@@ -3,7 +3,7 @@ html {
 }
 
 .container {
-    height: 100%;  /* 页面自适应显示 */
+    height: 98%;  /* 页面自适应显示 */
     background-color: #ebebeb;
     background-image: url('background.jpg'); /* 将背景图设置在container中 */
     background-size: cover;
@@ -13,8 +13,11 @@ html {
 .wrapper {
     background-color: rgba(255, 255, 255, 0.9);  /* 表单背景 */
     width: 70%;  /* 设置表单宽高 */
+    height: 90%;
+    overflow: scroll; 
     max-width: 1500px;
     min-height: 80%;
+    
     border-radius: 15px;  /* 圆角样式 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0 40px;  /*左右padding50px */
