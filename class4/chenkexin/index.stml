@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>设置渐变背景</title>
+    <style type="text/css">
+        body,h2,p{
+        margin: 0;	/*设置元素的外边距为0*/	
+        padding: 0	/*设置元素的内边距为0*/
+        }
+        body{
+               font-family:"微软雅黑";	/*设置字体*/	
+               font-size: 14px;	/*设置文字大小*/	
+               color: #333;	/*设置文字颜色为深灰色*/	
+               background: url(images/bodybg.jpg);/*设置背景图像为祥云图案，图像默认平铺*/
+        }
+        .content{	            /*盒子的样式*/	
+                   width:858px;	/*设置宽度*/	
+                   height: auto;	/*设置高度为 auto*/	
+                   border: lpx solid #CcC;	/*设置边框为1px的灰色实线*/	
+                   margin: 0 auto;	/*设置元素在网页上水平居中*/	
+                   padding: 20px;	/*设置元素的内边距*/	
+                   background: #FFF;	/*设置背景颜色为白色*/	
+        }
+         h2 {
+        text-align: center;	/*设置标题水平居中*/	
+        height: 40px;	/*设置标题的高度*/	
+        line-height:40px;	/*设置标题的行高与高度相等，使文字垂直居中	
+        }
+        p {
+        text-indent: 2em;	/*设置首行缩进 2个字符*/	
+        line-height:25px;	/*设置行高*/
+        margin-bottom: 20px auto;
+        }
+        .box {
+             width: 600px; height: 300px;
+             margin: 20px auto;
+             border: lpx solid #000;
+             background: linear-gradient (white, blue);/*设置具有渐变色的背景*/}
+        h2  {
+            text-align: center;
+        }
+        P{
+            text-indent: 2em; line-height:25px;}
+    </style></head><body>
+    <div class="box">
+    <h2>未来信息学院简介</h2>
+    <p>学院是山东省人民政府批准设立、教育部备案的省属公办全日制普通高校。学院秉持“以服务
+    发展为宗旨、以促进就业为导向”的办学方针，遵循“以人为本、德技双馨、产教融合、服务社会”的办学理念，以“建设有特色高水平的高职院校”为目标，建立了开放创新强校模式，累积了优质的教育资源，形成了良好的育人环境。学院的管理水平、教学质量、办学特色得到社会各界的广泛肯定。</p>
+    </div>
+    </body>
+    </html>
