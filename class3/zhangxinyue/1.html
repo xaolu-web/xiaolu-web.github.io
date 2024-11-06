@@ -2,33 +2,44 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>未来信息学院</title>
+        <title>盒子相关属性</title>
         <style type="text/css">
-            body {
-                font-family:"微软雅黑";
-                font-size: 14px;
-                color:  #333;
+            body,h2,p{margin:0;padding:0;}
+            .box {
+                width:450px;
+                height:300px;
+                border:1px soild #CCC;
+                padding:10px;
+                margin:50px auto;
+                box-shadow:10px 10px 10px #CCC;
             }
             h2 {
-                color: #F00;
                 text-align:center;
+                height:40px;
+                line-height:40px;
+                border-bottom: 1px dashed #CCC;
             }
-            p{
-                text-align: center;
+            .text {
+                font-family:"微软雅黑";
+                font-size:14px;
+                color: #333;
+                padding-top:10px;
+                text-indent:2em;
+                line-height:25px;
+            }
+            .imagel {
+                border-radius: 15px;
+                float:left;
+                margin:20px;
+                box-shadow:3px 3px 10px 2px #999;
             }
         </style>
     </head>
     <body>
-        <h2>欢迎来到未来信息学院</h2>
-        <hr>
-        <p><a href="intr.html">学院简介</a><br>
-            <a href="news.html">学院新闻</a><br>
-            <a href="spe.hrml">专业介绍</a><br>
-            <a href="rec.html">招生就业</a>
-        </p>
-        <p><img src="images/school.jpg" width="400" alt="学院鸟瞰图" title="学院鸟瞰图"></p>
-        <p>友情链接:<a herf="https://www.baidu*.com"target="_biank">百度</a>&nbsp;&nbsp;<a herf="https://www.sdcit*.edu.cn"target="_blank">学院官网</a><br>
-        <hr>
-        <p>版权所有&copy;未来信息学院</p>
+        <div class="box">
+            <h2>学院简介</h2>
+            <p><img src="images/school.jpg" width="200" height="200" height="150" alt="" class="imagel"/></p>
+            <p class="text">这是一段话</p>
+        </div>
     </body>
 </html>
