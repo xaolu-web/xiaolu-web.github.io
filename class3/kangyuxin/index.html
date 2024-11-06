@@ -1,43 +1,114 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charsrt="utf-8">
+        <meta charset="UTF-8">
+        <title></title>
         <style type="text/css">
-            body,h2,p{
+            body,ul,li{
                 margin: 0;
-                padding: 0
+                padding: 0;
+                list-style: none;
             }
             body{
+                background-image: url();
+                font-family: 'Courier New', Courier, monospace;
                 font-size: 14px;
-                color: darkmagenta;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                background: url("海绵宝宝.jpg");
             }
-            .content{
-                width: 858px;
-                height: auto;
-                border: 1px solid red;
+            a {
+                text-decoration: none;
+            }
+            nav{
+                width: 100%;
+                height: 42px;
+                background: rgb(28, 75, 169);
+            }
+            nav .navCon{
+                width: 1200px;
+                height: 42px;
                 margin: 0 auto;
-                padding: 20px;
-                background: #fff;
+                position: relative;
+                z-index: 111;
             }
-            h2{
+            .navCon li{
+                width: 120px;
+                height: 42px;
+                float: left;
                 text-align: center;
+            }
+            .navCon li a{
+                width: 120px;
+                height: 42px;
+                display: block;
+                line-height: 42px;
+                color: aqua;
+            }
+            .navCon ul{
+                width: 150px;
+                display: none;
+            }
+            .navCon li:hover ul{
+                display: block;
+            }
+            .navCon li ul li{
+                background: rgb(28, 75, 169);
+                width: 150px;
                 height: 40px;
                 line-height: 40px;
+                border-top: 1px rgb(0, 52, 162) solid;
+                text-align: center;
             }
-            p{
-                text-align: 2em;
-                line-height: 25px;
-                margin-bottom: 20px;
+            .navCon li ul li a{
+                display: block;
+                width: 150px;
+                height: 40px;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                line-height: 40px;
             }
             </style>
-        <title>学院简介</title>
     </head>
     <body>
-        <div class="content">
-            <h2>未来信息学院介绍</h2>
-            <p>未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是未来信息学院是</p>
-      ...
-        </div>
+        <nav>
+            <ul class="navCon">
+                <li><a href="#">1</a></li>
+                <li><a href="#">1</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">1</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">1</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">0</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">1</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#"></a>
+                        <ul>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">1</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">1</a></li>
+            </ul>
+        </nav>
     </body>
+</html>
