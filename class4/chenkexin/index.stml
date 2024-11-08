@@ -1,54 +1,116 @@
-<!DOCTYPE html>
+<!DOCTYPE  html>
 <html>
     <head>
-    <meta charset="utf-8">
-    <title>设置渐变背景</title>
-    <style type="text/css">
-        .box {
- body,h2,p{
-        margin: 0;	/*设置元素的外边距为0*/	
-        padding: 0	/*设置元素的内边距为0*/
+        <meta charset="UTF-8">
+        <title>学院网站导航条</title>
+        <style> 
+        body,ul,li {
+            margin: 0cm;
+            padding: 0cm;
+            list-style: none;
         }
-        body{
-               font-family:"微软雅黑";	/*设置字体*/	
-               font-size: 14px;	/*设置文字大小*/	
-               color: #333;	/*设置文字颜色为深灰色*/	
-               background: url(images/bodybg.jpg);/*设置背景图像为祥云图案，图像默认平铺*/
+        body {
+            background: url("images/bodybg.jpg");
+            font-family: 微软雅黑;
+            font-size: 14px;              
         }
-        .content{	            /*盒子的样式*/	
-                   width:858px;	/*设置宽度*/	
-                   height: auto;	/*设置高度为 auto*/	
-                   border: lpx solid #CcC;	/*设置边框为1px的灰色实线*/	
-                   margin: 0 auto;	/*设置元素在网页上水平居中*/	
-                   padding: 20px;	/*设置元素的内边距*/	
-                   background: #FFF;	/*设置背景颜色为白色*/	
+        a{
+            text-decoration: none;
         }
-         h2 {
-        text-align: center;	/*设置标题水平居中*/	
-        height: 40px;	/*设置标题的高度*/	
-        line-height:40px;	/*设置标题的行高与高度相等，使文字垂直居中	
+        nav {
+            width: 100%;
+            height: 42px;
+            background: rgb(28, 75, 169);
         }
-        p {
-        text-indent: 2em;	/*设置首行缩进 2个字符*/	
-        line-height:25px;	/*设置行高*/
-        margin-bottom: 20px auto;
+
+        nav.navCon {
+            width: 1200px;
+            height: 42px;
+            margin:  0 auto;
+            position: relative;
+            z-index: 111;
         }
-             width: 600px; height: 300px;
-             margin: 20px auto;
-             border: lpx solid #000;
-             background: linear-gradient (white, blue);/*设置具有渐变色的背景*/}
-        h2  {
+        .navCon li{
+            width: 120px;
+            height: 42px;
+            float: left;
             text-align: center;
         }
-        P{
-            text-indent: 2em; line-height:25px;}
-    </style></head><body>
-    <div class="box">
-    <h2>未来信息学院简介</h2>
-    <p>学院是山东省人民政府批准设立、教育部备案的省属公办全日制普通高校。学院秉持“以服务
-    发展为宗旨、以促进就业为导向”的办学方针，遵循“以人为本、德技双馨、产教融合、服务社会”
-办学理念，以“建设有特色高水平的高职院校”为目标，建立了开放创新强校模式，累积了优质的教育资源，
-形成了良好的育人环境。学院的管理水平、教学质量、办学特色得到社会各界的广泛肯定。</p>
-    </div>
+        .navCon li a{
+            display: block;
+            width: 120px;
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+        }
+        .navCon li ul{
+            width: 150px;
+            display: none;
+        }
+        .navCon li:hover ul{
+            display: block;                
+        }
+        .navCon li ul li a{
+            display: block;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            line-height: 40px;
+        }    
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="navCon">
+                <li><a href="#"网站首页></a></li>
+                <li><a href="#">学院概况</a>
+                    <ul>
+                        <li><a href="#">学院简介</a></li>
+                        <li><a href="#">学院荣誉</a></li>
+                        <li><a href="#">国家级示范性软件学院</a></li>
+                        <li><a href="#">高技能人才培训基地</a></li>
+                        <li><a href="#">办公电话</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">视频宣传</a></li>
+                    </ul>
+               </li>
+               <li><a href="#">新闻中心</a></li>
+                   <ul>
+               <li><a href="#">学校要闻</a></li>
+               <li><a href="#">系部动态</a></li>
+               <li><a href="#">通知公告</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">机构设置</a></li>
+               <li><a href="#">教学科研</a>
+                   <ul>
+                       <li><a href="#">教务管理系统</a></li>
+                       <li><a href="#">精品课程</a></li>
+                       <li><a href="#">教学辅助平台</a></li>
+                       <li><a href="#">网络教学平台</a></li> 
+                   </ul>
+               </li>
+               <li><a href="#">团学在线</a></li>
+               <li><a href="#">招生就业</a>
+              <ul>
+                <li><a href="#">招生信息网</a></li>
+                <li><a href="#">就业信息网</a></li>
+                <li><a href="#">空中乘务</a></li>
+              </ul>          
+            </li>
+            <li><a href="#">公共服务</a>
+                <ul>
+                    <li><a href="#">图书馆</a></li>
+                    <li><a href="#">信息公开</a></li>
+                    <li><a href="#">建行缴费</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">信息公开</a></li>
+            <li><a href="#">统一信息门户</a></li>
+        </ul>
+      </nav>
     </body>
-    </html>
+</html>
+
