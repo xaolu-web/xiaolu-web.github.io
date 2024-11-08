@@ -1,34 +1,124 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>未来信息学院</title>
-        <style type="text/css">
-            body {
-                font-family: 微软雅黑;
-                font-size: 14px;
-                color: #333;
-            }
-            h2 {
-                color: #F00;
-                text-align: center;
-            }
-            p {
-                text-align: center;
-            }
+    <meta charset="utf-8">
+    <title>学院网站导航条</title>
+    <style type="text/css">
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            background-image: url("http://pic.imeitou.com/uploads/allimg/2020050711/042bcyvkz33.jpg");
+            background-repeat: no-repeat;
+            background-size: 50%;
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+        }
+        nav {
+            width: 100%;
+            height: 42px;
+            background: rgb(28, 169, 162);
+        }
+        nav .navCon {
+            width: 1200px;
+            height: 42px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 111;
+        }
+        .navCon li {
+            width: 120px;
+            height: 42px;
+            float: left;
+            text-align: center;
+        }
+        .navCon li a {
+            display: block;
+            width: 120px;
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+        }
+        .navCon li ul {
+            width: 150px;
+            display: none;
+        }
+        .navCon li:hover ul {
+            display: block;
+        }
+        .navCon li ul li {
+            background: rgb(28, 153, 169);
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            border-top: 1px rgb(151, 162, 0) solid;
+            text-align: center;
+        }
+        .navCon li ul li a {
+            display: block;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            color: rgb(255,255,255);
+            line-height: 40px;
+        }
         </style>
     </head>
     <body>
-        <h2>欢迎来到未来信息学院</h2>
-        <hr>
-        <p><a href="intr.html">学院简介</a><br>
-           <a href="news.html">学院新闻</a><br>
-           <a href="spe.html">专业介绍</a><br>
-           <a href="rec.html">招生就业</a>
-        </p>
-        <p><img src="images/school1.jpg" width="400" alt="学院鸟瞰图" title="学院鸟瞰图"></p>
-        <p>友情链接:<a href="https://www.baidu*.com" target="_blank">百度</a>&nbsp;&nbsp;<a href="https://www.sdcit*.edu.cn" target="_blank">学院官网</a><br>
-        <hr>
-        <p>版权所有&copy;未来信息学院</p>
+        <nav>
+            <ul class="navCon">
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">学院概况</a>
+                    <ul>
+                       <li><a href="#">学院简介</a></li>
+                       <li><a href="#">学院荣誉</a></li>
+                       <li><a href="#">国家级示范性软件学院</a></li>
+                       <li><a href="#">高技能人才培训基地</a></li>
+                       <li><a href="#">办公电话</a></li>
+                       <li><a href="#">联系方式</a></li>
+                       <li><a href="#">视频宣传</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">新闻中心</a>
+                    <ul>
+                        <li><a href="#">学校要闻</a></li>
+                        <li><a href="#">系部动态</a></li>
+                        <li><a href="#">通知公告</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">机构设置</a></li>
+                <li><a href="#">教学科研</a>
+                <ul>
+                    <li><a href="#">教育管理系统</a></li>
+                    <li><a href="#">精品课程</a></li>
+                    <li><a href="#">教学辅助平台</a></li>
+                    <li><a href="#">网络教学平台</a></li>
+                </ul>
+            </li>
+            <li><a href="#">团学在线</a></li>
+            <li><a href="#">招生就业</a>
+                <ul>
+                    <li><a href="#">招生信息网</a></li>
+                    <li><a href="#">就业信息网</a></li>
+                    <li><a href="#">空中乘务</a></li>
+                </ul>
+        </li>
+        <li><a href="#">公共服务</a>
+            <ul>
+                <li><a href="#">图书馆</a></li>
+                <li><a href="#">信息公开</a></li>
+                <li><a href="#">建行缴费</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">信息公开</a></li>
+        <li><a href="#">统一信息门户</a></li> 
+            </ul>
+        </nav>
     </body>
 </html>
