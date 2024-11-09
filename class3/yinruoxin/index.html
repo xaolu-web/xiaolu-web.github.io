@@ -4,50 +4,60 @@
         <meta charset="utf-8">
         <title>竖直导航栏</title>
         <style type="text/css">
-            body {
-                background: url("https://www.hdkz.edu.cn/uploads/files/20220625/165613648741068409162254929208.jpg");
-                font-family: Microsoft YaHei;
-                text-align: center;
-                background-repeat: no-repeat;
-                background-size: 100%;
-                
-                font-size: 14px;
-            }
-            nav {
-                width: 120px;
-                background-color: blue;
-                width: 120px;
-                
-                margin: 0;
-            }
-            a {
-                text-decoration: none;
-            }
-            nav a {                                             /*设置导航链接样式*/
-                display: block;
-                color: white;
-                padding: 12px;
-                text-align: center;
-                
-            }
-            nav a:hover {
-                background-color: brown;
-                text-decoration: double;
-            }
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: url("https://bpic.588ku.com/illus_water_img/19/09/25/5ca2d7f730c765cb8031ff70ead2a0bc.jpg");
+            font-family: "Microsoft YaHei";
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        nav{
+            width: 120px;
+            height: 350px;
+            background-color: blue;
+            margin: 0 auto 45px 45px; 
+            border-radius: 15px;
+        }
+        li{
+            width: 120px;
+            height: 32px;
+            border-bottom: dashed pink;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            font-size: 22px;
+            color: azure;
+            text-align: center;
+            
+        }
+        a:hover{
+            text-decoration: underline;
+            text-decoration-color: aquamarine;
+            background-color: blueviolet;
+        }
         </style>
     </head>
     <body>
         <nav>
-                <a href="#">网站首页</a>
-                <a href="#">学院概况</a>
-                <a href="#">学院简介</a>
-                <a href="#">新闻中心</a>
-                <a href="#">机构设置</a>
-                <a href="#">教学科研</a>
-                <a href="#">团学在线</a>
-                <a href="#">招生就业</a>
-                <a href="#">公共服务</a>
-                <a href="#">招生信息</a>
+            <ul>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">学院概况</a></li>
+                <li><a href="#">学院简介</a></li>
+                <li><a href="#">新闻中心</a></li>
+                <li><a href="#">机构设置</a></li>
+                <li><a href="#">教学科研</a></li>
+                <li><a href="#">团学在线</a></li>
+                <li><a href="#">招生就业</a></li>
+                <li><a href="#">公共服务</a></li>
+                <li><a href="#">招生信息</a></li>
+            </ul>
         </nav>
     </body>
 </html>
