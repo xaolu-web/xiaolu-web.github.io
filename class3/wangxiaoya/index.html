@@ -1,73 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>学院网站导航条</title>
-        <style type="text/css">
-            body{
-                font-family: "微软雅黑";
-                font-size: 14px;
-                color: aqua;
-            }
-            #nav{
-               color: brown;
-                padding:5px;
-                line-height: 30px;
-            }
-        </style>
-    </head>
-    <boby>
-        <nav>
-            <ul class="navCon">
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">学院概况</a></li>
-                <ul>
-                    <li><a href="#">学院简介</a></li>
-                    <li><a href="#">学院荣誉</a></li>
-                    <li><a href="#">国家级示范性软件学院</a></li>
-                    <li><a href="#">高技能人才培训基地</a></li>
-                    <li><a href="#">办公电话</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">视频宣传</a></li>
-                </ul>
-            </li>
-            <li><a href="#">新闻中心</a>
-                <ul>
-                    <li><a href="#">学校要闻</a></li>
-                    <li><a href="#">系部动态</a></li>
-                    <li><a href="#">通知公告</a></li>
-                </ul>
-             </li>
-             <li>
-                <li><a href="#">机构设置</a></li>
-                <li><a href="#">教学科研</a></li>
-                <ul>
-                    <li><a href="#">教务管理系统</a></li>
-                    <li><a href="#">精品课程</a></li>
-                    <li><a href="#">教学辅助平台</a></li>
-                    <li><a href="#">网络教学平台</a></li>
-                </ul>
-             </li>
-             <li><a href="#">团学在线</a></li>
-             <li><a href="#">招生就业</a></li>
-             <ul>
-                <li><a href="#">招生信息网</a></li>
-                <li><a href="#">就业信息网</a></li>
-                <li><a href="#">空中乘务</a></li>
-             </ul>
-            </li>
-                <li><a href="#">公共服务</a></li>
-                <ul>
-                    <li><a href="#">图书馆</a></li>
-                    <li><a href="#">信息公开</a></li>
-                    <li><a href="#">建行缴费</a></li>
-                </li>
-                </ul>
-            </li>
-            <li><a href="#">信息公开</a></li>
-            <li><a href="#">统一信息门户</a></li>
-            </ul>
-        </nav>
-        <img src="https://f12.baidu.com/it/u=3029547392,2169337012&fm=173&app=49&f=JPEG?w=640&h=365&s=B814C71485044B5F5293C5D50300F0AB&access=215967316.jpg"alt="XUE YUAN"width="117"height="38">
-    </boby>
-</html>
+<head>
+   <meta charset="utf-8">
+<title>学院网站</title> 
+   <style type="text/css">
+ body,ul,li{
+       margin: 0;
+ padding: 0;
+         list-style: none;
+        }
+        body{
+       background: url(https://q6.itc.cn/q_70/images03/20240126/4eaa7950e4214e8e83965f851318a03d.jpeg); /*背景*/
+       background-repeat: no-repeat;
+       background-size: 100%;
+       font-family: "微软雅黑";
+       font-size: 14px;
+       }
+        a{
+       text-decoration: none;/*去掉超链接下划线*/
+       background: rgb(79, 45, 163);
+      }
+     nav{
+       width: 100%;
+        height: 42px;
+       /* background: rgb(132, 73, 209); */
+     }
+        nav.navCon{
+        width: 1200px;
+        height: 42px;
+        margin: 0 auto;
+        position: relative; /*相对定位*/
+        z-index: 111;
+        }
+       .navCon li{
+        width: 120px;
+        height: 42px;
+        float: left;
+        text-align: center;
+        }
+       .navCon li a{
+        display: block;/*转换为块元素*/
+        width: 120px;
+        height: 42px;
+        line-height: 42px;
+        color: cadetblue;
+        }
+      .navCon li ul{
+        width: 150px;
+        display: none;/*子菜单不可见*/
+        }
+        .navCon li:hover ul{
+        display: block;
+        }
+        .navCon li ul li{
+        background: rgb(111, 222,321);
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px rgb(123, 122,222) solid;
+        text-align: center;
+       }
+       .navCon li ul li a{/*子菜单项超链接*/
+        display: block;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        color: cornsilk;
+        line-height: 40px; }
+</style>
+</head>
+<body>
+      <nav> 
+        <ul class="navCon"> 
+        <li>首页 
+        <ul> 
+        <li>学院荣誉</li> 
+        <!-- <li>高技能人才培训基地</li> --> 
+        <li>办公电话</li> 
+        <li>联系方式</li> 
+        <li>视频宣传</li> 
+        </ul> 
+        </li> 
+        <li>新闻中心 
+        <ul> 
+        <li>学校要闻</li> 
+        <li>系部动态</li> 
+        <li>通知公告</li> 
+        </ul> 
+        </li> 
+        <!-- <li>机构设置</li> --> 
+        <li>科学研究 
+        <ul> 
+        <li>教务管理系统</li> 
+        <li>精品课程</li> 
+        <li>教学辅助平台</li> 
+        <li>网络教学平台</li> 
+        </ul> 
+        </li> 
+        <li>团学在线</li> 
+        <ul> 
+        <li>招生就业</li> 
+        <li>招生信息网</li> 
+        <li>就业信息网</li> 
+        <li>空中乘务</li> 
+        </ul> 
+        </li> 
+        <li>团学在线 
+        <ul> 
+        <li>公共服务</li> 
+        <li>图书馆</li> 
+        <li>信息公开</li> 
+        <li>建行缴费</li> 
+        <li>信息公开</li> 
+        <li>统一信息门户</li> 
+        </ul> 
+        </nav> 
+        </body> 
+        </html> 
+        
