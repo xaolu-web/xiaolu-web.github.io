@@ -1,127 +1,88 @@
 <!doctype html>
 <html>
-<head>
-     <meta charset="utf-8">
-    <title>水平导航条</title>     
-    <style type="text/css">
-        body,ul,li{
-         margin: 0;
-        padding: 0;
-        list-style: none;
-        color: blueviolet;
-        }
-        body{
-        background: url(https://img1.baidu.com/it/u=778161849,579961353&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800); /*背景*/
-        background-repeat: no-repeat;
-        background-size: 100%;
-        font-family: "微软雅黑";
-        font-size: 14px;
-        }
-        a:hover{
-
-            text-decoration: underline;
-        }
-        a{
-        text-decoration: none;/*去掉超链接下划线*/
-        background: rgb(78, 60, 60);
-        }
-        nav{
-        width: 100%;
-        height: 42px;
-        /* background: rgb(132, 73, 209); */
-        }
-        nav.navCon{
-        width: 1200px;
-        height: 42px;
-        margin: 0 auto;
-        position: relative; /*相对定位*/
-         z-index: 111;
-        }
-        .navCon li{
-        width: 120px;
-        height: 42px;
-        float: left;
-        text-align: center;
-        }
-        .navCon li a{
-        display: block;/*转换为块元素*/
-        width: 120px;
-        height: 42px;
-        line-height: 42px;
-        color: cadetblue;
-        }
-        .navCon li ul{
-        width: 150px;
-        display: none;/*子菜单不可见*/
-        }
-        .navCon li:hover ul{
-        display: block;
-        }
-        .navCon li ul li{
-        background: rgb(111, 222,321);
-        width: 150px;
-        height: 40px;
-        line-height: 40px;
-        border-top: 1px rgb(123, 122,222) solid;
-        text-align: center;
-        }
-        .navCon li ul li a{/*子菜单项超链接*/
-        display: block;
-         width: 150px;
-        height: 40px;
-        text-align: center;
-        color: cornsilk;
-        line-height: 40px;
-        }
-        </style>
-</head>
-<body>
-        <img src="11.jpg">
-        <nav>
-        <ul class="navCon">
-            <li><a href="#">首页</a>
-        <ul>
-        <li><a href="https://www.hdkz.edu.cn/">学院简介</a>
-            <li><a href="#">学院荣誉</a></li>
-            <!-- <li><a href="#">高技能人才培训基地</a></li> -->
-            <li><a href="#">办公电话</a></li>
-            <li><a href="#">联系方式</a></li>
-            <li><a href="#">视频宣传</a></li>
-        </ul>
-        </li>
-        <li><a href="#">新闻中心</a>
-        <ul>
-        <li><a href="#">学校要闻</a></li>
-        <li><a href="#">系部动态</a></li>
-        <li><a href="#">通知公告</a></li>
-        </ul>
-        </li>
-        <!-- <li><a href="#">机构设置</a></li> -->
-        <li><a href="#">科学研究</a>
-        <ul>
-         <li><a href="#">教务管理系统</a></li>
-         <li><a href="#">精品课程</a></li>
-        <li><a href="#">教学辅助平台</a></li>
-        <li><a href="#">网络教学平台</a></li>
-        </ul>
-        </li>
-        <li><a href="#">团学在线</a></li>
-        <ul>
-        <li><a href="#">招生就业</a></li>
-         <li><a href="#">招生信息网</a></li>
-        <li><a href="#">就业信息网</a></li>
-        <li><a href="#">空中乘务</a></li>
-         </ul>
-        </li>
-        <li><a href="#">团学在线</a>
-        <ul>
-        <li><a href="#">公共服务</a></li>
-        <li><a href="#">图书馆</a></li>
-        <li><a href="#">信息公开</a></li>
-        <li><a href="#">建行缴费</a></li>
-        <li><a href="#">信息公开</a></li>
-        <li><a href="#">统一信息门户</a></li>
-        </ul>
-    </nav>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>学校新闻</title>
+            <style type="text/css">
+                body,h2,ul,li{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+                body{
+                    background: url("img.jpg");
+                    font-family: "微软雅黑";
+                    font-size: 14px;
+                    color: rgb(60, 221, 221);
+                }
+                a{
+                    text-decoration: none;  /*去掉文字下划线*/
+                }
+                .news{
+                    background: rgb(130, 236, 30);
+                    border: 1px solid #ccc;
+                    width: 458px;
+                    height: 228px;
+                    padding: 5px 10px;
+                    margin: 20px auto;
+                }
+                .news h2{
+                    background: url(123.jpg.webp) no-repeat left center;
+                    width: 448px;
+                    height: 37px;
+                    line-height: 37px;
+                    color: rgb(71, 148, 235);
+                    font-size: 16px;
+                    padding-left: 10px;
+                    border-bottom: 1px solid #ccc;
+                }
+                .news h2 .eng{
+                    color: black;
+                    padding-left: 50px;
+                    font-weight: normal;
+                }
+                .news .content{
+                    width: 458px;
+                    height: 190px;
+                }
+                .news .content li{
+                    width: 443px;
+                    height: 31px;
+                    line-height: 31px;
+                    background: url("images/icon.png") no-repeat left center;
+                    padding-left: 15px;
+                }
+                .news .content li a{
+                    color: rgb(255, 156, 8);
+                    display: block;
+                    width: 320px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .news .content li a:hover{
+                    color: rgb(96, 192, 0);
+                    /* 指针悬停到超链接文字时的颜色 */
+                }
+                .news .content li span{
+                    color: rgb(84, 169, 172);
+                    font-size: 11px;
+                    float: right; 
+                    /* 使日期显示在列表项右边 */
+                }
+            </style>
+    </head>
+    <body>
+        <div class="news">
+            <h2>新闻要闻<span class="eng"> &nbsp;// college news</span><span></h2>
+                <ul class="content">
+                    <li><span>2021-04-09</span><a href="newsdetail.html" title="学校联合发起成立软件行业产教联盟" target="_blank">学校联合发起成立软件行业产教联盟</a></li>
+                    <li><span>2021-04-09</span><a href="#" title="学校四个推进掀起党史学习教育热潮" target="_blank">学校“四个推进"掀起党史学习教育热潮</a></li>
+                    <li><span>2021-04-09</span><a href="#" title="学校召开举办" target="_blank">学校召开举办2021年体育工作会议</a></li>
+                    <li><span>2021-04-09</span><a href="#" title="我校举办混合护服务商" target="_blank">我校举办混合护服务商</a></li>
+                    <li><span>2021-04-09</span><a href="#" title="中国工业互联网研究开院来我校访问" target="_blank">中国工业互联网研究开院来我校访问</a></li>
+                    <li><span>2021-04-09</span><a href="#" title="学校召开党务干部业务培训会议" target="_blank">学校召开党务干部业务培训会议</a></li>
+                </ul>
+        </div>     
+    </body>
 </html>
