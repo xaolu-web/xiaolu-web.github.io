@@ -1,120 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-   <meta charset="utf-8">
-<title>学院网站</title> 
-   <style type="text/css">
- body,ul,li{
-       margin: 0;
- padding: 0;
-         list-style: none;
-        }
-        body{
-       background: url(https://q6.itc.cn/q_70/images03/20240126/4eaa7950e4214e8e83965f851318a03d.jpeg); /*背景*/
-       background-repeat: no-repeat;
-       background-size: 100%;
-       font-family: "微软雅黑";
-       font-size: 14px;
-       }
-        a{
-       text-decoration: none;/*去掉超链接下划线*/
-       background: rgb(79, 45, 163);
-      }
-     nav{
-       width: 100%;
-        height: 42px;
-       /* background: rgb(132, 73, 209); */
-     }
-        nav.navCon{
-        width: 1200px;
-        height: 42px;
-        margin: 0 auto;
-        position: relative; /*相对定位*/
-        z-index: 111;
-        }
-       .navCon li{
-        width: 120px;
-        height: 42px;
-        float: left;
-        text-align: center;
-        }
-       .navCon li a{
-        display: block;/*转换为块元素*/
-        width: 120px;
-        height: 42px;
-        line-height: 42px;
-        color: cadetblue;
-        }
-      .navCon li ul{
-        width: 150px;
-        display: none;/*子菜单不可见*/
-        }
-        .navCon li:hover ul{
-        display: block;
-        }
-        .navCon li ul li{
-        background: rgb(111, 222,321);
-        width: 150px;
-        height: 40px;
-        line-height: 40px;
-        border-top: 1px rgb(123, 122,222) solid;
-        text-align: center;
-       }
-       .navCon li ul li a{/*子菜单项超链接*/
-        display: block;
-        width: 150px;
-        height: 40px;
-        text-align: center;
-        color: cornsilk;
-        line-height: 40px; }
-</style>
-</head>
-<body>
-      <nav> 
-        <ul class="navCon"> 
-        <li>首页 
-        <ul> 
-        <li>学院荣誉</li> 
-        <!-- <li>高技能人才培训基地</li> --> 
-        <li>办公电话</li> 
-        <li>联系方式</li> 
-        <li>视频宣传</li> 
-        </ul> 
-        </li> 
-        <li>新闻中心 
-        <ul> 
-        <li>学校要闻</li> 
-        <li>系部动态</li> 
-        <li>通知公告</li> 
-        </ul> 
-        </li> 
-        <!-- <li>机构设置</li> --> 
-        <li>科学研究 
-        <ul> 
-        <li>教务管理系统</li> 
-        <li>精品课程</li> 
-        <li>教学辅助平台</li> 
-        <li>网络教学平台</li> 
-        </ul> 
-        </li> 
-        <li>团学在线</li> 
-        <ul> 
-        <li>招生就业</li> 
-        <li>招生信息网</li> 
-        <li>就业信息网</li> 
-        <li>空中乘务</li> 
-        </ul> 
-        </li> 
-        <li>团学在线 
-        <ul> 
-        <li>公共服务</li> 
-        <li>图书馆</li> 
-        <li>信息公开</li> 
-        <li>建行缴费</li> 
-        <li>信息公开</li> 
-        <li>统一信息门户</li> 
-        </ul> 
-        </nav> 
-        </body> 
-        </html> 
-        
+    <head>
+        <meta charset="utf-8">
+        <title>学校要闻</title>
+        <style type=""text="text/css">
+            body,h2,ul,li{
+                margin:0;
+                padding:0;
+                list-style:none;
+            }
+            body{
+                background:url("images/bodybg.jpg");
+                font-family:"微软雅黑";
+                font-size: 14px;
+                color:blue;
+            }
+            a{
+                text-decoration:none;
+            }
+            .news{
+                background: rgb(235, 229, 133);
+                border:1px solid#ccc;
+                width:458px;
+                height:228px;
+                padding:5px 10px;
+                margin:20px auto;
+            }
+            .news h2{
+                background:url(images/headl.png)no-repeat left center;
+                width:448px;
+                height:37px;
+                line-height:37px;
+                color:rgb(247, 135, 135);
+                font-size:16px;
+                padding-left: 10px;
+                border-bottom:1px solid #f3d351;
+            }
+            .news h2 .eng{
+                color:#1c0d0d;
+                padding-left:50px;
+                font-weight:normal;
+            }
+            .news .content{
+                width:458px;
+                height: 190px;
+            }
+            .news .content li{
+                width:443px;
+                height:31px;
+                line-height: 31px;
+                background:url("images/icon.png")no-repeat left center;
+                padding-left:15px;
+            }
+            .news .content li a{
+                color:rgb(81, 236, 236);
+                display:block;
+                white-space:nowrap;
+                overflow:ellipsis;
+                text-overflow: ellipsis;
+            }
+            .news .content li a:hover{
+                color: #f3d351;
+            }
+            
+            .news .content li span{
+                color:#d390e5;
+                font-size:11px;
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="news">
+        <h2>学校要闻<span class="eng"> &nbsp;     college News</span></h2>
+        <ul class="content">
+            <li><span>2021-04-09</span><a href="newsDetail.html"title="学校联合发起成立软件行业产教联盟"target="_blak">学校联合发起成立软件行业产教联盟</a></li>
+            <li><span>2021-02-08</span><A href="#"title="学校“四个推进”掀起党史学习教育热潮"target="_blank">学校“四个推进”掀起党史学习教育热潮</A></li>
+            <li><span>2021-04-02</span><A href="#"title="学校召开2021年度体育工作会议"target="_blank">学校召开2021年度体育工作会议</A></li>
+            <li><span>2021-04-01</span><A href="#"title="我校举行“铭记历史 缅怀先烈”清明节祭扫先烈活动"target="_blank">我校举行“铭记历史 缅怀先烈”清明节祭扫先烈活动</A></li>
+            <li><span>2021-03-30</span><A href="#"title="中国工业互联网研究院来我校交流访问"target="_blank">中国工业互联网研究院来我校交流访问</A></li>
+            <li><span>2021-03-30</span><A href="#"title="学校召开党务干部业务培训会议"target="_blank">学校召开党务干部业务培训会议</A></li>
+        </ul>
+        </div>
+    </body>
+</html>
