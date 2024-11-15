@@ -2,93 +2,54 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>通知公告块</title>
+        <title>大作业</title>
         <style type="text/css">
-            body,h2,ul,li {
-                margin: 0;
-                padding: 0;
-                list-style: none;
+            h1 {
+                color: blueviolet;
+                text-align: center;
+            }
+            a {
+                color: #4c4c4c;
+                text-decoration: none;
+            }
+            a:hover {
+                color: chartreuse;
+
+            }
+            img:hover {
+                opacity: 0.2;
+            }
+            hr {
+                color: blue;
+            }
+            .image {
+                border-radius: 15px;
+                float: left;
+                box-shadow: 10px 10px 10px #808080;
             }
             body {
                 font-family: "Microsoft YaHei";
-                font-size: 14px;
-                color: #666;
-            }
-            a {
-                text-decoration: none;
-            }
-            .news {
-                background-color: bisque;
-                border: 3px solid yellow;
-                width: 462px;
-                height: 280px;
-                padding: 5px 10px;
-                margin: 20px auto;
-            }
-            .news h1 {
-                background: url("https://tse4-mm.cn.bing.net/th/id/OIP-C.bodAUfOE3Zbrxoz179xEAQHaHa?w=157&h=180&c=7&r=0&o=5&pid=1.7")  no-repeat left center;  
-                background-size: 100px 37px;
-                width: 448px;
-                height: 37px;
-                line-height: 37px;
-                color: #000;
-                font-size: 20px;
-                padding-left: 10px;
-                border-bottom: 1px solid pink;
-                position: relative;
-            }
-            .news h1 .more{
-                color: #000;
-                font-size: 12px;
-                font-weight: normal;
-                position: absolute;
-                top: 0;
-                right: 0px;
-            }
-            .news .content {
-                width: 458px;
-                height: 190px;
-
-            }
-            .news .content li {
-                width: 443px;
-                height: 31px;
-                line-height: 31px;
-                background: url("https://img.88icon.com/upload/jpg/20210622/f8bace31a257f5c736be98205e9a8998_10215_512_512.jpg!bg") no-repeat left center;    
-                background-size: 8px;                                                         
-                padding-left: 15px;
-
-            }
-            .news .content li a {
-                color: #333;
-                display: block;
-                width: 320px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .news .content li a:hover{
-                color: #1a4aa7;
-
-            }
-            .news .content li span {
-                color: #737373;
-                font-size: 11px;
-                float: right;
+                font-size: 25px;
+                background :linear-gradient(pink,silver);
             }
         </style>
     </head>
     <body>
-        <div class="news">
-            <h1>通知通告<span><a class="more" href="#" targrt="_blank">更多&gt;&gt;</a></span></h1>
-            <ul class="content">
-                <li><span>2021-04-09</span><a href="newsDetail.html" title="学校联合发起成立软件行业产教联盟" target="_blank">学校联合发起成立软件行业产教联盟</a></li>
-                <li><span>2021-04-08</span><a href="#" title="学校“四个推进”掀起党学习教育热潮" target="_blank">学校“四个推进”掀起党学习教育热潮</a></li>
-                <li><span>2021-04-02</span><a href="#" title="学校召开2021年度体育工作会议" target="_blank">学校召开2021年度体育工作会议</a></li>
-                <li><span>2021-04-01</span><a href="#" title="我校举行“铭记历史 缅怀先烈” 清明节祭扫活动" target="_blank">我校举行“铭记历史 缅怀先烈” 清明节祭扫活动</a></li>
-                <li><span>2021-03-30</span><a href="#" title="中国工业互联网研究院来我校交流访问" target="_blank">中国工业互联网研究院来我校交流访问</a></li>
-                <li><span>2021-03-30</span><a href="#" title="学校召开党务干部业务培训会议" target="_blank">学校召开党务干部业务培训会议</a></li>
+        <h1>html5大作业</h1>
+        <hr>
+        <p class="text">
+            <ul class="navcon">
+                <li><a href="xue.html">学院简介</a>
+                    <ul>
+                        <li><a href="xin.html">学院新闻</a></li>
+                        <li><a href="zhuan.html">专业介绍</a></li>
+                        <li><a href="http://zsjyc.hdkz.edu.cn/">招生就业</a></li>
+                    </ul>
+                </li>
+                <li><a href="geren.html">个人简介</a></li>
+                <li><a href="diwu.html">第五人格简介</a></li>
             </ul>
-        </div>
+        </p>
+        <p><img src="https://12687378.s21i.faiusr.com/2/ABUIABACGAAgw_m6kQYoteT-owUw2QI42QI.jpg" width="360px" height="350" alt="邯郸科技校徽" class="image" title="邯郸科技校徽"/></p>
     </body>
 </html>
