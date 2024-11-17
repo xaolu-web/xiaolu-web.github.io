@@ -1,88 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>学校新闻</title>
-            <style type="text/css">
-                body,h2,ul,li{
-                    margin: 0;
-                    padding: 0;
-                    list-style: none;
-                }
-                body{
-                    background: url("img.jpg");
-                    font-family: "微软雅黑";
-                    font-size: 14px;
-                    color: rgb(60, 221, 221);
-                }
-                a{
-                    text-decoration: none;  /*去掉文字下划线*/
-                }
-                .news{
-                    background: rgb(130, 236, 30);
-                    border: 1px solid #ccc;
-                    width: 458px;
-                    height: 228px;
-                    padding: 5px 10px;
-                    margin: 20px auto;
-                }
-                .news h2{
-                    background: url(123.jpg.webp) no-repeat left center;
-                    width: 448px;
-                    height: 37px;
-                    line-height: 37px;
-                    color: rgb(71, 148, 235);
-                    font-size: 16px;
-                    padding-left: 10px;
-                    border-bottom: 1px solid #ccc;
-                }
-                .news h2 .eng{
-                    color: black;
-                    padding-left: 50px;
-                    font-weight: normal;
-                }
-                .news .content{
-                    width: 458px;
-                    height: 190px;
-                }
-                .news .content li{
-                    width: 443px;
-                    height: 31px;
-                    line-height: 31px;
-                    background: url("images/icon.png") no-repeat left center;
-                    padding-left: 15px;
-                }
-                .news .content li a{
-                    color: rgb(255, 156, 8);
-                    display: block;
-                    width: 320px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                .news .content li a:hover{
-                    color: rgb(96, 192, 0);
-                    /* 指针悬停到超链接文字时的颜色 */
-                }
-                .news .content li span{
-                    color: rgb(84, 169, 172);
-                    font-size: 11px;
-                    float: right; 
-                    /* 使日期显示在列表项右边 */
-                }
-            </style>
-    </head>
-    <body>
-        <div class="news">
-            <h2>新闻要闻<span class="eng"> &nbsp;// college news</span><span></h2>
-                <ul class="content">
-                    <li><span>2021-04-09</span><a href="newsdetail.html" title="学校联合发起成立软件行业产教联盟" target="_blank">学校联合发起成立软件行业产教联盟</a></li>
-                    <li><span>2021-04-09</span><a href="#" title="学校四个推进掀起党史学习教育热潮" target="_blank">学校“四个推进"掀起党史学习教育热潮</a></li>
-                    <li><span>2021-04-09</span><a href="#" title="学校召开举办" target="_blank">学校召开举办2021年体育工作会议</a></li>
-                    <li><span>2021-04-09</span><a href="#" title="我校举办混合护服务商" target="_blank">我校举办混合护服务商</a></li>
-                    <li><span>2021-04-09</span><a href="#" title="中国工业互联网研究开院来我校访问" target="_blank">中国工业互联网研究开院来我校访问</a></li>
-                    <li><span>2021-04-09</span><a href="#" title="学校召开党务干部业务培训会议" target="_blank">学校召开党务干部业务培训会议</a></li>
-                </ul>
-        </div>     
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>通知公告</title>
+<style type="text/css">
+    body,ul,li,h2 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+    body {
+    background: url(img.jpg);
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #333;
+    }
+    a{
+        text-decoration: none;
+    }
+    .innews {
+    width: 460px;
+    height: 240px;    
+    padding: 5px 10px 10px;
+    margin: 20px auto;
+    border: 1px solid rgb(190, 16, 243);
+    background-color: #4e89ff;
+    }
+    .con {
+    width: 440px;
+    height: 38px;
+    }
+    .con h2 {
+    float: left;
+    width: 100px;
+    height: 36px;
+    margin-left: 10px;
+    background-color: rgb(12, 56, 200);
+    font-size: 14px;
+    color: rgb(255, 255, 105);
+    text-align: center;
+    line-height: 38px;
+    position: relative;
+    }
+    .con.more{
+        float: right;
+        padding-top: 4px;
+        padding-right: 10px;
+        font-size: 12px;
+        color: rgb(255, 205, 139);
+        line-height: 34px;
+    }
+    .xueze{
+        width: 440px;
+        height: 213px;
+        padding-top: 10px;
+        border-top: 2px solid #d3bbbb;
+    }
+    .xueze ul{
+        width: 430px;
+        padding-left: 10px;
+        height: 213px;
+    }
+    .xueze ul li{
+        width: 425px;
+        height: 30px;
+        line-height: 30px;
+        background: url(img.png) no-repeat left center;
+        padding-left: 15px;
+    }
+    .xueze ul li a{
+        /* float: left; */
+        color: rgb(0, 0, 0);
+        /* display: block;
+        width: 320px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; */
+        /* padding-right: 10px; */
+    }
+    .xueze ul li a:hover{
+        color: #eb4141;
+    }
+    .xueze ul li span{
+        float: right;
+        color: #000000;
+        font-size: 11px;
+    }
+</style>
+</head>
+<body>
+    <div class="innews">
+        <div class="con"> 
+            <h2>通知公告</h2>
+            <a class="more" href="#" target="_blank">更多 &gt;&gt;</a>
+        </div>
+        <div class="xueze">
+    <ul>
+        <li><span>2021-04-09</span><a title="未来信息学院滨海校区锅炉工招聘启事" target="_blank">未来信息学院滨海校区锅炉工招聘启事</a></li>
+        <li><span>2021-04-06</span><a title="未来信息学院训练服装询价公告" target="_blank">未来信息学院训练服装询价公告</a></li>
+        <li><span>2021-04-05</span><a title="关于学院教职工乒乓球赛奖品项目询价结果公示" target="_blank">关于学院教职工乒乓球赛奖品项目询价结果公示</a></li>
+        <li><span>2021-03-22</span><a title="关于学院采购计算机，打印机项目询价结果公示" target="_blank">关于学院采购计算机，打印机项目询价结果公示</a></li>
+    </ul>
+        </div>
+    </div>
+</body>
 </html>
