@@ -1,20 +1,107 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="uft-8">
-        <title>认识盒子模型</title>
+        <meta charset="utf-8">
+        <title>学生信息表</title>
         <style type="text/css">
-            .box {
-                width:200px;
+            body,h2,table,th,td {
+                margin: 0;
+                padding: 0
+            }
+            h2 {
+                text-align: center;
+            }
+            .gridtable {
+                width:700px;
                 height:200px;
-                border:5px soild red;
-                background: #CCC;
-                padding:20px;
-                margin:30px;
+                margin:0 auto;
+                border: 1px solid #666;
+                border-collapse: collapse;
+                font-family:"微软雅黑";
+                font-size: 14px;
+            }
+            .gridtable th,.gridtable td {
+                border: 1px solid #666;
+                padding:2px;
+            }
+            .gridtable th {
+                background:#ddd;
+            }
+            .gridtable tr:hover {
+                background: #FF0;
             }
         </style>
     </head>
     <body>
-        <div class="box">盒子中的内容</div>
+        <h2>学生信息表</h2>
+        <table class="gridtable">
+            <tr>
+                <th rowspan="2">学号</th>
+                <th colspan="3">个人信息</th>
+                <th colspan="3">入学信息</th>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>班级</th>
+                <th>入学年月</th>
+                <th>宿舍号</th>
+            </tr>
+            <tr>
+                <td>20210110201</td>
+                <td>王大震</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>20210110202</td>
+                <td>于雪鲲</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>20210110203</td>
+                <td>王攀岩</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <td>20210110204</td>
+                <td>刘雪红</td>
+                <td>女</td>
+                <td>17</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>502</td>
+            </tr>
+            <tr>
+                <td>20210110205</td>
+                <td>李子海</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <td>20210110206</td>
+                <td>张君玉</td>
+                <td>女</td>
+                <td>18</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>502</td>
+            </tr>
+        </table>
     </body>
 </html>
