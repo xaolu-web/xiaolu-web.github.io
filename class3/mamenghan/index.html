@@ -1,107 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>通知公告</title>
-<style type="text/css">
-    body,ul,li,h2 {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    }
-    body {
-    background: url(img.jpg);
-    font-family: "微软雅黑";
-    font-size: 14px;
-    color: #333;
-    }
-    a{
-        text-decoration: none;
-    }
-    .innews {
-    width: 460px;
-    height: 240px;    
-    padding: 5px 10px 10px;
-    margin: 20px auto;
-    border: 1px solid rgb(190, 16, 243);
-    background-color: #4e89ff;
-    }
-    .con {
-    width: 440px;
-    height: 38px;
-    }
-    .con h2 {
-    float: left;
-    width: 100px;
-    height: 36px;
-    margin-left: 10px;
-    background-color: rgb(12, 56, 200);
-    font-size: 14px;
-    color: rgb(255, 255, 105);
-    text-align: center;
-    line-height: 38px;
-    position: relative;
-    }
-    .con.more{
-        float: right;
-        padding-top: 4px;
-        padding-right: 10px;
-        font-size: 12px;
-        color: rgb(255, 205, 139);
-        line-height: 34px;
-    }
-    .xueze{
-        width: 440px;
-        height: 213px;
-        padding-top: 10px;
-        border-top: 2px solid #d3bbbb;
-    }
-    .xueze ul{
-        width: 430px;
-        padding-left: 10px;
-        height: 213px;
-    }
-    .xueze ul li{
-        width: 425px;
-        height: 30px;
-        line-height: 30px;
-        background: url(img.png) no-repeat left center;
-        padding-left: 15px;
-    }
-    .xueze ul li a{
-        /* float: left; */
-        color: rgb(0, 0, 0);
-        /* display: block;
-        width: 320px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; */
-        /* padding-right: 10px; */
-    }
-    .xueze ul li a:hover{
-        color: #eb4141;
-    }
-    .xueze ul li span{
-        float: right;
-        color: #000000;
-        font-size: 11px;
-    }
-</style>
-</head>
-<body>
-    <div class="innews">
-        <div class="con"> 
-            <h2>通知公告</h2>
-            <a class="more" href="#" target="_blank">更多 &gt;&gt;</a>
-        </div>
-        <div class="xueze">
-    <ul>
-        <li><span>2021-04-09</span><a title="未来信息学院滨海校区锅炉工招聘启事" target="_blank">未来信息学院滨海校区锅炉工招聘启事</a></li>
-        <li><span>2021-04-06</span><a title="未来信息学院训练服装询价公告" target="_blank">未来信息学院训练服装询价公告</a></li>
-        <li><span>2021-04-05</span><a title="关于学院教职工乒乓球赛奖品项目询价结果公示" target="_blank">关于学院教职工乒乓球赛奖品项目询价结果公示</a></li>
-        <li><span>2021-03-22</span><a title="关于学院采购计算机，打印机项目询价结果公示" target="_blank">关于学院采购计算机，打印机项目询价结果公示</a></li>
-    </ul>
-        </div>
-    </div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>学生信息表</title>
+        <style type="text/css">
+            body,h2,table,th,td{
+                margin: 0;
+                padding: 0;
+            }
+            h2{
+                text-align: center;
+            }
+            .git{
+                width: 700px;
+                height: 200px;
+                margin: 0 auto;
+                border: 1px solid #333;
+                border-collapse: collapse;
+                font-family: "微软雅黑";
+                font-size: 14px;
+            }
+            .git th,.git td{
+                border: 1px solid #666;
+                padding: 2px;
+            }
+            .git th{
+                background: #ddd;
+            }
+            .git tr:hover{
+                background: bisque;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>学生信息表</h2>
+        <table class="git">
+            <tr>
+                <th rowspan="2">学号</th>
+                <th colspan="3">个人信息</th>
+                <th colspan="3">入学信息</th>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>班级</th>
+                <th>入学年月</th>
+                <th>宿舍号</th>
+            </tr>
+            <tr>
+                <td>2021010201</td>
+                <td>夯大力</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应3班</td>
+                <td>2021年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>2021010202</td>
+                <td>白晶晶</td>
+                <td>女</td>
+                <td>19</td>
+                <td>2021计应3班</td>
+                <td>2021年9月</td>
+                <td>524</td>
+            </tr>
+            <tr>
+                <td>2021010203</td>
+                <td>王小丫</td>
+                <td>女</td>
+                <td>19</td>
+                <td>2021计应3班</td>
+                <td>2021年9月</td>
+                <td>524</td>
+            </tr>
+            <tr>
+                <td>2021010204</td>
+                <td>李子海</td>
+                <td>男</td>
+                <td>18</td>
+                <td>2021计应3班</td>
+                <td>2021年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>2021010205</td>
+                <td>张君玉</td>
+                <td>女</td>
+                <td>19</td>
+                <td>2021计应3班</td>
+                <td>2021年9月</td>
+                <td>524</td>
+            </tr>
+        </table>
+    </body>
 </html>
