@@ -1,97 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf=8">
-    <title>通知公告块</title>
+    <meta charset="utf-8">
+    <title>学生信息表</title>
     <style type="text/css">
-        .title {
-            background-color: #1a4aa7;
-            color: #fff;
-            font-size: 18px;
-            padding: 10px;
+        body,h2,table,th,td {
+            margin: 0;
+            padding: 0;
         }
-    body,h2,ul,li {
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        font-family: "Microsoft Yahei";
-        font-size: 14px;
-        color: #666;
-    }
-    a {
-        text-decoration: none;
-    }
-    .news {
-        background: #fff;
-        border: 1px solid #1a4aa7;
-        width: 462px;
-        height: 280px;
-        padding: 5px 6px;
-        margin: 20px auto;
-    }
-    .news h2 {
-        background: url(images/head1.png)no-repeat left center;
-        width: 448px;
-        /*height: 37px;*/
-        line-height: 37px;
-        background-color:  #333;
-        font-size: 16px;
-        padding-left: 10px;
-        border-bottom: 1px solid #333;
-    }
-    .news .content{
-        list-style: inside;
-    }
-    .news h2 .eng {
-        color: #ccc;
-        padding-left: 50px;
-        font-weight: normal;
-    }
-    .news .content li {
-        /*width: 443px;
-        height: 31px;*/
-        line-height: 31px;
-        background: url("images/icon.png") no-repeat center;
-        padding-left: 15px;
-    }
-    .news .content li a {
-        color: #333;
-       /* display: block;*/
-        width: 320px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .news .content li a:hover {
-        color: #1a4aa7;
-    }
-    .news .content li span {
-        color: #737373;
-        font-size: 11px;
-        float: right;
-    }
+        h2 {
+            text-align: center;
+        }
+        .gridtable {
+            width: 700px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid #666;
+            border-collapse: collapse;
+            font-family: Microsoft Yahei;
+            font-size: 14px;
+        }
+        .gridtable th, .gridtable td {
+            border: 1px solid #666;
+            padding: 2px;
+        }
+        .gridtable th {
+            background: #ddd;
+        }
+        .gridtable tr:hover {
+            background: #FF0;
+        }
     </style>
 </head>
 <body>
-    <div class="news">
-        <div class="title">通知公告</div>
-         <ul class="content">
-               <li><span>2021-04-09</span><a href="newsDetail.html" title="未来信息学院滨海校区锅炉工
-招聘启事" target="_blank">未来信息学院滨海校区锅炉工招聘启事</a></li>
-               <li><span>2021-04-06</span><a href="#" title="关于学院处置废旧金属物品
-项目结果公示" target="_blank">关于学院处置废旧金属物品项目结果公示</a></li>
-               <li><span>2021-04-05</span><a href="#" title="关于信息学院训练服装询价
-公告" target="_blank">关于信息学院训练服装询价公告</a></li>
-               <li><span>2021-03-26</span><a href="#" title="关于学校教职工乒乓球赛奖品项目询
-价结果公示" target="_blank">关于学校教职工乒乓球赛奖品项目询价结果公示</a></li>
-               <li><span>2021-03-22</span><a href="#" title="关于学校采购计算机、打印机项目询
-价结果公示" target="_blank">关于学校采购计算机、打印机项目询价结果公示</a></li>
-               <li><span>2021-03-16</span><a href="#" title="关于学院南区篮球场地安装球场照明工程
-项目询价结果公示" target="_blank">关于学院南区篮球场地安装球场照明工程项目询价结果公示</a></li>
-               <li><span>2021-03-11</span><a href="#" title="未来信息学院关于购买维修材料
-询价公告" target="_blank">未来信息学院关于购买维修材料询价公告</a></li>
-             </ul>
-    </div>
+    <h2>学生信息表</h2>
+    <table class="gridtable">
+        <tr>
+            <th rowspan="2">学号</th>
+            <th colspan="3">个人信息</th>
+            <th colspan="3">入学信息</th>
+        </tr>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>班级</th>
+            <th>入学年月</th>
+            <th>宿舍号</th>
+        </tr>
+        <tr>
+            <td>2021010201</td>
+            <td>王大震</td>
+            <td>男</td>
+            <td>19</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>201</td>
+        </tr>
+        <tr>
+            <td>2021010202</td>
+            <td>于雪鲲</td>
+            <td>男</td>
+            <td>19</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>201</td>
+        </tr>
+        <tr>
+            <td>2021010203</td>
+            <td>王攀岩</td>
+            <td>男</td>
+            <td>18</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>202</td>
+        </tr>
+        <tr>
+            <td>2021010204</td>
+            <td>刘雪红</td>
+            <td>女</td>
+            <td>17</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>502</td>
+        </tr>
+        <tr>
+            <td>2021010205</td>
+            <td>李子海</td>
+            <td>男</td>
+            <td>19</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>202</td>
+        </tr>
+        <tr>
+            <td>2021010206</td>
+            <td>张君玉</td>
+            <td>女</td>
+            <td>18</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>502</td>
+        </tr>
+    </table>
 </body>
 </html>
