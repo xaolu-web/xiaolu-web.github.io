@@ -1,53 +1,97 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
-    <meat charset="utf-8">
-        <title>天天开心</title>
-        <style type="text/css">
-            .box{
-                position:relative;
-                width: 400px;
-                height: 350px;
-                background: url(haizeiwang.jpg)no-repeat;
-                background-size: 600px;
-                margin:50px auto; 
-            }
-            .one,.two,.three,.four{
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                background-color: #f00;
-                font-size: 36px;
-                font-weight: bold;
-                text-align: center;
-                line-height: 50px;
-            }
-            .one{
-                left: 0;
-                top: 0;
-            }
-            .two{
-                right: 0;
-                top: 0;
-            }
-            .three{
-                right: 0;
-                bottom: 0;
-            }
-            .four{
-                left: 0;
-                bottom: 0;
-            }
-        </style>
-        <head>
-            <body>
-                <div class="box">
-                    <div class="one">天</div>
-                    <div class="two">天</div>
-                    <div class="three">心</div>
-                    <div class="four">开</div>
-                </div>
-            </body>
-        </head>
-    </meat>
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息表</title></head>
+<body>
+    <h2>学生信息表</h2>
+    <table class="gridtable">
+    <style type="text/css">
+        body,h2,table,th,td{
+            margin: 0;
+            padding: o
+        }
+        h2{
+            text-align: center;
+        }
+        .gridtable{
+            width: 700px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid #666;
+            border-collapse: collapse;
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+        .gridtable th,.gridtable td{
+            border: 1px solid #666;
+            padding: 2px;
+        }
+        .gridtable th{
+            background: #ddd;
+        }
+        .gridtable th{
+            background: #FF0;
+        }
+    </style>
+        <tr>
+            <th  rowspan="2">学号</th>
+            <th  colspan="3">个人信息</th>
+            <th  colspan="3">入学信息</th>
+        </tr>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>班级</th>
+            <th>入学年月</th>
+            <th>宿舍号</th>
+        </tr>
+        <tr>
+           <td>2021010201</td>
+            <td>王大震</td>
+            <td>男</td>
+            <td>19</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>201</td>
+        </tr>
+        <tr>
+           <td>20210110202</td>
+           <td>于雪鲲</td>
+           <td>男</td>
+           <td>19</td>
+           <td>2021计应1班</td>
+           <td>2021年9月</td>
+           <td>201</td> 
+        </tr>
+        <tr>
+            <td>2021010203</td>
+            <td>王攀岩</td>
+            <td>男</td>
+            <td>18</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>202</td>
+        </tr>
+        <tr>
+            <td>2021010204</td>
+            <td>刘雪红</td>
+            <td>女</td>
+            <td>17</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>502</td>
+        </tr>
+        <tr>
+            <td>2021010205</td>
+            <td>李子海</td>
+            <td>男</td>
+            <td>19</td>
+            <td>2021计应1班</td>
+            <td>2021年9月</td>
+            <td>202</td>
+        </tr>
+    </table>
+</body>
 </html>
