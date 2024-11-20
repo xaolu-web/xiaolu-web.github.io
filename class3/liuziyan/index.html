@@ -2,101 +2,106 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>通知公告</title>
-        <style>
-            body,h2,ulli {
+        <title>学生信息表</title>
+        <style type="text/css">
+            bpdy,h2,table,th,td{
                 margin: 0;
                 padding: 0;
-                list-style: none;
             }
-            body {
-                background: url(images/bodybg.jpg);
+            h2{
+                text-align: center;
+            }
+            .gridtable{
+                width: 700px;
+                height: 200px;
+                margin: 0 auto;
+                border: 1px solid #666;
+                border-collapse: collapse;
                 font-family: "微软雅黑";
                 font-size: 14px;
-                color: #333;
             }
-            a {
-                text-decoration: none;
+            .gridtable th,.gridtable td{
+                border: 1px solid #666;
+                padding: 2px;
             }
-            .notice {
-                width: 440px;
-                height: 263px;
-                padding: 5px 10px 10px;
-                margin: 20px auto;
-                border: 1px solid #CCC;
-                background-color: #fff;
+            .gridtable th{
+                background: #ddd;
             }
-            .nTitle {
-                width: 440px;
-                height: 38px;
-            }
-            .nTitle h2{
-                float: left;
-                width: 100px;
-                height: 38px;
-                margin-left: 10px;
-                background-color: #1a4aa7;
-                font-size: 14px;
-                color: #fff;
-                text-align: center;
-                line-height: 38px;
-            }
-            .nTitle .more{
-                float: right;
-                padding-top: 4px;
-                padding-right: 10px;
-                font-size: 12px;
-                color: #737373;
-                line-height: 34px;
-            }
-            .nContent{
-                width: 440px;
-                height: 213px;
-                padding-top: 10px;
-                border-top: 2px solid #1a4aa7;
-            }
-            .nContent ul{
-                width:430px;
-                padding-left: 10px;
-                height: 213px;
-            }
-            .nContent ul li{
-                width: 415px;
-                height: 30px;
-                line-height: 30px;
-                background: url(images/icon.png) no-repeat left center;
-                padding-left: 15px;
-            }
-            .nContent ul li a {
-                color: #666;
-            }
-            .nContent ul li a:hover{
-                color: #1a4aa7;
-            }
-            .nContent ul li span{
-                float: right;
-                color: #737373;
-                font-size: 11px;
+            .gridtable tr:hover{
+                background: #ff0;
             }
         </style>
     </head>
     <body>
-        <div class="notice">
-            <div class="nTitle">
-                <h2>通知公告</h2>
-                <a class="more" href="#" target="_blank">更多&gt;&gt;</a>
-            </div>
-            <div class="nContent">
-                <ul>
-                    <li><span>2021-04-09</span><a href="#">未来信息学院滨海校区锅炉工招聘启事</a></li> 
-                    <li><span>2021-04-06</span><a href="#">关于学院处置废旧金属物品项目结果公示</a></li>                 
-                    <li><span>2021-04-05</span><a href="#">未来信息学院训练服装询价公告</a></li>
-                    <li><span>2021-03-26</span><a href="#">关于学院职教工乒乓球赛奖品项目询价结果公示</a></li>
-                    <li><span>2021-03-22</span><a href="#">关于学院采购计算机、打印机项目询价结果公示</a></li>
-                    <li><span>2021-03-16</span><a href="#">关于学院南区篮球场地安装球场照明工程项目询...</a></li>
-                    <li><span>2021-03-11</span><a href="#">未来信息学院关于采购维修材料询价公告</a></li>
-                </ul>
-            </div>
-        </div>
+        <h2>学生信息表</h2>
+        <table class="gridtable">
+            <tr>
+                <th rowspan="2">学号</th>
+                <th colspan="3">个人信息</th>
+                <th colspan="3">入学信息</th>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>班级</th>
+                <th>入学年月</th>
+                <th>宿舍号</th>
+            </tr>
+            <tr>
+                <td>2021010201</td>
+                <td>王大震</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>2021年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>2021010202</td>
+                <td>于雪鲲</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>20221年9月</td>
+                <td>201</td>
+            </tr>
+            <tr>
+                <td>2021010203</td>
+                <td>王攀岩</td>
+                <td>男</td>
+                <td>18</td>
+                <td>2021计应1班</td>
+                <td>20221年9月</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <td>2021010204</td>
+                <td>刘雪红</td>
+                <td>女</td>
+                <td>17</td>
+                <td>2021计应1班</td>
+                <td>20221年9月</td>
+                <td>502</td>
+            </tr>
+            <tr>
+                <td>2021010205</td>
+                <td>李子海</td>
+                <td>男</td>
+                <td>19</td>
+                <td>2021计应1班</td>
+                <td>20221年9月</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <td>2021010206</td>
+                <td>张君玉</td>
+                <td>女</td>
+                <td>18</td>
+                <td>2021计应1班</td>
+                <td>20221年9月</td>
+                <td>502</td>
+            </tr>
+        </table>
     </body>
 </html>
