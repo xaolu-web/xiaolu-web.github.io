@@ -1,0 +1,28 @@
+<style type="text/css">
+        body,h2,table,th,td{
+            margin:0;
+            padding:0
+        }
+        h2{
+            text-align: center;
+        }
+        .gridtable{
+            width: 700px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid #666666;
+            border-collapse: collapse;
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+        .gridtable th,.gridtable td {
+            border: 1px solid #666;
+            padding: 2px;
+        }
+        .gridtable th{
+            background: rgb(236, 220, 255);
+        }
+        .gridtable tr:hover{
+            background: #ffo;
+        }
+    </style>
