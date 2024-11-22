@@ -1,18 +1,16 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>学生信息表</title>
         <style type="text/css">
-            body,h2,table,th,td {
+            body,h2,table,th,td{
                 margin: 0;
-                padding: 0;
+                padding: 0
             }
             h2{
                 text-align: center;
             }
-            .girdtable {
-                width: 200px;
+            .gridtable{
+                width: 700px;
                 height: 200px;
                 margin: 0 auto;
                 border: 1px solid #666;
@@ -20,27 +18,24 @@
                 font-family: "微软雅黑";
                 font-size: 14px;
             }
-            .gridtable th,.girdtable td {
-                border: 1px soild #666;
+            .gridtable th, .gridtable td{
+                border: 1px solid #666;
                 padding: 2px;
-                width: 200;
-                height: 100;
             }
-            .girdtable th {
-                background:#ddd;
+            .gridtable th{
+                background: #ddd;
             }
-            .girdtable tr:hover {
-                background:#ff0;
+            .gridtable tr:hover{
+                background: #fdd;
             }
         </style>
-       
         <body>
             <h2>学生信息表</h2>
             <table class="gridtable">
                 <tr>
                     <th rowspan="2">学号</th>
-                    <th rowspan="2">个人信息</th>
-                    <th rowspan="2">入学信息</th>
+                    <th colspan="3">个人信息</th>
+                    <th colspan="3">入学信息</th>
                 </tr>
                 <tr>
                     <th>姓名</th>
@@ -51,7 +46,7 @@
                     <th>宿舍号</th>
                 </tr>
                 <tr>
-                    <td rowspan="1">2021010201</td>
+                    <td>2021010201</td>
                     <td>王大震</td>
                     <td>男</td>
                     <td>19</td>
@@ -79,12 +74,30 @@
                 </tr>
                 <tr>
                     <td>20210101302</td>
-                    <td>李先业</td>
+                    <td >李显烨</td>
                     <td>女</td>
                     <td>20</td>
                     <td>2021计应3班</td>
                     <td>2021年7月</td>
                     <td>120</td>
+                </tr>
+                <tr>
+                    <td>2021010201</td>
+                    <td>李子海</td>
+                    <td>男</td>
+                    <td>19</td>
+                    <td>计应一班</td>
+                    <td>2021年9月</td>
+                    <td>202</td>
+                </tr>
+                <tr>
+                    <td>2021010301</td>
+                    <td>张君宇</td>
+                    <td>男</td>
+                    <td>20</td>
+                    <td>2021计应五班</td>
+                    <td>2021年8月</td>
+                    <td>301</td>
                 </tr>
             </table>
         </body>
