@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交通考试选择题</title>
+</head>
+<body>
+    <h3>交通考试选择题</h3>
+    <form action="/submit" method="post">
+        <!--单选题-->
+        <p>当交通指示灯为红灯时,应该怎么做?</p>
+        <input type="radio" id="redlight1" name="redLight" value="stop">
+        <label for="redLight1">A. 停车</label><br>
+        <input type="radio" id="redlight2" name="redLight" value="go">
+        <label for="redLight2">B.前行</label><br>
+        <input type="radio" id="redlight3" name="redLight" value="getOff">
+        <label for="redLight3">C.下车</label><br>
+        <input type="radio" id="redlight4" name="redLight" value="jump">
+        <label for="redLight4">D.跳车</label><br>
+
+
+
+        <!--多选题-->
+        <p>驾驶机动车在下列哪种路段可以超车</p>
+        <input type="checkbox" id="overtake1" name="overtake" value="mainStreet">
+        <label for="overtake1">A.主要阶段</label><br>
+        <input type="checkbox" id="overtake2" name="overtake" value="elevatedRoad">
+        <label for="overtake2">B.高架路/label><br>
+        <input type="checkbox" id="overtake3" name="overtake" value="crosswalk">
+        <label for="overtake3">C.人行街道</label><br>
+        <input type="checkbox" id="overtake4" name="overtake" value="highway">
+        <label for="overtake4">D.高速公路</label><br>
+
+        <!--提交按钮-->
+        <input type="submit" value="提交">
+            
+    </form>
+</body>
+</html>
