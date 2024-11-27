@@ -2,69 +2,30 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>学生信息表</title>
+		<title>交规考试</title>
 	</head>
 	<body>
-		<h2>学生信息表</h2>
-		<table class="gridtable">
-			<tr>
-				<th rowspan="2">学号</th>
-				<th colspan="3">个人信息</th>
-				<th colspan="3">入学信息</th>
-			</tr>
-			<tr>
-				<th>姓名</th>
-				<th>性别</th>
-				<th>年龄</th>
-				<th>班级</th>
-				<th>入学年月</th>
-				<th>宿舍号</th>
-			</tr>
-			<tr>
-				<td>2021010201</td>
-				<td>王大震</td>
-				<td>男</td>
-				<td>19</td>
-				<td>2021计应1班</td>
-				<td>2021年9月</td>
-				<td>201</td>
-			</tr>
-			<tr>
-				<td>20210101202</td>
-				<td>王攀岩</td>
-				<td>男</td>
-				<td>19</td>
-				<td>2021计应1班</td>
-				<td>2021年9月</td>
-				<td>201</td>
-			</tr>
-			<tr>
-				<td>20210100204</td>
-				<td>刘雪红</td>
-				<td>女</td>
-				<td>17</td>
-				<td>2021计应1班</td>
-				<td>2021年9月</td>
-				<td>502</td>
-			</tr>
-			<tr>
-				<td>2021020205</td>
-				<td>李子海</td>
-				<td>男</td>
-				<td>19</td>
-				<td>2021计应1班</td>
-				<td>2021年9月</td>
-				<td>202</td>
-			</tr>
-			<tr>
-				<td>2021010206</td>
-				<td>张君玉</td>
-				<td>女</td>
-				<td>18</td>
-				<td>2021计应1班</td>
-				<td>2021年9月</td>
-				<td>502</td>
-			</tr>
-		</table>
+		<h3>交规考试选择题</h3>
+		<form action="#"methond="post" name="exam">
+			<p>1.当交通指示为红灯时，应该怎样做？（单选题）</p>
+			<input type="radio"name="choose" id="a">
+			<label for="a">A:停车</label><br><br>
+			<input type="radio"name="choose" id="b">
+			<label for="b">B:前行</label><br><br>
+			<input type="radio"name="choose" id="c">
+			<label for="c">C:下车</label><br><br>
+			<input type="radio"name="choose" id="d">
+			<label for="d">D:跳车</label><br><br>
+			<p>2.驾驶机动车行经过下列哪种路段可以超车？（多选题）</p>
+			<input type="checkbook">
+			A:主要街道<br><br>
+			<input type="checkbook">
+			B:高架路<br><br>
+			<input type="checkbook">
+			C:人行横道<br><br>
+			<input type="checkbook">
+			D:环城高速<br><br>
+			<input type="submit" value="提交"/>
+		</form>
 	</body>
 </html>
