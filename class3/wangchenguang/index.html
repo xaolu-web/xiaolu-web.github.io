@@ -2,106 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>学生信息表</title>
-        <style type="text/css">
-            body,h5,table,th,td {
-                margin: 0;
-                padding: 0;
-            }
-            h5{
-                text-align: center;
-            }
-            .gridtable {
-                width: 900px;
-                height: 400px;
-                margin: 0 auto;
-                border: 1px solid #666;
-                border-collapse: collapse;
-                font-family: 华文楷体;
-                font-size: 20px;
-            }
-            .gridtable th , .gridtable td{
-                border:  2px solid #666;
-                padding: 3px;
-            }
-            .gridtable th {
-                background: #ddd;
-            }
-            .gridtable tr:hover {
-                background-color: yellow;
-            }
-        </style>
+        <title>实训</title>
     </head>
     <body>
-        <h5>学生信息表</h5>
-        <table class="gridtable">
-        <tr>
-            <th rowspan="2">学号</th>
-            <th colspan="3">个人信息</th>
-            <th colspan="3">入学信息</th>
-        </tr>
-        <tr>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>班级</th>
-            <th>入学年月</th>
-            <th>宿舍号</th>
-        </tr>
-        <tr>
-            <td>2021010201</td>
-            <td>王大震</td>
-            <td>男</td>
-            <td>19</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>201</td>
-        </tr>
-        <tr>
-            <td>2021010202</td>
-            <td>于雪鲲</td>
-            <td>男</td>
-            <td>19</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>201</td>
-        </tr>
-        <tr>
-            <td>2021010203</td>
-            <td>王攀岩</td>
-            <td>男</td>
-            <td>18</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>202</td>
-        </tr>
-        <tr>
-            <td>2021010204</td>
-            <td>刘雪红</td>
-            <td>女</td>
-            <td>17</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>502</td>
-        </tr>
-        <tr>
-            <td>2021010205</td>
-            <td>刘子海</td>
-            <td>男</td>
-            <td>19</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>202</td>
-        </tr>
-        <tr>
-            <td>2021010206</td>
-            <td>张如玉</td>
-            <td>女</td>
-            <td>18</td>
-            <td>2021计应1班</td>
-            <td>2021年9月</td>
-            <td>502</td>
-        </tr>
-    </table>
+        <form action="#" method="post" name="exam">
+        <h1>交规考试选择题</h1>
+        1、当交通指示灯为红色时,应怎样做?(单选题)<br><br>
+        <input type="radio" name="xixi" >A:停车<br><br>
+        <input type="radio" name="xixi" >B:前行<br><br>
+        <input type="radio" name="xixi" >C:下车<br><br>
+        <input type="radio" name="xixi" >D:跳车<br><br>
+        2、 驾驶机动车行径下列哪种路段可以超车?(多选题)<br><br>
+        <input type="checkbox" name="lala1" >A:主要街道<br><br>
+        <input type="checkbox" name="lala2" >B:高架路<br><br>
+        <input type="checkbox" name="lala3" >C:人行横道<br><br>
+        <input type="checkbox" name="lala4" >D:环城高速<br><br>
+        <input type="submit" value="提交">
+    </form>
     </body>
 </html>
