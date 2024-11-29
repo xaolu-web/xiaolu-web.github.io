@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charset ="utf-8">
+            <title>注册表单</title>
+    </head>
+    <body>
+        <div class="bg">
+            <form action="#" method="get">
+                <h2>学生信息注册</h2>
+                <p class="yelc">请注意：带有*的项必须填写</p>
+                <p><span>昵称：*</span>
+                <input type="text" name="txtUsername" autofocus required pattern="^[a-Za-Z]\w{5,17}$">
+                (6~18个字符，由字母、数字或下划线构成）</p>
+                <p><span>姓名：*</span>
+                <input type="text" name="txtName" required pattern="^[\u4e00-\u9fa5]{0,}$/">
+                (要填写真实姓名，只能输入汉字）</p>
+                <p><span>性别：*</span>
+                <input type="redio" name="gender" checked class="spe">男
+                <input type="redio" name="gender" class="spe">女</p>
+            </form>
+        </div>
+    </body>
+</html>
