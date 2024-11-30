@@ -2,30 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>交规考试</title>
+        <title>注册表单</title>
     </head>
     <body>
-        <h3>交规考试选择题</h3>
-        <from action="#" method="post" name="exam">
-            <p>1.当交通指示代为红灯时，应怎么做？（单选题）</p>
-            <input type="radio" name="choose" id="a">
-            <label for="a">A:停车</label><br><br>
-            <input type="radio" name="choose" id="b">
-            <label for="b">B:前行</label><br><br>
-            <input type="radio" name="choose" id="c">
-            <label for="c">C:下车</label><br><br>
-            <input type="radio" name="choose" id="d">
-            <label for="d">D:跳车</label><br><br>
-            <p>2.驾驶机动车行经下列哪种路段可以超车？（多选题）</p>
-            <input type="checkbox">
-            A:主要街道<br><br>
-            <input type="checkbox">
-            B:高架路<br><br>
-            <input type="checkbox">
-            C:人行横道<br><br>
-            <input type="checkbox">
-            D:环城高速<br><Br>
-            <input type="submit" value="提交" />
-        </from>
+        <div class="bg">
+            <form action="#" method="get">
+                <h2>学生信息表</h2>
+                <p class="yelc">请注意：带有*的项必须填</p>
+                <p><span>昵称：*</span>
+                    <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-Z]\w{5,17}$">(6~8个字符，由字母、数字或下画线构成)
+                </p>
+                <p><span>姓名：*</span>
+                    <input type="text" name="txtName" required pattern="^[\ueoo-\u9fa5]{0,}$"/>(要填写真实姓名，只能输入汉字)
+                </p>
+                <p><span>性别：</span>
+                    <input type="radio" name="gender" checked class="spe">男
+                    <input type="radio" name="gender" class="spe">女
+                </p>
+                <p><span>年龄：</span>
+                    <input type="number" name="age" value="18" min="18" max="100">
+                    (年龄介于18~100岁)
+                </p>
+                <p><span>出生日期：</span>
+                    <input type="date" name="birthday" value="1999-10-01">
+                </p>
+                <p><span>籍贯：</span>
+                    <select>
+                        <option>江苏省</option>
+                        <option selected="selected">山东省</option>
+                        <option>湖北省</option>
+                        <option>浙江省</option>
+                    </select>
+                </p>
+                <p><span>爱好：</span>
+                    <input type="checkbox" name="music" class="spe">音乐
+                    <input type="checkbox" name="internet" class="spe">上网
+                    <input type="checkbox" name="movie" class="spe">看电影
+                    <input type="checkbox" name="xiaqi" class="spe">下棋
+                </p>
+                <p class="btn">
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                </p>
+            </form>
+        </div>
     </body>
 </html>
