@@ -1,114 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <meta charset="UTF-8">
-   <title>注册表单</title>
-   <style type="text/css">
-    body,form,input,select,h2,p{
-        padding: 0;
+    <style type="text/css">
+     body, ul,li, p,h2 {
         margin: 0;
-        border: 0;
+        padding: 0;
+        list-style: none;
     }
-    body{
-        font-size: 12px;
-        font-family: "微软雅黑";
+     body {
+        font-family: "microsoft yahei";
+        font-size: 14px;
+        color: #333;
     }
-    .bg{
-        width: 800px;
-        height: 500px;
-        margin: 20px auto;
-        background: url(images/bg.jpg) no-repeat;
+     header {
+        width: 1000px;
+        height: 200px;
+        background: url(123.png) no-repeat;
+        margin: 0 auto;
     }
-    form{
-        width: 500px;
-        height: 480px;
-        padding-left: 250px;
-        padding-top: 20px;
+     .content {
+        width: 1000px;
+        overflow: hidden;
+        margin: 0 auto;
     }
-    h2{
+     nav {
+        width: 300px;
+        height: 400px;
+        float: left;
+        background-color: #ffd6ca;
+    }
+    nav ul li {
+        width: 300px;
         height: 40px;
         line-height: 40px;
-        text-align: center;
+        border-bottom: 1px solid #ffcdcd;
+    }
+     nav ul li a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        width: 292px;
+        height: 40px;
+        border-left: 8px solid #54alld;
+    }
+     nav ul li a:hover {
+        font-weight: bold;
+        background-color: rgb(124, 129, 113);
+        color: #fff;
+    }
+     .main {
+        float: left;
+        width: 680px;
+        height: 390px;
+        background-color: rgb(154, 188, 191);
+        padding: 0px 10px 10px;
+    
+    }
+     .main h2 {
+        height: 40px;
+        line-height: 40px;
         font-size: 20px;
-        border-bottom: 2px solid #8a1086;
+        padding-left: 30px;
+        border-bottom: 1px dashed rgb(157, 119, 119);
     }
-    p{
-        margin-top: 10px;
+    .text1 {
+        line-height: 30px;
+        text-indent: 2em;
+        padding-top: 10px;
     }
-    p span{
-        width: 75px;
-        display: inline-block;
-        text-align:right ;
-        padding-right: 10px;
+    footer {
+        width: 1000px;
+        height: 60px;
+        line-height: 60px;
+        background-color: rgb(172, 176, 169);
+        font-size: 12px;
+        color: rgb(192, 230, 254);
+        text-align: center;
+        margin: 0 auto;
     }
-    p input{
-        width: 200px;
-        height: 15px;
-        line-height: 15px;
-        border: 1px solid #2cb74c;
-        padding: 2px;
-    }
-    p input .spe{
-        width: 15px;
-        height: 15px;
-        border: 0;
-        padding: 0;
-    }
-    .btn input{
-        width: 50px;
-        height: 24px;
-        border: 0;
-        padding: 0;
-    }
-    .btn input{
-        width: 80px;
-        height: 30px;
-        background: #93b518;
-        margin-top: 10px;
-        margin-left: 120px;
-        border-radius: 3px;
-        font-size: 14px;
-        color: #a93c3c;
-
-    }
-   </style>
-</head>
-<body>
-    <div class="bg">
-        <from action="#" method="get">
-            <h2>学生信息注册</h2>
-            <p ><span>昵称:*</span>
-                <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-Z]\w{5,17}$">(6~18个字符,由字母、数字或下划线构成)
-            </p>
-            <p><span>性别:</span>
-                <input type="radio" name="gender" checked  class="spe">男
-                 <input type="radio" name="gender" checked  class="spe">女
-            </p>
-            <p><span>年龄:</span>
-            <input type="number" name="age" value="18" min="18" max="100">(年龄介于18~100岁之间)
-        </p>
-        <p><span>出生日期:</span>
-        <input type="date" name="birthday" value="1999-10-01">
-        </p>
-        <p><span>籍贯:</span>
-            <select>
-             <option>江苏省</option>
-             <option selected="selected">山东省</option>
-             <option>湖北省</option>
-             <option>浙江省</option>
-            </select>
-        </p>
-        <p><span>爱好:</span>
-          <input type="checkbox" name="music" class="spe">音乐
-           <input type="checkbox" name="internet" class="spe">上网
-         <input type="checkbox" name="movie" class="spe">看电影
-         <input type="checkbox" name="xiaqi" class="spe">下棋
-        </p>
-        <p class="btn">
-            <input type="submit" value="提交">
-            <input type="reset" value="重置">
-        </p>
-        </from>
-    </div>
+    </style>
+    </head> 
+        <body>
+            <header></header>
+            <div class="content">
+                <nav>
+                    <ul>
+                        <li><a>山东介绍</a></li>
+                        <li><a>行政区划</a></li>
+                        <li><a>地理环境</a></li>
+                        <li><a>自然资源</a></li>
+                        <li><a>人口民族</a></li>
+                        <li><a>经济概况</a></li>
+                        <li><a>农业工业</a></li>
+                        <li><a>固定投资</a></li>
+                    </ul>
+                </nav>
+                <div class="main">
+                <h2>山东介绍</h2>
+                <p class="text1">山东，隐去今后必须打不开差距和王洪好吃的江南江北是错误或查看了酒窝里。</p>
+                <p class="text1">山东省境内中部山地突起，西南、西北低洼平坦，东部缓丘起伏， [3]气候类型属于暖温带季风气候。 [148]商朝建立以前，山东是商族活动的中心，
+                    商前期的五次迁都，有三次在山东境内。商朝建立后，山东仍是其统治的中心地区。秦汉时期，今山东地区号称“膏壤千里”，农业经济发达。</p>
+                <p class="text1">山东省，简称“鲁”，中华人民共和国省级行政区，省会济南市，位于中国东部沿海、黄河下游，境域包括半岛和内陆两部分，山东半岛突出于渤海、黄海之中；内陆部分自北
+                    而南与河北、河南、安徽、江苏接壤。全省陆域面积15.81万平方千米,毗邻海域面积约为15.86万平方千米。 [3]截至2023年12月,山东省共有设区的市16个,县级政。宋、金、元时期，山东地区经济处于滞退状态。 [179]明洪武元年(1368年)置山东行中书省。
+                    清代，山东政区名称定为“山东省”。中华民国初期,划分为济南、济宁、胶东、东临4道。1949年3月,山东省下辖14个市。1967年,全省共辖9个地区,4个省辖市。</p>
+                </div>
+            </div>
+            <footer>版权所有@网页设计工作室</footer>
 </body>
 </html>
