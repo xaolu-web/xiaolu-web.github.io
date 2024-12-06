@@ -2,143 +2,57 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>注册表单</title>
-        <style type="text/css">
-            body,form,select,h2,p{
-                padding: 0;
-                margin: 0;
-                border: 0;
-            }
+        <title>日常作业</title>
+        <style>
             body{
-                font-size: 12px;
-                font-family: "微软雅黑";
+                background-image: url(z4.jpeg);
+                background-repeat: no-repeat;
+                background-size: 1290px 650px;
             }
-            .bg{
-                width: 800px;
+            .center{
+                width: 1290px;
+                overflow: hidden;
+            }
+            .left{
+                width: 600px;
                 height: 500px;
-                margin: 20px auto;
-                background:url(dbb44aed2e738bd46496bda7a18b87d6267ff9f5.jpg) no-repeat ;
+                float: left;
             }
-            form{
-                width: 550px;
-                height: 480px;
-                padding-left: 250px;
-                padding-top: 20px;
+            
+            .ones{
+                widrh:790px;
+                float: left;
             }
-            h2{
-                height: 40px;
-                line-height: 40px;
+            .ones li a{
                 text-align: center;
-                font-size: 20px;
-                border-bottom: 2px solid #ccc;
-            }
-            .yelc{
-                color: #ffff00;
+                font-size: 25px;
+                color: black;
                 font-weight: bold;
             }
-            p{
-                margin-top: 10px;
+            .ones li a:hover{
+                color: brown;
             }
-            p span{
-                width: 75px;
-                display: inline-block;
-                text-align: right;
-                padding-right: 10px;
+            h1{
+                text-align: center;
             }
-            p input{
-                width: 200px;
-                height: 15px;
-                line-height: 15px;
-                border: 1px solid #d4cdba;
-                padding: 2px;
-            }
-            p input.spe{
-                width: 15px;
-                height: 15px;
-                border: 0;
-                padding: 0;
-            }
-            .lucky input{
-                width: 50px;
-                height: 24px;
-                border: 0;
-                padding: 0;
-            }
-            .btn input{
-                width: 80px;
-                height: 30px;
-                background: #93b518;
-                margin-top: 10px;
-                margin-left: 120px;
-                border-radius: 3px;
-                font-size: 14px;
-                color: #fff;
-            }
+
         </style>
     </head>
     <body>
-        <div class="bg">
-            <form method="get" action="#">
-                <h2>学生注册信息</h2>
-                <p class="yelc">请注意：带有*的项目必须填写</p>
-                <p>
-                    <span>昵称：*</span>
-                    <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-z]\w{5,17}$">(6~18个字符,由字母、数字或下划线构成)
-                </p>
-                <p>
-                    <span>手机：*</span>
-                    <input type="tel" name="telephone" required pattern="\d{11}$">
-                </p>
-                <p>
-                    <span>姓名：*</span>
-                    <input type="text" name="txtName" required pattern="^u400-\u9fa5]{0,}$"/>(要填真实姓名，只能输入汉字)
-                </p>
-                <p>
-                    <span>性别：</span>
-                    <input type="radio" name="gender" checked class="spe">男
-                    <input type="radio" name="gender" class="spe">女
-                </p>
-                <p>
-                    <span>年龄：</span>
-                    <input type="number" name="age" value="18" min="18" max="100">(年龄介于18~100岁)
-                </p>
-                <p>
-                    <span>出生日期：</span>
-                    <input type="date" name="birthday" value="1999-10-01">
-                </p>
-                <p>
-                    <span>电子邮箱：</span>
-                    <input type="date" name="myemail" placeholder="susan@126.com">
-                </p>
-                <p>
-                    <span>身份证号：*</span>
-                    <input type="text" name="card" required pattern="^\d{8,18}|[0-9x]{8,18}|[0-9x]{8,18}?$">
-                </p>
-                <p>
-                    <span>籍贯</span>
-                    <select>
-                        <option>江苏省</option>
-                        <option selected="select">山东省</option>
-                        <option>湖北省</option>
-                        <option>浙江省</option>
-                    </select>
-                </p>
-                <p>
-                    <span>爱好：</span>
-                    <input type="checkbox" name="music" class="spe">音乐
-                    <input type="checkbox" name="internet" class="spe">上网
-                    <input type="checkbox" name="movie" class="spe">看电影
-                    <input type="checkbox" name="xiaqi" class="spe">下棋
-                </p>
-                <p class="lucky">
-                    <span>喜欢的颜色：</span>
-                    <input type="color" name="lovecolor">(请选择你喜欢的颜色)
-                </p>
-                <p class="btn">
-                    <input type="submit" value="提交">
-                    <input type="reset" value="重置">
-                </p>
-            </form>
+        <h1>课程作业</h1>
+        <div class="center">
+            <div class="left"></div>
+            <div class="ones">
+                 <ul>
+                    <li><a href="example11.html">学院网站导航条</a></li>
+                    <li><a href="example12.html">学校要闻</a></li>
+                    <li><a href="example13.html">通知公告</a></li>
+                    <li><a href="example14.html">学生信息表</a></li>
+                    <li><a href="example15.html">交通考试选择题</a></li>
+                    <li><a href="example16.html">注册表单</a></li>
+                    <li><a href="example17.html">二列布局页面</a></li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
