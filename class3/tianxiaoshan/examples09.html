@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>我的个人网页</title>
+        <style>
+            body {
+                font-family: Arial,sans-serif;
+                margin: 0;
+                padding: 0;
+                background: radial-gradient(circle at bottom right,rgb(143, 189, 226),rgb(233, 187, 220));
+            }
+            
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+            }
+            header {
+                background: #50b3a2;
+                color: white;
+                padding-top: 30px;
+                min-height: 70px;
+                border-bottom: #e8491d 3px solid;
+            }
+            header a {
+                color: #ffffff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+            header ul {
+                display: inline;
+                padding: 0 20px 0 20px;
+            }
+            header #branding {
+                float: left;
+            }
+            header #branding h1 {
+                margin: 0;
+            }
+            header nav {
+                float: right;
+                margin-top: 10px;
+            }
+            header .highlight, header .current a {
+                color: #e8491d;
+                font-weight: bold;
+            }
+            header a:hover {
+                color: #f3fac7;
+                font-weight: bold;
+            }
+            section#showcase  {
+                min-height: 400px;
+                background: url('showcase.jpg') no-repeat 0 -100px;
+                text-align: center;
+                color: #cdeaf4;
+            }
+            section#showcase h1 {
+                margin-top: 100px;
+                font-size: 55px;
+                margin-bottom: 10px;
+            }
+            section#showcase p {
+                font-size: 20px;
+            }
+            section#main {
+                padding: 15px;
+                background: rgb(231, 213, 241);
+            }
+            section#main .content-title {
+                color: #50b3a2;
+            }
+            section#main aside#main-col {
+                float:right;
+                width: 60%;
+            }
+            section#main aside#sidebar {
+                float: right;
+                width: 30%;
+                background: #e8491d;
+                padding: 10px;
+                color: rgb(233, 237, 186);
+            }
+            section#main aside#sidebar h3 {
+                color: #abf5e1;
+            }
+            section#main aside#sidebar p {
+                font-size: 14px;
+            }
+            footer {
+                background: #e8491d;
+                color: rgb(108, 175, 217);
+                text-align: center;
+                padding: 10px;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+            @media(max-width:768px) {
+                header #branding,
+                header nav,
+                header nav li,
+                .container,
+                #main-col,
+                #sidebar {
+                    float: none;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1>我的个人网页</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="current"><a href="index.html">首页</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="showcase">
+            <div class="container">
+                <h1>欢迎来到我的网页</h1>
+                <p>这里是一些关于我平时日常作业展示</p>
+                <li><a href="example10.html">11月28日作业（注册表单）</a></li>
+                <li><a href="example11.html">12月4号作业（美丽山东）</a></li>
+            </div>
+        </section>
+
+        <aside id="sidebar">
+           
+            <h3>联系方式</h3>
+           
+            <p>邮箱：example@1778605297@qq.com</p>
+            <!--更多联系信息-->
+        </aside>
+
+        <footer>
+            <p>版权所有 &copy;2024 我的个人网页</p>
+        </footer>
+    </body>
+</html>
