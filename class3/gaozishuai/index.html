@@ -2,33 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>绝对定位</title>
+        <title>超链接样式设置</title>
         <style type="text/css">
-            .box{
-                width: 200px;
-                height: 200px;
-                background: #aaffff;
-                position: relative;
+            body {
+                padding: 0;
+                margin: 0;
+                font-size: 16px;
+                font-family: "微软雅黑";
+                color； #3c3c3c;
             }
-            .one,.two,.three{
-                width: 50px;
-                height: 50px;
-                background-color: blueviolet;
-                border: 1px solid #333;
+            a {
+                color :#4c4c4c;
+                text-decoration: none;
             }
-            .two{
-                position: absolute;
-                left: 80px;
-                top: 30px;
+            a :hover {
+                color: #FF8400；
+                text-decoration: underline;
             }
         </style>
     </head>
     <body>
-        <div class="box">
-            <div class="one">第一个块</div>
-            <div class="two">第二个块</div>
-            <div class="three">第三个块</div>
-            <p><a href="http://127.0.0.1:5500/index.html" target="_blank">返回</p>
-        </div>
+        <a href="#">学校简介</a>
+        <a href="#">学院新闻</a>
+        <a href="#">专业介绍</a>
+        <a href="#">招生就业</a>
     </body>
 </html>
