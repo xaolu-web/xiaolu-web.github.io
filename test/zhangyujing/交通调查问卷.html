@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>交通调查问卷</title>
+  <style>
+    form {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    label,
+    input,
+    textarea,
+    button {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label for="name">姓名：</label>
+    <input type="text" id="name" required>
+    <label for="age">年龄：</label>
+    <input type="number" id="age" required>
+    <label for="travelMode">您日常出行的主要交通方式：</label>
+    <select id="travelMode" required>
+      <option value="bus">公交车</option>
+      <option value="subway">地铁</option>
+      <option value="car">私家车</option>
+      <option value="bike">自行车</option>
+      <option value="walk">步行</option>
+    </select>
+    <label for="trafficProblem">您认为当前交通最主要的问题是：</label>
+    <textarea id="trafficProblem" required></textarea>
+    <button type="submit">提交问卷</button>
+  </form>
+</body>
+
+</html>
