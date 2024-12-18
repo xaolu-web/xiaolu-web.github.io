@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <style type="text/css">
+            body,h2,p {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: "微软雅黑";
+                font-size: 14px;
+                color: #333;
+                background: url(images/R-C.jpg); 
+            }
+            .content {
+                width: 858px;
+                height: auto;
+                border: 1px solid #ccc;
+                margin: 0 auto;
+                padding: 20px;
+                background: #FFF;
+            }
+            h2 {
+                text-align: center;
+                height: 25px;
+                line-height: 40px;
+            }
+            p {
+                text-indent: 2em;
+            line-height: 25px;
+            margin-bottom: 20px;
+            }
+        </style>
+    </head>
+</html>
