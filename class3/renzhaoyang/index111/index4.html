@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>通告公告快</title>
+    <style>
+        .box {
+            width: 1500px;
+            height: 280px;
+            border: 0px;                /* 设置边框为0可省略 */
+            background-image: "[]";
+            padding: 20px;
+            margin: 30px auto;
+        }
+        .center {
+            display: flex;               
+            align-items: center;
+            height: 50vh;    
+            justify-content: center;
+        }
+        hr {
+            width: 100%;               /* 设置为100%填满父元素 */
+            border: 1px solid black;   /* 可更改边框颜色和样式 */
+            margin: 10px 0;            /* 上下间距，可根据需求调整 */
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .yanse{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="box">
+            <p style="float: left;" class="yanse">通知报告</p>
+            <p style="float: right;"><a href="#">更多>></a></p> 
+            <hr> <!-- 确保hr在适当位置 -->
+            <ul class="clearfix"> 
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">网站首页</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">教学科研</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">公开服务</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">6666</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">1111</a></div></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
