@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>河北文旅导航条</title>
+        <style type="text/css">
+        body,ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: url(bjt.jpg);
+            font-family:"微软雅黑"；
+            font-size：40px;
+        }
+        a{
+            text-decoration: none;
+        }
+        nav{
+            width:100%;
+            height:42px;
+            background:rgb(7, 116, 91);
+        }
+        nav.navCon{
+            width: 1200px;
+            height: 42px;
+            margin: 0 auto;
+            position:relative;
+            z-index: center;
+        }
+        .navCon li{
+        width: 120px;
+        height: 42px;
+        float: left;
+        text-align: center;
+        }
+        .navCon li a{
+            display:block;
+            width: 120px;
+            height: 42px;
+            line-height: 42px;
+            color:#FFF;
+        }
+        .navCon li ul{
+            width:150px;
+            display: none;
+        }
+        .navCon li:hover ul{
+            display:block;
+        }
+        .navCon li ul li{
+        background:rgb(7, 116, 91);
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        border-top:1px rgb(0,52,162)solid ;
+        text-align: center;
+        }
+        .navCon li ul li a{
+            display: block;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            color:rgb(255,255,255);
+            line-height: 40px;
+        }
+            </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="navCon">
+            <li><a href="#">历史文化</a>
+            <ul>
+                <li><a href="lishiwenhua.html">文化介绍</a></li>
+                <hr>
+                
+            </ul>
+            </li>
+            <li><a href="#">河北特色</a>
+                <ul>
+                    <li><a href="jingdian.html">特色景点</a></li>
+                    <li><a href="#">特色美食</a></li>
+                </ul>
+                </li>
+                <li><a href="#">热点新闻</a></li>
+                <ul>
+                <li><a href="#">发展经济</a>
+                        <ul>
+                            <li><a href="#">经济状况</a></li>
+                            <li><a href="#">GDP排行</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">公共服务</a>
+                            <ul>
+                            <li><a href="#">在线服务</a></li>
+                            <li><a href="#">信息公开</a>
+                            </li>
+                       </ul>
+                       </li>
+                        </ul>
+
+        </nav>
+    </body>
+</html>
