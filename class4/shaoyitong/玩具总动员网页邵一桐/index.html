@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>玩具总动员</title>
+		<link rel="stylesheet" media="screen" href="style.css">
+		<link href="slider.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript">
+			function dosearch() {
+			var sf=document.searchform;
+			var submitto = sf.sengine.value + escape(sf.searchterms.value);
+			window.location.href = submitto;
+			return false;
+			}
+		</script>
+	</head>
+	<body>
+		
+		
+		<p class="error">迪士尼
+		<p class="error">玩具总动员</p></p>
+
+		<div class="content">
+			<h2>飞向宇宙 浩瀚无垠</h2>
+			
+			<p class="text">
+				最重要的是我们在一起的这瞬间
+			<p>“因为离开你的人越来越多，所以留下来的人越来越重要”</p>
+				<form name="searchform" onSubmit="return dosearch();">
+					<input type="hidden" name="sengine" value="https://www.bilibili.com/video/BV1Ag4y1F7DC/?share_source=copy_web&vd_source=7ea088a0831f7de51ce4af5827ee1073" />
+					<input type="text" name="searchterms" class="inputform">
+					<input type="submit" name="SearchSubmit" value="Search" class="button" href="vedio.html"> 
+				</form>
+				
+			</p>
+				
+			<p class="links">
+				<a id="button" href="index.html">&larr; Back</a> <a href="index2.html">剧情解说</a> <a href="figure.html">人物介绍</a> <a href="vedio.html">宣传视频</a> 
+				
+			</p>
+		</div>
+		
+	</body>
+</html>
