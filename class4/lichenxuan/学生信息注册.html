@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册表单</title>
+        <style type="text/css">
+            body,form,input,select,h2,p {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+            body{
+                font-size: 12px;
+                font-family: "Microsoft YaHei";
+                background: url(./lingya/555.png);
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+
+            }
+            
+            form {
+                width: 550px;
+                height: 480px;
+                padding-left: 100px;
+                padding-top: 20px;
+                
+            }
+            h2{
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 20px;
+                border-bottom: 2px solid #ccc;
+            }
+            .yelc{
+                color: #ff7700;
+                font-weight: bold;
+
+            }
+            p{
+                margin-top: 10px;
+
+            }
+            p span{
+                width: 75px;
+                display: inline-block;
+                text-align: right;
+                padding-right: 10px;
+            }
+            p input{
+                width: 170px;
+                height: 15px;
+                line-height: 15px;
+                border: 1px solid #d4cdba;
+                padding: 2px;
+            }
+            .iii input{
+                width: 20px;
+                height: 15px;
+                line-height: 15px;
+                border: 1px solid #d4cdba;
+                padding: 2px;
+            }
+            p input .spe{
+                width: 15px;
+                height: 15px;
+                border: 0;
+                padding: 0;
+            }
+            .lucky input{
+                width: 50px;
+                height: 24px;
+                border: 0;
+                padding: 0;
+            }
+            .btn input{
+                width: 80px;
+                height: 30px;
+                background: #93b518;
+                margin-top: 10px;
+                margin-left: 120px;
+                border-radius: 3px;
+                font-size: 18px;
+                color: #fff;
+            }
+            .bg{
+                width: 800px;
+                height: 500px;
+                margin: 20px auto;
+
+            }
+            .text{
+                text-align: center;
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <form action="#" method="get">
+                <h2>学生信息注册</h2>
+                <p class="yelc">请注意:带有*的项必须填写</p>
+                <p><span>昵称: *</span>
+                   <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-z] \w{5,17} $">(6~18个字符,有字母数字或下划线构成)
+                </p>
+                <p><span>性别: </span>
+                    <input type="radio" name="gender" checked class="spe">男
+                    <input type="radio" name="gender" class="spe">女
+                </p>
+                <p><span>年龄: </span>
+                    <input type="number" name="age" value="18" min="18" max="100">(年龄介于18~100岁)
+                </p>
+                <p><span>出生日期: </span>
+                    <input type="date" name="birthday" value="1999-10-01">
+                </p>
+                <p><span>籍贯: </span>
+                    <select>
+                        <option>江苏省</option>
+                        <option selected="selected">山东省</option>
+                        <option>湖北省</option>
+                        <option>浙江省</option>
+                        <option>河北省</option>
+                    </select>
+                </p>
+                <p class="iii"><span>爱好: </span>
+                    <input type="checkbox" name="music" class="spe">音乐
+                    <input type="checkbox" name="internet" class="spe">上网
+                    <input type="checkbox" name="movie" class="spe">看电影
+                    <input type="checkbox" name="xiaqi" class="spe">下棋   
+                </p>
+                <p class="lucky"><span>喜欢的颜色</span>
+                    <input type="color" name="lovecolor">(请选择你喜欢的颜色)
+                </p>
+                <P class="btn">
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                </P>
+            </form>
+        </div>
+        <p class="text"><a href="index.html">返回列表</a></p>
+    </body>
+</html>
