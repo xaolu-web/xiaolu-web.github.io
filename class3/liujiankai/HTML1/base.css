@@ -1,0 +1,117 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+body{
+	background-color: #D9D9D9;
+}
+#topnav{
+	width:100%;
+	position: fixed;
+	height: 40px;
+	left: 0;
+	top: 0;
+	background: #F1F1F1;
+	z-index: 100;
+}
+#top{
+	width: 1000px;
+	height: 40px;
+	margin: 0 auto;
+	position: relative;
+	font: 12px 黑体;
+}
+#top a:hover{
+	color: red;
+}
+#logo{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#logo{
+	width: 30px;
+	height: 30px;
+}
+#sbmt{
+	width: 50px;
+	height: 20px;
+	font: 20px 楷体;
+	text-align: center;
+	transition: all 1s;
+	border-radius: 3px;
+	cursor: pointer;
+}
+#sbmt:hover{
+	background-color: #FF8023;
+}
+#bread{
+	position: absolute;
+	right: 8px;
+	top: 8px;
+}
+#toplist{
+	margin-left: 60px;
+	margin-top: 8px;
+}
+#toplist li{
+	display: inline-block;
+	margin: 5px;
+}
+#topnav #topform{
+	position: absolute;
+	top: 5px;
+	left: 400px;
+}
+#main{
+	width: 1000px;
+	background: #E8A94C;
+	height: 1500px;
+	margin: 0 auto;
+	position: relative;
+	top: 40px;
+}
+#banner img{
+	width: 1000px;
+	height: 320px;
+}
+#nav{
+	background-color: #F2CAB3;
+}
+#nav li{
+	display: inline-block;
+	width: 12.5%;
+	text-align: center;
+}
+#nav li a{
+	display: block;
+	padding: 10px 0px 6px;
+	font: 18px 楷体;
+	text-decoration: none;
+	color: block;
+}
+#nav li a:hover{
+	background: #E8A94C;
+	border-bottom: 4px brown solid;
+	padding-bottom: 2px;
+}
+#nav li a#current{
+	background: #E8A94C;
+}
+#footer{
+	margin-top: 40px;
+	width: 100%;
+	background: #333;
+	color:white;
+	padding:10px;
+}
+#footer{
+	margin-top: 40px;
+	width: 100%;
+	background:#333;
+	color: white;
+	padding: 10px;
+}
+#footer p{
+	text-align: center;
+}
