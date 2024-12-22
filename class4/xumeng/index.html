@@ -1,71 +1,43 @@
-<html>
-    <head>
-        <title> 我的HTML的大作业</title>
-        <link rel="stylesheet" href="style.css"/>
-    </head>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>寻梦环游记</title>
+		<link rel="stylesheet" media="screen" href="wy.css">
+		<link href="slider.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+			function dosearch() {
+			var sf=document.searchform;
+			var submitto = sf.sengine.value + escape(sf.searchterms.value);
+			window.location.href = submitto;
+			return false;
+			}
+		</script>
+	</head>
+	<body>
+		
+		
+		<p class="error">Welcome to watch Coco
+		<p class="error">寻梦环游记</p></p>
 
-<body>   
-    <div class="center-block">
-        <h1>HTML的大作业</h1>
-    </div>
-    <div class="center-block">
-        <li><a href="xm1.html">考试答卷</a></li><br>
-        <li><a href="xm2.html">注册表单</a></li><br>
-        <li><a href="xm3.html">美丽山东</a></li><br>
-        <li><a href="xx.html">学院网站导航条</a></li><br>
-    </div>
-</body>
-<style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0; 
-        height: 100vh; 
-        background-image: url("tp/77.jpg"); 
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat; 
-        text-align: center;
-    }
-    .conent{
-        background-color: transparent;
-        width: 300px;
-        padding:30px;
-        position: absolute;
-        top: 20%;
-        left: 10%;
-        color: rgb(2, 7, 2);
-        text-align: center;
-        
-    }
-    .hhhh{
-        background-color: transparent;
-        width: 300px;
-        padding:30px;
-        position: absolute;
-        top: 6%;
-        left: 45%;
-        font-size: 25px;
-        color: rgb(0, 0, 1);
-        text-align: center;
-    }
-    .ppp{
-        background-color: transparent;
-        width: 220px;
-        padding:20px;
-        position: absolute;
-        top: 32%;
-        left: 13%;
-        color: rgb(0, 0, 0);
-        font-size: 20px;
-        text-align: center;
-    }
-    a{
-        color: rgb(1, 0, 0);
-    }
-.ppp  li  a:hover {
-color: rgb(red, green, blue);
-background: cornflowerblue;
-}
-
-</style>
+		<div class="content">
+			<h2>请记住我</h2>
+			
+			<p class="text">
+				我一直以为爱的反义词是不爱，知道现在我才明白，爱的反义词是遗忘。
+				
+			<p>“真正的死亡是世界上再也没有一个人记得你”</p>
+				<form name="searchform" onSubmit="return dosearch();">
+					<input type="hidden" name="sengine" value=https://www.bilibili.com/video/BV1Gi4y147jT?t=13.4\>
+					<input type="text" name="searchterms" class="inputform">
+					<input type="submit" name="SearchSubmit" value="Search" class="button" href="vedio.html"> 
+				</form>
+			</p>
+				
+			<p class="links">
+				<a id="button" href="index.html">&larr; Back</a> <a href="wyw2.html">剧情解说</a> <a href="wyw.html">人物介绍</a><a href="pp.html">电影片段</a>				
+			</p>
+		</div>
+		
+	</body>
 </html>
