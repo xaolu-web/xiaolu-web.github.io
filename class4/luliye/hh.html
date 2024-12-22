@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年跨年倒计时</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  .countdown-container {
+    text-align: center;
+  }
+  .countdown {
+    font-size: 4em;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+<div class="countdown-container">
+  <h1>2025年跨年倒计时</h1>
+  <div class="countdown" id="countdown">00:00:00</div>
+</div>
+
+<script>
+// 设置跨年时间
+var newYear = new Date("January 1, 2025 00:00:00").getTime();
+
+// 更新倒计时
+function updateCountdown() {
+  var now = new Date().getTime();
+  var distance = newYear - now;
+
+  // 计算天、小时、分钟和秒
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // 显示结果
+  document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 "
+  + minutes + "分钟 " + seconds + "秒 ";
+
+  // 如果跨年时间已过，停止倒计时
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "跨年快乐！";
+  }
+}
+
+// 每秒更新倒计时
+var x = setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
