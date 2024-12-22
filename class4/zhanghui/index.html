@@ -4,7 +4,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg.png);
+    background-size: 100% 100%;
+}
+
+.smenu {
+    width: 1200px;
+    height: 70px;
+    line-height: 30px;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #333;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.smenu .logo {
+    width: 200px;
+    height: 70px;
+    float: left;
+}
+
+.smenu .logo img {
+    height: 70px;
+}
+
+.smenu .menu {
+    width: 600px;
+    height: 60px;
+    float: right;
+}
+
+.smenu ul {
+    width: 600px;
+    height: 60px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.smenu ul li {
+    width: 90px;
+    height: 30px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    margin: 10px 15px;
+    float: left;
+}
+
+.smenu .active, .smenu ul li a:hover {
+    color: #fff;
+    background-color: #D4922E;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.smenu ul li a {
+    display: block;
+    background-color: #019057;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.mainAll {
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.homem {
+    width: 1160px;
+    height: 370px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin: 0 auto;
+}
+
+.homem h2 {
+    color: #E8B249;
+    padding-top: 10px;
+    font-family: "宋体";
+}
+
+.homem .main_text {
+    width: 360px;
+    float: left;
+}
+
+.homem .main_text p {
+    width: 100%;
+    margin: 10px auto;
+    line-height: 30px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.homem .main_text button {
+    border: none;
+    background-color: #00A2E8;
+    color: #fff;
+    padding: 6px 15px;
+}
+
+.homem img {
+    width: 700px;
+    height: 300px;
+    border: 5px solid #fff;
+    float: right;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
+.hdjy {
+    width: 1160px;
+    height: 270px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.hdjy h2 {
+    color: #E8B249;
+    padding-top: 10px;
+    font-family: "宋体";
+}
+
+.imglist img {
+    width: 240px;
+    height: 150px;
+    border: 2px solid #fff;
+    float: left;
+    margin: 20px 20px;
+}
+
+.qingzhu {
+    width: 1160px;
+    height: 640px;
+    margin: 20px auto;
+    line-height: 30px;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.topp1 {
+    width: 1100px;
+    height: 160px;
+    margin: 10px auto;
+}
+
+.topp1 h2 {
+    padding: 10px 0;
+    color: #E8B249;
+}
+
+.cpart {
+    width: 1160px;
+    margin: 5px;
+    float: left;
+}
+
+.topp1 .cparts {
+    width: 500px;
+    height: 140px;
+    margin: 10px;
+    padding: 10px 20px;
+    float: left;
+}
+
+.cparts h3 {
+    font-family: "宋体";
+    padding: 10px;
+    color: #E8B249;
+}
+
+.rd {
+    background: rgba(214, 227, 187, 0.6)
+}
+
+.gr {
+    background: rgba(214, 227, 187, 0.5)
+}
+
+.topp2 {
+    width: 1160px;
+    margin: 10px auto;
+    margin-top: 30px;
+}
+
+.topp2 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    float: left;
+}
+
+.tpright {
+    width: 800px;
+    margin-left: 30px;
+    float: left;
+}
+
+.tpright ul span {
+    color: #50B8FE;
+}
+
+.yingxiang {
+    width: 100%;
+    height: 570px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.yingxiang .kindlist {
+    width: 1200px;
+    margin: 5px auto;
+    height: auto;
+}
+
+.yingxiang .dopart {
+    width: 580px;
+    height: 260px;
+    margin: 30px 10px;
+    float: left;
+}
+
+.yingxiang .mpleft {
+    width: 300px;
+    float: left;
+}
+
+.yingxiang .mpleft img {
+    width: 100%;
+    height: 260px;
+    border: 2px solid #eee;
+}
+
+.yingxiang .mpright {
+    width: 240px;
+    float: right;
+}
+
+.yingxiang .mpright h3 {
+    padding: 10px 0;
+    color: #228ED6;
+}
+
+.yingxiang .mpright p {
+    color: #aaa;
+}
+
+.yingxiang .mpright button {
+    border: none;
+    border: 1px solid #50B8FE;
+    color: #50B8FE;
+    background-color: #fff;
+    padding: 10px 30px;
+    margin: 10px 10px;
+    float: right;
+}
+
+.qiyuan {
+    width: 1200px;
+    height: 730px;
+    margin: 0 auto;
+}
+
+.qiyuan .vod {
+    width: 1000px;
+    padding-top: 20px;
+    margin: 10px auto;
+}
+
+.qiyuan p {
+    line-height: 40px;
+    color: #888;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.liuyan {
+    width: 700px;
+    margin: 0 auto;
+    height: 700px;
+    color: #aaa;
+}
+
+.liuyan h2 {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.liuyan input {
+    width: 700px;
+    height: 50px;
+    padding-left: 20px;
+    color: #999;
+}
+
+.liuyan .btn {
+    width: 700px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #E8B249;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.footer {
+    width: 1200px;
+    height: 80px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0px auto;
+    color: #fff;
+    padding-top: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.footer p {
+    padding: 5px 0;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background-color: #E8B249;
+    margin: 0 auto;
+}
     <title>网页制作</title>
 </head>
 <div class="smenu">
