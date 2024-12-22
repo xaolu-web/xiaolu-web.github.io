@@ -1,211 +1,44 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>学院网站主页布局</title>
-        <link href="style.css" rel="stylesheet" type="text/css"  />
-        <style>/* css 文件*/
-            * {
-                margin:0;
-                padding:0;
-                border:0;
-            }
+    <head> <meta charset="utf-8">
+        <title>作业</title>
+        <style type="text/css">
             body {
-                text-align:center;
-                font-size:20px;
-            }
-            header {
-                width:1200px;
-                height:100px;
-                margin: 0 auto;
-                background: #ccc;
-            }
-            nav {
-                width: 100%;
-                height: 42px;
-                background: rgb(28, 75, 169);
-            }
-            .navCon{
-                width: 1200px;
-                height: 42px;
-                margin: 0 auto;
-                color: #FFF;
-            }
-            .blank {
-                width: 100px;
-                height: 30px;
-                margin: 0 auto;
-                background: #FFF;
-            }
-            .main{
-                width: 1200px;
-                overflow: hidden;
-                margin: 0px auto;
-            }
-            #onerow {
-                width: 1200px;
-                height: 392px;
-                margin-bottom: 12px;
-                overflow: hidden;
-            }
-            .ppt1 {
-                background: #ccc;
-                width: 462px;
-                height: 392px;
-                float: left;
-            }
-            .onerowR {
-                background: #FFF;
-                width: 738px;
-                height: 392px;
-                float: left;
-            }
-            .imnewsl {
-                background: #CCC;
-                width: 720PX;
-                height: 280PX;
-                margin-bottom: 12PX;
-                margin-left: 18PX;
-            }
-            .ppt2 {
-                background: #ccc;
-                width: 720px;
-                height: 100px;
-                margin-left: 18px;
-            }
-            #tworow {
-                width: 1200px;
-                height: 280px;
-                margin-bottom: 12px;
-                overflow: hidden;
-            }
-            .notice {
-                background: #ccc;
-                width: 462px;
-                height: 280px;
-                float: left;
-            }
-            .imnews2 {
-                background: #ccc;
-                width: 720px;
-                height: 280px;
-                margin-bottom: 12px;
-                margin-left: 18px;
-                float: left;
-            }
-            #threerow {
-                width: 1200px;
-                height: 80px;
-                margin-bottom: 12px;
-            }
-            .mail {
-                width: 462px;
-                height: 80px;
-                float: left;
-                background: #ccc;
-            }
-            .threerowR {
-                background: #ccc;
-                width: 720px;
-                height: 80px;
-                margin-left: 18px;
-                float: left;
-            }
-            #fourrow {
-                width: 1200px;
-                height: 120px;
-                margin-bottom: 12px;
-                overflow: hidden;
-            }
-            .product1, .product2 {
-                background: #ccc;
-                width: 388px;
-                height: 120px;
-                float: left;
-            }
-            .product2 {
-                margin-left: 18px;
-            }
-            #fiverow {
-                width: 1200px;
-                height: 122px;
-                margin-bottom: 12px;
-                background: #ccc;
-            }
-            .link {
-                background: #ccc;
-                width: 1200px;
-                height: 30px;
-                margin: 0px auto;
-                margin-bottom: 12px;
-            }
-            footer {
-                width: 100%;
-                height: 150px;
-                background: rgb(28, 75, 169);
-            }
-            .footerCon {
-                width: 1200px;
-                height: 115px;
-                margin: 0 auto;
-                color: #FFF;
-            }</style>
+                    font-family: "微软雅黑";
+                    color: #666;
+                }
+                p {
+                    text-align: center;
+                }      
+        </style>
+        <style type="text/css">
+            body {
+                    font-family: "微软雅黑";
+                    color: #666;
+                }
+                p {
+                    text-align: center;
+                }      
+        </style>
+        <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}</style>
     </head>
-    <body>
-        <!--头部开始-->
-        <header>页面头部</header>
-        <!--头部结束-->
-        <!--导航开始-->
-        <nav>
-            <div class="navCon">导航</div>
-        </nav>
-        <!--导航结束-->
-        <!--滚动文字-->
-        <div class="blank">滚动文字</div>
-        <!--滚动文字结束-->
-        <!--主体部分开始-->
-        <div class="main">
-            <!--onerow开始-->
-            <div id="onerow">
-                <div class="ppt1">新闻图片信息</div><!--图片信息（轮播图）-->
-                <div class="onerowR">
-                    <div class="imnewsl">学校要闻</div>
-                    <div class="ppt2">宣传图片信息</div>
-                </div>
-            </div>
-            <!--onerow结束-->
-            <!--tworow开始-->
-            <div id="tworow">
-                <div class="notice">通知公告</div>
-                <div class="imnews2">系部动态</div>
-            </div>
-            <!--tworow结束-->
-            <!--threerow开始-->
-            <div id="threerow">
-                <div class="mail">信箱图片</div>
-                <div class="threerowR">招生信息网图片</div>
-            </div>
-            <!--threerow结束-->
-            <!--fourow开始-->
-            <div id="fourrow">
-                <div class="product1">教学系部</div>
-                <div class="product2">专题站点</div>
-                <div class="product2">热点导航</div>
-            </div>
-            <!--fourow结束-->
-            <!--fiverow开始-->
-            <div id="fiverow">视频宣传</div>
-            <!--fiverow结束-->
-        </div>
-        <!--主体部分结束-->
-        <!--友情链接开始-->
-        <div class="link">友情链接</div>
-        <!--友情链接结束-->
-        <!--页脚开始-->
-        <footer>
-            <div class="footerCon">页面底部</div>
-        </footer>
-        <!--页脚结束 -->
-    </body>
+    <body inmaintabuse="1">
+        <hr>
+        <p>
+            <a href="学院网站.html" target="_blank">作业1</a>
+            <br>
+            <a href="学生信息.html" target="_blank">作业2</a>
+            <br>
+            <a href="学员.html" target="_blank">作业3</a>
+            <br>
+            <a href="交规考试.html" target="_blank">作业4</a>
+            <br>
+            <a href="学校网站导航条.html" target="_blank">作业5</a>
+            <br>
+            <a href="index1.html" target="_blank">作业6</a>
+            <br> 
+        </p>
+    
+
+<script src="chrome-extension://nhiheekdcnmfbapkmpbhmplfddenhjic/sm.bundle.js" data-pname="supercopy-v3" data-asset-path="https://spc4e.s3.ap-east-1.amazonaws.com"></script></body>
 </html>
