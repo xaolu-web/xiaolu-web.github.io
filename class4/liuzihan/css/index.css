@@ -1,0 +1,93 @@
+/* 剧情介绍 */
+.content{
+	width: 100%;
+	min-width: 1500px;
+	height: 600px;
+	margin: 100px 0;
+}
+
+.content .title{
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 10%;
+}
+
+.content .block{
+	width: 8%;
+	height: 12px;
+	margin-top: 12px;
+	margin-left: 10%;
+	background-color: #91d3e4;
+}
+
+.content .juqing{
+	width: 80%;
+	height: 500px;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
+}
+
+.content .juqing p{
+	width: 55%;
+	height: 70%;
+	margin-top: 70px;
+	font-size: 20px;
+	text-indent: 2em;
+	line-height: 50px;
+}
+
+
+
+/* 主要人物 */
+.people{
+	width: 100%;
+	min-width: 1500px;
+	height: 400px;
+	background-color: #a9eee6;
+	margin-bottom: 100px;
+}
+
+.people .title{
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.people img{
+	width: 200px;
+	height: 200px;
+	margin: 50px 0 50px 9%;
+	border-radius: 50%;
+}
+
+
+
+/* 精彩图片 */
+.tupian{
+	width: 100%;
+	min-width: 1500px;
+	height: 800px;
+}
+
+.tupian p{
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	/* margin-left: 10%; */
+}
+
+.tupian dl{
+	float: left;
+	width: 25%;
+	height: 300px;
+	margin: 35px 0 20px 6%;
+	background-color: #91d3e4;
+}
+
+.tupian dl img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

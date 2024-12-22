@@ -1,0 +1,50 @@
+/* 内容 */
+.content{
+	width: 75%;
+	height: 500px;
+	background-color: white;
+	box-shadow: 0 0 15px #ccc;
+	margin: 100px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.content img{
+	width: 40%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.content .right{
+	width: 60%;
+	height: 100%;
+}
+
+.content .right h2{
+	margin-top: 30px;
+	text-align: center;
+}
+
+.content .right div{
+	width: 70%;
+	margin-top: 40px;
+	margin-left: 30%;
+}
+
+.content .right div p{
+	font-size: 18px;
+	margin: 20px;
+}
+
+.content .right div p .submit{
+	margin-left: 10%;
+	width: 150px;
+	height: 30px;
+	border: none;
+	border-radius: 10px;
+	background-color: #cbf1f5;
+}
+
+.content .right div p .submit:hover{
+	cursor: pointer;
+}
