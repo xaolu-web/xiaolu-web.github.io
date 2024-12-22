@@ -1,45 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>注册表单</title>
-        </head>
-        <body>
-        <div class="bg">
-            <form action="#" method="get">
-                <h2>学生信息注册</h2>
-                <p><span>昵称:*</span>
-                <input type="text" name="txtUsername" atuofocus required pattern="^[a-zA-Z]\w{5,17}$">
-                </p>
-                <p><span>性别:</span>
-                    <input type="radio" name="gender" checked class="spe">男
-                    <input type="radio" name="gender" class="spe">女
-                </p>
-                <p><span>年龄:</span>
-                    <input type="number" name="age" value="18" min="18" max="100">
-                </p>
-                <p><span>出生日期:</span>
-                    <input type="date" name="birthday" value="1999-10-01">
-                </p>
-                <p><span>籍贯:</span>
-                    <select>
-                        <option>江苏省</option>
-                        <option selected="selected">山东省</option>
-                        <option>湖北省</option>
-                        <option>浙江省</option>
-                        </select>       
-                </p>
-                <p><span>爱好:</span>
-                    <input type="checkbox" name="music" class="spe">音乐
-                    <input type="checkbox" name="internet" class="spe">上网
-                    <input type="checkbox" name="movie" class="spe">看电影
-                    <input type="checkboc" name="xiaqi" class="spe">下棋
-                </p>
-                <p class="btn">
-                <input type="submit" value="提交">
-                <input type="reset" value="重置">
-                </p>
-            </form>
-        </div>
-    </body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>精灵旅社</title>
+		<link rel="stylesheet" media="screen" href="style.css">
+		<link href="slider.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+			function dosearch() {
+			var sf=document.searchform;
+			var submitto = sf.sengine.value + escape(sf.searchterms.value);
+			window.location.href = submitto;
+			return false;
+			}
+		</script>
+	</head>
+	<body style="background: url(./images/精灵旅社图片/16.jpg);">
+		
+		
+		
+		<p class="error">精灵旅社</p></p>
+
+		<div class="content">
+			<h2>走进精灵旅社</h2>
+			
+			<p class="text">
+				我总是觉得最糟糕的事情是看着你离开，
+				然而我发现最糟糕的事情是看着你难过。
+				
+				——精灵旅社
+			<p>“真爱可以让人做疯狂的事情。”</p>
+				<form name="searchform" onSubmit="return dosearch();">
+					<input type="hidden" name="sengine" value= "C:\Users\HP\Desktop\精灵旅社\7b17522c82176d4d2e2c95827c05be97.mp4"/>
+					<input type="text" name="searchterms" class="inputform">
+					<input type="submit" name="SearchSubmit" value="Search" class="button" href="vedio.html"> 
+				</form>
+				
+			</p>
+				
+			<p class="links">
+				<a id="button" href="index.html">&larr; Back</a>
+                <a href="index2.html">剧情解说</a> 
+                <a href="jing.html">人物介绍</a>
+				<a href="vedio.html">宣传视频</a>
+				 
+			</p>
+		</div>
+		
+	</body>
 </html>
