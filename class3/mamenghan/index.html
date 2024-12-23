@@ -1,111 +1,110 @@
+
 <!DOCTYPE html>
-<html >
-<head>
-    <meta charset="UTF-8">
-    <style type="text/css">
-     body, ul,li, p,h2 {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-     body {
-        font-family: "microsoft yahei";
-        font-size: 14px;
-        color: #333;
-    }
-     header {
-        width: 1000px;
-        height: 200px;
-        background: url(123.png) no-repeat;
-        margin: 0 auto;
-    }
-     .content {
-        width: 1000px;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-     nav {
-        width: 300px;
-        height: 400px;
-        float: left;
-        background-color: #ffd6ca;
-    }
-    nav ul li {
-        width: 300px;
-        height: 40px;
-        line-height: 40px;
-        border-bottom: 1px solid #ffcdcd;
-    }
-     nav ul li a {
-        color: #333;
-        text-decoration: none;
-        display: block;
-        width: 292px;
-        height: 40px;
-        border-left: 8px solid #54alld;
-    }
-     nav ul li a:hover {
-        font-weight: bold;
-        background-color: rgb(124, 129, 113);
-        color: #fff;
-    }
-     .main {
-        float: left;
-        width: 680px;
-        height: 390px;
-        background-color: rgb(154, 188, 191);
-        padding: 0px 10px 10px;
-    
-    }
-     .main h2 {
-        height: 40px;
-        line-height: 40px;
-        font-size: 20px;
-        padding-left: 30px;
-        border-bottom: 1px dashed rgb(157, 119, 119);
-    }
-    .text1 {
-        line-height: 30px;
-        text-indent: 2em;
-        padding-top: 10px;
-    }
-    footer {
-        width: 1000px;
-        height: 60px;
-        line-height: 60px;
-        background-color: rgb(172, 176, 169);
-        font-size: 12px;
-        color: rgb(192, 230, 254);
-        text-align: center;
-        margin: 0 auto;
-    }
-    </style>
-    </head> 
-        <body>
-            <header></header>
-            <div class="content">
-                <nav>
-                    <ul>
-                        <li><a>山东介绍</a></li>
-                        <li><a>行政区划</a></li>
-                        <li><a>地理环境</a></li>
-                        <li><a>自然资源</a></li>
-                        <li><a>人口民族</a></li>
-                        <li><a>经济概况</a></li>
-                        <li><a>农业工业</a></li>
-                        <li><a>固定投资</a></li>
-                    </ul>
-                </nav>
-                <div class="main">
-                <h2>山东介绍</h2>
-                <p class="text1">山东，隐去今后必须打不开差距和王洪好吃的江南江北是错误或查看了酒窝里。</p>
-                <p class="text1">山东省境内中部山地突起，西南、西北低洼平坦，东部缓丘起伏， [3]气候类型属于暖温带季风气候。 [148]商朝建立以前，山东是商族活动的中心，
-                    商前期的五次迁都，有三次在山东境内。商朝建立后，山东仍是其统治的中心地区。秦汉时期，今山东地区号称“膏壤千里”，农业经济发达。</p>
-                <p class="text1">山东省，简称“鲁”，中华人民共和国省级行政区，省会济南市，位于中国东部沿海、黄河下游，境域包括半岛和内陆两部分，山东半岛突出于渤海、黄海之中；内陆部分自北
-                    而南与河北、河南、安徽、江苏接壤。全省陆域面积15.81万平方千米,毗邻海域面积约为15.86万平方千米。 [3]截至2023年12月,山东省共有设区的市16个,县级政。宋、金、元时期，山东地区经济处于滞退状态。 [179]明洪武元年(1368年)置山东行中书省。
-                    清代，山东政区名称定为“山东省”。中华民国初期,划分为济南、济宁、胶东、东临4道。1949年3月,山东省下辖14个市。1967年,全省共辖9个地区,4个省辖市。</p>
-                </div>
-            </div>
-            <footer>版权所有@网页设计工作室</footer>
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>学院网站导航条</title>
+        <style type="text/css">
+            body,ul,li{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            body{
+                background-image: url(0.jpg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                font-family: 'Microsoft Yahei',sans-serif;
+                font-size: 14px;
+            }
+            a{
+                text-decoration: none;
+            }
+            nav{
+                width: 100%;
+                height: 42px;
+                background: rgb(4, 11, 24);
+            }
+            nav .navCon{
+                width: 1200px;
+                height: 42px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 111;
+            }
+            .navCon li{
+                width: 120px;
+                height: 42px;
+                float: left;
+                text-align: center;
+            }
+            .navCon li a {
+                display: block;
+                width: 120px;
+                height: 42px;
+                line-height: 42px;
+                color: #e3dbdb;
+            }
+            .navCon li ul{
+                width: 150px;
+                display: none;
+            }
+            .navCon li:hover ul{
+                display: block;
+            }
+            .navCon li ul li{
+                background: rgb(0, 32, 95);
+                width: 150px;
+                height: 40px;
+                line-height: 40px;
+                border-top: 1px rgb(0, 52, 162) solid;
+                text-align: center;
+            }
+            .navCon li ul li a {
+                display: block;
+                width: 150px;
+                height: 40px;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                line-height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="navCon">
+                <li><a href="https://www.hdkz.edu.cn/zsjy/zsxx/">网站首页</a></li>
+                <li><a href="#">学院概况</a>
+                <ul>
+                    <li><a href="学院网站导航条.html">学院简介</a></li>
+                    <li><a href="#">学院荣誉</a></li>
+                    <li><a href="#">国家级示范性软件学校</a></li>
+                    <li><a href="#">高技能人才培训基地</a></li>
+                    <li><a href="#">办公电话</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">视频宣传</a></li>
+                </ul>
+                </li>
+                <li><a href="#">学院要闻</a>
+                <ul>
+                    <li><a href="学院新闻块.html">学院要闻</a></li></ul>
+                <li><a href="#">通知公告</a>
+                    <ul><li><a href="通知公告块.html">通知公告</a></li></ul>
+                
+                </li>
+                <li><a href="#">美丽山东</a>
+                <ul>
+                    <li><a href="美丽山东.html">美丽山东</a></li>
+                </ul>
+                </li>
+                <li><a href="#">学生信息表</a>
+                <ul>
+                    <li><a href="学生信息表.html">学生信息表</a></li></ul>
+                <li><a href="#">注册表单</a>
+                <ul>
+                    <li><a href="注册表单.html">注册表单</a></li></ul>
+                </ul>
+            </ul>
+        </nav>
+    </body>
 </html>
