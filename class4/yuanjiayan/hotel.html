@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>酒店预订</title>
+  <link rel="stylesheet" href="../css/hotel.css">
+
+</head>
+<script>
+  function tijiao() {
+    alert("提交成功")
+    location.reload();
+  }
+</script>
+
+<body>
+  <header>
+    <h1>酒店预订</h1>
+    <nav>
+      <ul>
+        <li><a href="../html/index.html">首页</a></li>
+        <li><a href="../html/attractions.html">景点介绍</a></li>
+        <li><a href="../html/food.html">正定美食</a></li>
+        <li><a href="../html/culture.html">历史文化</a></li>
+        <li><a href="../html/hotel.html">酒店预订</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form>
+    <label for="name">姓名：</label>
+    <input type="text" id="name" required>
+
+    <label for="email">电子邮件：</label>
+    <input type="email" id="email" required>
+
+    <label for="checkInDate">入住日期：</label>
+    <input type="date" id="checkInDate" required>
+
+    <label for="checkOutDate">退房日期：</label>
+    <input type="date" id="checkOutDate" required>
+
+    <label for="hotel">选择酒店：</label>
+    <select id="hotel">
+      <option value="hotel1">正定酒店1</option>
+      <option value="hotel2">正定酒店2</option>
+      <option value="hotel3">正定酒店3</option>
+    </select>
+
+    <label for="message">特殊要求：</label>
+    <textarea id="message"></textarea>
+
+    <button type="submit" onclick="tijiao()">提交预订</button>
+  </form>
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+
+</html><!-- 酒店预订 -->
