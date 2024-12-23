@@ -1,83 +1,76 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <style type="text/css">
-    body,form,input,select,h2,p{
-         padding:0;
-         margin:o;
-        border:0;
-    }
+    <head>
+        <title>期末作业</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+<body>   
+         <div class="hhhh">
+            <h1>大作业</h1>
+         </div>
+    <div class="conent">
+        <h1>我的HTML的大作业</h1>
+        <h2>如下</h2>
+    </div>
+    <div class="ppp">
+        <li><a href="kj.html">考试答卷</a></li><br>
+        <li><a href="hk.html">学校要闻</a></li><br>
+        <li><a href="xj.html">学校简介</a></li><br>
+        <li><a href="https://www.hdkz.edu.cn/">学校网站</a></li><br>
+        <li><a href="cjd.html">学生成绩单</a></li><br>
+        <li><a href="sd.html">美丽山东</a></li>
+        <li><a href="du/邯郸.mp4">邯郸</a></li>
+    </div>
+
+    
+</body>
+<style>
     body{
-        font-size:12px;
-        font-family:"微软雅黑";
+        background-image: url(du/猫爪.jpg);
+        font-family: Arial, Helvetica, sans-serif;
     }
-    .bg {
-        width:800px;
-        height:500px;
-        margin:20px auto;
-        background:url(images/bg.jpg) no-repeat;
-    }
-    form{
-        width:550px;
-        height:480px;
-        padding-left:250px;
-        padding-top:20px;
-    }
-    h2{
-        height:40PX;
-        line-height:40px;
-        text-align:center;
+    .conent{
+        background-color: transparent;
+        width: 300px;
+        padding:30px;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        color: aquamarine;
         
     }
-    </style>
-    <meta charset="utf-8">
-    <title>注册表单</title>
-</head>
-<body>
-    <a href="index.html ">首页</a>
-    <a href="个人信息.html">第二页</a>
-    <a href="山东.html ">第三页</a>
-    <a href="新闻.html">第四页</a>
-    <a href="xueyuan.html">第五页</a>
-    <div class="bg"
-        <form action="#"method="get">
-            <h2>学生信息注册</h2>
-            <p class="yelc">请注意：带有*的项必须填写</p>
-            <p><span>昵称：*</span>
-                <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-z]\w{5,17}$">(6~18个字符，由字母、数字或下划线构成
-            </p>
-            <p><span>姓名:*</span>
-               <input type="text"name="txtName"required pattern="^[\u4e00-\u9fa5]{0,}$" />(要填真实姓名，只能输入汉字)
-            </p>
-            <p><span>性别:</span>
-               <input type="radio"name="gender"checked class="spe">男
-               <input type="radio"name="gender"checked class="spe">女
-            </p>
-            <p><span>年龄:</span>
-               <input type="number"name="age"value="18"min="18"max="100">(年龄介于18~100岁)
-            </p>
-            <p><span>出生日期:</span>
-               <input type="date"name="birthday"value="1999-10-01">
-            </p>
-            <p><span>籍贯:</span>
-               <select>
-                   <option>江苏省</option>
-                   <option selected="selected">山东省</option>
-                   <option>湖北省</option>
-                   <option>浙江省</option>
-               </select>
-            </p>
-            <p><span>爱好:</span>
-               <input type="checkbox"name="music" class="spe">音乐
-               <input type="checkbox"name="internet" class="spe">上网
-               <input type="checkbox"name="movie" class="spe">看电影
-               <input type="checkbox"name="xiaqi" class="spe">下棋
-            </p>
-            <p class="btn">
-                <input type="submit"value="提交">
-                <input type="reset" value="重置">
-            </p>
-        </form>
-    </div>
-</body>
+    .hhhh{
+        background-color: transparent;
+        width: 300px;
+        padding:30px;
+        position: absolute;
+        top: 6%;
+        left: 45%;
+        font-size: 25px;
+        color: paleturquoise;
+    }
+    .ppp{
+        background-color: transparent;
+        width: 220px;
+        padding:20px;
+        position: absolute;
+        top: 32%;
+        left: 13%;
+        color: aquamarine;
+        font-size: 20px;
+    }
+    a{
+        color: #583b9c;
+    }
+.ppp  li  a:hover {
+color: rgb(red, green, blue);
+background: cornflowerblue;
+}
+.rrr{
+    position: relative;
+    top: 45%;
+    left: 70%;
+    
+}
+</style>
 </html>
