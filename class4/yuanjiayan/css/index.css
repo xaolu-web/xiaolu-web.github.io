@@ -1,0 +1,81 @@
+  /* 全局样式重置，去除浏览器默认边距和填充 */ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+  /* 头部样式 */
+  header {
+    background-color: #2372c1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* 轮播图容器样式 */
+.scroll-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid #7488a7;
+    position: relative;
+  }
+
+  /* 图片列表样式 */
+.image-list {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 每张图片的样式 */
+.image-list img {
+    width: 100%;
+    height: auto;
+    display: block;
+ 
+  }
+
+  /* 版权信息（页脚）样式 */
+  footer {
+    background-color: #2372c1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+  }

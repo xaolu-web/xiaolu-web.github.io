@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('your - texture - image.jpg');
+    background-size: cover;
+  }
+
+  header {
+    background-color: #2372c1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+
+  nav {
+    background-color: #2372c1;
+    padding: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin-right: 30px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+  }
+
+  nav ul li.current a {
+    color: #ffcc00;
+    font-weight: bold;
+  }
+
+  section {
+    padding: 30px;
+    margin: 30px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  #hero-image {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    filter: brightness(0.7);
+    border-radius: 5px;
+  }
+
+  #hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+ .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+ .btn:hover {
+    background-color: #555;
+  }
+
+ .attraction-item {
+    display: inline-block;
+    width: 30%;
+    margin-right: 2%;
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+  }
+
+ 
+
+  /* 放大景点图片 */
+ .attraction-item img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+ .attraction-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+ .attraction-item p {
+    margin: 0 10px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #666;
+  }
+
+  footer {
+    background-color: #2372c1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+  }
+ 
