@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册表单</title>
+
+    </head>
+    <body>
+        <div class="bg">
+            <form action="#" method="get">
+                <h2>学生信息注册</h2>
+                <p><span>昵称: *</span>
+                <input type="tel" name="telephone" autofocus required pattern="^[a-zA-Z]\w{5,7}$">(6~18个字符,由字母、数字或下划线构成)
+                </p>
+                <p><span>姓名: *</span>
+                    <input type="text" name="txtName"  required pattern="^[\u4e00-\u9fa5]{0,}$ /">(要填真实姓名,只能输入汉字)
+                </p>
+                <p><span>性别:</span>
+                <input type="radio" name="gender" checked class="spe">男
+                <input type="radio" name="gender"  class="spe">女
+                </p>
+                <p><span>年龄:</span>
+                <input type="number" name="age" value="18" min="18" max="100">(年龄介于18~100岁)
+                </p>
+                <p><span>出生日期:</span>
+                <input type="date" name="birthday" value="1999-10-01">
+                </p>
+                <p><span>籍贯:</span>
+                <select>
+                    <option>江苏省 </option>
+                    <option selected="selected">山东省</option>
+                    <option>湖北省</option>
+                    <option>浙江省</option>
+                </select>
+                </p>
+                <p><span>爱好: </span>
+                <input type="checkbox" name="music" class="spe">音乐
+                <input type="checkbox" name="internet" class="spe">上网
+                <input type="checkbox" name="mocie" class="spe">看电影
+                <input type="checkbox" name="xiaqi" class="spe">下棋
+                </p>
+                <p class="btn"> 
+                    <input type="submit" value="提交">
+                    <input type="reset" value="重置">
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
