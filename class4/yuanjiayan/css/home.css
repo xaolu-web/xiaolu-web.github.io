@@ -1,0 +1,92 @@
+/*位置*/        
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  }
+/*位置*/ 
+.rslides li {
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+/*第一个图浮动属性*/ 
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+/*图片属性*/ 
+.rslides img {
+  width: 100%;
+  border: 0;
+  display: block;
+  }
+/*位置*/ 
+  .rslides {
+  margin: 0 auto;
+  }
+
+/*定位属性*/ 
+.rslides_container {
+  position: relative;
+  }
+/*按钮属性*/ 
+.centered-btns_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 50%;
+  left: 0;
+  opacity: 0.7;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url(../img/themes.gif) no-repeat left top;
+  }
+/*按钮点击变淡*/ 
+.centered-btns_nav:active {
+  opacity: 1.0;
+  }
+/*右按钮*/ 
+.centered-btns_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+  }
+
+.transparent-btns_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 0;
+  left: 0;
+  display: block;
+  background: #fff;
+  opacity: 0;
+  filter: alpha(opacity=1);
+  width: 48%;
+  text-indent: -9999px;
+  overflow: hidden;
+  height: 91%;
+  }
+
+.transparent-btns_nav.next {
+  left: auto;
+  right: 0;
+  }
+  
+			.box4{
+			background:url(img/down.png) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 270px;
+            opacity: 0.9;
+			}
+			.box6:hover{
+				transform: scale(1.25)
+			}

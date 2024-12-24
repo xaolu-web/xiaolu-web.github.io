@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">   
+        <title>注册登录页面</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <!--注册-->
+                <div class="register-box hidden">
+                    <h1>register</h1>
+                    <input type="text" placeholder="用户名">
+                    <input type="email" placeholder="邮箱">
+                    <input type="password" placeholder="密码">
+                    <input type="password" placeholder="确认密码">
+                    <button onclick="alert('注册成功！')">注册</button>
+                </div>
+                <!--登录-->
+                <div class="login-box">
+                    <h1>login</h1>
+                    <input type="text" placeholder="用户名">
+                    <input type="password" placeholder="密码">
+                    <button onclick="logina()">登录</button>
+                </div>
+            </div>
+
+            <div class="con-box left">
+                <h2>欢迎来到<br/><span>Lilo&Stitch</span></h2>
+                <img src="img/logo1.png">
+                <p>已有账号</p>
+                <button id="login">去登录</button>
+            </div>
+
+            <div class="con-box right">
+                <h2>欢迎来到<br/><span>Lilo&Stitch</span></h2>
+                <img src="img/user.png">
+                <p>没有账号？</p>
+                <button id="register">去注册</button>
+            </div>
+        </div>
+        <script>
+            let login=document.getElementById('login');
+            let register=document.getElementById('register');
+            let form_box=document.getElementsByClassName('form-box')[0];
+            let register_box=document.getElementsByClassName('register-box')[0];
+            let login_box=document.getElementsByClassName('login-box')[0];
+            register.addEventListener('click',()=>{
+                form_box.style.transform='translateX(80%)';
+                login_box.classList.add('hidden');
+                register_box.classList.remove('hidden');
+            })
+            login.addEventListener('click',()=>{
+                form_box.style.transform='translateX(0%)';
+                register_box.classList.add('hidden');
+                login_box.classList.remove('hidden');
+            })
+        </script>
+        <script>
+        	function logina(){
+            window.location.href="home.html"
+           }
+        </script>
+    </body>
+</html>

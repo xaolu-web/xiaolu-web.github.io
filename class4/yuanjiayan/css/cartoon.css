@@ -1,0 +1,62 @@
+.college {
+            position: relative;
+        }
+        .mask {
+            display:none;
+            position: absolute;
+            top:0;
+            left: 10%;
+            width: 80%;
+            height: 99%;
+            background: rgba(0, 0, 0, .4) 
+        }
+        .college:hover .mask{
+            display: block;
+        }
+        .tab ul li {
+				color: #000000;
+				float:left;
+				text-decoration: none;
+				display:block;
+				border: solid black 1px;
+				width: 30px;
+				height: 20px;
+				line-height: 19px;
+				font-size: 15px;
+				text-align: center;
+				margin-right: 20px;
+			}
+			.tab ul li.TabActive {
+				background-color: gainsboro;
+			}
+			.content ul li {
+				display: none;
+			}
+			.content ul li.ContActive {
+				display: block;
+			}
+
+        .content{
+        	position: relative;
+        	width: 300px;
+        	
+
+        }
+		.music1{
+			background-color: white;
+			width: 450px;
+			height: 40px;
+			border-top-left-radius: 30%;
+			margin-bottom: 5px;
+			border: solid cornflowerblue 1px;
+		}
+		.music1:hover{
+			transform: scale(1.02);
+		}
+		audio{
+			height: 36px;
+			position: relative;
+			left: 100px;
+			width: 220px;
+			top: -45px;
+		}

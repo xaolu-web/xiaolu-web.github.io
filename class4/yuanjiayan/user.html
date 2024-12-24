@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户</title>
+		<link rel="icon" type="image/png" href="img/logo1.png"/>
+		<link href="css/main.css" type="text/css" rel="stylesheet" />
+		<link href="css/user.css" type="text/css" rel="stylesheet" />
+        <script src="js/5.js"></script>
+	</head>
+	<body>
+		
+		<header>
+		<table cellspacing="0" class="head">
+    		<tr>
+    		<td bgcolor=steelblue width="40%">
+    			<img src="img/logo.png" width="200px" align="right"/>
+    		</td>
+    		<td bgcolor=steelblue style="padding-left: 10px;">
+                <ul class="q">
+                    <li><a href="home.html" style="color: white;">主页</a></li>
+                    <li><a href="figure.html" style="color: white;">人物</a></li>
+                    <li><a href="cartoon.html" style="color: white;">动画</a></li>
+                    <li><a href="user.html"  style="color: white;">用户</a></li>
+                </ul>
+            </td>
+        </tr>
+        </table>
+   </header>
+<section >
+    	<div style="margin: auto;width: 980px;background:url(img/qwe4.jpg);position: relative;height: 780px;background-size: 100% 100%;">
+        <div class="tab-container" style="position: relative;top: 130px;left: 70px;">
+        	<div style="position: relative;top: 90px;">
+        	<div class="tab active" onclick="openTab(event,'tab1')" style="margin-bottom: 10px;"><h3 align="center">登录</h3></div>
+            <div class="tab" onclick="openTab(event,'tab2')" style="margin-bottom: 10px;"><h3 align="center">注册</h3></div>
+            <div class="tab" onclick="openTab(event,'tab3')"><h3 align="center">反馈</h3></div>
+        	</div>
+	
+ 			<div style="position: relative;top: -169px;left: 160px;">
+ 			<div id="tab1" class="tab-content" style="display:block;border-radius: 45px;background: url(img/qwe1.jpg);background-size: 100% 100%;">
+ 				<!--
+                 	界面1
+                 -->
+                <div style="width: 100%;">
+                	<img src="img/user.png"width="25%" border="2px" style="position: relative;top: 80px;left: 40px;"/>
+                	<div style="position: relative;top: -80px;left: 250px;height: 160px;">
+                		<table>
+                			<tr>
+                				<td>
+                					<h1>账号：</h1>
+                				</td>
+                				<td><input type="text" placeholder="账号"></td>
+                			</tr>
+                			<tr>
+                				<td><h1>密码：</h1></td>
+                				<td><input type="password" placeholder="密码"></td>
+                			</tr>
+                			<tr>
+                				<td colspan="2" align="right">
+                					<button style="width: 80px;background-color: white;">登录</button>
+                				</td>
+                			</tr>
+                		</table>
+                	</div>
+                	
+                </div>
+            </div>
+            <div id="tab2" class="tab-content" style="position: relative;border-radius: 45px;background: url(img/qwe2.jpg);background-size: 100% 100%;">
+            	<!--
+                 	界面2
+                 -->
+                <div style="width: 100%;">
+                	<img src="img/logo1.png" width="27%"border="2px" style="position: relative;top: 80px;left: 40px;"/>
+                	<div style="position: relative;top: -120px;left: 250px;height: 160px;">
+                		<table>
+                			<tr>
+                				<td>
+                					<h1>用户名：</h1>
+                				</td>
+                				<td><input type="text" placeholder="用户名"></td>
+                			</tr>
+                			<tr>
+                				<td><h1>手机号：</h1></td>
+                				<td><input type="text" placeholder="手机号"></td>
+                			</tr>
+                			<tr>
+                				<td><h1>密码</h1></td>
+                				<td><input type="password" placeholder="密码"></td>
+                			</tr>
+                			<tr>
+                				<td colspan="2" align="right">
+                					<button style="width: 80px;background-color: white;">注册</button>
+                				</td>
+                			</tr>
+                		</table>
+                	</div>
+                </div>
+            </div>
+            <div id="tab3" class="tab-content" style="position: relative;border-radius: 45px;background: url(img/qwe3.jpg);background-size: 100% 100%;">
+            	<!--
+                 	界面3
+                 -->
+                <div style="width: 100%;">
+                	<img src="img/1233.png" width="27%"border="2px" style="position: relative;top: 80px;left: 40px;"/>
+                	<div style="position: relative;top: -120px;left: 250px;height: 160px;">
+                		<table>
+                			<tr>
+                				<td>
+                					<h1>用户名：</h1>
+                				</td>
+                				<td><input type="text" placeholder="用户名"></td>
+                			</tr>
+                			<tr>
+                				<td><h1>邮箱号：</h1></td>
+                				<td><input type="text" placeholder="邮箱号"></td>
+                			</tr>
+                			<tr>
+                				<td><h1>内容：</h1></td>
+                				<td><textarea rows="4" cols="50" placeholder="内容" style="width: 170px;">			
+                				</textarea></td>
+                			</tr>
+
+                				<td colspan="2" align="right">
+                					<button style="width: 80px;background-color: white;">提交</button>
+                				</td>
+                			</tr>
+                		</table>
+                	</div>
+                </div>
+            </div>
+ 			</div>
+
+        </div>
+        	
+        	
+       </div>
+    	</div>
+</section>
+    <footer style="position: relative;">
+		<p align="center">袁佳妍<br /></p>
+    </footer>
+	</body>
+</html>
