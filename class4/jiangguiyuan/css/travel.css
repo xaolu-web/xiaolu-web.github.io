@@ -1,0 +1,95 @@
+/* 红色旅游 */
+.red{
+	width: 100%;
+	height: 1000px;
+	margin: 100px 0;
+}
+
+.red h1{
+	text-align: center;
+}
+
+.red table{
+	width: 100%;
+	height: 850px;
+	margin-top: 50px;
+}
+
+.red table tr td{
+	width: 30%;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+.red table tr td img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.red table tr td img:hover{
+	transform: scale(1.2);
+	transition: 0.5s;
+}
+
+.red table tr td div{
+	width: 100%;
+	height: 25%;
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	background-color: white;
+	border-radius: 0 0 10px 10px;
+}
+
+.red table tr td div h3,p{
+	margin-top: 15px;
+	margin-left: 5%;
+}
+
+
+/* 自然风景 */
+.nature{
+	width: 80%;
+	height: 800px;
+	margin: 100px auto;
+	/* background-color: antiquewhite; */
+}
+
+.nature h1{
+	text-align: center;
+}
+
+.nature table{
+	width: 100%;
+	height: 600px;
+	margin-top: 50px;
+	/* background-color: aqua; */
+}
+
+.nature table tr td{
+	width: 20%;
+	height: 300px;
+	/* background-color: aquamarine; */
+}
+
+.nature table tr td img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.nature table tr td div{
+	width: 100%;
+	height: 100%;
+	background-color: #e4f9f5;
+}
+
+.nature table tr td div h3,.p{
+	text-align: center;
+	padding-top: 50px;
+}
