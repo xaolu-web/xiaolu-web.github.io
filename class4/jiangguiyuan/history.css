@@ -1,0 +1,26 @@
+/* 历史沿革 */
+.history{
+	width: 75%;
+	height: 1800px;
+	margin: 100px auto;
+	background-color: white;
+	padding: 50px;
+	/* box-shadow: 0 0 10px #999; */
+}
+
+.history h2{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.history h3{
+	margin-top: 20px;
+	margin-left: 2%;
+}
+
+.history p{
+	margin-top: 20px;
+	text-indent: 2em;
+	line-height: 25px;
+	margin-left: 2%;
+}
