@@ -88,3 +88,16 @@ section {
     z-index: -100;
     background-size: cover;
 }
+  .center-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 容器高度为视口高度 */
+  }
+  .img1 {
+ /*   max-width: 100%; /* 图片最大宽度为容器宽度 
+    max-height: 100%; /* 图片最大高度为容器高度 */ 
+	  width: 50%; /* 或者具体的像素值 */
+	  height: auto; /* 保持原始宽高比 */
+	}
+  }
