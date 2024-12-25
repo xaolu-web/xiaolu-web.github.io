@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册表单</title>
+    </head>
+    <body>
+            <form action="#" method="get">
+                <h2> 学生信息注册</h2>
+               <p><span>昵称：*</span>
+            <input type="text" name="txtUsername" autofocus required pattern="^[a-zA-Z]\w{5,17}$">(6~8个字符，由字母，数字或下划线构成)
+        </p>
+        <p><span>性别：</span>
+            <input type="radio" name="gender" checked class="spe">男
+            <input type="radio" name="gender" class="spe">女
+        </p>
+        <p><span>年龄：</span>
+        <input type="number" name="age" value="18" min="18" max="100">(年龄介于18~100岁之间)
+        </p>
+        <p><span>出生日期：</span>
+        <input type="date" name="birthday" value="1999-10-01">
+        </p>
+        <p><span>籍贯：</span>
+            <select>
+                <option>江苏省</option>
+                <option selected="selected">山东省</option>
+                <option>湖北省</option>
+                <option>浙江省</option>
+            </select>
+        </p>
+        <p><span>爱好：</span>
+            <input type="checkbox" name="music" class="spe">音乐
+            <input type="checkbox" name="internet" class="spe">上网
+            <input type="checkbox" name="movie" class="spe">看电影
+            <input type="checkbox" name="xiaqi" class="spe">下棋
+        </p>
+        <p class="btn">
+           <input type="submit" value="提交">
+           <input type="reset" value="重置">
+        </p>
+            </form>
+        </div>
+    </body>
+    <body style="background-image: url('565.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+        <h1>这里是页面内容标题</h1>
+        <p>这是页面的一些文字内容，在有背景图片的情况下进行展示，你可以根据实际需求修改这些文字内容等相关元素。</p>
+    </body>
+    
+</html>
