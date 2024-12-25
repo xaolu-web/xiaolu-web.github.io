@@ -1,0 +1,72 @@
+body,h2,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+body{
+    background:url("computer-img3.jpg");
+    background-size:1600px;
+    font-family:"微软雅黑";
+    font-size:14px;
+    color:#080808;
+}
+a{
+    text-decoration:none;
+}
+.news{
+    background:#FFF;
+    border:1px solid #ccc;
+    width:458px;
+    height:228px;
+    padding:5px 10px;
+    margin:20px auto;
+}
+.news h2{
+    background:url(https://ts1.cn.mm.bing.net/th/id/R-C.541d315de4b11e79e0bcb84f35ccf30b?rik=V96LdUGfUZJu5g&riu=http%3a%2f%2fimage.qianye88.com%2fpic%2f812f74e3a664e1c2b1e0e8cde0480e8c&ehk=o55Cw49jjhzmX%2bO%2fvYRXQsoMo3R%2f%2fuXTqpx%2bM88E63M%3d&risl=&pid=ImgRaw&r=0)no-repeat left center;
+    width:448px;
+    height:37px;
+    line-height:37px;
+    color:#e11515;
+    font-size:16px;
+    padding-left:10px;
+    border-bottom:1px solid #ccc;
+}
+.news h2 .eng {
+    color:#737373;
+    padding-left:50px;
+    font-weight:normal;
+}
+.news .content {
+    width:458px;
+    height:190px;
+}
+.news .content {
+    width:458px;
+    height:190px;
+}
+news .content li {
+    width:443px;
+    height:31px;
+    line-height:31px;
+    background:url("")no-repeat left center;
+    padding-left:20px;
+    ul{
+        list-style-type: square;
+    }
+}
+.news .content li a {
+    color:#333;
+    display:block;
+    width:320px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.news .content li a:hover {
+    color:#1c4ba9;
+}
+.news .content li span {
+    color:#737373;
+    font-size:11px;
+    float:right;
+}
