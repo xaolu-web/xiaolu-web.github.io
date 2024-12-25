@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>邯郸科技职业学院招生就业处网站</title>
+    <link rel="stylesheet" href="/static/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/js/jquery.transit.min.js"></script>
+    <script src="/static/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="/static/js/swiper.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="/static/images/logo.png?t=2024083020" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="container">
+            <a href="https://www.hdkz.edu.cn/">学院首页</a>
+        </div>
+    </div>
+
+    <div class="swiper-container home-slide">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="item in slidelist" ::key="item.id">
+                <a href="#" target="_self" class="home-slide-item" :style="'background-image: url(' + item.url + ');'"></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="guide">
+                <a href="http://zhaosheng.hdkz.edu.cn/" target="_blank"><img src="/static/images/guide_thumb_zhaosheng.png" alt=""
+                                                              class="thumb"></a>
+                <div class="title">
+                    <div class="iconfont">&#xe72f;</div>
+                    <span>最新消息</span>
+                </div>
+                <ul class="list">
+                    <li v-for="item in zslist" :key="item.id">
+                        <i class="iconfont">&#xe622;</i>
+                        <a :href="item.url" target="_blank">{{item.title}}</a>
+                        <div class="date">{{item.date}}</div>
+                    </li>
+                </ul>
+                <div class="enter">
+                    进入【<a href="http://zhaosheng.hdkz.edu.cn/" target="_blank">招生信息网</a>】
+                </div>
+            </div>
+            <div class="guide">
+                <a href="http://jiuye.hdkz.edu.cn/" target="_blank"><img src="/static/images/guide_thumb_jiuye.png" alt=""
+                                                          class="thumb"></a>
+                <div class="title">
+                    <div class="iconfont">&#xe72f;</div>
+                    <span>最新消息</span>
+                </div>
+                <ul class="list">
+                    <li v-for="item in jylist" :key="item.id">
+                        <i class="iconfont">&#xe622;</i>
+                        <a :href="item.url" target="_blank">{{item.title}}</a>
+                        <div class="date">{{item.date}}</div>
+                    </li>
+                </ul>
+                <div class="enter">
+                    进入【<a href="http://jiuye.hdkz.edu.cn/" target="_blank">就业网</a>】
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <img src="/static/images/footer_logo.png" alt="">
+            <div class="copyright">
+                <p>河北省邯郸市冀南新区滏阳路1号 邮编：056046</p>
+                <p>招生就业处电话：0310-8571656 电子邮箱：hdkzzsjyc@163.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/static/libs/element-ui@2.15.8/lib/theme-chalk/index.css">
+<script src="/static/libs/vue@2/vue.min.js"></script>
+<script src="/static/libs/element-ui@2.15.8/lib/index.js"></script>
+<script src="/static/libs/axios@0.27.2/axios.min.js"></script>
+<script src="/static/libs/lodash@4.17.21/lodash.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                slidelist: [
+                    {
+                        id: 1,
+                        url: '/static/images/home-slide-1.jpg'
+                    },
+                    {
+                        id: 2,
+                        url: '/static/images/home-slide-20230920.jpg'
+                    },
+                    {
+                        id: 3,
+                        url: '/static/images/home-slide-3.jpg'
+                    },
+                ],
+                zslist: [],
+                jylist: []
+            }
+        },
+        mounted() {
+            this.getZhaoshengList();
+            this.getJiuyeList();
+        },
+        methods: {
+            getZhaoshengList() {
+                axios.get("http://zhaosheng.hdkz.edu.cn/api/article")
+                    .then(res => {
+                        if(res.status == 200 && res.data.code == 0) {
+                            this.zslist = res.data.data
+                        }
+                    })
+            },
+            getJiuyeList() {
+                axios.get("http://jiuye.hdkz.edu.cn/api/article")
+                    .then(res => {
+                        if(res.status == 200 && res.data.code == 0) {
+                            this.jylist = res.data.data
+                        }
+                    })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
