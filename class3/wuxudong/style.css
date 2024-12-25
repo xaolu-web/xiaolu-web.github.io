@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+	background-color: #333;
 }
 
 .navbar {
