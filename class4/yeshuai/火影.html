@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <style type="text/css">
+        .body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f5;
+    }
+    
+    .header {
+        background-color: #ff6600;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .character {
+        text-align: center;
+        margin: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .character img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #ff6600;
+        color: white;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火影忍者网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>火影忍者</h1>
+    </header>
+    <main>
+        <section class="character">
+            <img src="3.jpg" alt="鸣人" class="album-cover">
+            <h2>漩涡鸣人</h2>
+            <video width="640" height="480" controls>
+                <source src="鸣人.mp4" type="video/mp4">
+              </video>
+            <p>火之国木叶村的忍者，梦想是成为火影。</p >
+        </section>
+        <section class="character">
+            <img src="2.jpg" alt="佐助">
+            <h2>宇智波佐助</h2>
+            <video width="640" height="480" controls>
+                <source src="视频佐助.mp4" type="video/mp4">
+              </video>
+            <p>曾经是木叶村的忍者，背负着家族的仇恨。</p >
+                <video width="640" height="480" controls>
+                    <source src="鸣佐.mp4" type="video/mp4">
+                  </video>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 火影忍者粉丝网站</p >
+    </footer>
+</body>
+
+</html>
