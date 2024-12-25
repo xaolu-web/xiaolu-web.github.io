@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学院网站导航条</title>
+		<style type="text/css">
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body{
+				background-image: url(tp/77.jpg);
+				background-repeat: no-repeat;
+				background-size: 100%;
+				font-family: 'Microsoft Yahei',sans-serif;
+				font-size: 14px;
+			}
+			a{
+				text-decoration: none;
+			}
+			nav{
+				width: 100%;
+				height: 42px;
+				background: rgb(28, 75, 169);
+			}
+			nav .navCon{
+				width: 1200px;
+				height: 42px;
+				margin: 0 auto;
+				position: relative;
+				z-index: 111;
+			}
+			.navCon li{
+				width: 120px;
+				height: 42px;
+				float: left;
+				text-align: center;
+			}
+			.navCon li a {
+				display: block;
+				width: 120px;
+				height: 42px;
+				line-height: 42px;
+				color: #e3dbdb;
+			}
+			.navCon li ul{
+				width: 150px;
+				display: none;
+			}
+			.navCon li:hover ul{
+				display: block;
+			}
+			.navCon li ul li{
+				background: rgb(28, 75, 169);
+				width: 150px;
+				height: 40px;
+				line-height: 40px;
+				border-top: 1px rgb(0, 52, 162) solid;
+				text-align: center;
+			}
+			.navCon li ul li a {
+				display: block;
+				width: 150px;
+				height: 40px;
+				text-align: center;
+				color: rgb(255, 255, 255);
+				line-height: 40px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul class="navCon">
+                <li><a href="邵一桐.html">邵一桐</a></li>
+				<li><a href="https://www.hdkz.edu.cn/">邯郸科技职业学院</a></li>
+				<li><a href="#">学院概况</a>
+				<ul>
+					<li><a href="xueyuanjianjie.html">学院简介</a></li>
+				</ul>
+				</li>
+				<li><a href="#">新闻中心</a>
+				<ul>
+                    <li><a href="xueyuanyaowen.html">学院要闻</a></li>
+					<li><a href="./宣传视频.mp4">视频宣传</a></li>
+					<li><a href="tongzhigonggao.html">通知公告</a></li>
+				</ul>
+				</li>
+				<li><a href="#">招生就业</a>
+				<ul>
+					<li><a href="http://zhaosheng.hdkz.edu.cn/index.html">招生信息网</a></li>
+					<li><a href="http://jiuye.hdkz.edu.cn/index.html">就业信息网</a></li>
+				</ul>
+				</li>
+				<li><a href="./美景.jpg">美丽校园</a></li>
+				<li><a href="./玩具总动员/index.html">其他</a></li>
+			</ul>
+			
+		</nav>
+	</body>
+</html>
