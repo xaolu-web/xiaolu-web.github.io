@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>通告公告块</title>
+    <style>
+        .box {
+            width: 1500px;
+            height: 280px;
+            border: 0px;                
+            background-color: wheat;
+            padding: 20px;
+            margin: 30px auto;
+        }
+        .center {
+            display: flex;               
+            align-items: center;
+            height: 50vh;    
+            justify-content: center;
+        }
+        hr {
+            width: 100%;               
+            border: 1px solid black;  
+            margin: 10px 0;       
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .yanse{
+            background-color: aqua;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="box">
+            <p style="float: left;" class="yanse"><strong>教学案例</strong></p>
+            <p style="float: right;"><a href="#">更多>></a></p> 
+            <hr> 
+            <ul class="clearfix"> 
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">未来信息学院招聘</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">学院废旧金属处理结果公告</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">学院服装价格表</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">关于采购计算机及价格表</a></div></li>
+                <li><div><span style="float: right;">2021-8-5</span><a href="#">购买院校维修材料价格表</a></div></li>
+            </ul>
+        </div>
+    </div>
+	<p class="text1"></p><a href="index.html">返回</a>
+</body>
+</html>
