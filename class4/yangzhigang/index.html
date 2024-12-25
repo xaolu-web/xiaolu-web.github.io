@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <title>期末作业</title>
+        <style type="text/css">
+            body {
+                font-family: "微软雅黑";
+                color: #472222;
+            }
+            p {
+                text-align: center;
+            }
+            body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3a3a3;
+        }
+
+        canvas {
+            width: 700px;
+            height: 700px;
+        }
+            
+        </style>
+        
+    </head>
+    <body>
+        <hr>
+            <p>
+
+                <a href="01.html" target="_blank">作业一</a><br>
+                <a href="example09.html" target="_blank">作业二</a><br>
+                <a href="student.html" target="_blank">作业三</a><br>
+                <a href="交规考试选择题.html" target="_blank">作业四</a><br>
+                <a href="美丽山东.html" target="_blank">作业五</a>
+        </p>
+        <canvas id="canvas"></canvas>
+
+        <script>
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+    
+            const heart = {
+                x: canvas.width / 2,
+                y: canvas.height / 2,
+                size: 300,
+                scale: 1
+            };
+    
+            function drawHeart() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                const x = heart.x;
+                const y = heart.y;
+                const n = heart.size;
+                const s = heart.scale;
+    
+                ctx.moveTo(x, y);
+                ctx.bezierCurveTo(x, y - n * s * 0.42, x + n * s * 0.42, y - n * s * 0.42, x + n * s * 0.42, y);
+                ctx.bezierCurveTo(x + n * s * 0.42, y + n * s * 0.42, x, y + n * s * 0.42, x, y + n * s * 0.42);
+                ctx.bezierCurveTo(x - n * s * 0.42, y + n * s * 0.42, x - n * s * 0.42, y, x - n * s * 0.42, y);
+                ctx.bezierCurveTo(x - n * s * 0.42, y - n * s * 0.42, x, y - n * s * 0.42, x, y);
+                ctx.strokeStyle = 'rgba(255, 0, 0, 0.8)';
+                ctx.lineWidth = 10;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.stroke();
+                ctx.closePath();
+    
+                // 在爱心中间添加文字并换行
+                ctx.font = "15px Arial";
+                ctx.fillStyle = "white";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                const text = "这是我的作业\n拿走吧";
+                const lines = text.split('\n');
+                let lineHeight = 24;
+                for (let i = 0; i < lines.length; i++) {
+                    ctx.fillText(lines[i], x, y - (lines.length - 1 - i) * lineHeight / 2);
+                }
+            }
+    
+            function animate() {
+                heart.scale = 1 + 0.15 * Math.sin(Date.now() * 0.008);
+                drawHeart();
+                requestAnimationFrame(animate);
+            }
+    
+            animate();
+        </script>
+    </body>
+</html>
