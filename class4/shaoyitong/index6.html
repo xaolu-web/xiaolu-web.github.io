@@ -1,102 +1,44 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>学院网站导航条</title>
-		<style type="text/css">
-			body,ul,li{
-				margin: 0;
-				padding: 0;
-				list-style: none;
+		<title>玩具总动员</title>
+		<link rel="stylesheet" media="screen" href="style.css">
+		<link href="slider.css" rel="stylesheet" type="text/css">
+        <script language="JavaScript">
+			function dosearch() {
+			var sf=document.searchform;
+			var submitto = sf.sengine.value + escape(sf.searchterms.value);
+			window.location.href = submitto;
+			return false;
 			}
-			body{
-				background-image: url(tp/77.jpg);
-				background-repeat: no-repeat;
-				background-size: 100%;
-				font-family: 'Microsoft Yahei',sans-serif;
-				font-size: 14px;
-			}
-			a{
-				text-decoration: none;
-			}
-			nav{
-				width: 100%;
-				height: 42px;
-				background: rgb(28, 75, 169);
-			}
-			nav .navCon{
-				width: 1200px;
-				height: 42px;
-				margin: 0 auto;
-				position: relative;
-				z-index: 111;
-			}
-			.navCon li{
-				width: 120px;
-				height: 42px;
-				float: left;
-				text-align: center;
-			}
-			.navCon li a {
-				display: block;
-				width: 120px;
-				height: 42px;
-				line-height: 42px;
-				color: #e3dbdb;
-			}
-			.navCon li ul{
-				width: 150px;
-				display: none;
-			}
-			.navCon li:hover ul{
-				display: block;
-			}
-			.navCon li ul li{
-				background: rgb(28, 75, 169);
-				width: 150px;
-				height: 40px;
-				line-height: 40px;
-				border-top: 1px rgb(0, 52, 162) solid;
-				text-align: center;
-			}
-			.navCon li ul li a {
-				display: block;
-				width: 150px;
-				height: 40px;
-				text-align: center;
-				color: rgb(255, 255, 255);
-				line-height: 40px;
-			}
-			
-		</style>
+		</script>
 	</head>
 	<body>
-		<nav>
-			<ul class="navCon">
-                <li><a href="邵一桐.html">邵一桐</a></li>
-				<li><a href="https://www.hdkz.edu.cn/">邯郸科技职业学院</a></li>
-				<li><a href="#">学院概况</a>
-				<ul>
-					<li><a href="xueyuanjianjie.html">学院简介</a></li>
-				</ul>
-				</li>
-				<li><a href="#">新闻中心</a>
-				<ul>
-                    <li><a href="xueyuanyaowen.html">学院要闻</a></li>
-					<li><a href="./宣传视频.mp4">视频宣传</a></li>
-					<li><a href="tongzhigonggao.html">通知公告</a></li>
-				</ul>
-				</li>
-				<li><a href="#">招生就业</a>
-				<ul>
-					<li><a href="http://zhaosheng.hdkz.edu.cn/index.html">招生信息网</a></li>
-					<li><a href="http://jiuye.hdkz.edu.cn/index.html">就业信息网</a></li>
-				</ul>
-				</li>
-				<li><a href="./美景.jpg">美丽校园</a></li>
-				<li><a href="./玩具总动员/index.html">其他</a></li>
-			</ul>
+		
+		
+		<p class="error">迪士尼
+		<p class="error">玩具总动员</p></p>
+
+		<div class="content">
+			<h2>飞向宇宙 浩瀚无垠</h2>
 			
-		</nav>
+			<p class="text">
+				最重要的是我们在一起的这瞬间
+			<p>“因为离开你的人越来越多，所以留下来的人越来越重要”</p>
+				<form name="searchform" onSubmit="return dosearch();">
+					<input type="hidden" name="sengine" value="https://www.bilibili.com/video/BV1Ag4y1F7DC/?share_source=copy_web&vd_source=7ea088a0831f7de51ce4af5827ee1073" />
+					<input type="text" name="searchterms" class="inputform">
+					<input type="submit" name="SearchSubmit" value="Search" class="button" href="vedio.html"> 
+				</form>
+				
+			</p>
+				
+			<p class="links">
+				<a id="button" href="index6.html">&larr; Back</a> <a href="index2.html">剧情解说</a> <a href="figure.html">人物介绍</a> <a href="vedio.html">宣传视频</a> 
+				
+			</p>
+		</div>
+		
 	</body>
 </html>
