@@ -1,31 +1,119 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<h3>常规考试选择题</h3>
-		<form action="#" method="post" name="exam"
-		<p>1.当交通指示灯为红灯时，应怎样做？（单选题）</p>
-		<input type="radio" name="choose" id="a">
-		<label for="a">A:停车</label><br><br>
-		<input type="radio" name="choose" id="b">
-		<label for="b">B:前行</label><br><br>
-		<input type="radio" name="choose" id="c">
-		<label for="c">C:下车</label><br><br>
-		<input type="radio" name="choose" id="d">
-		<label for="d">D:跳车</label><br><br>
-		<p>2.驾驶机动车行经下列那种路段可以超车？（多选题）</p>
-		<input type="checkbox">
-		A:主要街道<br><br>
-		<input type="checkbox">
-		B:高架路<br><br>
-		<input type="checkbox">
-		C：人行横道<br><br>
-		<input type="checkbox">
-		D：环城高速<br><br>
-		<input type="submit" value="提交" />
-		</form>
-	</body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 知识学习网页</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* 设置渐变背景 */
+      background: linear-gradient(45deg, #f4f4f4, #e0e0e0);
+      /* 设置背景图片，可替换为你的图片路径 */
+      background-image: url('your_background_image.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    code {
+      background-color: #e5e5e5;
+      padding: 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>HTML 知识学习</h1>
+  </header>
+  <section>
+    <h2>HTML 简介</h2>
+    <p>HTML（超文本标记语言）是用于创建网页的标准标记语言。它通过一系列的标签来描述网页的结构和内容，浏览器会读取这些标签并将其渲染成可视化的网页。例如，<code>&lt;html&gt;</code> 标签是整个网页的根标签，所有其他标签都嵌套在它内部。</p >
+    <h2>基础标签</h2>
+    <h3>标题标签</h3>
+    <p>HTML 提供了六个级别的标题标签，从 <code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code>，<code>&lt;h1&gt;</code> 通常用于表示最重要的标题，字号最大，而 <code>&lt;h6&gt;</code> 字号最小，用于表示相对次要的标题。例如：</p >
+    <code>&lt;h1&gt;这是一级标题&lt;/h1&gt;</code>
+    <code>&lt;h2&gt;这是二级标题&lt;/h2&gt;</code>
+    <h3>段落标签</h3>
+    <p>使用 <code>&lt;p&gt;</code> 标签来定义段落，段落之间会自动换行，并且有一定的上下间距。例如：</p >
+    <code>&lt;p&gt;这是一段文字，它会在网页上独立成段显示。&lt;/p&gt;</code>
+    <h3>链接标签</h3>
+    <p>通过 <code>&lt;a&gt;</code> 标签可以创建超链接，让用户能够从一个页面跳转到另一个页面或资源。例如：</p >
+    <code>&lt;a href=&quot;https://www.example.com&quot;&gt;点击跳转到示例网站&lt;/a&gt;</code>，其中 <code>href</code> 属性指定了链接的目标地址。
+    <h3>图片标签</h3>
+    <p><code>&lt;img&gt;</code> 标签用于在网页中插入图片，需要通过 <code>src</code> 属性指定图片的路径，以及 <code>alt</code> 属性提供图片的替代文本，当图片无法加载时，替代文本会显示出来。例如：</p >
+    <code>&lt;img src=&quot;your_image.jpg&quot; alt=&quot;这是一张示例图片&quot;&gt;</code>
+    <h2>列表标签</h2>
+    <h3>无序列表</h3>
+    <p><code>&lt;ul&gt;</code> 标签用于创建无序列表，列表项使用 <code>&lt;li&gt;</code> 标签包裹。例如：</p >
+    <code>
+      &lt;ul&gt;
+        &lt;li&gt;列表项 1&lt;/li&gt;
+        &lt;li&gt;列表项 2&lt;/li&gt;
+        &lt;li&gt;列表项 3&lt;/li&gt;
+      &lt;/ul&gt;
+    </code>
+    <h3>有序列表</h3>
+    <p><code>&lt;ol&gt;</code> 标签用于创建有序列表，同样列表项使用 <code>&lt;li&gt;</code> 标签包裹，列表项会自动按顺序编号。例如：</p >
+    <code>
+      &lt;ol&gt;
+        &lt;li&gt;第一项&lt;/li&gt;
+        &lt;li&gt;第二项&lt;/li&gt;
+        &lt;li&gt;第三项&lt;/li&gt;
+      &lt;/ol&gt;
+    </code>
+    <h2>表格标签</h2>
+    <p><code>&lt;table&gt;</code> 标签用于创建表格，表格由 <code>&lt;tr&gt;</code>（表格行）、<code>&lt;td&gt;</code>（表格单元格）和 <code>&lt;th&gt;</code>（表头单元格）等标签组成。例如：</p >
+    <code>
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;th&gt;表头 1&lt;/th&gt;
+          &lt;th&gt;表头 2&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;数据 1&lt;/td&gt;
+          &lt;td&gt;数据 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    </code>
+  </section>
+  <footer>
+    &copy; 2024 HTML 学习网页. 版权所有
+  </footer>
+</body>
+
 </html>
