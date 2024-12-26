@@ -1,149 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>学院网站导航条</title>
   <style type="text/css">
-    body,
-    ul,
-    li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
+    /* 整体页面样式 */
     body {
-      background-image: url(https://www.qau.edu.cn/userfiles/image/zhuye/2016/11/20161118153321162.jpg);
+      background-image: url(https://copyright.bdstatic.com/vcg/creative/a2dd4bf903c812f48cea82db3aa4b184.jpg@h_1280);
       background-repeat: no-repeat;
-      background-size: 100%;
+      background-size: cover;
       font-family: 'Microsoft Yahei', sans-serif;
       font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease, background-color 0.3s ease;
     }
 
+    a:hover {
+      color: #473170;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* 导航栏整体样式 */
     nav {
       width: 100%;
-      height: 42px;
-      background: rgb(28, 75, 169);
+      height: auto; /* 调整高度为自动，以适应内容 */
+      background: transparent; /* 将背景改为透明 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
     }
 
     nav.navCon {
-      width: 1200px;
-      height: 42px;
+      width: 250px; /* 调整宽度，使其更适合纵向布局 */
+      height: auto;
       margin: 0 auto;
       position: relative;
       z-index: 111;
+      display: flex;
+      flex-direction: column; /* 改为纵向排列 */
+      align-items: center;
     }
 
-   .navCon li {
-      width: 120px;
-      height: 42px;
-      float: left;
-      text-align: center;
+    /* 导航栏主菜单样式 */
+.navCon li {
+      list-style: none;
+      position: relative;
+      width: 100%;
     }
 
-   .navCon li a {
+.navCon li a {
       display: block;
-      width: 120px;
-      height: 42px;
-      line-height: 42px;
+      padding: 10px 20px; /* 调整内边距 */
+      height: auto; /* 调整高度为自动 */
+      line-height: 1.6; /* 调整行高 */
       color: #FFF;
+      font-weight: 500;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      transition: all 0.5s ease-in-out;
     }
 
-   .navCon li ul {
-      width: 150px;
+.navCon li a:hover {
+      color: #fff;
+      background-color: rgba(21, 209, 223, 0.5);
+      transform: scale(1.1); /* 去掉旋转效果，仅保留缩放效果 */
+    }
+
+    /* 下拉菜单样式 */
+.navCon li ul {
+      width: 100%; /* 调整宽度为 100% */
       display: none;
+      position: relative; /* 改为相对定位 */
+      top: 0;
+      left: 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      padding: 0;
     }
 
-   .navCon li:hover ul {
+.navCon li:hover ul {
       display: block;
     }
 
-   .navCon li ul li {
-      background: rgb(28, 75, 169);
-      width: 150px;
-      height: 40px;
-      line-height: 40px;
-      border-top: 1px rgb(0, 52, 162) solid;
+.navCon li ul li {
+      border-bottom: 1px solid #ddd;
       text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-   .navCon li ul li a {
+.navCon li ul li:hover {
+      background-color: #f5f5f5;
+      transform: translateX(5px);
+    }
+
+.navCon li ul li a {
       display: block;
-      width: 150px;
+      padding: 10px 20px;
+      height: auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+.navCon li ul li a:hover {
+      color: #41ccba;
+    }
+
+    /* logo样式优化 */
+.logo {
+      margin-bottom: 20px; /* 调整下边距 */
+      text-align: center; /* 居中显示 logo */
+    }
+
+.logo img {
       height: 40px;
-      text-align: center;
-      color: rgb(255, 255, 255);
-      line-height: 40px;
+      vertical-align: middle;
     }
 
-    /* 添加logo样式 */
-   .logo {
-      float: left;
-      margin-right: 20px;
-      margin-top: 5px;
+    /* 搜索框样式优化 */
+.search-box {
+      display: flex;
+      flex-direction: column; /* 改为纵向排列 */
+      align-items: center;
+      margin-bottom: 20px; /* 调整下边距 */
     }
 
-   .logo img {
-      height: 30px;
-    }
-
-    /* 添加搜索框样式 */
-   .search-box {
-      float: right;
-      margin-top: 6px;
-    }
-
-   .search-box input {
-      width: 200px;
-      height: 30px;
+.search-box input {
+      width: 250px;
+      height: 35px;
       border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
+      padding: 8px 15px;
+      border-radius: 25px;
       background-color: #eff6f8;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+
+.search-box input:focus {
+      background-color: #fff;
+    }
+
+.search-box button {
+      height: 35px;
+      border: none;
+      padding: 0 15px;
+      margin-top: 10px; /* 调整上边距 */
+      border-radius: 25px;
+      background-color: #084239;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+.search-box button:hover {
+      background-color: #FFC0CB;
     }
 
     /* 响应式设计 */
     @media screen and (max-width: 768px) {
-      nav {
-        height: auto;
+      body {
+        padding-top: 60px;
       }
 
-     .navCon {
+  .navCon {
         width: 100%;
       }
 
-     .navCon li {
-        width: 100%;
-        float: none;
-      }
-
-     .navCon li a {
+  .navCon li {
         width: 100%;
       }
 
-     .navCon li ul {
+  .navCon li a {
+        width: 100%;
+        padding: 15px 0;
+      }
+
+  .navCon li ul {
         width: 100%;
         position: relative;
       }
 
-     .navCon li ul li {
-        width: 100%;
-      }
-
-     .logo {
+  .logo {
         display: block;
         text-align: center;
         margin-bottom: 10px;
       }
 
-     .search-box {
-        display: block;
-        text-align: center;
+  .search-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+  .search-box input {
+        width: 80%;
         margin-bottom: 10px;
       }
     }
@@ -153,16 +215,15 @@
 <body>
   <nav>
     <div class="logo">
-      <img src="你的logo图片路径" alt="学院logo">
+      <img src="https://img1.baidu.com/it/u=3936751108,3905225109&fm=253&fmt=auto&app=138&f=PNG?w=465&h=310" alt="学院logo">
     </div>
     <ul class="navCon">
-      <li><a href="#">网站首页</a></li>
+      <li><a href="./过年.html">新年快乐</a></li>
       <li><a href="#">学院概况</a>
         <ul>
-          <li><a href="#">学院简介</a></li>
+          <li><a href="./山东介绍.html">学院简介</a></li>
           <li><a href="#">学院荣誉</a></li>
-          <li><a href="#">国家级示范性软件学校</a></li>
-          <li><a href="#">高技能人才培训基地</a></li>
+          <li><a href="./交规考题.html">高技能人才培训基地</a></li>
           <li><a href="#">办公电话</a></li>
           <li><a href="#">联系方式</a></li>
           <li><a href="#">视频宣传</a></li>
@@ -187,9 +248,8 @@
       <li><a href="#">团学在线</a></li>
       <li><a href="#">招生就业</a>
         <ul>
-          <li><a href="#">招生信息网</a></li>
+          <li><a href="./wangzhan.html">招生信息网</a></li>
           <li><a href="#">就业信息网</a></li>
-          <li><a href="#">空中乘务</a></li>
         </ul>
       </li>
       <li><a href="#">公共服务</a>
@@ -204,8 +264,13 @@
     </ul>
     <div class="search-box">
       <input type="text" placeholder="搜索">
+      <button type="submit">搜索</button>
     </div>
   </nav>
+  <div style="height: 1000px;">
+    <!-- 此处添加一些内容，用于测试导航栏是否遮挡内容 -->
+    <p>大作业</p>
+  </div>
 </body>
 
-</html>s'sss
+</html>
