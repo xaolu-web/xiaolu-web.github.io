@@ -1,0 +1,305 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: url(../images/bg.jpg);
+}
+
+#mingchao {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px;
+    margin: 20px 0px;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    background-color: #09090B;
+    height: 40px;
+}
+
+nav ul li {
+    float: left;
+    text-align: center;
+    width: 150px;
+}
+
+nav ul li a:hover {
+    color: #C5A864;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 40px;
+}
+
+#banner {
+    font-size: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#banner img {
+    width: 100%;
+}
+
+#main {
+    background-color: #fff;
+    padding: 10px;
+    overflow: hidden;
+}
+
+h2 {
+    padding: 5px 0px;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+.img1 {
+    float: right;
+    width: 150px;
+    margin: 10px;
+}
+
+.box1 p {
+    text-indent: 2em;
+    line-height: 30px;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid black;
+    margin: 10px 0px;
+}
+
+.table td,
+.table th {
+    border: 1px solid black;
+    /* 设置1像素的实线边框，颜色为黑色，可以根据需要修改颜色 */
+}
+
+.table td {
+    padding: 5px 10px;
+}
+
+.plist {
+    font-size: 0px;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.plist img {
+    width: 160px;
+    margin: 0px 10px;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #09090B;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    line-height: 40px;
+}
+
+.banner2 {
+    width: 100%;
+}
+
+.box1 h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.lasttext {
+    margin-bottom: 20px;
+}
+
+.jueselist li {
+    float: left;
+    width: 260px;
+    margin-left: 50px;
+}
+
+.jueselist li:nth-child(1) {
+    margin-left: 0px;
+}
+
+.jueselist li img {
+    width: 100%;
+    height: 300px;
+}
+
+.box2 h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.juesebox {
+    padding: 10px;
+    margin-top: 10px;
+    border-top: 2px solid #ccc;
+}
+
+.juesebox strong {
+    color: #136EC2;
+}
+
+.juesebox p {
+    font-size: 12px;
+    line-height: 24px;
+    color: #4D504D;
+}
+
+.map {
+    padding: 140px 0px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map1 {
+    background: url(../images/map1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.map2 {
+    background: url(../images/map2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.map3 {
+    background: url(../images/map3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.maptext {
+    width: 60%;
+    background-color: #ffffff60;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.maptext h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#box3 form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#box3 table {
+    margin: 0 auto;
+}
+
+#box3 td {
+    padding: 10px;
+    text-align: right;
+}
+
+#box3 input[type="text"],
+#box3 input[type="password"] {
+    width: 250px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#box3 input[type="submit"] {
+    width: 250px;
+    background-color: #09090B;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#box3 input[type="submit"]:hover {
+    background-color: #4e4e4e;
+}
+
+#box4 {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#box4 h2 {
+    color: #333;
+    text-align: center;
+}
+
+#box4 hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#box4 table {
+    width: 100%;
+}
+
+#box4 td {
+    padding: 10px;
+}
+
+#box4 input[type="text"],
+#box4 input[type="password"],
+#box4 select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#box4 input[type="radio"],
+#box4 input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#box4 .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #09090B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#box4 .button:hover {
+    background-color: #4e4e4e;
+}

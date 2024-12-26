@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸣潮</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="mingchao">
+        <header>
+            <img class="logo" src="./images/logo.png" alt="">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="./page1.html">世界设定</a></li>
+                <li><a href="./page2.html">主要角色</a></li>
+                <li><a href="./page3.html">地图设定</a></li>
+                <li><a href="./login.html">会员登陆</a></li>
+                <li><a href="./register.html">会员注册</a></li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <img src="./images/banner.jpg" alt="">
+        </div>
+        <div id="main">
+            <div id="box4">
+                <h2>会员注册</h2>
+                <hr>
+                <form id="loginForm" onsubmit="return validateForm()">
+                    <table>
+                        <tr>
+                            <td>用户名:</td>
+                            <td><input type="text" name="username" id="username"></td>
+                        </tr>
+                        <tr>
+                            <td>密码:</td>
+                            <td><input type="password" name="password" id="password"></td>
+                        </tr>
+                        <tr>
+                            <td>性别:</td>
+                            <td>
+                                <input type="radio" name="gender" value="male">男
+                                <input type="radio" name="gender" value="female">女
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>兴趣爱好:</td>
+                            <td>
+                                <input type="checkbox" name="interests" value="football">足球
+                                <input type="checkbox" name="interests" value="basketball">篮球
+                                <input type="checkbox" name="interests" value="swimming">游泳
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>城市:</td>
+                            <td>
+                                <select name="city">
+                                    <option value="beijing">北京</option>
+                                    <option value="shanghai">上海</option>
+                                    <option value="guangzhou">广州</option>
+                                    <option value="shenzhen">深圳</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" class="button">注册</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>
+                鸣潮
+            </p>
+        </footer>
+    </div>
+</body>
+<script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (username == "" || password == "") {
+            alert("用户名和密码不能为空");
+            return false;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸣潮</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="mingchao">
+        <header>
+            <img class="logo" src="./images/logo.png" alt="">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">网站首页</a></li>
+                <li><a href="./page1.html">世界设定</a></li>
+                <li><a href="./page2.html">主要角色</a></li>
+                <li><a href="./page3.html">地图设定</a></li>
+                <li><a href="./login.html">会员登陆</a></li>
+                <li><a href="./register.html">会员注册</a></li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <img src="./images/banner.jpg" alt="">
+        </div>
+        <div id="main">
+            <div id="box3">
+                <h2>会员登陆</h2>
+                <hr>
+                <form id="loginForm">
+                    <table>
+                        <tr>
+                            <td><label for="username">用户名:</label></td>
+                            <td><input type="text" id="username" name="username" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">密码:</label></td>
+                            <td><input type="password" id="password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="登陆"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>
+                鸣潮
+            </p>
+        </footer>
+    </div>
+</body>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username === '123' && password === '123') {
+            window.location.href = "./index.html";
+        } else {
+            alert("用户名或密码错误");
+        }
+    });
+</script>
+
+</html>
