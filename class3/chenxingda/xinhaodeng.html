@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .light-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #333;
+            width: fit-content;
+            border-radius: 10px;
+        }
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        #red { background: red; }
+        #yellow { background: yellow; }
+        #green { background: green; }
+        .countdown {
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="light-box">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+        <div class="countdown" id="countdown">35</div>
+    </div>
+    <script>
+        const LIGHT_TIME = {
+            green: 35,
+            yellow: 5,
+            red: 30
+        };
+        let currentLight = 'green'; 
+        let countdown = LIGHT_TIME.green; 
+        let timer; 
+        function updateLights() {
+            document.getElementById('red').style.boxShadow = '';
+            document.getElementById('yellow').style.boxShadow = '';
+            document.getElementById('green').style.boxShadow = '';
+            document.getElementById(currentLight).style.boxShadow = 'inset 0 0 20px rgba(255,255,255,0.8)';
+        }
+        function switchLight() {
+            switch(currentLight) {
+                case 'green':
+                    currentLight = 'yellow';
+                    countdown = LIGHT_TIME.yellow;
+                    break;
+                case 'yellow':
+                    currentLight = 'red';
+                    countdown = LIGHT_TIME.red;
+                    break;
+                case 'red':
+                    currentLight = 'green';
+                    countdown = LIGHT_TIME.green;
+                    break;
+            }
+            updateLights();
+        }
+        function startCountdown() {
+            timer = setInterval(() => {
+                countdown--;
+                document.getElementById('countdown').textContent = countdown;
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    switchLight();
+                    startCountdown(); 
+                }
+            }, 1000);
+        }
+        updateLights();
+        startCountdown();
+    </script>
+</body>
+</html>

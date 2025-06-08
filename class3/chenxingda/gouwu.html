@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3871375_7q6z866557.css"> 
+  <title>购物页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .product {
+      width: calc(33% - 20px);
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+    }
+    .product-info h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .product-info p {
+      color: #ff5722;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .btn-add-cart {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-add-cart:hover {
+      background-color: #f57c00;
+    }
+    .cart {
+      width: 300px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      position: fixed;
+      right: 20px;
+      top: 80px;
+    }
+    .cart h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .cart-item-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-item-info span {
+      font-size: 14px;
+      color: #666;
+    }
+    .cart-item-count {
+      display: flex;
+      align-items: center;
+    }
+    .cart-item-count button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      margin: 0 5px;
+    }
+    .cart-total {
+      margin-top: 15px;
+      text-align: right;
+      font-weight: bold;
+    }
+    .empty-cart {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+    .empty-cart:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>购物页面</h1>
+  </header>
+  <div class="container">
+    <section class="products">  
+        <div class="product">
+        小米Xiaomi 小米14 徕卡光学镜头 光影猎人900
+         徕卡75mm浮动长焦 官方标配
+        <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.PVLei_jzOfnIY0bdFE7F1wAAAA?w=234&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"alt="商品1">
+        <div class="product-info">
+          <h3>小米14</h3>
+          <p>¥3389</p >
+                  <button class="btn-add-cart" data-price="3389" data-name="商品1">加入购物车</button>
+        </div>
+      </div>
+      <div class="product">
+      <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.o6rLvY8xyX9jmE5mWEnmxQAAAA?w=206&h=169&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="商品2">
+        <div class="product-info">
+          <h3>小米pad7pro</h3>
+          <p>¥2358</p >
+          <button class="btn-add-cart" data-price="2358" data-name="商品2">加入购物车</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.w2DtXdBXbYfRUWbSek2LnwHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="商品3">
+        <div class="product-info">
+          <h3>小米空调</h3>
+          <p>¥2099</p >
+          <button class="btn-add-cart" data-price="2099" data-name="商品3">加入购物车</button>
+        </div>
+      </div>
+    </section>
+    <aside class="cart">
+      <h2>购物车</h2>
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">总价：¥<span id="total-price">0</span></div>
+      <button class="empty-cart">清空购物车</button>
+    </aside>
+  </div>
+  <script>
+    const addCartButtons = document.querySelectorAll('.btn-add-cart');
+    const cartItemsDiv = document.querySelector('.cart-items');
+    const totalPriceSpan = document.getElementById('total-price');
+    const emptyCartBtn = document.querySelector('.empty-cart');
+    let cartItems = [];
+    addCartButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const productName = this.getAttribute('data-name');
+        const productPrice = parseFloat(this.getAttribute('data-price'));
+        const existingItem = cartItems.find(item => item.name === productName);
+        if (existingItem) {
+          existingItem.count++;
+        } else {
+          cartItems.push({ name: productName, price: productPrice, count: 1 });
+        }
+        renderCartItems();
+      });
+    });
+    function renderCartItems() {
+      cartItemsDiv.innerHTML = '';
+      let totalPrice = 0;
+      cartItems.forEach(item => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        cartItemDiv.innerHTML = `
+          <div class="cart-item-info">
+            <span>${item.name}</span>
+            <span>¥${item.price.toFixed(2)}</span>
+          </div>
+          <div class="cart-item-count">
+            <button class="minus-btn">-</button>
+            <span>${item.count}</span>
+            <button class="plus-btn">+</button>
+          </div>
+        `;
+        cartItemsDiv.appendChild(cartItemDiv);
+        totalPrice += item.price * item.count;
+        const minusBtn = cartItemDiv.querySelector('.minus-btn');
+        const plusBtn = cartItemDiv.querySelector('.plus-btn');
+        minusBtn.addEventListener('click', () => {
+          if (item.count > 1) {
+            item.count--;
+            renderCartItems();
+          }
+        });
+        plusBtn.addEventListener('click', () => {
+          item.count++;
+          renderCartItems();
+        });
+      });
+      totalPriceSpan.textContent = totalPrice.toFixed(2);
+    }
+    emptyCartBtn.addEventListener('click', () => {
+      cartItems = [];
+      renderCartItems();
+    });
+  </script>
+<style>
+        .jump-btn {
+            position: fixed; 
+            bottom: 20px;   
+            right: 20px;     
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; 
+        }
+        .jump-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="jump-btn" onclick="window.location.href='lunbotu.html'">跳转到目标页面</button>
+</body>
+</html>
