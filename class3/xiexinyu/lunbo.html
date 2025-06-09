@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +15,12 @@
     }
 
     .carousel-wrapper {
-      width: 1500px;
+      width: calc(500px * 3); /* 动态计算总宽度 */
       display: flex;
       transition: transform 0.5s ease-in-out;
+      list-style: none; /* 移除默认列表样式 */
+      margin: 0;
+      padding: 0;
     }
 
     .carousel-item {
@@ -32,6 +34,10 @@
       object-fit: cover;
     }
 
+    h1 {
+           text-align: center;
+    }
+
     .btn {
       position: absolute;
       top: 50%;
@@ -41,15 +47,38 @@
       border: none;
       padding: 10px 15px;
       cursor: pointer;
+      z-index: 10; /* 确保按钮在图片上层 */
     }
 
-    #prevBtn {
-      left: 10px;
+    #prevBtn { left: 10px; }
+    #nextBtn { right: 10px; }
+
+    /* 小圆点导航样式 */
+    .dot-container {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px; /* 圆点间距 */
     }
 
-    #nextBtn {
-      right: 10px;
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: opacity 0.3s;
     }
+
+    .dot.active {
+      opacity: 1;
+      background-color: #007bff; /* 当前圆点颜色 */
+    }
+
+    /* 导航栏样式 */
     .nav {
       margin-bottom: 10px;
       text-align: center;
@@ -62,13 +91,6 @@
       padding: 5px 10px;
       border-radius: 4px;
     }
-    h1 {
-           text-align: center;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
   </style>
 </head>
 
@@ -79,40 +101,106 @@
     <a href="shopping.html">前往购物</a>
     <a href="liuyanban.html">前往留言板</a>
   </div>
+
   <div>
     <h1>轮播图</h1>
-      <ul></ul>
   </div>
+
   <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div class="carousel-item">
-        <img src="images/1.png" alt="图1"></div>
-      <div class="carousel-item">
-        <img src="images/2.png" alt="图2"></div>
-      <div class="carousel-item">
-        <img src="images/3.png" alt="图3"></div>
+    <div class="carousel-wrapper" id="carouselWrapper">
+      <div class="carousel-item"><img src="images/1.png" alt="图1"></div>
+      <div class="carousel-item"><img src="images/2.png" alt="图2"></div>
+      <div class="carousel-item"><img src="images/3.png" alt="图3"></div>
     </div>
-    <!-- 上一张，下一张 -->
+
+    <!-- 左右切换按钮 -->
     <button class="btn" id="prevBtn">←</button>
     <button class="btn" id="nextBtn">→</button>
+
+    <!-- 小圆点导航容器 -->
+    <div class="dot-container" id="dotContainer"></div>
   </div>
+
   <script>
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    const carouselWrapper = document.getElementById('carouselWrapper');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const dotContainer = document.getElementById('dotContainer');
     let currentIndex = 0;
-    const itemWidth = 500;
-    // 下一张
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % 3; 
+    const itemWidth = 500; // 单个图片宽度
+    const totalItems = 3; // 图片总数（可动态获取：carouselWrapper.children.length）
+    let autoplayTimer; // 自动播放定时器
+
+    // ---------------------- 初始化功能 ----------------------
+    init();
+
+    function init() {
+      // 1. 生成小圆点导航
+      createDots();
+      // 2. 开启自动播放
+      startAutoplay();
+      // 3. 绑定键盘事件
+      bindKeyEvents();
+    }
+
+    // ---------------------- 小圆点导航 ----------------------
+    function createDots() {
+      dotContainer.innerHTML = ''; // 清空原有圆点
+      for (let i = 0; i < totalItems; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        dot.addEventListener('click', () => switchTo(i));
+        dotContainer.appendChild(dot);
+      }
+      // 初始化选中第一个圆点
+      dotContainer.children[0].classList.add('active');
+    }
+
+    // ---------------------- 切换图片逻辑 ----------------------
+    function switchTo(index) {
+      currentIndex = index;
+      // 平移轮播容器
       carouselWrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    });
-    // 上一张
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + 3) % 3; 
-      carouselWrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    });
+      // 更新小圆点状态
+      updateDots();
+    }
+
+    function updateDots() {
+      // 移除所有圆点的active类
+      Array.from(dotContainer.children).forEach(dot => 
+        dot.classList.remove('active')
+      );
+      // 添加当前圆点的active类
+      dotContainer.children[currentIndex].classList.add('active');
+    }
+
+    // ---------------------- 按钮交互 ----------------------
+    prevBtn.addEventListener('click', () => switchTo((currentIndex - 1 + totalItems) % totalItems));
+    nextBtn.addEventListener('click', () => switchTo((currentIndex + 1) % totalItems));
+
+    // ---------------------- 自动播放 ----------------------
+    function startAutoplay() {
+      autoplayTimer = setInterval(() => {
+        switchTo((currentIndex + 1) % totalItems);
+      }, 3000); // 3秒切换一次
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayTimer);
+    }
+
+    // 鼠标进入轮播区域时暂停自动播放
+    carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+    // 鼠标离开时恢复自动播放
+    carouselWrapper.addEventListener('mouseleave', startAutoplay);
+
+    // ---------------------- 键盘控制 ----------------------
+    function bindKeyEvents() {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevBtn.click(); // 左箭头键触发上一张
+        if (e.key === 'ArrowRight') nextBtn.click(); // 右箭头键触发下一张
+      });
+    }
   </script>
 </body>
-
 </html>
