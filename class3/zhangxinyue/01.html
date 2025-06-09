@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Js大作业</title>
+<style>
+/* 基础样式 */
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+/* 登录页面样式 */
+.login-container {
+width: 300px;
+margin: 100px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+/* 导航样式 */
+nav {
+background: #333;
+padding: 10px;
+}
+nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+}
+nav ul li {
+margin-right: 20px;
+}
+nav ul li a {
+color: white;
+text-decoration: none;
+cursor: pointer;
+}
+ 
+/* 页面容器 */
+.page {
+display: none;
+padding: 20px;
+}
+.active {
+display: block;
+}
+
+/* 购物页面样式 */
+.product {
+border: 1px solid #ddd;
+padding: 10px;
+margin: 10px;
+width: 200px;
+display: inline-block;
+}
+</style>
+</head>
+<body>
+<!-- 登录页面 -->
+<div id="loginPage" class="login-container">
+<h2>用户登录</h2>
+<form onsubmit="return validateLogin(event)">
+<div>
+<label>账号：</label>
+<input type="text" id="username" required>
+</div>
+<div>
+<label>密码：</label>
+<input type="password" id="password" required>
+</div>
+<button type="submit">登录</button>
+</form>
+</div>
+
+<!-- 主内容 -->
+ 
+<div id="mainContent" style="display: none;">
+<nav>
+  <style>
+  /* 导航栏 */
+    nav {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+      background-color: #3498db;
+    }
+    
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #e74c3c;
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    
+</style>
+   <!-- 导航栏 -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">大一Web大作业</div>
+      <ul class="nav-links">
+       <li><a onclick="showPage('resume')">简历</a ></li>
+       <li><a onclick="showPage('shop')">购物</a ></li>
+       <li><a onclick="showPage('carousel')">轮播图</a ></li>
+       <li><a onclick="showPage('hdkz')">学校简介</a ></li>
+      </ul>
+      <div class="cart-icon" id="cartIcon">
+        <i class="icon-cart">🛒</i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </nav>
+</nav>
+<!--学校简介-->
+<div id="hdkz" class="page">
+    <h2>邯郸科技职业学院介绍</h2>
+    <div>
+    <h3>学院概况</h3>
+    <p>邯郸科技职业学院是由邯郸市人民政府举办的公办全日制高等职业院校，于2020年2月经河北省政府批准设置，2020年5月经教育部备案成立。学院坐落在邯郸市冀南新区职教城，规划占地850亩，总建筑面积51万平方米。</p >
+    </div>
+    <div>
+    <h3>师资力量</h3>
+    <p>学院现有在职教职工518人，其中专任教师464人，双师型教师288人；正高级职称、副高级职称169人，中级职称179人；具有博士研究生学历5人，硕士研究生学历214人。</p >
+    </div>
+    <div>
+    <h3>专业设置</h3>
+    <p>学院现设有农牧系、材料系、电子信息系、计算机系、医药卫生系、财经系、管理系等7个教学系和2个基础教学单位，开设有畜牧兽医、材料工程技术、物联网应用技术、计算机应用技术、护理、会计信息管理、电子商务等23个专业，涵盖理、工、经、农、医多个学科门类。</p >
+    </div>
+    <div>
+    <h3>校企合作</h3>
+    <p>学院深化校企合作，签订校企合作战略协议300余家，牵头组建了邯郸市财经商贸职教集团，与企业联办正保智能会计产业学院、数字碳管理产业学院等，是全国机器人系统集成行业等22个产教融合共同体理事、副理事单位。</p >
+    </div>
+    <div>
+    <h3>学校荣誉</h3>
+    <p>学院现为河北省第一批绿色学校、河北省优秀高校团委、邯郸市文明校园、邯郸市学校安全工作先进单位等。学生在职业技能大赛中荣获国家、省市各类技能大赛奖项近700项，毕业生就业率连年保持在95%以上。</p >
+    </div>
+    </div>
+<!-- 个人简历 -->
+<div id="resume" class="page active">
+ <h2>个人简历</h2>
+ <div>
+   <h3>基本信息</h3>
+   <p>姓名：张馨月</p >
+   <p>性别：女</p >
+   <p>爱好： 王者荣耀，金铲铲</p >
+ </div>
+ <div>
+   <h3>技能</h3>
+   <ul>
+   <li>Dev-c++</li>
+   <li>JavaScript</li>
+   <li>Java</li>
+   </ul>
+   <h3>我的两只可爱小猫咪</h3>
+   <img src="银渐层.jpg" alt="脾气超好的银渐层">
+   <img src="小三花.jpg" alt="超高颜值的小三花">
+ </div>
+</div>
+<!-- 轮播图 -->
+<div  id="carousel" class="page ">
+  <div class="carousel">
+    <div class="slide active">
+<img src="悟空.jpg" alt="悟空">
+</div>
+<div class="slide">
+<img src="银.jpg" alt="银">
+</div>
+<div class="slide">
+<img src="花.jpg" alt="花">
+</div>
+  </div>
+</div>
+</div>
+
+<style>
+  /* 轮播图样式 */
+.carousel {
+width: 600px;
+height: 400px;
+margin: 0 auto;
+position: relative;
+overflow: hidden;
+}
+.slide {
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: opacity 1s;
+}
+.slide.active {
+opacity: 1;
+}
+.carousel img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+</style>
+<script>
+  // 轮播图功能
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide() {
+slides[currentSlide].classList.remove('active');
+currentSlide = (currentSlide + 1) % slides.length;
+slides[currentSlide].classList.add('active');
+}
+
+// 自动播放
+setInterval(nextSlide, 3000);
+</script>
+<!-- 购物页面 -->
+<div  id="shop" class="tab-content">
+ <!-- 购物页面内容 -->
+  <div class="shop-container">
+        <h2>商品列表</h2>
+        <div class="filter">
+          <label for="category">分类：</label>
+          <select id="category">
+            <option value="all">全部商品</option>
+            <option value="book">书籍</option>
+            <option value="stationery">文具</option>
+            <option value="electronics">电子产品</option>
+          </select>
+       </div>
+        <div class="products" id="productsContainer">
+          <!-- 商品将通过JS动态生成 -->
+        </div>
+</div>
+     <style>
+     /* 购物页面 */
+    .shop-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .shop-container h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    
+    .filter {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .filter label {
+      font-weight: 500;
+    }
+    
+    .filter select {
+      padding: 8px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+    
+    .product-info {
+      padding: 15px;
+    }
+    
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    
+    .product-price {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .add-to-cart {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+      .add-to-cart:hover {
+      background-color: #2980b9;
+    }
+    /* 购物车模态框 */
+    .cart-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background-color: white;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .modal-header h3 {
+      color: #2c3e50;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #7f8c8d;
+    }
+    
+    .cart-items {
+      padding: 20px;
+    }
+    
+    .cart-item {
+      display: flex;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .cart-item-info {
+      flex: 1;
+    }
+    
+    .cart-item-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .cart-item-price {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      background-color: #f5f7fa;
+      border: 1px solid #ddd;
+      border-radius:4px;
+      cursor: pointer;
+    }
+    
+    .quantity-btn:hover {
+      background-color: #eee;
+    }
+    
+    .quantity-value {
+      width: 40px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .remove-item {
+      color: #e74c3c;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .cart-summary {
+      padding: 20px;
+      background-color: #f5f7fa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .checkout-btn {
+      padding: 10px 20px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #c0392b;
+    }
+    </style>
+  </div>
+     <!-- 购物车模态框 -->
+      <div class="cart-modal" id="cartModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>购物车</h3>
+            <button class="close-btn" id="closeCart">×</button>
+          </div>
+          <div class="cart-items" id="cartItems">
+            <!-- 购物车商品将通过JS动态生成 -->
+            <p class="empty-cart" style="display: none;">购物车为空</p >
+          </div>
+          <div class="cart-summary">
+            <p>总计：<span id="totalPrice">¥0.00</span></p >
+            <button class="btn checkout-btn">结算</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+   //购物车功能
+    const productsContainer = document.getElementById('productsContainer');
+    const cartIcon = document.getElementById('cartIcon');
+    const cartCount = document.getElementById('cartCount');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.getElementById('closeCart');
+    const cartItems = document.getElementById('cartItems');
+    const emptyCart = document.querySelector('.empty-cart');
+    const totalPrice = document.getElementById('totalPrice');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
+    
+    // 商品数据
+    const products = [
+      { id: 1, name: 'Linux网络操作系统项目教程', category: 'book', price: 59.8, image:'https://linux.jpg '},
+      { id: 2, name: 'JavaScript前端开发案例教程', category: 'book', price: 89.5, image: 'https://js.jpg' },
+      { id: 3, name: 'Java程序设计案例教程', category: 'book', price: 78.0, image: 'https://java.jpg' },
+      { id: 4, name: '笔记本电脑', category: 'electronics', price: 4999.0, image: 'https://picsum.photos/300/200?random=204' },
+      { id: 5, name: '无线鼠标', category: 'electronics', price: 69.9, image: 'https://picsum.photos/300/200?random=205' },
+      { id: 6, name: '机械键盘', category: 'electronics', price: 299.0, image: 'https://picsum.photos/300/200?random=206' },
+      { id: 7, name: '笔记本', category: 'stationery', price: 15.5, image: 'https://picsum.photos/300/200?random=207' },
+      { id: 8, name: '钢笔', category: 'stationery', price: 35.0, image: 'https://picsum.photos/300/200?random=208' },
+      { id: 9, name: '文件夹', category: 'stationery', price: 8.9, image: 'https://picsum.photos/300/200?random=209' }
+    ];
+    
+    // 购物车数据
+    let cart = [];
+    
+    // 渲染商品列表
+    function renderProducts(productsToRender) {
+      productsContainer.innerHTML = '';
+      
+      productsToRender.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+          <div class="product-image">
+            < img src="${product.image}" alt="${product.name}">
+          </div>
+          <div class="product-info">
+            <div class="product-name">${product.name}</div>
+            <div class="product-price">¥${product.price.toFixed(2)}</div>
+            <button class="add-to-cart" data-id="${product.id}">加入购物车</button>
+          </div>
+        `;
+        productsContainer.appendChild(productCard);
+      });
+      
+      // 添加加入购物车事件监听
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const productId = parseInt(btn.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+    
+    // 初始化渲染所有商品
+    renderProducts(products);
+    
+    // 分类筛选
+    const categorySelect = document.getElementById('category');
+    categorySelect.addEventListener('change', () => {
+      const category = categorySelect.value;
+      let filteredProducts = products;
+      
+      if (category !== 'all') {
+        filteredProducts = products.filter(product => product.category === category);
+      }
+      
+      renderProducts(filteredProducts);
+    });
+    
+    // 加入购物车
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      // 检查商品是否已在购物车中
+      const existingItem = cart.find(item => item.id === productId);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          quantity: 1
+        });
+      }
+      
+      // 更新购物车计数
+      updateCartCount();
+      
+      // 显示购物车
+      showCart();
+      
+      alert('商品已加入购物车！');
+    }
+    
+    // 更新购物车计数
+    function updateCartCount() {
+      let count = 0;
+      cart.forEach(item => {
+        count += item.quantity;
+      });
+      cartCount.textContent = count;
+    }
+    
+    // 显示购物车
+    function showCart() {
+      renderCartItems();
+      cartModal.style.display = 'flex';
+    }
+    
+    // 关闭购物车
+    closeCart.addEventListener('click', () => {
+      cartModal.style.display = 'none';
+    });
+  </script>
+  </div>
+<script>
+// 登录验证
+function validateLogin(event) {
+event.preventDefault();
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+
+if(username === 'admin' && password === 'a123456') {
+document.getElementById('loginPage').style.display = 'none';
+document.getElementById('mainContent').style.display = 'block';
+} else {
+alert('账号或密码错误！');
+}
+}
+
+// 页面切换
+function showPage(pageId) {
+document.querySelectorAll('.page').forEach(page => {
+page.classList.remove('active');
+});
+document.getElementById(pageId).classList.add('active');
+}
+</script>
+</body>
+</html>
