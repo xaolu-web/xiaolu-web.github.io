@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html" class="logo">我的网站</a>
+            <ul class="nav-links">
+                <li><a href="jianli.html">简历</a></li>
+                <li><a href="shop.html">购物</a></li>
+                <li><a href="#" id="logout">退出</a></li>
+				<li><a href="#">购物车(<span class="cart-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <section id="shop" class="section"> -->
+        <!-- <div class="shop-container"> -->
+		<div class="container">
+            <!-- <h2>在线商店</h2> -->
+            <div class="products">
+                <div class="product">
+                    <img src="购物1.png" alt="商品1" width="250px">
+                    <h3>商品1</h3>
+                    <p class="price">￥99.00</p>
+                    <button class="btn add-to-cart">加入购物车</button>
+                </div>
+                <div class="product">
+                    <img src="购物2.png" alt="商品2" width="250px">
+                    <h3>商品2</h3>
+                    <p class="price">￥199.00</p>
+                    <button class="btn add-to-cart">加入购物车</button>
+                </div>
+                <div class="product">
+                    <img src="购物3.png" alt="商品3" width="250px">
+                    <h3>商品3</h3>
+                    <p class="price">￥999.00</p>
+                    <button class="btn add-to-cart">加入购物车</button>
+                </div>
+                <div class="product">
+                    <img src="购物4.png" alt="商品4" width="250px">
+                    <h3>商品4</h3>
+                    <p class="price">￥70.00</p>
+                    <button class="btn add-to-cart">加入购物车</button>
+                </div>
+            <!-- </div> -->
+			</div>
+           <!-- <div class="cart-container">
+                <h3>购物车(<span id="cart-count">0</span>)</h3>
+                <div id="cart-items" class="cart-items">
+                </div>
+                <div class="cart-total">
+                    <p>总计：￥<span id="cart-total">0.00</span></p>
+                    <button class="btn checkout" onclick="checkout()">结算</button>
+                </div> -->
+            </div>
+        </div>
+    <!-- </section> -->
+    <script src="script.js"></script>
+   <script>
+        document.getElementById('logout').addEventListener('click',function(e){
+            e.preventDefault();
+            window.location.href='index.html';
+        });
+    </script>
+</body>
+</html>

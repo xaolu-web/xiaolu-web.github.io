@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的简历</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html" class="logo">我的网站</a>
+            <ul class="nav-links">
+                <li><a href="jianli.html">简历</a></li>
+                <li><a href="shop.html">购物</a></li>
+                <li><a href="#" id="logout">退出</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <section id="resume" class="section"> -->
+        <div class="resume-container">
+            <h2>我的简历</h2>
+            <div class="resume-header">
+                <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.yMAeC3o1ZnVZYsQecLSlEAAAAA?r=0&rs=1&pid=ImgDetMain" alt="个人照片" class="profile-img">
+                <div class="header-info">
+                    <h1>武旭东</h1>
+                    <p>学生</p>
+                    <p>电话：182-****-****</p>
+                    <p>邮箱：123456789@163.com</p>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h3>教育背景</h3>
+                <div class="resume-item">
+                    <h4>邯郸科技职业学院</h4>
+                    <p class="date">2024-2027</p>
+                    <p>计算机应用技术</p>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h3>技能</h3>
+                <ul class="skills">
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+        </div>
+    <!-- </section> -->
+    <script src="script.js"></script>
+   <script>
+        document.getElementById('logout').addEventListener('click',function(e){
+            e.preventDefault();
+            window.location.href='index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,67 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar Example</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link href="//unpkg.com/layui@2.11.2/dist/css/layui.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="navbar-logo">武旭东HTML/CSS</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="vertical nav.html" class="nav-link">垂直导航</a>
-                </li>
-                <li class="nav-item">
-                    <a href="p120.html" class="nav-link">学院公告</a>
-                </li>
-                <li class="nav-item">
-                    <a href="实训6.html" class="nav-link">实训6</a>
-                </li>
-                <li class="nav-item">
-                    <a href="7.3.1.html" class="nav-link">7.3.1</a>
-                </li>
-                <li class="nav-item">
-                    <a href="实训8.html" class="nav-link">实训8</a>
-                </li>
-                <li class="nav-item">
-                    <a href="8.3form.html" class="nav-link">form表单</a>
-                </li>
-            </ul>
+<style>
+body {
+  background-image: url('登录背景.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+}
+
+.demo-login-container{
+  width: 320px; 
+  margin: 21px auto 0;
+  background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.demo-login-other .layui-icon{
+  position: relative; 
+  display: inline-block; 
+  margin: 0 2px; 
+  top: 2px; 
+  font-size: 26px;
+}
+</style>
+
+<form class="layui-form">
+  <div class="demo-login-container">
+    <div class="layui-form-item">
+      <div class="layui-input-wrap">
+        <div class="layui-input-prefix">
+          <i class="layui-icon layui-icon-username"></i>
         </div>
-    </nav>
-	<div class="center-container">
-		<img  src="小丑.gif"/>
-		<img class="img1" src="小丑.gif">
-		<img  src="小丑.gif"/>
-		 <audio autoplay loop>
-		    <source src="再难遇你 - 我知道你1.50x.mp3" type="audio/mpeg">
-		    Your browser does not support the audio element.
-		  </audio>
-	</div>
-    <!-- <video autoplay muted loop id="video-background">
-        <source src="悬崖1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video> -->
-    <!-- <main>
-        <section id="home">
-            <h1>Welcome to the Home Page</h1>
-            <p>This is the home section.</p>
-        </section>
-        <section id="services">
-            <h1>Our Services</h1>
-            <p>This is the services section.</p>
-        </section>
-        <section id="about">
-            <h1>About Us</h1>
-            <p>This is the about section.</p>
-        </section>
-        <section id="contact">
-            <h1>Contact Us</h1>
-            <p>This is the contact section.</p>
-        </section>
-    </main> -->
+        <input type="text" name="username" value="" lay-verify="required" placeholder="用户名" lay-reqtext="请填写用户名" autocomplete="off" class="layui-input" lay-affix="clear">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-wrap">
+        <div class="layui-input-prefix">
+          <i class="layui-icon layui-icon-password"></i>
+        </div>
+        <input type="password" name="password" value="" lay-verify="required" placeholder="密   码" lay-reqtext="请填写密码" autocomplete="off" class="layui-input" lay-affix="eye">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-row">
+        <div class="layui-col-xs7">
+          <div class="layui-input-wrap">
+            <div class="layui-input-prefix">
+              <i class="layui-icon layui-icon-vercode"></i>
+            </div>
+            <input type="text" name="captcha" value="" lay-verify="required" placeholder="验证码" lay-reqtext="请填写验证码" autocomplete="off" class="layui-input" lay-affix="clear">
+          </div>
+        </div>
+        <div class="layui-col-xs5">
+          <div style="margin-left: 10px;">
+            <img src="https://www.oschina.net/action/user/captcha" onclick="this.src='https://www.oschina.net/action/user/captcha?t='+ new Date().getTime();">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <input type="checkbox" name="remember" lay-skin="primary" title="记住密码">
+      <a href="#forget" style="float: right; margin-top: 7px;">忘记密码？</a>
+    </div>
+    <div class="layui-form-item">
+      <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-login">登录</button>
+    </div>
+    <div class="layui-form-item demo-login-other">
+      <label>社交账号登录</label>
+      <span style="padding: 0 21px 0 6px;">
+        <a href="javascript:;"><i class="layui-icon layui-icon-login-qq" style="color: #3492ed;"></i></a>
+        <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="color: #4daf29;"></i></a>
+        <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo" style="color: #cf1900;"></i></a>
+      </span>
+      或 <a href="zhuce.html">注册帐号</a>
+    </div>
+  </div>
+</form>
+  
+<!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+<script src="//unpkg.com/layui@2.11.2/dist/layui.js"></script> 
+	<script>
+	  layui.use(function(){
+	    var form = layui.form;
+	    var layer = layui.layer;
+	    
+	    // 提交事件
+	    form.on('submit(demo-login)', function(data){
+	      var field = data.field; // 获取表单字段值
+	      
+	      // 验证用户名和密码
+	      if(field.username === 'admin' && field.password === 'a123456'){
+	        localStorage.setItem('isLoggedIn', 'true');
+	        window.location.href = 'home.html';
+	      } else {
+	        layer.msg('用户名或密码错误！');
+	      }
+	      
+	      return false; // 阻止默认form跳转
+	    });
+	  });
+	</script>
+
 </body>
 </html>

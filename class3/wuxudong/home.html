@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    </style>
+	<link href="//unpkg.com/layui@2.11.2/dist/css/layui.css" rel="stylesheet">
+</head>
+<body>
+	  <div class="layui-col-md4">
+	    <div class="grid-demo grid-demo-bg1">
+		<ul class="ull1">
+			<a href="vertical nav.html"><li>学院信息网</li></a>
+			<a href="8.3form.html"><li>注册表单</li></a>
+			<a href="实训6.html"><li>公告</li></a>
+			<a href="p120.html"><li>学院要闻</li></a>
+			<a href="7.3.1.html"><li>学生信息表</li></a>
+		</ul>
+		</div>
+	  </div>
+	  <div class="layui-col-md4">
+	    <div class="grid-demo">
+		<!-- <div class="news-carousel"> -->
+		      <div class="carousel-container">
+		              <div class="carousel-slide active">
+		                  <a href="vertical nav.html"><img src="学院信息网.png" alt="Slide 1" height="500px"></a>
+		              </div>
+		              <div class="carousel-slide">
+		                  <a href="8.3form.html"><img src="注册表单.png" alt="Slide 2"></a>
+		              </div>
+		              <div class="carousel-slide">
+		                  <a href="实训6.html"><img src="通知公告.png" alt="Slide 3"></a>
+		              </div>
+						<div class="carousel-slide">
+						    <a href="p120.html"><img src="p120.png" alt="Slide 4"></a>
+						</div>
+						<div class="carousel-slide">
+						    <a href="7.3.1.html"><img src="学生信息表.png" alt="Slide 4"></a>
+						</div>
+						<button class="carousel-btn prev">&#10094;</button>
+						 <button class="carousel-btn next">&#10095;</button>
+						</div>
+		<!-- </div> -->
+	  </div>
+	</div>
+	
+    <nav class="navbar">
+        <div class="container">
+            <a href="" class="logo">我的网站</a>
+            <ul class="nav-links">
+                <li><a href="jianli.html">简历</a></li>
+                <li><a href="shop.html">购物</a></li>
+                <li><a href="#" id="logout">退出</a></li>
+            </ul>
+        </div>
+    </nav>
+           
+<!--    </section> -->
+    <script src="script.js"></script>
+   <script>
+        document.getElementById('logout').addEventListener('click',function(e){
+            e.preventDefault();
+            window.location.href='index.html';
+        });
+    </script>
+	<script>
+		let currentSlide = 0;
+		const slides = document.querySelectorAll('.carousel-slide');
+		function showSlide(n){
+			slides.forEach(slide => slide.classList.remove('active'));
+			currentSlide = (n + slides.length) % slides.length;
+			slides[currentSlide].classList.add('active');
+		}
+		document.querySelector('.prev').addEventListener('click',() => showSlide(currentSlide - 1));
+		document.querySelector('.next').addEventListener('click',() => showSlide(currentSlide + 1));
+		setInterval(() => showSlide(currentSlide + 1),2000);
+	</script>
+</body>
+</html>
