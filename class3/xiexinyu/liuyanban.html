@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .remove {
+            background-color: #f44336;
+            margin-left: 10px;
+        }
+         .nav {
+            margin-bottom: 10px;
+            text-align: center;
+       }
+        .nav a {
+            margin-right: 10px;
+             text-decoration: none;
+             color: #007bff;
+            border: 1px solid #007bff;
+             padding: 5px 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <a href="index.html">返回登录</a>
+    <a href="jianli.html">前往简历</a>
+    <a href="shopping.html">前往购物</a>
+    <a href="lunbo.html">前往轮播图</a>
+  </div>
+    <div>
+        <h1>留言板</h1>
+        <ul></ul>
+        <textarea placeholder="请编辑您的留言"></textarea>
+        <button class="sub">发布</button>
+    </div>
+    <script>
+        var btn = document.querySelector('.sub');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        
+        btn.onclick = function() {
+            if (text.value === '') {
+                alert('您没有输入内容');
+                return false; 
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = text.value;
+                ul.insertBefore(li, ul.children[0]);
+                text.value = '';
+                
+                var button = document.createElement('button'); 
+                button.className = 'remove';
+                button.innerHTML = '删除';
+                button.onclick = function() {
+                    ul.removeChild(this.parentNode);
+                };
+                li.appendChild(button);
+            }
+        };
+    </script>
+</body>
+</html>
