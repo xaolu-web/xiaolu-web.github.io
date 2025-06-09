@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录页面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 200px;
+    }
+
+    .login-container button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+     <h2>JS大作业-登录</h2>
+    <input type="text" id="username" placeholder="账号">
+    <input type="password" id="password" placeholder="密码">
+    <button onclick="checkLogin()">登录</button>
+  </div>
+  <script>
+    function checkLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (username === 'admin' && password === 'a123456') {
+        // 登录成功，跳转至轮播图页面（可根据需求调整首跳页面）
+        window.location.href = 'lunbo.html'; 
+      } else {
+        alert('账号或密码错误，请重新输入！');
+      }
+    }
+  </script>
+</body>
+</html>
