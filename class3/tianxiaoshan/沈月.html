@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沈月 | 官方网站</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B8B',
+            secondary: '#FF9BB0',
+            light: '#FFF0F3',
+            dark: '#2D3748',
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .input-focus {
+        @apply focus:ring-2 focus:ring-primary/30 focus:border-primary focus:outline-none;
+      }
+      .textarea-focus {
+        @apply focus:ring-2 focus:ring-primary/30 focus:border-primary focus:outline-none;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter bg-white text-dark antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-bold text-primary flex items-center">
+        <span class="fa fa-star mr-2"></span>
+        <span>沈月</span>
+      </a>
+      
+      <!-- 桌面导航 -->
+      <div class="hidden md:flex space-x-8">
+        <a href="登录.html" class="text-dark hover:text-primary transition-colors">首页</a>
+        <a href="#about" class="text-dark hover:text-primary transition-colors">关于</a>
+        <a href="#works" class="text-dark hover:text-primary transition-colors">作品</a>
+        <a href="#gallery" class="text-dark hover:text-primary transition-colors">照片</a>
+      </div>
+      
+      <!-- 移动端菜单按钮 -->
+      <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
+        <span class="fa fa-bars text-2xl"></span>
+      </button>
+    </nav>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="#return" class="text-dark hover:text-primary transition-colors py-2">首页</a>
+        <a href="#about" class="text-dark hover:text-primary transition-colors py-2">关于</a>
+        <a href="#works" class="text-dark hover:text-primary transition-colors py-2">作品</a>
+        <a href="#gallery" class="text-dark hover:text-primary transition-colors py-2">照片</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 英雄区 -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 mix-blend-multiply"></div>
+        <img src="封面.jpg" alt="沈月" class="w-full h-full object-cover">
+      </div>
+      
+      <!-- 装饰性图案 -->
+      <div class="absolute top-20 left-10 opacity-30 animate-float hidden md:block">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
+          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2"/>
+          <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" stroke="white" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <div class="absolute bottom-20 right-10 opacity-30 animate-float hidden md:block" style="animation-delay: 2s;">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 15L19 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 19L19 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 5L9 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 9L9 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-2xl">
+          <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white text-shadow leading-tight mb-4">
+            沈月 <span class="text-primary">YUE SHEN</span>
+          </h1>
+          <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-xl">
+            中国女演员，以清新自然的演技和甜美形象受到观众喜爱
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#works" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg">
+              查看作品
+            </a>
+            <a href="#about" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium transition-all">
+              了解更多
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-white/80 hover:text-white transition-colors">
+          <span class="fa fa-angle-down text-3xl"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 关于部分 -->
+    <section id="about" class="py-20 bg-light relative overflow-hidden">
+      <!-- 装饰性图案 -->
+      <div class="absolute top-10 right-10 opacity-20">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF6B8B" stroke-width="2"/>
+          <path d="M12 12L2 17L12 22L22 17L12 12Z" stroke="#FF6B8B" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <div class="absolute bottom-10 left-10 opacity-20">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FF6B8B" stroke-width="2"/>
+          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#FF6B8B" stroke-width="2"/>
+          <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" stroke="#FF6B8B" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">关于沈月</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <img src="6..jpg" alt="沈月写真" class="w-full h-auto rounded-lg shadow-xl hover-lift">
+            <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg hidden md:block">
+              <p class="text-xl font-bold">1997年2月27日</p>
+              <p>出生于湖南邵阳</p>
+            </div>
+            
+            <!-- 装饰性元素 -->
+            <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary/20 rounded-full"></div>
+            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-primary/20 rounded-full"></div>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl font-bold text-dark mb-6">从平凡女孩到闪耀明星</h3>
+            <p class="text-dark/80 mb-6 leading-relaxed">
+              沈月,1997年出生于湖南邵阳,中国内地女演员。她以清新自然的演技和甜美的形象受到观众的广泛喜爱。
+            </p>
+            <p class="text-dark/80 mb-6 leading-relaxed">
+              2016年,沈月因出演科幻古装网剧《颤抖吧,阿部!》进入演艺圈。2017年,她主演青春校园剧《致我们单纯的小美好》，凭借"陈小希"一角走红，成为新一代青春偶像。
+            </p>
+            <p class="text-dark/80 mb-6 leading-relaxed">
+              她的代表作品包括《致我们单纯的小美好》《流星花园》《七月与安生》《小夜曲》等。沈月以其真实自然的表演风格和亲和力，成功塑造了多个令人难忘的角色。
+            </p>
+            
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
+                <!-- 装饰性背景 -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
+                <p class="text-primary text-4xl font-bold mb-2">20+</p>
+                <p class="text-dark/70">影视作品</p>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
+                <!-- 装饰性背景 -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
+                <p class="text-primary text-4xl font-bold mb-2">15+</p>
+                <p class="text-dark/70">广告代言</p>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
+                <!-- 装饰性背景 -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
+                <p class="text-primary text-4xl font-bold mb-2">10M+</p>
+                <p class="text-dark/70">社交媒体粉丝</p>
+              </div>
+              <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
+                <!-- 装饰性背景 -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
+                <p class="text-primary text-4xl font-bold mb-2">8+</p>
+                <p class="text-dark/70">奖项荣誉</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品部分 -->
+    <section id="works" class="py-20 bg-white relative">
+      <!-- 装饰性图案 -->
+      <div class="absolute top-10 left-10 opacity-10">
+        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF6B8B" stroke-width="2"/>
+          <path d="M12 12L2 17L12 22L22 17L12 12Z" stroke="#FF6B8B" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <div class="absolute bottom-10 right-10 opacity-10">
+        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 12H2" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 22V2" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 15L19 19" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 19L19 15" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 5L9 9" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 9L9 5" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">代表作品</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 作品卡片1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="小美好.jpg" alt="致我们单纯的小美好" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2017</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">致我们单纯的小美好</h3>
+              <p class="text-dark/70 mb-4">饰演：陈小希</p>
+              <p class="text-dark/70 text-sm">青春校园剧,讲述了少女陈小希与学霸江辰19年间共同成长,从青梅竹马到错失后再次牵手的爱情故事。</p>
+            </div>
+          </div>
+          
+          <!-- 作品卡片2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="杉菜.jpg" alt="流星花园" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2018</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">流星花园</h3>
+              <p class="text-dark/70 mb-4">饰演：杉菜</p>
+              <p class="text-dark/70 text-sm">翻拍自经典同名剧,讲述了怀揣着把家里的家厨事业做大做强梦想的少女杉菜,在贵族学校明德学院遇见F4并与其展开一段爱恨交织的故事。</p>
+            </div>
+          </div>
+          
+          <!-- 作品卡片3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="七月.jpg" alt="七月与安生" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2020</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">七月与安生</h3>
+              <p class="text-dark/70 mb-4">饰演：安生</p>
+              <p class="text-dark/70 text-sm">改编自安妮宝贝同名小说，讲述了"七月"和"安生"两个性格迥异的女孩,从13岁开始相识相知、相爱相杀的成长故事。</p>
+            </div>
+          </div>
+          
+          <!-- 作品卡片4 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="顾逸.jpg" alt="失笑" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">失笑</h3>
+              <p class="text-dark/70 mb-4">饰演：顾逸</p>
+              <p class="text-dark/70 text-sm">讲述了泸漂脱口秀女演员顾逸白天做社畜，晚上登台，没有远大的野心，目标就是让台下所有的观众都能笑。</p>
+            </div>
+          </div>
+          
+          <!-- 作品卡片5 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="少女漫.jpg" alt="开画！少女漫" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">开画！少女漫</h3>
+              <p class="text-dark/70 mb-4">饰演：左千黛</p>
+              <p class="text-dark/70 text-sm">讲述了理工科少女漫画家陆也奇与元气少女千黛在漫画团队中碰撞出火花，共同追逐梦想。</p>
+            </div>
+          </div>
+          
+          <!-- 作品卡片6 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+            
+            <div class="relative h-64 overflow-hidden">
+              <img src="南星.jpg" alt="我的反派男友" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div class="p-6">
+                  <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2023</span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">我的反派男友</h3>
+              <p class="text-dark/70 mb-4">饰演：南星</p>
+              <p class="text-dark/70 text-sm">奇幻爱情剧，讲述了元气满满的正能量编剧南星，因为一场奇幻的经历，与自己笔下的反派角色萧无敌相遇，并展开了一段搞笑又浪漫的爱情故事。</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
+            查看全部作品
+            <span class="fa fa-long-arrow-right ml-2"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 照片画廊 -->
+    <section id="gallery" class="py-20 bg-light relative overflow-hidden">
+      <!-- 装饰性图案 -->
+      <div class="absolute top-20 left-20 opacity-10">
+        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 12H2" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 22V2" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 15L19 19" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 19L19 15" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 5L9 9" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 9L9 5" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      
+      <div class="absolute bottom-20 right-20 opacity-10">
+        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF6B8B" stroke-width="2"/>
+          <path d="M12 12L2 17L12 22L22 17L12 12Z" stroke="#FF6B8B" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">照片画廊</h2>
+          <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="1.jpg" alt="沈月写真" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="2.jpg" alt="沈月生活照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="3.jpg" alt="沈月剧照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="4.jpg" alt="沈月活动照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="5.jpg" alt="沈月时尚照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="写真.jpg" alt="沈月片场照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="7.。.jpg" alt="沈月广告照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
+            <!-- 装饰性悬停效果 -->
+            <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+              <span class="fa fa-search-plus text-white text-3xl"></span>
+            </div>
+            <img src="8.jpg" alt="沈月杂志照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
+            查看更多照片
+            <span class="fa fa-long-arrow-right ml-2"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12 relative overflow-hidden">
+    <!-- 装饰性图案 -->
+    <div class="absolute top-10 left-10 opacity-5">
+      <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2"/>
+        <path d="M12 12L2 17L12 22L22 17L12 12Z" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    
+    <div class="absolute bottom-10 right-10 opacity-5">
+      <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 12H2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 22V2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M15 15L19 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 19L19 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 5L9 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 9L9 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-6">沈月</h3>
+          <p class="text-white/70 mb-6">中国内地女演员，以清新自然的演技和甜美形象受到观众喜爱。</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">
+              <span class="fa fa-weibo text-xl"></span>
+            </a>
+            <a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">
+              <span class="fa fa-wechat text-xl"></span>
+            </a>
+            <a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">
+              <span class="fa fa-instagram text-xl"></span>
+            </a>
+            <a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">
+              <span class="fa fa-youtube-play text-xl"></span>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-6">快速链接</h3>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-white/70 hover:text-primary transition-colors hover-lift">首页</a></li>
+            <li><a href="#about" class="text-white/70 hover:text-primary transition-colors hover-lift">关于</a></li>
+            <li><a href="#works" class="text-white/70 hover:text-primary transition-colors hover-lift">作品</a></li>
+            <li><a href="#gallery" class="text-white/70 hover:text-primary transition-colors hover-lift">照片</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-6">作品</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">致我们单纯的小美好</a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">流星花园</a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">七月与安生</a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">失笑</a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors hover-lift">我的反派男友</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-12 pt-8 text-center">
+        <p class="text-white/50">&copy; 2023 沈月官方网站. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover-lift">
+    <span class="fa fa-arrow-up"></span>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md');
+        navbar.classList.remove('py-4');
+        navbar.classList.add('py-2');
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+        navbar.classList.remove('py-2');
+        navbar.classList.add('py-4');
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuBtn.innerHTML = '<span class="fa fa-bars text-2xl"></span>';
+      } else {
+        menuBtn.innerHTML = '<span class="fa fa-times text-2xl"></span>';
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuBtn.innerHTML = '<span class="fa fa-bars text-2xl"></span>';
+        }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 返回顶部按钮
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
