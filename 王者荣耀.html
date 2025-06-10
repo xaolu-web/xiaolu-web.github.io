@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀主题页面</title>
+  <style>
+    /* 全局样式重置，简单清除默认边距等 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "微软雅黑", sans-serif;
+      background: url('h.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-list {
+      display: flex;
+      width: 1600px;
+      height: 500px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .hero-item {
+      width: 1600px;
+      margin-bottom: 40px;
+      background-color: rgba(254, 146, 240, 0.719);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(247, 154, 255, 0.911);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-item:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-item img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .hero-item p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>王者荣耀战绩展示</h1>
+    <div class="hero-list">
+      <div class="hero-item">
+        <img src="m.png" alt="英雄1">
+        <p>瑶</p >
+      </div>
+      <div class="hero-item">
+        <img src="n.png"  alt="英雄2">
+        <p>妲己</p >
+      </div>
+      <div class="hero-item">
+        <img src="o.png"  alt="英雄3">
+        <p>朵莉亚</p >
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
