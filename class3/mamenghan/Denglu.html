@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(0 96% 4%);
+            padding: 0;
+            display: flex;
+        }
+        .add {
+            height: 350px;
+            margin: 80px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .add h2 {
+            text-align: center;
+        }
+        .xian {
+            margin-bottom: 15px;
+        }
+        .xian label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .xian input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #38aded;
+            color: rgb(255, 238, 238);
+            border: none;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #d2abff;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .red{
+            color: red;
+            font-size: 17px;
+        }
+        .green{
+            color: rgb(8, 140, 255);
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="add">
+        <h2>用户登录</h2>
+        <form id="Form">
+            <div class="xian">
+                <label>账号：</label>
+                <input type="text" id="username" ><span></span>
+            </div>
+            <div class="xian">
+                <label>密码：</label>
+                <input type="password" id="password"><span></span>
+            </div>
+            <button type="dl">登录</button>
+            <span></span>
+        </form>
+    </div>
+    <script>
+        function checkItem(obj,name,reg){
+            var osp = obj.nextElementSibling;
+            obj.onblur = function(){
+                if(reg.test(obj.value)){
+                    osp.innerHTML = '恭喜您' + name + '合法！';
+                    osp.className = 'green';
+                        }else{
+                            osp.innerHTML = '您输入的' + name +'不合法，请重新输入!';
+                            osp.className = 'red';
+                        }
+                    }
+                }
+                var oinp = document.getElementsByTagName('input');
+                checkItem(oinp[0], '用户名', /^[a-zA-Z]{3,10}$/);
+                checkItem(oinp[1], '密码', /^\w{6,20}$/);
+                var botton = document.querySelector(botton);
+                
+                document.getElementById('Form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var username = document.getElementById('username').value;
+                    var password = document.getElementById('password').value;
+                    if (username === 'admin' && password === 'a123456') {
+                        alert('登录成功！');
+                         window.location.href='Geren.html';
+                    } else {
+                        alert('账号或密码有误，请重新输入！');
+                    }
+        });
+    </script>
+</body>
+</html>

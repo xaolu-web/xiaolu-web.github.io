@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>个人简介</title>
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: hsl(0, 0%, 20%);}
+        .section { 
+            margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .photo { 
+            width: 200px; height: 200px; border-radius: 50%; }
+        .info { line-height: 1.6; }
+        .hobby { 
+            display: inline-block; background: #f0f0f0; padding: 5px 10px; border-radius: 40%; margin-right: 5px; }
+        .aa {
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.486);
+            color: white;
+            padding: 8px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>我的个人简介</h1>
+    </div>
+    <div><img src="1.jpg" alt="个人照片" class="photo" ></div>
+    <div class="section">
+        <h2>基本信息</h2>
+        <div class="info">
+            <p><strong>姓名：</strong>马梦涵</p>
+            <p><strong>年龄：</strong>19</p>
+            <p><strong>职业：</strong>学生</p>
+            <p><strong>学校：</strong>邯郸科技职业学院</p>
+            <p><strong>专业：</strong>计算机专业</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>联系方式</h2>
+        <div class="info">
+            <p><strong>邮箱：</strong>xxx@qq.com</p>
+            <p><strong>电话：</strong>189****</p>
+            <p><strong>微信：</strong>xxx</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>技能专长</h2>
+        <div class="info">
+            <ul>
+                <li>Java、Python、JavaScript</li>
+                <li>HTML、CSS、C语言</li>
+            </ul>
+        </div>
+    </div>
+     <div class="section">
+        <h2>兴趣爱好</h2>
+        <div class="info">
+            <span class="hobby">学习</span>
+            <span class="hobby">听音乐</span>
+            <span class="hobby">旅行</span>
+        </div>
+    </div>
+    <div class="section">
+        <h2>个人目标</h2>
+        <div class="info">
+            <p>成为一名优秀学习，不断学习和掌握新的技术，解决实际问题。</p>
+        </div>
+    </div>
+    <style>
+        .aa {
+            position: fixed; 
+            bottom: 20px;   
+            right: 20px;     
+            padding: 10px 20px;
+            background-color: #df49a0;
+            color: rgb(39, 37, 37);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; 
+        }
+        .aa:hover {
+            background-color: #f55eb6;
+        }
+    </style>
+    <button class="aa" onclick="window.location.href='Gouwu.html'">跳转页面></button>
+</body>
+</html>

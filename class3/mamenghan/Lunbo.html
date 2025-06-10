@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .carousel {
+            width: 430px;
+            height: 420px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        .carousel-inner {
+            display: flex;
+            /* 移除固定宽度，让容器自适应内容 */
+            transition: transform 0.5s;
+        }
+        .carousel-item {
+            width: 430px;
+            height: 450px;
+            flex-shrink: 0; /* 防止图片被压缩 */
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.486);
+            color: white;
+            padding: 8px 10px;
+        }
+        #prev { left: 10px; }
+        #next { right: 10px; }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none; 
+        }
+        .button:hover {
+            background-color: #45a049; 
+        }
+        .jump-btn {
+            position: relative;
+            left: 500px;
+            top: 25px;
+            padding: 10px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .jump-btn:hover {
+            background-color: #45a049;
+        }
+        /* 图片使用轮播项样式 */
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <!-- 为每项添加carousel-item类 -->
+            <div class="carousel-item"><img src="11.jpg" alt="照片"></div>
+           <div class="carousel-item"><img src="12.jpg" alt="照片"></div>
+          <div class="carousel-item"><img src="13.jpg" alt="照片"></div>
+        </div>
+        <button class="btn" id="prev">&#10094;</button>
+        <button class="btn" id="next">&#10095;</button>
+    </div>
+    <button class="jump-btn" onclick="window.location.href='shubiao.html'">跳转页面></button>
+    <script>
+        let index = 0;
+        const inner = document.getElementById('carouselInner');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        const itemWidth = 450; // 使用实际轮播项宽度
+        
+        nextBtn.onclick = () => {
+            index = (index + 1) % 3;
+            //使用正确的宽度计算
+            inner.style.transform = `translateX(-${index * itemWidth}px)`;
+        };
+
+        prevBtn.onclick = () => {
+            index = (index - 1 + 3) % 3;
+            //修正计算逻辑
+            inner.style.transform = `translateX(-${index * itemWidth}px)`;
+        };
+    </script>
+</body>
+</html>
