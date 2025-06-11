@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简单购物车</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>购物车</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+            </tr>
+        </thead>
+        <tbody id="cart">
+            <tr>
+                <td>商品A</td>
+                <td>10</td>
+                <td><input type="number" value="1" min="0" id="quantity1"></td>
+                <td id="subtotal1">10</td>
+            </tr>
+            <tr>
+                <td>商品B</td>
+                <td>20</td>
+                <td><input type="number" value="1" min="0" id="quantity2"></td>
+                <td id="subtotal2">20</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><span id="total"></span></p>
+    <button onclick="calculateTotal()">结算</button>
+  
+
+    <script>
+        function calculateTotal() {
+            var quantity1 = document.getElementById('quantity1').value;
+            var quantity2 = document.getElementById('quantity2').value;
+            var price1 = 10;
+            var price2 = 20;
+            var subtotal1 = quantity1 * price1;
+            var subtotal2 = quantity2 * price2;
+            var total = subtotal1 + subtotal2;
+             alert("消费金额为"+total); 
+            
+
+            if (quantity1 >= 0 && quantity2 >= 0) {
+                document.getElementById('subtotal1').innerText = subtotal1;
+                document.getElementById('subtotal2').innerText = subtotal2;
+                document.getElementById('total').innerText = total;
+                location.href="lunbotu.html";
+            } else {
+                alert("数量不能为负数");
+            }
+        }
+    </script>
+       <!-- <p><a href="lunbotu.html">轮播图</a></p> -->
+</body>
+</html>

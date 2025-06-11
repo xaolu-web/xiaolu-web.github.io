@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单轮播图</title>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    
+right: 10px;
+}
+</style>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="3.jpg" alt="图片1">
+            </div>
+            <div class="carousel-item">
+                <img src="2.jpg" alt="图片2">
+            </div>
+            <div class="carousel-item">
+                <img src="4.jpg" alt="图片3">
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script >
+        let currentIndex = 0;
+var items = document.querySelectorAll('.carousel-item');
+var totalItems = items.length;
+
+function showSlide(index) {
+    if (index < 0) {
+        currentIndex = totalItems - 1;
+    } else if (index >= totalItems) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+
+    var offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// 自动播放功能（可选）
+setInterval(nextSlide, 3000);
+    </script>
+    <p><a href="biaodan.html">表单</a></p>
+</body>
+</html>

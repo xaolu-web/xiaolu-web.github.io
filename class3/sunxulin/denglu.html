@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易登录</title>
+    <style>
+        
+        body {
+             font-family: Arial, sans-serif; 
+            }
+
+        .container { 
+            width: 300px; 
+            margin: 50px auto; 
+            
+
+        }
+        input { 
+            width: 100%;
+             padding: 8px;
+              margin: 5px 0;
+            }
+        button {
+             width: 100%; 
+             padding: 10px; 
+             background: #4CAF50;
+              color: white;
+              border: none; 
+            }
+        .error { 
+            color: red; 
+            font-size: 20px;
+        }
+        .tian{
+            margin-bottom: 15px;
+        }
+        .tian label{
+            display: block;
+            margin-bottom : 5px;
+        }
+        .tian input{
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .button{
+            color: #4CAF50;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>用户登录</h2>
+        <form id="Form">
+            <div class="tian">
+                <label>账号: </label>
+                <input type="text" id="username"><span></span>
+            </div>
+            <div class="tian">
+                <label>密码：</label>
+                <input type="password" id="password"  ><span></span>
+            <div>
+            <button type="d1">登录</button><span></span>
+
+        <!-- <div class="error" id="errorMsg"></div>
+        <form id="loginForm">
+            <div>
+            <input type="text" id="username" placeholder="用户名" ><span></span>
+            </div>
+            <div>
+            <input type="password" id="password" placeholder="密码" ><span></span>
+            </div>
+            <div>
+            <button type="submit">登录</button><span></span>
+            </div> -->
+        </form>
+    </div>
+
+    <script>
+        function checkItem(obj,name,reg){
+            var osp=obj.nextElementSibling;
+            obj.onblur=function(){
+                if(reg.text(obj.value)){
+                    osp.innerHTML='恭喜你'+name+'合法！';
+                    osp.className='button';
+                }else{
+                    osp.innerHTML='您输入的'+name+'不合法，请重新输入';
+                    osp.className='error';
+                }
+            }
+        }
+        var oinp = document.getElementsByTagName('input');
+        checkItem(oinp[0],'用户名',/^[a-zA-Z]{3,10}$/);
+         checkItem(oinp[1],'密码',/^\w{6,20}$/);
+         var botton =document.querySelector(botton);
+        
+        document.getElementById('Form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if (username=== 'admin' && password === 'a123456') {
+                alert('登录成功！');
+                location.href="jianjie.html";
+            } else {
+                alert('用户名或密码错误！');
+            }
+            
+        });
+    </script>
+
+</body>
+</html>    
