@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片轮播</title>
+    <style>
+        /* 设置轮播图容器样式 */
+        .slider {
+            width: 1000px;
+            height: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 设置图片列表样式 */
+        .slider ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 500%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* 设置每张图片样式 */
+        .slider li {
+            width: 20%;
+        }
+
+        .slider img {
+            width: 1000px;
+            height: 900px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 轮播图容器 -->
+    <div class="slider">
+        <ul id="sliderList">
+            <li><img src="微信图片_20250609222235.jpg" alt="Image 1"></li>
+            <li><img src="微信图片_20250609222236.jpg" alt="Image 2"></li>
+            <li><img src="微信图片_20250609222237.jpg" alt="Image 3"></li>
+            <li><img src="微信图片_20250609222238.jpg" alt="Image 4"></li>
+            <li><img src="微信图片_202506092222381.jpg" alt="Image 5"></li>
+        </ul>
+    </div>
+
+    <script>
+        const sliderList = document.getElementById('sliderList');
+        let currentIndex = 0;
+        const intervalTime = 3000;
+
+        // 自动轮播函数
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % 5;
+            sliderList.style.transform = `translateX(-${currentIndex * 20}%)`;
+        }
+
+        // 每3秒调用一次自动轮播函数
+        setInterval(autoSlide, intervalTime);
+    </script>
+     <p class="text"><a href="蛋仔派对界面.html">下一个</a></p>
+</body>
+</html>

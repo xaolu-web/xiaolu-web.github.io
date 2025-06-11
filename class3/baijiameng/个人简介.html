@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f9ff 0%, #e0f7fa 100%);
+        }
+
+        /* 头部样式 */
+        header {
+            background: linear-gradient(45deg, #2196f3 0%, #673ab7 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* 板块样式 */
+        .section {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: calc(33.33% - 20px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h2 {
+            color: #2196f3;
+            border-bottom: 2px solid #2196f3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* 技能条样式 */
+        .skill-bar {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 20px;
+            margin-bottom: 15px;
+        }
+
+        .skill-level {
+            background: linear-gradient(90deg, #2196f3 0%, #673ab7 100%);
+            border-radius: 5px;
+            height: 100%;
+            text-align: right;
+            padding-right: 10px;
+            color: white;
+            line-height: 20px;
+            animation: fillBar 1s ease forwards;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 992px) {
+            .section {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>白佳萌</h1>
+        <p></p >
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>基本信息</h2>
+            <ul>
+                <li><strong>年龄:</strong> 20 岁</li>
+                <li><strong>性别：</strong> 女</li>
+                <li><strong>联系方式:</strong> 3108326324@qq.com</li>
+                <li><strong>居住地:</strong> 河北省定州市</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>教育背景</h2>
+            <ul>
+                <li><strong>邯郸科技职业学院</strong>-计算机应用技术专业</li>
+                <li>主修课程：JavaScript前端开发，Photoshop，Linux，Java程序设计，职业英语等。</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>个人爱好</h2>
+            <p>打游戏；看书；拍照；也热衷于旅行，感受不同地方的风土人情。</p >
+        </div>
+        <p class="text"><a href="网站购物页面.html">下一个</a></p>
+</body>
+</html>
