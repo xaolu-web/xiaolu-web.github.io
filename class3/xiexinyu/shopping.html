@@ -55,7 +55,49 @@
     h1 {
       text-align: center;
     }
-  
+    
+    /* 购物车样式增强 */
+    #cart {
+      background-color: #fff;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    #cartList li {
+      list-style-type: none;
+      margin: 5px 0;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    #cartList li button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    
+    #cartList li button:hover {
+      background-color: #c82333;
+    }
+    
+    /* 按钮悬停效果 */
+    .product button:hover {
+      background-color: #218838;
+    }
+    
+    .nav a:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -71,13 +113,13 @@
     <img src="images/化妆品.png" alt="商品1">
     <p>商品名称:化妆品</p >
     <p>价格:￥399</p >
-    <button onclick="addToCart('商品1', 399)">加入购物车</button>
+    <button onclick="addToCart('化妆品', 399)">加入购物车</button>
   </div>
   <div class="product">
     <img src="images/双人床.png" alt="商品2">
     <p>商品名称:双人床</p >
     <p>价格:￥2900</p >
-    <button onclick="addToCart('商品2', 2900)">加入购物车</button>
+    <button onclick="addToCart('双人床', 2900)">加入购物车</button>
   </div>
   <div id="cart">
     <h3>购物车</h3>
@@ -87,31 +129,73 @@
   <script>
     // 初始化购物车
     let cart = [];
+    
     // 添加商品到购物车
     function addToCart(name, price) {
-      cart.push({ name, price });
+      // 检查商品是否已在购物车中
+      const existingItem = cart.find(item => item.name === name);
+      
+      if (existingItem) {
+        // 如果商品已存在，增加数量
+        existingItem.quantity = (existingItem.quantity || 1) + 1;
+      } else {
+        // 如果商品不存在，添加新商品
+        cart.push({ name, price, quantity: 1 });
+      }
+      
       renderCart();
     }
-    //  renderCart()数量显示和总价计算
+    
+    // 从购物车移除商品
+    function removeFromCart(index) {
+      // 减少商品数量或完全移除商品
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+      } else {
+        cart.splice(index, 1);
+      }
+      
+      renderCart();
+    }
+    
+    // 渲染购物车列表和计算总价
     function renderCart() {
-      // cartList购物车列表
       const cartList = document.getElementById('cartList');
-      // totalPriceEle 显示价格
       const totalPriceEle = document.getElementById('totalPrice');
+      
       // 清空原有内容
       cartList.innerHTML = '';
       let total = 0;
-      // 遍历购物车数据
-      cart.forEach(item => {
+      
+      // 遍历购物车数据并生成列表项
+      cart.forEach((item, index) => {
         const li = document.createElement('li');
-        li.innerText = `${item.name} - ￥${item.price}`;
+        
+        // 创建商品信息和数量显示
+        li.innerHTML = `
+          <span>${item.name} - ￥${item.price} x ${item.quantity}</span>
+          <button onclick="removeFromCart(${index})">删除</button>
+        `;
+        
         cartList.appendChild(li);
+        
         // 计算总价
-        total += item.price;
+        total += item.price * item.quantity;
       });
-      // 更新总价
+      
+      // 更新总价显示
       totalPriceEle.innerText = total;
+      
+      // 如果购物车为空，显示提示信息
+      if (cart.length === 0) {
+        const emptyMessage = document.createElement('li');
+        emptyMessage.textContent = '购物车为空';
+        cartList.appendChild(emptyMessage);
+      }
     }
+    
+    // 初始化购物车显示
+    renderCart();
   </script>
 </body>
-</html>  
+</html>
