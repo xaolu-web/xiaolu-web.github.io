@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            line-height: 1.6;
+        }
+        .resume-container {
+            width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 40px 30px;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .main {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 22px;
+            color: #2c3e50;
+            border-left: 5px solid #2c3e50;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .item {
+            margin-bottom: 20px;
+        }
+        .item-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .item-subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        .item-desc {
+            color: #555;
+            line-height: 1.8;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-item {
+            background: #eaeaea;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: #555;
+        }
+        @media (max-width: 850px) {
+            .resume-container {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <h1>陈兴达</h1>
+            <p>求职意向：XX 岗位</p >
+        </div>
+        <div class="main">
+            <div class="section">
+                <div class="section-title">个人信息</div>
+                <div class="item-desc">
+                    年龄：21岁 &emsp;&emsp;&emsp;&emsp;&emsp;
+                    联系电话：19941069610 &emsp;&emsp;&emsp;&emsp;&emsp;
+                    邮箱：2464239126@qq.com <br>
+                    地址：河北省承德市滦平县
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">教育背景</div>
+                <div class="item">
+                    <div class="item-title">邯郸科技职业学院 - 计算机应用技术（专科）</div>
+                    <div class="item-subtitle">2024.09 - 2027.06</div>
+                    <div class="item-desc">
+                        主修课程：数据结构、算法设计、前端开发基础<br>
+                        在校荣誉：五四优秀共青团员
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">工作经历</div>
+                <div class="item">
+                    <div class="item-title">XXXXXXXX - XXXXXXXX</div>
+                    <div class="item-subtitle">20XX.07 - 至今</div>
+                    <div class="item-desc">
+                        1. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        2. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        3. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">技能特长</div>
+                <div class="skill-list">
+                    <span class="skill-item">HTML5/CSS3</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">C语言</span>
+                    <span class="skill-item">Visual FoxPro</span>
+                    <span class="skill-item">Visual Basic</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">项目经验</div>
+                <div class="item">
+                    <div class="item-title">XXXXXXXXX</div>
+                    <div class="item-subtitle">XXXX.XX - XXXX.XX | 前端开发</div>
+                    <div class="item-desc">
+                        - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .jump-btn {
+            position: fixed; 
+            bottom: 20px;   
+            right: 20px;     
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 999; 
+        }
+        .jump-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="jump-btn" onclick="window.location.href='gouwu.html'">跳转到目标页面</button>
+</body>
+</html>
