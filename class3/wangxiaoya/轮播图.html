@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易轮播图</title>
+    <style>
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider" id="slider">
+        <div class="slides" id="slides">
+            <div class="slide">
+                <img src="轮播图片1.jpg" alt="轮播图1">
+            </div>
+            <div class="slide">
+                <img src="轮播图片2.png" alt="轮播图2">
+            </div>
+            <div class="slide">
+                <img src="轮播图片3.jpg" alt="轮播图3">
+            </div>
+        </div>
+        
+        <button class="prev" id="prevBtn">‹</button>
+        <button class="next" id="nextBtn">›</button>
+        
+        <div class="dots" id="dots"></div>
+    </div>
+
+    <script>
+        const slides = document.getElementById('slides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dots');
+        
+        let currentIndex = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        // 创建指示器
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'dot';
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+        
+        const dots = document.querySelectorAll('.dot');
+        dots[0].classList.add('active'); // 设置第一个为激活状态
+        
+        // 更新轮播图位置
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // 更新指示器状态
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        // 切换到指定幻灯片
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlidePosition();
+        }
+        
+        // 上一张
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        }
+        
+        // 下一张
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlidePosition();
+        }
+        
+        // 事件监听
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        // 自动轮播
+        let autoplay = setInterval(nextSlide, 3000);
+        
+        // 鼠标悬停暂停自动轮播
+        document.querySelector('.slider').addEventListener('mouseenter', () => {
+            clearInterval(autoplay);
+        });
+        
+        document.querySelector('.slider').addEventListener('mouseleave', () => {
+            autoplay = setInterval(nextSlide, 3000);
+        });
+    </script>
+    <p>
+        <a href="学院要闻.html">学院要闻</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <style>
+      
+        .resume {
+            width: 800px; 
+            margin: 0 auto;
+            background-color: rgba(56,12,55,0.1);
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05); 
+            overflow: hidden; 
+        }
+        .header { 
+            background-color:pink;
+            color: rgb(0, 0, 0);
+            padding: 5px; 
+            text-align: center; 
+        }
+        .main {
+             padding: 20px 30px;
+             }
+        .section { 
+            margin-bottom: 30px; 
+        }
+        .section-title { 
+            font-size:25px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+         }
+        .section-title i {
+            color: #165DFF;
+            margin-right: 5px;
+            width: 10px;
+            text-align: center;
+        }
+        .section-content {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .experience-item { 
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 2px solid #e0edff;
+            transition: border-color 0.2s;
+         }
+        .experience-item:hover {
+             border-color: pink;
+         }
+        .experience-header { 
+            margin-bottom: 10px;
+         }
+        .experience-header h3 {
+             font-size: 20px;
+             font-weight: 600;
+             color:rgb(0, 0, 0);
+        }
+        .time {
+             float: right;
+             color: #000000;
+             padding: 10px 20px;
+             border-radius: 9999px;
+             font-size:18px;
+        }
+        .position {
+             color: pink;
+             font-weight: 500;
+             margin-bottom: 10px;
+        }
+        .details {
+             padding-left:20px;
+             list-style-type: disc;
+        }
+        .education-item {
+             margin-bottom: 10px;
+        }
+        .education-header {
+             margin-bottom: 15px; 
+        }
+        .education-header h3 { 
+            font-size: 20px; 
+            font-weight: 600; 
+            color: #000000; 
+        }
+        .degree { 
+            color: pink; 
+            font-weight: 500; 
+            margin-bottom:10px; 
+        }
+         .footer { 
+            background-color:pink; 
+            border-top: 1px solid white; 
+            padding: 20px 30px; 
+            text-align: center; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <header class="header">
+            <h1>个人简历</h1>
+        </header>
+        <main class="main">
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fa fa-user-circle"></i>
+                    一、关于我
+                </h2>
+                <p class="section-content">
+                  <p><strong>姓名：</strong>王筱雅</p>
+                  <p><strong>年龄：</strong>20</p>
+                  <p><strong>职业：</strong>学生</p>  
+                  <p><strong>学校：</strong>邯郸科技职业技术学院</p> 
+                  <p><strong>专业：</strong>计算机应用技术</p> 
+                   <p><strong>邮箱：</strong>1234567899@qq.com</p>  
+                  <p><strong>籍贯：</strong>河北省保定市xx区</p> 
+                  <p><strong>地址：</strong>河北省邯郸市邯山区邯郸科技职业技术学院</p> 
+                </p>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fa fa-briefcase"></i>
+                    二、学习经验
+                </h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>1.保定市职业技术教育中心</h3>
+                        <span class="time">2021年-2024年</span>
+                    </div>
+                    <p class="position">计算机平面设计专业</p>
+                    <ul class="details section-content">
+                        <li>精通PS</li>
+                        <li>精通PR</li>
+                        <li>精通3D</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>2.郸科技职业技术学院</h3>
+                        <span class="time">2024年-2027年</span>
+                    </div>
+                    <p class="position">计算机应用技术专业</p>
+                    <ul class="details section-content">
+                        <li>学习HTML</li>
+                        <li>学习LINUX</li>
+                        <li>学习AI</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fa fa-graduation-cap"></i>
+                    三、教育背景
+                </h2>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <h3>1.邯郸科技职业技术学院</h3>
+                        <span class="time">2024年-2027年</span>
+                    </div>
+                    <p class="degree">计算机应用技术-专科</p>
+                    <p class="section-content">主修课程：ps、ai、计算机网络、操作系统、html等。</p>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2025 王筱雅 - 个人简历</p>
+            <p>
+                <a href="购物网站.html">购物网站</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
