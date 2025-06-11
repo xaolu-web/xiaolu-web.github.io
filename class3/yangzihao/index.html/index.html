@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Logo</h1>
+        <nav class="navigation">
+            <a href="22.html" style="color:black;">个人简介</a>
+            <a href="44.html">网站购物</a>
+            <a href="33.html">轮播图</a>
+            <a href="minesweeper.html">扫雷</a>
+            <button class="loginBtn" onclick="functionClick()">登录</button>
+        </nav>
+    </header>
+
+    
+    <!-- 登录菜单-->
+     <div class="wrapper" id="wrapper">
+        <!-- 关闭按钮 -->
+         <span class="close-icon" onclick="functionClose()">
+            X
+         </span>
+        <div class="form-box login">
+            <h2>登录</h2>
+            <div class="input-box">
+            <span class="icon"></span>
+            <input id="userName"  type="email" placeholder="请输入用户名" required>
+            <lable>用户名</lable>
+        </div>
+        <div class="input-box">
+        <span class="icon"></span>
+        <input id="passwordVal"  type="password" placeholder="请输入密码"  required>
+        <lable>密码</lable>
+         </div>
+ 
+
+      <div class="remember-forgot">
+      
+        <label><input type="checkbox">记住我</label>
+        <a href="#">忘记了密码？</a>
+       </div>
+
+       <button type="submit" class="submitBtn">登录</button>
+       <div class="login-register">
+        <p>
+              还没有账号吗？
+            <a href="#" class="regisster-link">注册</a>
+        </p>
+       </div>
+      </div>
+    </div>
+
+    <script src="script.js">
+       
+        
+    
+    </script>
+</body>
+</html>
