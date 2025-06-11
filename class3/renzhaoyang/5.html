@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    app.post("/xml,(req,res")=>{
+        res.send("ok")
+    });
+    <script>
+        var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://localhost:3000/xml');
+// 设置请求头
+xhr.setRequestHeader('Content-Type', 'text/xml');
+xhr.send('<?xml version="1.0" encoding="utf-8" ?><book><name>红楼梦</name><author>曹雪芹</author></book>');
+    </script>
+</body>
+</html>

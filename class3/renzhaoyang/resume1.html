@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>购物网站</title>
+<style>
+.product {
+border: 1px solid #ddd;
+padding: 15px;
+margin: 10px;
+width: 200px;
+display: inline-block;
+}
+.price {
+color: #e63946;
+font-weight: bold;
+font-size: 1.2em;
+}
+.add-to-cart {
+background-color: #4CAF50;
+color: white;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+}
+#cart-count {
+background-color: #e63946;
+color: white;
+border-radius: 50%;
+padding: 2px 6px;
+font-size: 0.8em;
+}
+.notification {
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: #4CAF50;
+color: white;
+padding: 15px;
+border-radius: 5px;
+transition: opacity 0.5s;
+}
+.fade-out {
+opacity: 0;
+}
+.cart-item {
+display: flex;
+margin-bottom: 10px;
+align-items: center;
+}
+.quantity-input {
+width: 50px;
+margin-left: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>欢迎来到我们的商店</h1>
+<div>
+购物车 <span id="cart-count">0</span>
+总计: <span id="cart-total">$0.00</span>
+</div>
+</header>
+
+<main>
+<h2>我们的商品</h2>
+<div id="products"></div>
+
+<aside id="cart-sidebar">
+<h3>购物车</h3>
+<ul id="cart-items"></ul>
+<p>总计: <span id="cart-total-sidebar">$0.00</span></p >
+<button id="checkout-btn">结账</button>
+</aside>
+</main>
+
+<script src="shopping.js"></script>
+</body>
+</html>
+未选择文件

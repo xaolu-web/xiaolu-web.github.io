@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不良人-李星云</title>
+  <style>
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+      background-image: url('https://img.zcool.cn/community/01e5b55d156a4ca8012187f4c5d3f0.jpg@1280w_1l_2o_100sh.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .content-wrapper {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #d32f2f;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    .character-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .character-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .character-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .character-image img:hover {
+      transform: scale(1.02);
+    }
+    .character-info {
+      flex: 2;
+      min-width: 300px;
+    }
+    .character-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #d32f2f;
+      border-bottom: 2px solid #d32f2f;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    strong {
+      color: #555;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: calc(33.333% - 10px);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .gallery img:hover {
+      opacity: 0.8;
+      transform: translateY(-5px);
+    }
+    .tab-container {
+      margin-top: 20px;
+    }
+    .tab-buttons {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      background: #f1f1f1;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+    .tab-btn.active {
+      background: #d32f2f;
+      color: white;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .quote {
+      font-style: italic;
+      color: #666;
+      border-left: 3px solid #d32f2f;
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>画江湖之不良人 - 李星云</h1>
+    
+    <div class="character-container">
+      <div class="character-image">
+        <img src="https://ts1.tc.mm.bing.net/th/id/R-C.47263ad537e312f01f25264d0ca928c6?rik=d9vay94M0y7l0Q&riu=http%3a%2f%2fpic.qianye88.com%2fpic%2f84b86cab50cf721979d59906b4e17008.jpg&ehk=xXuRaX2TLyW1G0Xd81Plqs1jaV2WLtVFvBYsj5v2%2bKA%3d&risl=&pid=ImgRaw&r=0" alt="李星云人物立绘">
+        <div class="gallery">
+          <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.06BRSY6Awz7tkR9AvDGHdwHaE4?rs=1&pid=ImgDetMain" alt="李星云战斗场景">
+          <img src="https://c-ssl.duitang.com/uploads/blog/202202/24/20220224152714_49794.jpg" alt="李星云经典造型">
+        </div>
+      </div>
+      
+      <div class="character-info">
+        <div class="character-card">
+          <h2>人物简介</h2>
+          <p>李星云是《画江湖之不良人》系列动画的男主角，大唐皇室后裔，不良人天罡三十六校尉之一。他表面玩世不恭，实则重情重义，心怀天下却不愿被皇位束缚。</p >
+          
+          <div class="quote">
+            "我李星云行事，但求问心无愧。"
+          </div>
+          
+          <div class="tab-container">
+            <div class="tab-buttons">
+              <button class="tab-btn active" onclick="openTab(event, 'basic-info')">基本信息</button>
+              <button class="tab-btn" onclick="openTab(event, 'abilities')">能力武功</button>
+              <button class="tab-btn" onclick="openTab(event, 'relationships')">人际关系</button>
+            </div>
+            
+            <div id="basic-info" class="tab-content active">
+              <p><strong>别名/称号：</strong>星云、李公子、殿下</p>
+              <p><strong>年龄:</strong>约25岁</p>
+              <p><strong>性别:</strong>男</p >
+              <p><strong>身份:</strong>大唐遗孤、不良人天罡三十六校尉之一</p>
+              <p><strong>外貌特征：</strong>
+                <ul>
+                  <li>身高约180cm,修长挺拔</li>
+                  <li>黑色长发(常扎马尾)</li>
+                  <li>明亮有神的眼睛</li>
+                  <li>常穿白色与蓝色相间的侠客服饰</li>
+                  <li>腰间佩戴龙泉剑</li>
+                </ul>
+              </p>
+              <p><strong>性格特点：</strong>
+                <ul>
+                  <li>表面玩世不恭，实则重情重义</li>
+                  <li>聪明机智，善于谋略</li>
+                  <li>心怀天下，但不愿被皇位束缚</li>
+                  <li>对朋友极其忠诚</li>
+                  <li>有时显得懒散随意</li>
+                </ul>
+              </p >
+            </div>
+            
+            
+<script>
+    // 标签页切换功能
+    function openTab(evt, tabName) {
+      const tabContents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+      }
+      
+      const tabButtons = document.getElementsByClassName("tab-btn");
+      for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+      
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    
+    // 图
