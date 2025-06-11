@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>轮播图片</title>
+  <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .carousel {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .carousel-item.active {
+        opacity: 1;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .carousel-control {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+    }
+    .carousel-control button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        border: none;
+        background-color: rgba(255,255,255,0.5);
+        color: #333;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .carousel-control button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-item">
+        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.rTy2jheq7jmzDLCeqfwJIQHaE7?w=243&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="图片1">
+    </div>
+    <div class="carousel-item">
+        <img src="https://unpkg.com/outeres/demo/carousel/720x360-2.jpg" alt="图片2">
+    </div>
+    <div class="carousel-item">
+        <img src="https://unpkg.com/outeres/demo/carousel/720x360-3.jpg" alt="图片3">
+    </div>
+    <div class="carousel-item">
+        <img src="https://unpkg.com/outeres/demo/carousel/720x360-4.jpg" alt="图片4">
+    </div>
+    <div class="carousel-control">
+        <button id="prev">←</button>
+        <button id="next">→</button>
+    </div>
+</div>
+<script>
+    let current = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    function showSlide(index) {
+        items[current].classList.remove('active');
+        current = (index + totalItems) % totalItems;
+        items[current].classList.add('active');
+    }
+    function showNext() {
+        showSlide(current + 1);
+    }
+    function showPrev() {
+        showSlide(current - 1);
+    }
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+    let interval = setInterval(showNext, 3000);
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(interval);
+    });
+    carousel.addEventListener('mouseleave', () => {
+        interval = setInterval(showNext, 3000);
+    });
+    showSlide(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百雀羚购物页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+    body {
+      background-color: #f8f7f5;
+      color: #333;
+    }
+    header {
+      background-color: #e73c7e;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      grid-gap: 30px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-gap: 25px;
+    }
+    .product {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .product-info {
+      margin-top: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-info h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #444;
+    }
+    .product-price {
+      font-size: 18px;
+      margin: 8px 0 15px;
+      color: #ff5722;
+      font-weight: bold;
+    }
+    .btn-add-cart {
+      background-color: #e73c7e;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+      display: block;
+      margin-top: auto;
+      width: 100%;
+    }
+    .btn-add-cart:hover {
+      background-color: #d4306f;
+    }
+    .cart {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      grid-column: 2 / 3;
+      grid-row: 1 / span 3;
+    }
+    .cart h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: 500;
+    }
+    .cart-items {
+      margin-bottom: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .cart-items::-webkit-scrollbar {
+      width: 5px;
+    }
+    .cart-items::-webkit-scrollbar-thumb {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .cart-item-info {
+      font-size: 14px;
+      color: #555;
+    }
+    .cart-item-price {
+      font-size: 14px;
+      color: #ff5722;
+    }
+    .cart-item-count {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+    .count-btn {
+      width: 25px;
+      height: 25px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .empty-cart {
+      background-color: #f5f5f5;
+      color: #666;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .empty-cart:hover {
+      background-color: #e0e0e0;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    .notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>百雀羚商城</h1>
+  </header>
+  <div class="container">
+    <section class="products">
+      <div class="product">
+        <img src="https://img1.baidu.com/it/u=451870987,787731935&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=517 " alt="面霜">
+        <div class="product-info">
+          <h3>百雀羚面霜</h3>
+          <p>焕颜草本面霜，滋养肌肤</p>
+          <div class="product-price">¥128.00</div>
+          <button class="btn-add-cart" data-price="128" data-name="百雀羚面霜">加入购物车</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://img2.baidu.com/it/u=1625751085,564215083&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" alt="精华液">
+        <div class="product-info">
+          <h3>百雀羚精华液</h3>
+          <p>焕颜精华，提亮肤色</p>
+          <div class="product-price">¥258.00</div>
+          <button class="btn-add-cart" data-price="258" data-name="百雀羚精华液">加入购物车</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://t15.baidu.com/it/u=3750600455,3778159048&fm=224&app=112&f=JPEG?w=500&h=500" alt="爽肤水">
+        <div class="product-info">
+          <h3>百雀羚爽肤水</h3>
+          <p>舒缓保湿，滋养肌肤</p>
+          <div class="product-price">¥108.00</div>
+          <button class="btn-add-cart" data-price="108" data-name="百雀羚爽肤水">加入购物车</button>
+        </div>
+      </div>
+    </section>
+    <aside class="cart">
+      <h2>购物车</h2>
+      <div class="cart-items">
+      </div>
+      <div class="cart-total">
+        <span>总计:</span>
+        <span id="total-price">¥0.00</span>
+      </div>
+      <button class="empty-cart">清空购物车</button>
+    </aside>
+  </div>
+  <footer>
+    <p>© 2025 百雀羚商城 版权所有</p>
+    <p>客服热线: 888-888-8888 | 地址: 邯郸科技职业学院</p>
+  </footer>
+  <script>
+    const addCartButtons = document.querySelectorAll('.btn-add-cart');
+    const cartItemsDiv = document.querySelector('.cart-items');
+    const totalPriceSpan = document.getElementById('total-price');
+    const emptyCartBtn = document.querySelector('.empty-cart');
+    let cartItems = [];
+    addCartButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const productName = this.getAttribute('data-name');
+        const productPrice = parseFloat(this.getAttribute('data-price'));
+        const existingItem = cartItems.find(item => item.name === productName);       
+        if (existingItem) {
+          existingItem.count++;
+        } 
+        else {
+          cartItems.push({ name: productName, price: productPrice, count: 1 });
+        updateCartDisplay();
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = `${productName} 已添加到购物车`;
+        document.body.appendChild(notification);
+        notification.style.opacity = '1';
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 2000);
+      };
+    });
+    function updateCartDisplay() {
+      cartItemsDiv.innerHTML = '';
+      let totalPrice = 0; 
+      if (cartItems.length === 0) {
+        cartItemsDiv.innerHTML = '<p style="color: #999; font-size: 14px; text-align: center;">购物车是空的</p>';
+      } 
+        cartItems.forEach((item, index) => {
+          const cartItemDiv = document.createElement('div');
+          cartItemDiv.classList.add('cart-item');
+          cartItemDiv.innerHTML = `
+            <div class="cart-item-info">
+              <span>${item.name}</span>
+            </div>
+            <div class="cart-item-price">¥${item.price.toFixed(2)}</div>
+            <div class="cart-item-count">
+              <button class="minus-btn">-</button>
+              <span>${item.count}</span>
+              <button class="plus-btn">+</button>
+            </div>
+          `;   
+          cartItemsDiv.appendChild(cartItemDiv);
+          totalPrice += item.price * item.count;
+          const minusBtn = cartItemDiv.querySelector('.minus-btn');
+          const plusBtn = cartItemDiv.querySelector('.plus-btn');         
+          minusBtn.addEventListener('click', () => {
+            if (item.count > 1) {
+              item.count--;
+              updateCartDisplay();
+            }
+          });          
+          plusBtn.addEventListener('click', () => {
+            item.count++;
+            updateCartDisplay();
+          });
+        });
+      }
+      totalPriceSpan.textContent = totalPrice.toFixed(2);
+    emptyCartBtn.addEventListener('click', () => {
+      cartItems = [];
+      updateCartDisplay();
+    });
+  </script>
+</body>
+</html>
+    

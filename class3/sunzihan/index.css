@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="css/E:\index.html\Example02reset.css">
+<link rel="stylesheet" type="text/css" href-"css/E:\index.html\Example02index.css">
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ul,li{
+    list-style: none;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #000;
+    background: url(../images/bodybg.jpg);
+}
+a{
+    font-family: "微软雅黑";
+    font-size:14px;
+    color:#000;
+    text-decoration:none;
+}
+/*头部*/
+header {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+/*导航条*/
+nav {
+    width: 100%;
+    height: 42px;
+    background: rgb(28, 75, 169);
+}
+nav  .navCon {
+    width: 1200px;
+    height: 42px;
+    margin: 0 auto;
+    position: relative;  /*相对定位*/
+    z-index: 111;      /*菜单显示在最上面，不被其他内容遮盖*/
+}
+.navCon li {
+    width: 120px;
+    height: 42px;
+    float: left;
+    text-align: center;
+}
+.navCon li a {
+    display: block;
+    width: 120px;
+    height: 42px;
+    line-height: 42px;
+    color: #FFF;
+}
+.navCon li ul {
+    width: 150px;
+    display: none;
+}
+.navCon li:hover ul {
+    display: block;
+}
+.navCon li ul li {
+    background: rgb(28 75, 169);
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px rgb(0,52,162) solid;
+    text-align: center;
+}
+.navCon li ul li a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: rgb(255,255,255);
+    line-height: 40px;
+}
+
