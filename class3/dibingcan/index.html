@@ -122,7 +122,7 @@
                     <input type="password" id="password" class="form-control" placeholder="请输入密码">
                 </div>
                 
-                <button type="submit" class="btn" onclick="checkLogin(event)">登录</a></button>
+                <button type="submit" class="btn" onclick="checkLogin(event)">登录</button>
                 
                 <div class="register-link">
                     <a href="#">立即注册</a>
@@ -139,6 +139,8 @@
                 if(e) e.preventDefault();
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
+                console.log('用户名:', username); // 调试代码
+                console.log('密码:', password); 
                 if (username === 'admin' && password === 'a123456') {
                     window.location.href='http://127.0.0.1:5500/ee.html';
                 } else {
