@@ -2,8 +2,6 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3871375_7q6z866557.css"> 
   <title>购物页面</title>
   <style>
     * {
@@ -13,7 +11,10 @@
       font-family: Arial, sans-serif;
     }
     body {
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #e9e7dd;
     }
     header {
       background-color: #333;
@@ -22,15 +23,15 @@
       text-align: center;
     }
     .container {
-      width: 90%;
+      width: 75%;
       margin: 20px auto;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-wrap: wrap; 
+      justify-content: space-between; 
     }
     .product {
-      width: calc(33% - 20px);
-      background-color: white;
+      width: calc(33% - 20px); 
+      background-color: rgb(235, 245, 244);
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 30px;
@@ -42,8 +43,9 @@
     }
     .product img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      height: 300px;
+      display:block;
+      margin:0 auto;
     }
     .product-info {
       padding: 15px;
@@ -72,13 +74,13 @@
     }
     .cart {
       width: 300px;
-      background-color: white;
+      background-color: rgb(230, 229, 199);
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 15px;
       position: fixed;
       right: 20px;
-      top: 80px;
+      bottom: 60px;
     }
     .cart h2 {
       font-size: 18px;
@@ -144,36 +146,34 @@
     <h1>购物页面</h1>
   </header>
   <div class="container">
-    <section class="products">  
-        <div class="product">
-        ...............................................................................................
-        <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.PVLei_jzOfnIY0bdFE7F1wAAAA?w=234&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"alt="小米14">
-        <div class="product-info">
-          <h3>小米14</h3>
-          小米Xiaomi 小米14 徕卡光学镜头 光影猎人900 徕卡75mm浮动长焦 官方标配
-          <p>¥3389</p >
-                  <button class="btn-add-cart" data-price="3389" data-name="小米14">加入购物车</button>
-        </div>
+    <div class="product">
+      <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.PVLei_jzOfnIY0bdFE7F1wAAAA?w=234&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"alt="小米14">
+      <div class="product-info">
+        <h2>小米14</h2>
+        <p>价格：¥3389</p >
+        小米Xiaomi 小米14 国家补贴 徕卡光学镜头 光影猎人900 徕卡75mm浮动长焦 智能摄影手机 12GB+256GB黑色 官方标配｜京东快递 更快更好
+        <button class="btn-add-cart"data-price="3389"data-name="小米14">加入购物车</button>
       </div>
-      <div class="product">
+    </div>
+    <div class="product">
       <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.o6rLvY8xyX9jmE5mWEnmxQAAAA?w=206&h=169&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="小米pad7pro">
-        <div class="product-info">
-          <h3>小米pad7pro</h3>
-          小米平板7Pro 11.2英寸 3.2K超清屏    黑色 8GB+256GB 标准版
-          <p>¥2358</p >
-          <button class="btn-add-cart" data-price="2358" data-name="小米pad7pro">加入购物车</button>
-        </div>
+      <div class="product-info">
+        <h2>小米pad7pro</h2>
+        <p>价格：¥2358</p >
+        小米（MI）小米平板7Pro 11.2英寸 3.2K超清屏  Xiaomi Pad 7 Pro小米平板电脑 学生网课学习 黑色 8GB+256GB 标准版｜京东快递 更快更好
+        <button class="btn-add-cart"data-price="2358"data-name="小米pad7pro">加入购物车</button>
       </div>
-      <div class="product">
-        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.w2DtXdBXbYfRUWbSek2LnwHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="小米空调">
-        <div class="product-info">
-          <h3>小米空调</h3>
-          小米 大1匹 巨省电 变频冷暖 壁挂式空调挂机 KFR-26GW/V1A1
-          <p>¥2099</p >
-          <button class="btn-add-cart" data-price="2099" data-name="小米空调">加入购物车</button>
-        </div>
+    </div>
+    <div class="product">
+      <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.w2DtXdBXbYfRUWbSek2LnwHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="小米空调">
+      <div class="product-info">
+        <h2>小米空调</h2>
+        <p>价格：¥2099</p >
+        小米（MI）米家 大1匹 新一级能效 巨省电 变频冷暖 壁挂式空调挂机 KFR-26GW/V1A1【国家补贴20%】
+        <button class="btn-add-cart"data-price="2099"data-name="小米空调">加入购物车</button>
       </div>
-    </section>
+    </div>
+  </div>
     <aside class="cart">
       <h2>购物车</h2>
       <div class="cart-items">
