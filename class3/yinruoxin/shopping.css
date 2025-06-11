@@ -1,0 +1,717 @@
+/* 头部开始 */
+body{
+    background-color: #f3e9ed;
+}
+.title{
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #b5b2b2;
+}
+.title1{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: #2b2a2a;
+    font-size: 15px;
+}
+.title1a{
+    text-decoration: none;
+    color: #e11b5a;
+}
+.title2{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    color: #e11b5a;
+    font-size: 15px;
+}
+.title2a{
+    text-decoration: none;
+    color: #e11b5a;
+}
+.title3{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+}
+.title3 a{
+    text-decoration: none;
+    color: #e1251b;
+    font-size: 15px;
+}
+.title3 a:hover{
+    color: #e1251b;
+    font-size: 15px;
+}
+.title4 a:hover{
+    color: #2b2a2a;
+    font-size: 15px;
+}
+.title4{
+    display: block;
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+    left: 245px;
+}
+.title4 a{
+    text-decoration: none;
+    color: #2b2a2a;
+}
+.header{
+    width: 100%;
+    height: 140px;
+    border-bottom: 1px solid #ffffff;
+}
+.wrap{
+    width: 1190px;
+    margin: 0 auto;
+}
+.header-box{
+    height: 140px;
+    position: relative;
+}
+.logo{
+    width: 190px;
+    height: 120px;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    /* ../将目录调至js，再从里面选择images中的图片 */
+    background: url(shoplogo.png) no-repeat;
+    background-position: 0 0;   
+    background-size: contain;
+}
+.search{
+    width: 100%;
+    height: 60px;
+}
+.search-m{
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+.form{
+    position: absolute;
+    top: 25px;
+    left: 260px;
+    width: 546px;
+    height: 32px;
+    border: 2px solid #e2231a;
+    background-color: #fff;
+
+}
+.keyword{
+    /* 绝对定位是相对于它最近的有定位的祖先 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 425px;
+    height: 26px;
+    /* 上右下左 */
+    padding: 2px 44px 2px 17px;
+    /* 透明色 */
+    border: 1px solid transparent;
+    /* 输入框的行高 */
+    line-height: 26px;
+    font-size: 12px;
+    color: #333;
+    /* 去掉输入框黑边 */
+    outline: none;
+}
+.form button{
+    position: absolute;
+    right: 0;
+    width: 58px;
+    height: 32px;
+    line-height: 32px;
+    /* 去掉按钮的默认边框 */
+    border: none;
+    background-color: #e1251b;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    /* 变成小手【设置鼠标指针悬停在元素上时显示的样式 */
+    cursor: pointer;
+}
+.img{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    /* 反色 黑=>白 */
+    filter: invert(100%);
+}
+.text{
+    position: absolute;
+    top: 80px;
+    left: 260px;
+    width: 546px;
+    height: 22px;
+    /* border: 2px solid #e2231a; */
+    /* background-color: #fff; */
+}
+.text span{
+    color: #e1251b;
+}
+.text .spani{
+    color: #000000;
+}
+/* 头部结束 */
+body{
+    background-color: #f4f4f4;
+}
+
+
+
+/* 轮播图开始 */
+.navcon a{
+    color: #000000;
+    text-decoration: none;
+}
+.navcon{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 18px;
+}
+.navcon li{
+    list-style: none;
+    line-height: 38px;
+    padding-left: 43px;
+}
+.li1{ 
+    background: url(https://img14.360buyimg.com/imagetools/jfs/t1/95664/15/40921/296/66d13f7cF7ed5ab7d/bd4d68f33a69c7dc.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li2{
+    background: url(https://img10.360buyimg.com/imagetools/jfs/t1/247476/17/17051/251/66d13f7dF795a4306/93894d9675b21bc9.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li3{
+    background: url(https://img12.360buyimg.com/imagetools/jfs/t1/242395/34/16729/259/66d13f7bF0d8cc517/d0b621d6a5d57409.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li4{
+    background: url(https://img11.360buyimg.com/imagetools/jfs/t1/158901/20/47133/355/66d13f7cFe7ae3a25/0241d37642abb9a5.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li5{
+    background: url(https://img13.360buyimg.com/imagetools/jfs/t1/236205/4/26259/315/66d13f7bFa6179f46/01e945d3bae87a8d.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li6{
+    background: url(https://img13.360buyimg.com/imagetools/jfs/t1/78165/1/28972/293/66d13f7bF366459f6/ccc78435369c55f1.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li7{
+    background: url(https://img13.360buyimg.com/imagetools/jfs/t1/57285/32/26773/372/66d13f7dFd5e7f8fa/c97b8634e410fd2f.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li8{
+    background: url(https://img12.360buyimg.com/imagetools/jfs/t1/132989/18/46173/321/66d13f7dF21b29c8a/0204c8f1aefd017a.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li9{
+    background: url(https://img10.360buyimg.com/imagetools/jfs/t1/238399/24/22617/307/66d13f7bFe05d9a35/b7f1e233a982662a.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li10{
+    background: url(https://img10.360buyimg.com/imagetools/jfs/t1/231301/22/25764/350/66d13f7cF939a0236/582b896f1eefdbc8.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.li11{
+    background: url(https://img12.360buyimg.com/imagetools/jfs/t1/90075/15/45774/323/66d13f7dF22e7951a/45d57a26b924d416.png) no-repeat left 10px center;
+    background-size: 20px;
+}
+.navcon a:hover{
+    font-size: 20px;
+    color: rgb(81, 109, 155);
+}
+
+.i{
+    position: relative;
+    left: 5.75%;
+    width: 88.5%;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.banner{
+    width: 100%;
+    height: 470px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.banner-box{
+    height: 470px;
+    
+}
+
+.banner-slide{
+    width: 790px;
+    height: 470px;
+    margin: 0 auto;
+}
+.slide{
+    position: relative;
+    left: 80px;
+    width: 590px;
+    height: 470px;
+}
+.slide a img{
+    border-radius: 15px;
+}
+.leftt{
+    position: absolute;
+    left: 18px;
+    top: 13px;
+    width: 250px;
+    height: 466px;
+    background-color: #f6f2f9;
+    border-radius: 15px;
+}
+.rightt{
+    position: absolute;
+    right: 18px;
+    top: 13px;
+    width: 290px;
+    height: 470px;
+    background-color: #f6f2f9;
+    border-radius: 15px;
+}
+.box1{
+    position: relative;
+    top: 15px;
+    left: 15px;
+    width: 260px;
+    height: 230px;
+    /* background-color: #e11b5a; */
+    border-radius: 15px;
+}
+.top{
+    width: 260px;
+    height: 40px;
+    background-color: #e6fae9;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid #333;
+}
+.top img{
+    position: relative;
+    top: 6px;
+    left: 40px;
+    width: 27.5px;
+    height: 27.5px;
+}
+.top p{
+    position: relative;
+    top: -40px;
+    left: 73px;
+}
+.bottom{
+    position: absolute;
+    bottom: 0px;
+    width: 260px;
+    height: 29.5px;
+    background-color: #e6f9fa;
+    border-radius: 0px 0px 10px 10px;
+}
+.bottom p{
+    position: absolute;
+    top: -12px;
+    left: 65px;
+
+}
+.left1{
+    width: 130px;
+    height: 80px;
+    /* background-color: aqua; */
+    border-bottom: 1px solid #2b2a2a;
+    border-right: 1px solid #2b2a2a;
+}
+.left2{
+    width: 130px;
+    height: 80px;
+    /* background-color: rgb(150, 236, 97); */
+    border-bottom: 1px solid #2b2a2a;
+    border-right: 1px solid #2b2a2a;
+}
+.right1{
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    width: 130px;
+    height: 80px;
+    /* background-color: rgb(111, 99, 242); */
+    border-top: 1px solid #2b2a2a;
+    border-bottom: 1px solid #2b2a2a;
+    border-left: 1px solid #2b2a2a;
+}
+.right2{
+    position: absolute;
+    top: 121.5px;
+    right: 0px;
+    width: 130px;
+    height: 75px;
+    /* background-color: rgb(243, 125, 70); */
+    border-bottom: 1px solid #2b2a2a;
+    border-left: 1px solid #2b2a2a;
+}
+#righttimg{
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    width: 220px;
+    height: 170px;
+    border-radius: 15px;
+    background-color: #f8ecec;
+
+}
+#text{
+    position: absolute;
+    font-size: 16px;
+    bottom: 10px;
+    left: 30px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #f8e0dc;
+}
+.r-img{
+    width: 220px;
+    height: 170px;
+}
+.prev,.next{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 25px;
+    height: 35px;
+    line-height: 35px;
+    background-color: rgb(242, 255, 0);
+    font-size: 20px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.prev{
+    left: 0;
+    border-radius: 0 18px 18px 0;
+}
+
+.next{
+    right: 0;
+    border-radius: 18px 0 0 18px;
+}
+.banner-btn{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 120px;
+    height: 15px;
+}
+.banner-btn li{
+    /* 去除黑点 */
+    list-style: none;
+    float: left;
+    width: 8.5px;
+    height: 8.5px;
+    border: 1px solid rgba(212, 34, 34, 0.05);
+    margin-right: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.banner-btn .active{
+    /* relative微调 */
+    position: relative;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    border: 3px solid rgba(0,0,0,.1);
+    background-color: rgba(255,255,255,1);
+}
+
+/* 轮播图结束 */
+/* 购物车搭建开始 */
+.begin{
+    padding-top: 10px;
+    position: relative;
+    left: 5.75%;
+    width: 88.5%;
+    height: 740px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-bottom: 200px;
+}
+.one{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 5px;
+}
+.one:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.two{
+    position: absolute;
+    top: 10px;
+    left: 280px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255); 
+}
+.two:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.three{
+    position: absolute;
+    top: 10px;
+    left: 545px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.three:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.four{
+    position: absolute;
+    top: 10px;
+    left: 810px;
+    width: 360px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255); 
+}
+.four:hover{
+    width: 360px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.five{
+    position: absolute;
+    top: 370px;
+    left: 15px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.five:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.six{
+    position: absolute;
+    top: 370px;
+    left: 280px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.six:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.seven{
+    position: absolute;
+    top: 370px;
+    left: 545px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.seven:hover{
+    width: 250px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.eight{
+    position: absolute;
+    top: 370px;
+    left: 813px;
+    width: 370px;
+    height: 350px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.eight:hover{
+    width: 370px;
+    height: 350px;
+    border: 2px solid #e2231a;
+}
+.one-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+
+.img1{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text1{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.two-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img2{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text2{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.three-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img3{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text3{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.four-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img4{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 370px;
+    height: 250px;
+}
+.text4{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.five-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img5{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text5{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.six-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img6{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text6{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.seven-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img7{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 245px;
+    height: 250px;
+}
+.text7{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+.eight-img{
+    border-radius: 20 20 0 0px;
+    width: 250px;
+    height: 150px;
+}
+.img8{
+    position: relative;
+    top: 3px;
+    left: 3.5px;
+    border-radius: 15px;
+    width: 370px;
+    height: 250px;
+}
+.text8{
+    display: block;
+    position: absolute;
+    top: 260px;
+    left: 5px;
+}
+/* 购物车搭建结束 */
