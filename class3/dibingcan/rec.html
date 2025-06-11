@@ -1,60 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
     <head>
-        <meta charset="utf-8">
-        <title>sky光遇</title>
-        <style type="text/css">
-            body{
-                font-family: '仿宋';
-                font-size: 15px;
-                color: rgb(70, 112, 203);
-                background: url(124497193.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top;
-            }
-            .box{
-                width: 400px;
-                height: 250px;
-                border: 1px solid #da3c7e;
-                padding: 10px;
+        <meta charset="UTF-8">
+        <title>极简无限轮播</title>
+        <style>
+            .carousel {
+                width: 900px;
+                height: 500px;
                 margin: 50px auto;
-                box-shadow: 10px 10px 10px #5c99ee;
-                float: left;
+                overflow: hidden;
+                position: relative;
             }
-            h2 {
-                text-align: left;
-                height: 30px;
-                line-height: 30px;
-                border-bottom: 1px dashed #542db8;
+            .carousel-inner {
+                display: flex;
+                width: 700%; /* 5张图+2张复制 */
+                transition: transform 0.5s;
             }
-            .text1 {
-                font-family: "楷体";
+            .carousel-item {
+                width: 14.285%; /* 100%/7 */
+            }
+            .carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0,0,0,0.5);
+                color: white;
+                border: none;
+                padding: 10px 20px;
                 font-size: 20px;
-                font-weight: bold;
-                color: #c23d8b;
-                padding-top: 10px;
-                line-height: 25px;
-                float: left;
-                right: 10px;
-                top: 65px;
-                width: 400px;
+                cursor: pointer;
+            }
+            .prev { 
+                left: 10px; 
+            }
+            .next { 
+                right: 10px; 
             }
             .hhh a{
-                
-                font-size: 35px;
-                position: fixed;
-                top: 500px;
-                left: 1400px;
-                color: #2d3ac4;
+                margin-top: 5px;
+                display: flex;
+                justify-content: flex-end;
+                gap: 5px;
+                font-size: 15px;
             }
+            
         </style>
     </head>
     <body>
-        <div class="box">
-            <h2>sky光遇</h2>
-            <p class="text1">光遇是一款非常温暖人心的社交冒险游戏。在这个游戏中，你将踏入一个如梦似幻的光之国度，与来自世界各地的玩家们相遇、相识、相知。</p>
+        <audio src="yp.mp3" controls autoplay></audio>
+        <div class="carousel">
+            <div class="carousel-inner" id="slide">
+                <!-- 复制最后一张 -->
+                <div class="carousel-item"><img src="index.1.jpg" alt="复制图5"></div>
+                <!-- 真实图片 -->
+                <div class="carousel-item"><img src="d1.jpg" alt="图1"></div>
+                <div class="carousel-item"><img src="d3.jpg" alt="图2"></div>
+                <div class="carousel-item"><img src="d22.jpg" alt="图3"></div>
+                <div class="carousel-item"><img src="d4.jpg" alt="图4"></div>
+                <div class="carousel-item"><img src="index.1.jpg" alt="图5"></div>
+                <!-- 复制第一张 -->
+                <div class="carousel-item"><img src="d1.jpg" alt="复制图1"></div>
+            </div>
+            <button class="btn prev" onclick="prev()"></button>
+            <button class="btn next" onclick="next()"></button>
         </div>
-        <p class="hhh"><a href="index.html">返回</a></p>
+        <div class="hhh">
+            <a href="mac.html" >自选</a>
+            <a href="rczy.html">购物网页</a>
+            <a href="index.html">返回首页</a>
+        </div>
+
+        <script>
+            const slide = document.getElementById('slide');
+            let current = 1; // 初始显示第一张真实图片（索引1）
+            const total = 7; // 总图片数（含复制）
+        
+            // 自动轮播（3秒切换一次）
+            let interval = setInterval(next, 3000);
+        
+            // 下一张
+            function next() {
+                current = (current + 1) % total;
+                updateSlide();
+            
+                // 处理边界跳转：从复制图5到真实图1
+                if (current === 0) {
+                    setTimeout(() => {
+                        current = 1; // 跳转到真实图1
+                        updateSlide(false); // 无动画跳转
+                    }, 500); // 等待动画完成后执行
+                }
+            }
+        
+            // 上一张
+            function prev() {
+                current = (current - 1 + total) % total;
+                updateSlide();
+            
+                // 处理边界跳转：从复制图1到真实图5
+                if (current === 6) {
+                    setTimeout(() => {
+                        current = 5; // 跳转到真实图5
+                        updateSlide(false); // 无动画跳转
+                    }, 500); // 等待动画完成后执行
+                }
+            }
+        
+            // 更新轮播位置
+            function updateSlide(animate = true) {
+                slide.style.transition = animate ? 'transform 0.5s' : 'none';
+                slide.style.transform = `translateX(-${current * 100/7}%)`;
+            }
+        
+            // 鼠标悬停暂停轮播，离开恢复
+            const carousel = document.querySelector('.carousel');
+            carousel.addEventListener('mouseenter', () => clearInterval(interval));
+            carousel.addEventListener('mouseleave', () => interval = setInterval(next, 3000));
+        </script>
     </body>
 </html>
