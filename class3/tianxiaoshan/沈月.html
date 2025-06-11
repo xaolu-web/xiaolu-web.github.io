@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>沈月 | 官方网站</title>
-  <!-- 引入Tailwind CSS -->
+  
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- 引入Font Awesome -->
+  
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
-  <!-- Tailwind配置 -->
   <script>
     tailwind.config = {
       theme: {
@@ -28,7 +27,7 @@
     }
   </script>
   
-  <!-- 自定义工具类 -->
+
   <style type="text/tailwindcss">
     @layer utilities {
       .content-auto {
@@ -62,7 +61,7 @@
   </style>
 </head>
 <body class="font-inter bg-white text-dark antialiased">
-  <!-- 导航栏 -->
+  
   <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="#" class="text-2xl font-bold text-primary flex items-center">
@@ -70,7 +69,7 @@
         <span>沈月</span>
       </a>
       
-      <!-- 桌面导航 -->
+     
       <div class="hidden md:flex space-x-8">
         <a href="登录.html" class="text-dark hover:text-primary transition-colors">首页</a>
         <a href="#about" class="text-dark hover:text-primary transition-colors">关于</a>
@@ -78,13 +77,13 @@
         <a href="#gallery" class="text-dark hover:text-primary transition-colors">照片</a>
       </div>
       
-      <!-- 移动端菜单按钮 -->
+      
       <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
         <span class="fa fa-bars text-2xl"></span>
       </button>
     </nav>
     
-    <!-- 移动端导航菜单 -->
+
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
         <a href="#return" class="text-dark hover:text-primary transition-colors py-2">首页</a>
@@ -96,14 +95,14 @@
   </header>
 
   <main>
-    <!-- 英雄区 -->
+  
     <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 mix-blend-multiply"></div>
         <img src="封面.jpg" alt="沈月" class="w-full h-full object-cover">
       </div>
       
-      <!-- 装饰性图案 -->
+     
       <div class="absolute top-20 left-10 opacity-30 animate-float hidden md:block">
         <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
@@ -149,9 +148,9 @@
       </div>
     </section>
 
-    <!-- 关于部分 -->
+  
     <section id="about" class="py-20 bg-light relative overflow-hidden">
-      <!-- 装饰性图案 -->
+    
       <div class="absolute top-10 right-10 opacity-20">
         <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF6B8B" stroke-width="2"/>
@@ -181,7 +180,7 @@
               <p>出生于湖南邵阳</p>
             </div>
             
-            <!-- 装饰性元素 -->
+           
             <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary/20 rounded-full"></div>
             <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-primary/20 rounded-full"></div>
           </div>
@@ -200,25 +199,25 @@
             
             <div class="grid grid-cols-2 gap-4 mt-8">
               <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
-                <!-- 装饰性背景 -->
+                
                 <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
                 <p class="text-primary text-4xl font-bold mb-2">20+</p>
                 <p class="text-dark/70">影视作品</p>
               </div>
               <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
-                <!-- 装饰性背景 -->
+                
                 <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
                 <p class="text-primary text-4xl font-bold mb-2">15+</p>
                 <p class="text-dark/70">广告代言</p>
               </div>
               <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
-                <!-- 装饰性背景 -->
+               
                 <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
                 <p class="text-primary text-4xl font-bold mb-2">10M+</p>
                 <p class="text-dark/70">社交媒体粉丝</p>
               </div>
               <div class="bg-white p-6 rounded-lg shadow-md hover-lift relative overflow-hidden">
-                <!-- 装饰性背景 -->
+                
                 <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
                 <p class="text-primary text-4xl font-bold mb-2">8+</p>
                 <p class="text-dark/70">奖项荣誉</p>
@@ -229,9 +228,9 @@
       </div>
     </section>
 
-    <!-- 作品部分 -->
+   
     <section id="works" class="py-20 bg-white relative">
-      <!-- 装饰性图案 -->
+    
       <div class="absolute top-10 left-10 opacity-10">
         <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF6B8B" stroke-width="2"/>
@@ -257,9 +256,9 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- 作品卡片1 -->
+        
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+            
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -277,9 +276,9 @@
             </div>
           </div>
           
-          <!-- 作品卡片2 -->
+        
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+          
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -297,9 +296,9 @@
             </div>
           </div>
           
-          <!-- 作品卡片3 -->
+        
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+            
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -317,9 +316,9 @@
             </div>
           </div>
           
-          <!-- 作品卡片4 -->
+         
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+          
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -337,9 +336,9 @@
             </div>
           </div>
           
-          <!-- 作品卡片5 -->
+         
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+         
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -357,9 +356,9 @@
             </div>
           </div>
           
-          <!-- 作品卡片6 -->
+          
           <div class="bg-white rounded-xl overflow-hidden shadow-lg hover-lift relative">
-            <!-- 装饰性元素 -->
+         
             <div class="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
             
             <div class="relative h-64 overflow-hidden">
@@ -387,9 +386,8 @@
       </div>
     </section>
 
-    <!-- 照片画廊 -->
     <section id="gallery" class="py-20 bg-light relative overflow-hidden">
-      <!-- 装饰性图案 -->
+     
       <div class="absolute top-20 left-20 opacity-10">
         <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M22 12H2" stroke="#FF6B8B" stroke-width="2" stroke-linecap="round"/>
@@ -416,56 +414,56 @@
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+            
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="1.jpg" alt="沈月写真" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+        
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="2.jpg" alt="沈月生活照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+            
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="3.jpg" alt="沈月剧照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+           
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="4.jpg" alt="沈月活动照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+          
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="5.jpg" alt="沈月时尚照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+         
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="写真.jpg" alt="沈月片场照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+           
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
             <img src="7.。.jpg" alt="沈月广告照" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
           </div>
           <div class="overflow-hidden rounded-lg shadow-md hover-lift relative">
-            <!-- 装饰性悬停效果 -->
+           
             <div class="absolute inset-0 bg-primary/0 hover:bg-primary/20 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
               <span class="fa fa-search-plus text-white text-3xl"></span>
             </div>
@@ -475,7 +473,7 @@
         
         <div class="text-center mt-12">
           <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
-            查看更多照片
+            
             <span class="fa fa-long-arrow-right ml-2"></span>
           </a>
         </div>
@@ -483,9 +481,9 @@
     </section>
   </main>
 
-  <!-- 页脚 -->
+ 
   <footer class="bg-dark text-white py-12 relative overflow-hidden">
-    <!-- 装饰性图案 -->
+    
     <div class="absolute top-10 left-10 opacity-5">
       <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2"/>
@@ -553,14 +551,14 @@
     </div>
   </footer>
 
-  <!-- 返回顶部按钮 -->
+  
   <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover-lift">
     <span class="fa fa-arrow-up"></span>
   </button>
 
-  <!-- JavaScript -->
+
   <script>
-    // 导航栏滚动效果
+   
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('backToTop');
     
@@ -580,7 +578,7 @@
       }
     });
     
-    // 移动端菜单切换
+
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     
@@ -593,12 +591,12 @@
       }
     });
     
-    // 平滑滚动
+   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         
-        // 关闭移动菜单（如果打开）
+       
         if (!mobileMenu.classList.contains('hidden')) {
           mobileMenu.classList.add('hidden');
           menuBtn.innerHTML = '<span class="fa fa-bars text-2xl"></span>';
@@ -616,7 +614,7 @@
       });
     });
     
-    // 返回顶部按钮
+   
     backToTop.addEventListener('click', function() {
       window.scrollTo({
         top: 0,

@@ -60,12 +60,12 @@
         <h1>我的购物车</h1>
     </div>
 
-    <!-- 商品列表 -->
+  
     <div class="product-list" id="productList">
-        <!-- 动态生成商品项 -->
+        
     </div>
 
-    <!-- 购物车底部结算栏 -->
+    
     <div class="cart-container">
         <div class="cart-summary">
             合计：<span id="totalPrice">0.00</span>元
@@ -74,7 +74,7 @@
     </div>
 
     <script>
-        // 模拟商品数据（可替换为真实接口数据）
+        
         const products = [
             { id: 1, name: "纯棉T恤", price: 99.9, img: "https://img14.360buyimg.com/n1/s720x720_jfs/t1/314200/6/5382/94137/68392538F0bcdadec/c3d3153850418c60.jpg" },
             { id: 2, name: "运动鞋", price: 399.5, img: "https://tse4-mm.cn.bing.net/th/id/OIP-C.9SVr60cfmA3JOKlzNzT4mwHaHa?rs=1&pid=ImgDetMain" },
@@ -83,16 +83,14 @@
             { id: 5, name: "连衣裙", price: 103.8, img: "https://img.alicdn.com/bao/uploaded/i1/2776415056/O1CN01pXqzPQ1nDhCHvvvuc_!!2776415056.jpg"},
         ];
 
-        // 购物车数据（存储在本地缓存）
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // 初始化页面
+       
         function init() {
             renderProducts();
             updateCart();
         }
 
-        // 渲染商品列表
         function renderProducts() {
             const list = document.getElementById('productList');
             list.innerHTML = products.map(product => `
@@ -109,11 +107,11 @@
             `).join('');
         }
 
-        // 加入购物车
+        
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             if (product) {
-                // 检查是否已存在购物车，存在则数量+1，否则新增
+              
                 const item = cart.find(item => item.id === productId);
                 if (item) {
                     item.quantity++;
@@ -125,11 +123,10 @@
             }
         }
 
-        // 更新购物车显示（可扩展为弹出层/悬浮窗，此处简化为底部总价）
         function updateCart() {
             const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
             document.getElementById('totalPrice').textContent = total.toFixed(2);
-            // 此处可添加购物车图标角标等效果（需扩展HTML结构）
+           
         }
 
         init();

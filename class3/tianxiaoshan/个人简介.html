@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap">
     <title>个人简介 - 田晓姗</title>
     <style>
-        /* 全局样式重置 */
+      
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +23,7 @@
             padding: 20px;
         }
 
-        /* 卡片容器 */
+      
         .card {
             background-color: #fff;
             width: 100%;
@@ -39,14 +39,13 @@
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
         }
 
-        /* 卡片头部（背景图区域） */
         .card-header {
             background: url('背景2.jpg') center/cover no-repeat;
             height: 180px;
             position: relative;
         }
 
-        /* 头像（可替换为个人照片） */
+       
         .avatar {
             width: 100px;
             height: 100px;
@@ -58,7 +57,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* 卡片主体内容 */
         .card-body {
             padding: 70px 20px 20px;
         }
@@ -88,7 +86,7 @@
             display: inline-block;
         }
 
-        /* 兴趣爱好特殊样式 */
+        
         .hobby-list {
             display: flex;
             flex-wrap: wrap;
@@ -108,7 +106,7 @@
             background-color: #dce6f0;
         }
 
-        /* 响应式适配 */
+      
         @media (max-width: 576px) {
             .avatar {
                 left: 20px;
@@ -146,16 +144,15 @@
 <body>
     <div class="card">
         <div class="card-header">
-            <!-- 这里可替换为你的个人照片，注意改路径 -->
+           
             <img src="头像.jpg" alt="头像" class="avatar">
         </div>
         <div class="card-body" id="profileContent">
-            <!-- JavaScript 动态填充内容 -->
-        </div>
+           
     </div>
 
     <script>
-        // 个人信息数据
+        
         const personalData = {
             name: "田晓姗",
             college: "邯郸科技职业技术学院",
@@ -166,7 +163,7 @@
             hobbies: ["旅行拍照", "听音乐", "PS创意设计", "追技术博客", "校园散步","撸猫"]
         };
 
-        // 渲染函数
+      
         function renderProfile() {
             const contentDiv = document.getElementById('profileContent');
             let html = `

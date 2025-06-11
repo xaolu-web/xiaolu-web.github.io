@@ -22,26 +22,26 @@
         }
         .slider-container {
             position: relative;
-            width:1000px; /* 轮播图宽度 */
-            height: 600px; /* 轮播图高度 */
+            width:1000px;
+            height: 600px; 
             overflow: hidden;
             margin: 70px auto;
-            border-radius: 12px; /* 添加圆角 */
-            box-shadow: 0 6px 14px rgba(0,0,0,0.1); /* 添加阴影 */
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1); 
         }
 
         .slider {
             display: flex;
-            width: 100%; /* 优化图片数量计算方式 */
+            width: 100%; 
             height: 100%;
-            transition: transform 0.5s ease; /* 滑动过渡动画 */
+            transition: transform 0.5s ease; 
         }
 
         .slider img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 图片自适应 */
-            flex-shrink: 0; /* 禁止图片收缩 */
+            object-fit: cover;
+            flex-shrink: 0; 
         }
 
         .prev, .next {
@@ -54,8 +54,8 @@
             padding: 12px 18px;
             font-size: 24px;
             cursor: pointer;
-            z-index: 10; /* 确保按钮在图片上方 */
-            transition: background 0.3s; /* 添加按钮悬停动画 */
+            z-index: 10; 
+            transition: background 0.3s; 
         }
 
         .prev:hover, .next:hover {
@@ -82,14 +82,14 @@
             background: #ddd;
             margin: 0 8px;
             cursor: pointer;
-            transition: all 0.3s; /* 优化过渡效果 */
-            border: 2px solid transparent; /* 预留边框空间 */
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
         .dots span.active {
-            background: #ff4444; /* 激活状态颜色 */
-            border-color: #ff4444; /* 添加边框效果 */
-            transform: scale(1.2); /* 激活时放大效果 */
+            background: #ff4444; 
+            border-color: #ff4444; 
+            transform: scale(1.2); 
         }
             .jump-btn {
             position: fixed; 
@@ -111,7 +111,7 @@
 </head>
 <body>
     <div class="slider-container">
-        <!-- 图片容器 -->
+      
         <div class="slider" id="slider">
             <img src="微信图片_20250531105741.jpg" alt="图片1">
             <img src="微信图片_20250531105754.jpg" alt="图片2">
@@ -122,128 +122,104 @@
             <img src="7.jpg" alt="图片7">
         </div>
         
-        <!-- 左右切换按钮 -->
+        
         <button class="prev" onclick="changeSlide(-1)">‹</button>
         <button class="next" onclick="changeSlide(1)">›</button>
         
-        <!-- 圆点导航 -->
+      
         <div class="dots" id="dots"></div>
     </div>
 
     <script>
-        // ----------------------
-        // 初始化参数
-        // ----------------------
-        let currentSlide = 0; // 当前显示的图片索引（从0开始）
-        const slider = document.getElementById('slider'); // 图片容器
-        const slides = document.querySelectorAll('.slider img'); // 所有图片
+      
+        let currentSlide = 0;
+        const slider = document.getElementById('slider'); 
+        const slides = document.querySelectorAll('.slider img');
         const dotContainer = document.getElementById('dots');
-        let autoPlayInterval; // 自动播放定时器
-
-        // ----------------------
-        // 初始化函数
-        // ----------------------
+        let autoPlayInterval; 
+       
         function init() {
-            // 生成圆点导航
-            createDots();
-            // 启动自动播放
+        createDots();
+           
             startAutoPlay();
-            // 绑定触摸滑动事件（移动端支持）
+            
             bindTouchEvents();
         }
 
-        // ----------------------
-        // 生成圆点导航
-        // ----------------------
+     
         function createDots() {
             slides.forEach((_, index) => {
                 const dot = document.createElement('span');
                 dot.addEventListener('click', () => switchToSlide(index));
                 dotContainer.appendChild(dot);
             });
-            // 初始化激活第一个圆点
+          
             dotContainer.children[0].classList.add('active');
         }
 
-        // ----------------------
-        // 切换图片（n为-1/1或目标索引）
-        // ----------------------
+      
         function changeSlide(n) {
-            // 处理边界情况（循环切换）
+            
             if (typeof n === 'number') {
                 currentSlide = (currentSlide + n + slides.length) % slides.length;
             }
             updateSlider();
         }
 
-        // ----------------------
-        // 更新图片显示和圆点状态
-        // ----------------------
+       
         function updateSlider() {
-            // 移动图片容器（使用CSS Transform）
+          
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
             
-            // 更新圆点激活状态
+           
             Array.from(dotContainer.children).forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
         }
 
-        // ----------------------
-        // 自动播放控制
-        // ----------------------
+        
         function startAutoPlay() {
             autoPlayInterval = setInterval(() => {
                 changeSlide(1);
             }, 3000); 
         }
 
-        // ----------------------
-        // 暂停自动播放
-        // ----------------------
+     
         function pauseAutoPlay() {
             clearInterval(autoPlayInterval);
         }
 
-        // ----------------------
-        // 移动端触摸滑动支持
-        // ----------------------
         function bindTouchEvents() {
             let startX = 0;
             const sliderContainer = document.querySelector('.slider-container');
 
             sliderContainer.addEventListener('touchstart', (e) => {
                 startX = e.touches[0].clientX;
-                pauseAutoPlay(); // 触摸时暂停自动播放
+                pauseAutoPlay(); 
             });
 
             sliderContainer.addEventListener('touchmove', (e) => {
-                e.preventDefault(); // 阻止滚动行为
+                e.preventDefault(); 
             });
 
             sliderContainer.addEventListener('touchend', (e) => {
                 const endX = e.changedTouches[0].clientX;
                 const deltaX = endX - startX;
                 
-                // 向左滑动切换下一张（deltaX > 50）
-                // 向右滑动切换上一张（deltaX < -50）
+             
                 if (Math.abs(deltaX) > 50) {
                     changeSlide(deltaX > 0 ? -1 : 1);
                 }
-                startAutoPlay(); // 触摸结束后恢复自动播放
+                startAutoPlay(); 
             });
         }
 
-        // ----------------------
-        // 鼠标事件控制
-        // ----------------------
+       
         const sliderContainer = document.querySelector('.slider-container');
         sliderContainer.addEventListener('mouseenter', pauseAutoPlay);
         sliderContainer.addEventListener('mouseleave', startAutoPlay);
 
-        // ----------------------
-        // 初始化调用
-        // ----------------------
+       
         init();
                  
     </script>

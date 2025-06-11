@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device - width, initial - scale=1.0">
     <title>登录页面</title>
     <style>
+        body{
+    background: radial-gradient(circle at 50% 50%,#fff0,#fff),
+    radial-gradient(farthest-side at bottom left,#ec7ad0,#fff0),
+    radial-gradient(farthest-side at top left,#67d481,#fff0),
+    radial-gradient(farthest-side at bottom right,#6a4cff,#fff0),
+    radial-gradient(farthest-side at top right,#ff7ece,#fff0);
+
+    min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:60px 30px;
+            margin: 0;
+        }
         form {
             width:700px;
             margin: 100px auto;
@@ -71,7 +85,7 @@
                     return;
                 }
 
-               if (username==='admin' && password==='123456'){
+               if (username==='admin' && password==='a123456'){
                 alert('登录成功');
 
                 window.location.href="个人简介.html";
