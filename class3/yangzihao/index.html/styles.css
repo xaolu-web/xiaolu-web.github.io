@@ -1,0 +1,53 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.product img {
+    width: 100%;
+}
+
+.add-to-cart {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-list li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space - between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+body {
+    display: flex;
+    justify-content: center; /*背景弹性居中填充*/
+    align-items: center; /*背景垂直居中*/
+    min-height: 100vh; /*背景最小为100vh*/
+    background: url(223.jpg) no-repeat; /*导入背景图*/
+    background-size: cover; /*背景大小覆盖整个页面*/
+    background-position: center;  /*背景位置居中*/}

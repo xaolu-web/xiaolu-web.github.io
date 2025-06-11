@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图示例</title>
+    <link rel="stylesheet" href="carousel.css"> <!-- 外部CSS样式 -->
+</head>
+<body>
+    <div class="carousel-container">
+        <!-- 轮播图容器 -->
+        <div class="carousel">
+            <img src="back.jpg" alt="图片1" class="carousel-item active">
+            <img src="21.img" alt="图片2" class="carousel-item">
+            <img src="112.img" alt="图片3" class="carousel-item">
+        </div>
+        
+        <!-- 左右切换按钮 -->
+        <button class="carousel-btn prev-btn">&lt;</button>
+        <button class="carousel-btn next-btn">&gt;</button>
+        
+        <!-- 指示点容器 -->
+        <div class="carousel-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+    </div>
+    <script src="carousel.js"></script> <!-- 外部JavaScript逻辑 -->
+</body>
+</html>

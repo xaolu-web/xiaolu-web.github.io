@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫雷</title>
+    <style>
+        .cell {
+            width: 30px;
+            height: 30px;
+            float: left;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            background-color: #ddd;
+        }
+        .cell.revealed {
+            background-color: #bbb;
+            cursor: default;
+        }
+        .cell.mine {
+            background-color: red;
+        }
+        .cell.mine:after {
+            content: "💣";
+        }
+        .cell.number-1 { color: blue; }
+        .cell.number-2 { color: green; }
+        .cell.number-3 { color: red; }
+        .cell.number-4 { color: purple; }
+        .cell.number-5 { color: maroon; }
+    </style>
+</head>
+<body>
+    <h1>简易扫雷</h1>
+    <div id="board" style="width: 300px; margin: 0 auto;"></div>
+    <button id="reset">重新开始</button>
+    <script>
+        // 游戏配置：10x10网格，10个地雷
+        const size = 10;
+        const mineCount = 10;
+        let board = [];
+        let revealed = [];
+        
+        // 初始化游戏
+        function init() {
+            board = Array(size).fill().map(() => Array(size).fill(0));
+            revealed = Array(size).fill().map(() => Array(size).fill(false));
+            
+            // 随机放置地雷
+            let minesPlaced = 0;
+            while (minesPlaced < mineCount) {
+                const row = Math.floor(Math.random() * size);
+                const col = Math.floor(Math.random() * size);
+                if (board[row][col] !== -1) {
+                    board[row][col] = -1;
+                    minesPlaced++;
+                }
+            }
+            
+            // 计算每个格子周围的地雷数
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    if (board[row][col] === -1) continue;
+                    let count = 0;
+                    for (let r = row-1; r <= row+1; r++) {
+                        for (let c = col-1; c <= col+1; c++) {
+                            if (r >=0 && r < size && c >=0 && c < size && board[r][c] === -1) {
+                                count++;
+                            }
+                        }
+                    }
+                    board[row][col] = count;
+                }
+            }
+            
+            // 渲染棋盘
+            const boardEl = document.getElementById('board');
+            boardEl.innerHTML = '';
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.dataset.row = row;
+                    cell.dataset.col = col;
+                    cell.addEventListener('click', () => clickCell(row, col));
+                    boardEl.appendChild(cell);
+                }
+            }
+        }
+        
+        // 点击格子处理
+        function clickCell(row, col) {
+            if (revealed[row][col]) return;
+            revealed[row][col] = true;
+            
+            const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+            cell.classList.add('revealed');
+            
+            if (board[row][col] === -1) {
+                // 踩到地雷，游戏结束
+                cell.classList.add('mine');
+                alert('游戏结束！踩到地雷了');
+                revealAllMines();
+                return;
+            }
+            
+            if (board[row][col] > 0) {
+                cell.classList.add(`number-${board[row][col]}`);
+                cell.textContent = board[row][col];
+            } else {
+                // 递归翻开周围格子
+                for (let r = row-1; r <= row+1; r++) {
+                    for (let c = col-1; c <= col+1; c++) {
+                        if (r >=0 && r < size && c >=0 && c < size) {
+                            clickCell(r, c);
+                        }
+                    }
+                }
+            }
+            
+            // 检查是否胜利
+            checkWin();
+        }
+        
+        // 显示所有地雷
+        function revealAllMines() {
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    if (board[row][col] === -1 && !revealed[row][col]) {
+                        const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+                        cell.classList.add('revealed', 'mine');
+                    }
+                }
+            }
+        }
+        
+        // 检查是否胜利
+        function checkWin() {
+            const totalCells = size * size;
+            const safeCells = totalCells - mineCount;
+            const revealedCells = revealed.flat().filter(v => v).length;
+            
+            if (revealedCells === safeCells) {
+                alert('恭喜你胜利了！');
+            }
+        }
+        
+        // 重置游戏
+        document.getElementById('reset').addEventListener('click', init);
+        
+        // 启动游戏
+        init();
+    </script>
+</body>
+</html>

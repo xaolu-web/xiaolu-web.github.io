@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+padding: 0;}
+ul{
+    list-style: none;
+}
+
+a{
+    color:#333;
+    text-decoration: none;
+}
+body{
+    background:#f8f6f6;
+}
+.header{
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.nav-box{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    height: 40px;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    color:#333;
+}
+.nav-box .nav{
+    display: flex;
+    font-size:16px;
+    color:#555;
+
+}
+.nav-box .nav li{
+    padding-left: 40px
+
+}
+.banner{
+    width: 1200px;
+    margin: 0 auto;
+    background: url(21.img) no-repeat center center;
+    height: 312px;
+    text-align: center;
+    line-height: 312px;
+    color:#fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.introduce{
+    width: 1200px;
+    padding: 40px 0;
+    margin: 0 auto;
+    display: flex;
+}
+.introduce-tit{
+    line-height:50px;
+    font-size:27px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    color:#555;
+}
+.introduce-main{
+    display: flex;
+}
+.introduce .l{
+    margin-right: 60px;
+
+}
+.introduce .l img{
+    border-radius: 50%;
+}
+.introduce .r{
+    line-height: 60px;
+    font-size: 25px;
+    color: #555;
+}
