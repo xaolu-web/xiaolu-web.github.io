@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>轮播图展示</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f5f5f5;
+}
+nav {
+background: #333;
+padding: 10px;
+}
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+}
+.container {
+max-width: 1000px;
+margin: 30px auto;
+padding: 0 20px;
+}
+h1 {
+text-align: center;
+color: #333;
+margin-bottom: 30px;
+}
+.slider {
+position: relative;
+width: 100%;
+height: 400px;
+overflow: hidden;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.slides {
+display: flex;
+width: 100%;
+height: 100%;
+transition: transform 0.5s ease;
+}
+.slide {
+min-width: 100%;
+height: 100%;
+}
+.slide img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.slide-caption {
+position: absolute;
+bottom: 20px;
+left: 0;
+right: 0;
+text-align: center;
+color: white;
+background-color: rgba(0,0,0,0.5);
+padding: 10px;
+margin: 0 20px;
+border-radius: 4px;
+}
+.slider-nav {
+position: absolute;
+top: 50%;
+width: 100%;
+display: flex;
+justify-content: space-between;
+transform: translateY(-50%);
+}
+.slider-nav button {
+background: rgba(255,255,255,0.5);
+border: none;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+font-size: 20px;
+cursor: pointer;
+margin: 0 10px;
+}
+.slider-nav button:hover {
+background: rgba(255,255,255,0.8);
+}
+.indicators {
+position: absolute;
+bottom: 10px;
+left: 0;
+right: 0;
+display: flex;
+justify-content: center;
+gap: 8px;
+}
+.indicator {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: rgba(255,255,255,0.5);
+cursor: pointer;
+}
+.indicator.active {
+background: white;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li><a href="index.html">首页</a ></li>
+<li><a href="index4.html">个人简历</a ></li>
+<li><a href="index5.html">网站购物</a ></li>
+<li><a href="index2.html">轮播图</a ></li>
+</ul>
+</nav>
+
+<div class="container">
+<h1>轮播图展示</h1>
+
+<div class="slider">
+<div class="slides" id="slides">
+<!-- 轮播项1 -->
+<div class="slide">
+ <img src="kd2.jpg" style="width: 900px;height: 500px;margin:0,auto;"/>
+<div class="slide-caption">这是第一张轮播图的描述文字></div>
+</div>
+
+<!-- 轮播项2 -->
+<div class="slide">
+<img src="kd3.jpg" style="width: 900px;height: 500px;"/>
+<div class="slide-caption">这是第二张轮播图的描述文字></div>
+</div>
+
+<!-- 轮播项3 -->
+<div class="slide">
+<img src="kd4.jpg" style="width: 900px;height: 500px;"/>
+<div class="slide-caption">这是第三张轮播图的描述文字></div>
+</div>
+</div>
+
+<!-- 导航按钮 -->
+<div class="slider-nav">
+<button id="prevBtn">❮</button>
+<button id="nextBtn">❯</button>
+</div>
+
+<!-- 指示器 -->
+<div class="indicators" id="indicators">
+<div class="indicator active" data-index="0"></div>
+<div class="indicator" data-index="1"></div>
+<div class="indicator" data-index="2"></div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const slides = document.getElementById('slides');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const indicators = document.getElementById('indicators').children;
+
+let currentIndex = 0;
+const slideCount = document.querySelectorAll('.slide').length;
+let autoSlideInterval;
+
+// 更新轮播图位置
+function updateSlidePosition() {
+slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+// 更新指示器状态
+for (let i = 0; i < indicators.length; i++) {
+indicators[i].classList.toggle('active', i === currentIndex);
+}
+}
+
+// 下一张
+function nextSlide() {
+currentIndex = (currentIndex + 1) % slideCount;
+updateSlidePosition();
+}
+
+// 上一张
+function prevSlide() {
+currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+updateSlidePosition();
+}
+
+// 自动轮播
+function startAutoSlide() {
+autoSlideInterval = setInterval(nextSlide, 3000);
+}
+
+// 停止自动轮播
+function stopAutoSlide() {
+clearInterval(autoSlideInterval);
+}
+
+// 事件监听
+nextBtn.addEventListener('click', function() {
+nextSlide();
+stopAutoSlide();
+startAutoSlide();
+});
+
+prevBtn.addEventListener('click', function() {
+prevSlide();
+stopAutoSlide();
+startAutoSlide();
+});
+
+// 指示器点击
+for (let indicator of indicators) {
+indicator.addEventListener('click', function() {
+currentIndex = parseInt(this.dataset.index);
+updateSlidePosition();
+stopAutoSlide();
+startAutoSlide();
+});
+}
+
+// 鼠标悬停暂停轮播
+document.querySelector('.slider').addEventListener('mouseenter', stopAutoSlide);
+document.querySelector('.slider').addEventListener('mouseleave', startAutoSlide);
+
+// 开始自动轮播
+startAutoSlide();
+});
+</script>
+</body>
+</html>
