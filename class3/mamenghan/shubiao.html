@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>鼠标拖拽</title>
-    <link rel="stylesheet" href="dialog.css">
+
+    <style>
+        #drop{
+            width: 200px; height: 200px; background-color: aquamarine;
+            border: 10px solid rgb(255, 132, 132);
+        }
+         .jump-btn {
+            position: relative;
+            left: 500px;
+            top: 25px;
+            padding: 10px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .jump-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <div class="dialog" id="box">
@@ -32,5 +52,6 @@
         box.style.display = 'none';
     };
     </script>
+    <button class="jump-btn" onclick="window.location.href='daohang.html'">跳转页面></button>
 </body>
 </html>
