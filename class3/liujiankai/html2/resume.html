@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人简历</title>
+<style>
+body {
+font-family: 'Microsoft YaHei', sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+background-color: #f9f9f9;
+color: #333;
+}
+.container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background: white;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+header {
+text-align: center;
+border-bottom: 2px solid #4CAF50;
+padding-bottom: 20px;
+margin-bottom: 20px;
+}
+h1 {
+color: #4CAF50;
+margin-bottom: 5px;
+}
+.contact-info {
+margin: 10px 0;
+}
+section {
+margin-bottom: 25px;
+}
+h2 {
+color: #4CAF50;
+border-bottom: 1px solid #eee;
+padding-bottom: 5px;
+}
+.education-item, .experience-item {
+margin-bottom: 15px;
+}
+.date {
+font-weight: bold;
+color: #666;
+}
+.skills {
+display: flex;
+flex-wrap: wrap;
+}
+.skill {
+background: #4CAF50;
+color: white;
+padding: 5px 10px;
+margin: 5px;
+border-radius: 3px;
+}
+nav {
+background: #333;
+padding: 10px;
+margin-bottom: 20px;
+}
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li><a href="login.html">首页</a ></li>
+<li><a href="resume.html">个人简历</a ></li>
+<li><a href="shop.html">网站购物</a ></li>
+<li><a href="gallery.html">轮播图</a ></li>
+</ul>
+</nav>
+
+<div class="container">
+<header>
+<h1>李四</h1>
+<div class="contact-info">
+<span>电话：189-XXXX-XXXX</span> |
+<span>邮箱：Lisi@example.com</span> |
+<span>地址：河北省保定市</span>
+</div>
+</header>
+
+<section>
+<h2>教育背景</h2>
+<div class="education-item">
+<div class="date">2018.09 - 2022.06</div>
+<h3>XX大学 - 计算机应用与技术（专科）</h3>
+<p>主修课程：数据结构、Java程序设计、Web开发、Java前端开发</p >
+<p>GPA：3.0/4.0（专业前10%）</p >
+</div>
+</section>
+
+<section>
+<h2>工作经历</h2>
+<div class="experience-item">
+<div class="date">2022.07 - 至今</div>
+<h3>XX科技有限公司 - 前端开发工程师</h3>
+<ul>
+<li>负责公司官网和后台管理系统前端开发</li>
+<li>使用Vue.js框架开发用户交互模块</li>
+<li>优化页面加载速度，性能提升40%</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>技能专长</h2>
+<div class="skills">
+<span class="skill">HTML5</span>
+<span class="skill">CSS3</span>
+<span class="skill">JavaScript</span>
+<span class="skill">React</span>
+<span class="skill">Node.js</span>
+</div>
+</section>
+
+<section>
+<h2>项目经验</h2>
+<div class="experience-item">
+<h3>电商后台管理系统（2023.03 - 2023.06）</h3>
+<ul>
+<li>基于Vue+Element UI开发</li>
+<li>实现商品管理、订单管理、数据统计等功能模块</li>
+<li>采用axios实现前后端数据交互</li>
+</ul>
+</div>
+</section>
+</div>
+</body>
+</html>

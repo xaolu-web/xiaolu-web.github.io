@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 可引入公共 CSS 文件，这里先写内联简单样式演示 -->
+<style>
+/* 简单重置，让排版更统一 */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: "微软雅黑", sans-serif;
+background-color: #f4f4f4;
+padding: 20px;
+}
+
+h1 {
+text-align: center;
+color: #333;
+margin-bottom: 30px;
+}
+
+.container {
+max-width: 600px;
+margin: 0 auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-item {
+margin-bottom: 15px;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+color: #666;
+}
+
+select,
+input[type="checkbox"],
+input[type="radio"] {
+margin-right: 10px;
+cursor: pointer;
+}
+
+button {
+display: block;
+margin: 20px auto 0;
+padding: 10px 20px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+#result {
+text-align: center;
+margin-top: 20px;
+padding: 10px;
+border-radius: 4px;
+background-color: #e9f3ff;
+color: #333;
+display: none; /* 初始隐藏，选完显示 */
+}
+</style>
+<title>自选功能页面</title>
+</head>
+
+<body>
+<h1>自选功能 - 选喜欢的水果</h1>
+<div class="container">
+<!-- 下拉选择示例 -->
+<div class="option-item">
+<label for="fruitSelect">请选择一种水果：</label>
+<select id="fruitSelect">
+<option value="apple">苹果</option>
+<option value="banana">香蕉</option>
+<option value="orange">橙子</option>
+<option value="grape">葡萄</option>
+</select>
+</div>
+
+<!-- 多选框示例 -->
+<div class="option-item">
+<label>喜欢的水果特性（可多选）：</label>
+<input type="checkbox" name="feature" value="sweet"> 甜
+<input type="checkbox" name="feature" value="sour"> 酸
+<input type="checkbox" name="feature" value="juicy"> 多汁
+</div>
+
+<!-- 单选框示例 -->
+<div class="option-item">
+<label>水果颜色偏好：</label>
+<input type="radio" name="color" value="red"> 红色系
+<input type="radio" name="color" value="yellow"> 黄色系
+<input type="radio" name="color" value="orange"> 橙色系
+</div>
+
+<!-- 提交按钮，触发结果展示 -->
+<button id="submitBtn">提交选择</button>
+
+<!-- 展示结果区域 -->
+<div id="result"></div>
+</div>
+
+<script>
+// 获取 DOM 元素
+const submitBtn = document.getElementById('submitBtn');
+const resultDiv = document.getElementById('result');
+const fruitSelect = document.getElementById('fruitSelect');
+const featureChecks = document.getElementsByName('feature');
+const colorRadios = document.getElementsByName('color');
+
+// 按钮点击事件
+submitBtn.addEventListener('click', function () {
+// 获取下拉选择值
+const selectedFruit = fruitSelect.value;
+// 获取多选框选中值
+const selectedFeatures = [];
+featureChecks.forEach(item => {
+if (item.checked) {
+selectedFeatures.push(item.value);
+}
+});
+// 获取单选框选中值
+let selectedColor = '';
+colorRadios.forEach(item => {
+if (item.checked) {
+selectedColor = item.value;
+}
+});
+
+// 拼接结果文本
+let resultText = `你选择的水果是：${selectedFruit}<br>`;
+resultText += `喜欢的特性：${selectedFeatures.join('、')}<br>`;
+resultText += `颜色偏好：${selectedColor}`;
+
+// 显示结果
+resultDiv.innerHTML = resultText;
+resultDiv.style.display = 'block';
+});
+</script>
+</body>
+</html>
