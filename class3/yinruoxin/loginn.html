@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 进入后跳转至购物网站 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="iconfont.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .re{
+            position: relative;
+        }
+        .message{
+            position: absolute;
+            top: 110px;
+            left: 65px;
+            font-size: 12px;
+            background: url(warning.png) no-repeat left center;
+            background-size: 17px;
+            padding-left: 20px;
+        }
+        .message.wrong{
+            color: red;
+            background: url(wrong.png) no-repeat left center;
+            background-size: 16px;
+        }
+        .message.right{
+            color: rgb(100, 163, 6);
+            background: url(right.png) no-repeat left center;
+            background-size: 16px;
+        }
+        .usernamemessage.wrongg{
+            color: red;
+            background: url(wrong.png) no-repeat left center;
+            background-size: 16px;
+        }
+        .usernamemessage.rightt{
+            color: rgb(100, 163, 6);
+            background: url(right.png) no-repeat left center;
+            background-size: 16px;
+        }
+        .usernamemessage{
+            position: absolute;
+            top: 30px;
+            left: 65px;
+            font-size: 12px;
+            background: url(warning.png) no-repeat left center;
+            background-size: 17px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 核心：表单  need:校验-->
+    <div class="container">
+        <div class="header">
+            <h1>登录</h1>
+        </div>
+        <div class="main">
+            <!-- 主页面 -->
+             <form class="re">
+                <span class="iconfont icon-user"></span>
+                <input type="text" placeholder="同户名" class="j" id="username">
+                <p class="usernamemessage">请输入您的用户名</p>
+                <br>
+                <span class="iconfont icon-lock"></span>
+                <input type="password" placeholder="密码" class="i" id="pwd">
+                <p class="message">请输入6~16位密码</p>
+                <br>
+                <button type="button" class="k" onclick="login()">登录</button>
+             </form>
+        </div>
+        <!-- <div class="big">
+            <p class="p">不要着急哦~请先登录</p>
+        </div>
+        <div class="error">
+            <i class="close-btn">x</i>
+        </div>
+        
+        <div class="small">
+
+        </div> -->
+    </div>
+    <script>
+        //1.判断事件：失去焦点事件 onblur 2.若输入正确则提示颜色信息为小绿色图标3.若x，则为小红色图标4.采取className修改样式
+        var username=document.getElementById("username");
+        var pwd=document.getElementById("pwd");
+        var message=document.querySelector(".message");
+        var usermessage=document.querySelector(".usernamemessage");
+        // window.onload=function(){
+        //     var big=document.querySelector(".big");                   //选择器要注意id选择器+'.'
+        //     var small=document.querySelector(".small");
+        //     var error=document.querySelector(".error");
+        //     var btn=document.querySelector('.close-btn');
+        //     var p=document.querySelector(".p");
+        // }
+        // btn.onclick=function(){
+        //     big.style.display='none';
+        //     small.style.display='none';
+        //     error.style.display='none';
+        //     p.style.value='';
+        //     btn.style.display='none';
+        // }
+        //2.注册失去焦点事件
+        pwd.onblur=function(){
+            //根据表单里面值的长度 ipt.value.length
+            if(this.value.length<7||this.value.length>16){
+                // console.log("error");
+                message.className="message wrong";
+                message.innerHTML="您输入的位数不对要求7~16位"; 
+            }else{
+                if(this.value!='a123456'){
+                    message.className="message wrong";
+                    message.innerHTML="您输入的密码不正确";
+                }else{
+                    message.className="message right";
+                    message.innerHTML="您输入的密码正确";
+                }
+            }
+        }
+        username.onblur=function(){
+            //根据表单里面值的长度 ipt.value.length
+            var c=/^[a-zA-Z]+$/;
+            var inputvalue=this.value.trim();
+            if(!c.test(inputvalue)){
+                usermessage.className="usernamemessage wrongg";
+                // console.log("error");
+                usermessage.innerHTML="您输入的用户名不合法";
+                
+            }else{
+                if(inputvalue!='admin'){
+                    usermessage.className="usernamemessage wrongg";
+                    usermessage.innerHTML="该用户名不存在,请重新输入";
+                }else{
+                    usermessage.className="usernamemessage rightt";
+                    usermessage.innerHTML="您输入的用户名正确";
+                }
+            }
+        }
+        function login(){
+            var isusernamevalid=false;
+            var usernamevalue=username.value.trim();//trim()去除字符串两端的空白字符(空格 换行 \t)
+            var usernameregex=/^[a-zA-Z]+$/;
+            if(usernameregex.test(usernamevalue)&&usernamevalue==='admin'){
+                isusernamevalid=true;
+            }else{
+                username.onblur();      //若校验未通过，可以手动触发onblur提示错误
+            }
+            var ispwdvalid=false;
+            var pwdvalue=pwd.value.trim();
+            if(pwdvalue.length>=7&&pwdvalue.length<16&&pwdvalue==='a123456'){
+                ispwdvalid=true;
+            }else{
+                pwd.onblur();
+            }
+            if(isusernamevalid&&ispwdvalid){
+                window.location.href="shopping.html";
+            }else{
+                alert("用户名或密码有误,请检查后重新输入");
+            }
+        }
+    </script>
+</body>
+</html>

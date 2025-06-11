@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            /* 将边框合起来 */
+            border-collapse: collapse;
+            width: 800px;
+            /* 居中 */
+            margin: 0 auto;
+        }
+        table,th,td{
+            border: 1px solid #000;
+        }
+        th,td{
+            padding: 8px;
+            text-align: center;
+        }
+        th{
+            width: 100px;
+            background-color: rgb(242,242,242);
+        }
+        .ii{
+            text-align: left;
+            height: 60px;
+        }
+        .i{
+            text-align: center;
+            padding: 1px;
+        }
+        #a{
+            padding: 0px;
+            height: 210px;
+            overflow: hidden;
+            text-align: center;
+        }
+        #a img{
+            width: 180px;
+            height: 210px;
+        }
+        .i{
+            width: 200px;
+            position: relative;
+            left: 0px;
+
+        }
+        .i a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- table th(标题) tr(行) td(tr中有几项) -->  
+    <div class="i"><a href="switch.html">跳转至轮播图</a></div>                                                                                                                                                                                                                                                                                             
+    <table>
+        <tr>
+            <th colspan="5" class="i"><h2>个人简介</h2></th>
+        </tr>
+        <tr>
+            <th>姓 名</th>
+            <td>yrx</td>
+            <th>性 别</th>
+            <td>女</td>
+            <!-- 向下合并--纵向合并 -->
+            <td rowspan="5" width="150px" id="a">
+                <img src="introduction.jpg" alt="介绍图片">
+            </td>
+        </tr>
+        <tr>
+            <th>民 族</th>
+            <td>汉</td>
+            <th>出生年月</th>
+            <td>2006 12 12</td>
+        </tr>
+        <tr>
+            <th>政治面貌</th>
+            <td>群众</td>
+            <th>学制</th>
+            <td>3年</td>
+        </tr>
+        <tr>
+            <th>学 历</th>
+            <td>专科</td>
+            <th>专业</th>
+            <td>计算机应用技术</td>
+        </tr>
+        <tr>
+            <th>身高/体重</th>
+            <td>xxxCM/xxKG</td>
+            <th>身体状况</th>
+            <td>良好</td> 
+        </tr>
+        <tr>
+            <th>籍 贯</th>
+            <td>河北</td>
+            <th>毕业院校</th>
+            <td colspan="2">邯郸科xx业学院</td>
+        </tr>
+        <tr>
+            <th>联系电话</th>
+            <td>18x32xxxxxx</td>
+            <th>联系地址</th>
+            <td colspan="2">xx省xx市xx县</td>
+        </tr>
+        <tr>
+            <th>计算机水平</th>
+            <td colspan="4" class="ii">暂无</td>
+        </tr>
+        <tr>
+            <th>兴趣爱好</th>
+            <td colspan="4" class="ii">画画 DIY</td>
+        </tr>
+        <tr>
+            <th>教育背景</th>
+            <td colspan="4" class="ii">
+                20xx,202404103xx,邯郸科xxx学院 计算机应用技术 专科</td>
+        </tr>
+        <tr>
+            <th>社会实践</th>
+            <td colspan="4" class="ii">
+                工作概括: 热爱社会实践,积极帮助他人
+            </td>
+        </tr>
+        <tr>
+            <th>自我评价</th>
+            <td colspan="4" class="ii">
+                好好学习,天天向上
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
