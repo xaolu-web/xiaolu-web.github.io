@@ -5,73 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人简介</title>
     <style>
-        /* 全局样式重置 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "微软雅黑", sans-serif;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
-
-        body {
-            background: #f9f9f9;
-            line-height: 1.6;
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
         }
-
-        /* 容器：居中显示 */
-        .bt {
-            width: 80%;
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 10px; 
         }
-
-        /* 标题样式 */
-        .jj {
-            font-size: 28px;
-            color: #333;
-            border-left: 5px solid #667eea;
-            padding-left: 15px;
-            margin-bottom: 20px;
+        h2 { 
+            color: #3498db; 
+            margin: 15px 0 10px; 
         }
-
-        /* 子标题样式 */
-        .xx {
-            font-size: 18px;
-            color: #555;
-            margin: 20px 0 10px;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 5px;
+        p { 
+            margin-bottom: 10px; 
         }
-
-        /* 文本段落 */
-        .text {
-            color: #666;
-            margin-bottom: 15px;
-            text-indent: 2em; /* 首行缩进 */
+        ul { 
+            list-style: none; 
         }
-
-        /* 技能列表 */
-        .skill-list {
-            list-style: none;
-            padding-left: 20px;
+        li { 
+            margin-bottom: 5px; 
         }
-
-        .skill-list li {
-            color: #666;
-            margin: 5px 0;
-            position: relative;
-            padding-left: 15px;
+        .section { 
+            margin-bottom: 30px; 
+            padding-bottom: 20px; 
+            border-bottom: 1px solid #eee; 
         }
-
-        .skill-list li::before {
-            content: "•";
-            color: #667eea;
-            position: absolute;
-            left: 0;
+        .profile { 
+            text-align: center; 
+            margin-bottom: 30px; 
+        }
+        .profile img { 
+            width: 120px; height: 120px; 
+            border-radius: 50%; 
+            margin-bottom: 15px; 
+        }
+        .contact li { 
+            display: flex; 
+            align-items: center; 
+        }
+        .contact i { 
+            margin-right: 10px; 
+            color: #3498db; 
         }
         .hhh a{
             margin-top: 20px;
@@ -80,27 +63,6 @@
             gap: 30px;
             font-size: 20px;
         }
-    </style>
-</head>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简介</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
-        h1 { color: #2c3e50; margin-bottom: 10px; }
-        h2 { color: #3498db; margin: 15px 0 10px; }
-        p { margin-bottom: 10px; }
-        ul { list-style: none; }
-        li { margin-bottom: 5px; }
-        .section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        .profile { text-align: center; margin-bottom: 30px; }
-        .profile img { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 15px; }
-        .contact li { display: flex; align-items: center; }
-        .contact i { margin-right: 10px; color: #3498db; }
     </style>
 </head>
 <body>
