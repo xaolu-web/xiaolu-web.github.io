@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>页面五 - 个人博客</title>
+  <!-- 引入 Layui CSS（用作业给的资源） -->
+  <link rel="stylesheet" href="https://layui.dev/docs/2/dist/css/layui.css"  media="all">
+  <style>
+    /* 自定义样式，和 Layui 配合 */
+    .blog-header {
+      text-align: center;
+      padding: 30px 0;
+      background-color: #f8f9fa;
+    }
+    .blog-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .blog-header p {
+      color: #666;
+    }
+    .layui-card {
+      margin: 20px 0;
+    }
+    .sidebar {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      color: #999;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+<!-- 导航栏（和作业其他页面保持一致，假设其他页也用 Layui 导航） -->
+<ul class="layui-nav" lay-filter="nav">
+  <li class="main.html"><a href="main.html">登录页面</a></li>
+  <li class="resume.html"><a href="resume.html">个人简历页面</a></li>
+  <li class="shop.html"><a href="shop.html">网站购物页面</a></li>
+  <li class="gallery.html"><a href="gallery.html">轮播图</a></li>
+  <li class="custom.html"><a href="custom.html">个人博客</a></li>
+</ul>
+
+<!-- 页面主体 -->
+<div class="layui-container" style="margin-top: 20px;">
+  <div class="layui-row layui-col-space15">
+    <!-- 左侧内容（博客列表） -->
+    <div class="layui-col-md9">
+      <!-- 博客头部 -->
+      <div class="blog-header">
+        <h1>我的个人博客</h1>
+        <p>分享生活、技术、感悟的小天地</p >
+      </div>
+
+      <!-- 文章卡片1 -->
+      <div class="layui-card">
+        <div class="layui-card-header">前端学习之旅</div>
+        <div class="layui-card-body">
+          <p>最近在学 Vue3 + Vite，生态真的太强大了！...</p >
+          <button class="layui-btn layui-btn-normal" lay-event="readMore">阅读全文</button>
+        </div>
+      </div>
+
+      <!-- 文章卡片2 -->
+      <div class="layui-card">
+        <div class="layui-card-header">Git 协作技巧</div>
+        <div class="layui-card-body">
+          <p>多人协作时，rebase 和 merge 怎么选？...</p >
+          <button class="layui-btn layui-btn-normal" lay-event="readMore">阅读全文</button>
+        </div>
+      </div>
+
+      <!-- 文章卡片3 -->
+      <div class="layui-card">
+        <div class="layui-card-header">生活随想</div>
+        <div class="layui-card-body">
+          <p>周末去爬山，看到沿途风景，突然明白...</p >
+          <button class="layui-btn layui-btn-normal" lay-event="readMore">阅读全文</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧侧边栏 -->
+    <div class="layui-col-md3">
+      <div class="sidebar">
+        <h3 class="layui-heading">关于我</h3>
+        <hr>
+        <p>一枚热爱前端的开发者<br>喜欢折腾代码、记录生活</p >
+        <h3 class="layui-heading" style="margin-top: 20px;">文章分类</h3>
+        <hr>
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li class="layui-nav-item">技术分享</li>
+          <li class="layui-nav-item">生活随笔</li>
+          <li class="layui-nav-item">工具推荐</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+
+</div>
+
+<!-- 引入 Layui JS -->
+<script src="https://layui.dev/docs/2/dist/layui.js"></script>
+<script>
+  // Layui 基础初始化（如需交互可扩展）
+  layui.use(['element'], function(){
+    var element = layui.element; 
+    // 这里可写导航、侧边栏的交互逻辑（如点击切换等）
+  });
+</script>
+</body>
+</html>
