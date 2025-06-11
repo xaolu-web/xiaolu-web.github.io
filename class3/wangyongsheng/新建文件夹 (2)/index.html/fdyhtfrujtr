@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>学校要闻</title>
+        <style type=""text="text/css">
+            body,h2,ul,li{
+                margin:0;
+                padding:0;
+                list-style:none;
+            }
+            body{
+                background:url("555.jpg");
+                font-family:"微软雅黑";
+                font-size: 14px;
+                color:rgb(28, 28, 243);
+            }
+            a{
+                text-decoration:none;
+            }
+            .news{
+                background: rgb(235, 229, 133);
+                border:1px solid#ccc;
+                width:458px;
+                height:228px;
+                padding:5px 10px;
+                margin:20px auto;
+            }
+            .news h2{
+                background:url(images/headl.png)no-repeat left center;
+                width:448px;
+                height:37px;
+                line-height:37px;
+                color:rgb(209, 100, 100);
+                font-size:16px;
+                padding-left: 10px;
+                border-bottom:1px solid #de72ab;
+            }
+            .news h2 .eng{
+                color:#1c0d0d;
+                padding-left:50px;
+                font-weight:normal;
+            }
+            .news .content{
+                width:458px;
+                height: 190px;
+            }
+            .news .content li{
+                width:443px;
+                height:31px;
+                line-height: 31px;
+                background:url("images/icon.png")no-repeat left center;
+                padding-left:15px;
+            }
+            .news .content li a{
+                color:rgb(0, 0, 0);
+                display:block;
+                white-space:nowrap;
+                overflow:ellipsis;
+                text-overflow: ellipsis;
+            }
+            .news .content li a:hover{
+                color: #f6e7ad;
+            }
+            
+            .news .content li span{
+                color:#9427b2;
+                font-size:11px;
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="news">
+        <h2>学校要闻<span class="eng"> &nbsp;     college News</span></h2>
+        <ul class="content">
+            <li><span>2021-04-09</span><a href="newsDetail.html"title="学校联合发起成立软件行业产教联盟"target="_blak">学校联合发起成立软件行业产教联盟</a></li>
+            <li><span>2021-02-08</span><A href="#"title="学校“四个推进”掀起党史学习教育热潮"target="_blank">学校“四个推进”掀起党史学习教育热潮</A></li>
+            <li><span>2021-04-02</span><A href="#"title="学校召开2021年度体育工作会议"target="_blank">学校召开2021年度体育工作会议</A></li>
+            <li><span>2021-04-01</span><A href="#"title="我校举行“铭记历史 缅怀先烈”清明节祭扫先烈活动"target="_blank">我校举行“铭记历史 缅怀先烈”清明节祭扫先烈活动</A></li>
+            <li><span>2021-03-30</span><A href="#"title="中国工业互联网研究院来我校交流访问"target="_blank">中国工业互联网研究院来我校交流访问</A></li>
+            <li><span>2021-03-30</span><A href="#"title="学校召开党务干部业务培训会议"target="_blank">学校召开党务干部业务培训会议</A></li>
+        </ul>
+        </div>
+    </body>
+</html>

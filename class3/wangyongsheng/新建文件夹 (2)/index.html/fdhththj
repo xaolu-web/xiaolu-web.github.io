@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>美丽山东</title>
+        <link rel="stylesheet"type="text/css"href="546.css"/>
+        <style type="text/css">
+        body,ul,li,p,{/*设置元素的初始属性*/
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+            body{
+                font-family:"microsoft yahei";
+                font-size:14px;
+                color:#333333;
+            }
+            header{
+                width:1000px;
+                height:200px;
+                background:url(../images/top,jpg)no-repeat;
+                margin:0 auto;
+            }
+            .content{
+                width:1000px;
+                overflow:hidden;
+                margin:0 auto;
+            }
+            nav{
+                width:300px;
+                height:400px;
+                float:left;
+                background-color:#ecc4e6;
+               
+            }
+            nav ul li{
+                width:300px;
+                height:40px;
+                line-height:40px;
+                border-bottom:1px solid#FFF;
+             }
+             nav ul li a{
+                color:#333;
+                text-decoration:none;
+                display:block；
+                width：292px;
+                height:40px;
+                border-left:8px solid#54alld;
+             }
+             nav ul li a:hover{
+                 font-weight:bold;
+                 background-color:#54alld;
+                 color:#FFF;
+             }
+             .main{
+                 float:left;
+                 width:680px;
+                 height:390px;
+                 background-color:#e5c5f2;
+                 padding:0px 10px 10px;
+             }
+             .main h2{
+                 height:40px;
+                 line-height:40px;
+                 font-size:20px;
+                 padding-left:30px;
+                 border-bottom:1px dashed#d997cf;
+             }
+             .text1{
+                 line-height:30px;
+                 text-indent:2em;
+                 padding-top:10px;
+             }
+             footer{
+                 width:1000px;
+                 height:60px;
+                 line-height:60px;
+                 background-color:#cc9fdb;
+                 font-size:12px;
+                 color:#fff;
+                 text-align:center;
+                 margin:0 auto;
+             }</style>
+    </head>
+    <body>
+        <!--两列布局页面-->
+        <header></header>
+        <div class="content">
+            <nav>
+                <ul>
+                   
+                    <li><a href="#">山东介绍</a></li>
+                    <li><a href="#">行政区划</a></li>
+                    <li><a href="#">地理环境</a></li>
+                    <li><a href="#">自然资源</a></li>
+                    <li><a href="#">人口民族</a></li>
+                    <li><a href="#">经济概况</a></li>
+                    <li><a href="#">农业工业</a></li>
+                    <li><a href="#">固定投资</a></li>
+                </ul>
+            </nav>
+            <div class="main">
+                <h2>山东介绍</h2>
+                <p class="textl">山东，因居太行山一东而得名，简称“鲁”，省会济南。先秦时期隶属奇国、鲁国，故而别名齐鲁。</p>
+               <p class="text1">山东不仅是中华文明的重要发源地之一，也是儒家文化的发源地。山东拥有丰富的历史文化遗产和自然景观，如世界自然与文化双重遗产泰山、中国最大的孔庙、中国四大名阁之一的蓬莱阁等。</p>
+                <p class="text1">山东中部山地突起，西南、西北低洼平坦，东部缓丘起伏，地形以山地丘陵为主，东部是山东半岛，西部及北部属华北平原，中南部为山地丘陵，形成以山地丘陵为骨架，平原盆地交错环列其间的地貌，类型包括山地、丘陵、台地、盆地、平原、湖泊等多种类型</p>
+            </div>
+        </div>
+        <footer>版权所有@网页设计工作室</footer>
+    </body>
+</html>
