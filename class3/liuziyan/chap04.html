@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgb(252, 213, 250),rgb(131, 211, 245));
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 90%;
+            height: 85%;
+            display: block;
+        }
+        .indicators {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .indicator.active {
+            background: #717171;
+        }
+        .text{
+            text-align: left;
+            color: blueviolet;
+        }
+        .text2{
+            text-align: right;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="微信图片_20250609215708.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="微信图片_20250609215714.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="微信图片_20250609220823.jpg" alt="Slide 3">
+            </div>
+             <div class="slide">
+                <img src="微信图片_20250609220514.jpg" alt="Slide 4">
+            </div>
+        </div>
+        <div class="indicators" id="indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const slider = document.getElementById('slider');
+
+        function goToSlide(index) {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        let autoPlayInterval = setInterval(() => {
+            goToSlide((currentIndex + 1) % slides.length);
+        }, 3000);
+        document.querySelector('.container').addEventListener('mouseover', () => {
+            clearInterval(autoPlayInterval);
+        });
+        document.querySelector('.container').addEventListener('mouseout', () => {
+            autoPlayInterval = setInterval(() => {
+                goToSlide((currentIndex + 1) % slides.length);
+            }, 1000);
+        });
+    </script>
+    <p class="text"><a href="chap03.html">上一个</a></p>
+    <p class="text2"><a href="chap05.html">下一个</a></p>
+</body>
+</html>

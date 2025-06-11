@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c5f6d3;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: #96d9f1;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0;
+            list-style: none;
+        }
+        .product {
+            width: calc(33.333% - 20px);
+            margin: 10px;
+            background: #f6f6eb;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .product h3 {
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        .product p {
+            margin: 0 10px 10px;
+            font-size: 1em;
+        }
+        .product button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background: #96e4f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background: #91eef5;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #98edf8;
+            color: #f3f7f7;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .text{
+            text-align: left;
+            color: blueviolet;
+        }
+        .text2{
+            text-align: right;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>购物网站</h1>
+    </header>
+    <div class="container">
+        <ul class="product-list">
+            <li class="product">
+                <img src="高跟鞋.jpg" alt="产品1">
+                <h3>高跟鞋</h3>
+                <p>价格：￥200</p >
+                <button>加入购物车</button>
+            </li>
+            <li class="product">
+                <img src="微信图片_20250609212547.jpg" alt="产品2">
+                <h3>连衣裙</h3>
+                <p>价格：￥150</p >
+                <button>加入购物车</button>
+            </li>
+            <li class="product">
+                <img src="微信图片_20250609212101.jpg" alt="产品3">
+                <h3>手表</h3>
+                <p>价格：￥300</p >
+                <button>加入购物车</button>
+            </li>
+        </ul>
+    </div>
+        <p>购物网站，版权所有 &copy; 2024</p >
+    </footer>
+    </script>
+    <p class="text"><a href="chap02.html">上一个</a></p>
+    <p class="text2"><a href="chap04.html">下一个</a></p>
+</body>
+</html>
