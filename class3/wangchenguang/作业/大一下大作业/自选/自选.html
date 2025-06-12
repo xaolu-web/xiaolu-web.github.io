@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简待办事项清单</title>
+    <style>
+        body {
+           
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .todo-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .todo-container:hover {
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .add-todo {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .xixi {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.2s ease;
+            font-size: 15px;
+        }
+        
+      
+        
+        
+        
+        .todo-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+        }
+        
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+        
+        .todo-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 15px;
+            
+            cursor: pointer;
+        }
+        
+        .todo-text {
+            flex: 1;
+            font-size: 16px;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+        
+        input[type="checkbox"]:checked + .todo-text {
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .delete-btn {
+            color: #dc3545;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            font-size: 18px;
+        }
+        
+        .todo-item:hover .delete-btn {
+            opacity: 1;
+        }
+        
+        .delete-btn:hover {
+            color: #c82333;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>待办事项清单</h1>
+        
+        <form class="add-todo">
+            <input class="xixi" type="text" placeholder="添加新的待办事项..." required>
+            <input type="submit" value="添加">
+        </form>
+        
+        <ul class="todo-list">
+            <li class="todo-item">
+                <input type="checkbox" id="task1">
+                <label for="task1" class="todo-text">完成项目报告</label>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox" id="task2">
+                <label for="task2" class="todo-text">购买生活用品</label>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox" id="task3">
+                <label for="task3" class="todo-text">健身锻炼</label>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox" id="task4" checked>
+                <label for="task4" class="todo-text">回复邮件</label>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
