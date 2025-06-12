@@ -1,276 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <title>学院网站导航条</title>
-  <style type="text/css">
-    /* 整体页面样式 */
-    body {
-      background-image: url(https://copyright.bdstatic.com/vcg/creative/a2dd4bf903c812f48cea82db3aa4b184.jpg@h_1280);
-      background-repeat: no-repeat;
-      background-size: cover;
-      font-family: 'Microsoft Yahei', sans-serif;
-      font-size: 14px;
-      color: #333;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease, background-color 0.3s ease;
-    }
-
-    a:hover {
-      color: #473170;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* 导航栏整体样式 */
-    nav {
-      width: 100%;
-      height: auto; /* 调整高度为自动，以适应内容 */
-      background: transparent; /* 将背景改为透明 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-    }
-
-    nav.navCon {
-      width: 250px; /* 调整宽度，使其更适合纵向布局 */
-      height: auto;
-      margin: 0 auto;
-      position: relative;
-      z-index: 111;
-      display: flex;
-      flex-direction: column; /* 改为纵向排列 */
-      align-items: center;
-    }
-
-    /* 导航栏主菜单样式 */
-.navCon li {
-      list-style: none;
-      position: relative;
-      width: 100%;
-    }
-
-.navCon li a {
-      display: block;
-      padding: 10px 20px; /* 调整内边距 */
-      height: auto; /* 调整高度为自动 */
-      line-height: 1.6; /* 调整行高 */
-      color: #FFF;
-      font-weight: 500;
-      font-family: 'Arial', sans-serif;
-      font-size: 16px;
-      transition: all 0.5s ease-in-out;
-    }
-
-.navCon li a:hover {
-      color: #fff;
-      background-color: rgba(21, 209, 223, 0.5);
-      transform: scale(1.1); /* 去掉旋转效果，仅保留缩放效果 */
-    }
-
-    /* 下拉菜单样式 */
-.navCon li ul {
-      width: 100%; /* 调整宽度为 100% */
-      display: none;
-      position: relative; /* 改为相对定位 */
-      top: 0;
-      left: 0;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      padding: 0;
-    }
-
-.navCon li:hover ul {
-      display: block;
-    }
-
-.navCon li ul li {
-      border-bottom: 1px solid #ddd;
-      text-align: center;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-.navCon li ul li:hover {
-      background-color: #f5f5f5;
-      transform: translateX(5px);
-    }
-
-.navCon li ul li a {
-      display: block;
-      padding: 10px 20px;
-      height: auto;
-      line-height: 1.6;
-      color: #333;
-    }
-
-.navCon li ul li a:hover {
-      color: #41ccba;
-    }
-
-    /* logo样式优化 */
-.logo {
-      margin-bottom: 20px; /* 调整下边距 */
-      text-align: center; /* 居中显示 logo */
-    }
-
-.logo img {
-      height: 40px;
-      vertical-align: middle;
-    }
-
-    /* 搜索框样式优化 */
-.search-box {
-      display: flex;
-      flex-direction: column; /* 改为纵向排列 */
-      align-items: center;
-      margin-bottom: 20px; /* 调整下边距 */
-    }
-
-.search-box input {
-      width: 250px;
-      height: 35px;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 25px;
-      background-color: #eff6f8;
-      outline: none;
-      transition: background-color 0.3s ease;
-    }
-
-.search-box input:focus {
-      background-color: #fff;
-    }
-
-.search-box button {
-      height: 35px;
-      border: none;
-      padding: 0 15px;
-      margin-top: 10px; /* 调整上边距 */
-      border-radius: 25px;
-      background-color: #084239;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-.search-box button:hover {
-      background-color: #FFC0CB;
-    }
-
-    /* 响应式设计 */
-    @media screen and (max-width: 768px) {
-      body {
-        padding-top: 60px;
-      }
-
-  .navCon {
-        width: 100%;
-      }
-
-  .navCon li {
-        width: 100%;
-      }
-
-  .navCon li a {
-        width: 100%;
-        padding: 15px 0;
-      }
-
-  .navCon li ul {
-        width: 100%;
-        position: relative;
-      }
-
-  .logo {
-        display: block;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-  .search-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-  .search-box input {
-        width: 80%;
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动漫--火影忍者</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
-
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f7fa;
+        }
+        .login-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 360px;
+        }
+        .login-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="https://img1.baidu.com/it/u=3936751108,3905225109&fm=253&fmt=auto&app=138&f=PNG?w=465&h=310" alt="学院logo">
+    <div class="login-container">
+        <h2 class="login-title">系统登录</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="text" id="username" class="form-control" placeholder="请输入账号">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <button type="button" id="login-btn" class="login-btn">登录</button>
+        </form>
     </div>
-    <ul class="navCon">
-      <li><a href="./过年.html">新年快乐</a></li>
-      <li><a href="#">学院概况</a>
-        <ul>
-          <li><a href="./山东介绍.html">学院简介</a></li>
-          <li><a href="#">学院荣誉</a></li>
-          <li><a href="./交规考题.html">高技能人才培训基地</a></li>
-          <li><a href="#">办公电话</a></li>
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">视频宣传</a></li>
-        </ul>
-      </li>
-      <li><a href="#">新闻中心</a>
-        <ul>
-          <li><a href="#">学院要闻</a></li>
-          <li><a href="#">系统动态</a></li>
-          <li><a href="#">通知公告</a></li>
-        </ul>
-      </li>
-      <li><a href="#">机构设置</a></li>
-      <li><a href="#">教学科研</a>
-        <ul>
-          <li><a href="#">教务管理系统</a></li>
-          <li><a href="#">精品课程</a></li>
-          <li><a href="#">教学辅助平台</a></li>
-          <li><a href="#">网络教学平台</a></li>
-        </ul>
-      </li>
-      <li><a href="#">团学在线</a></li>
-      <li><a href="#">招生就业</a>
-        <ul>
-          <li><a href="./wangzhan.html">招生信息网</a></li>
-          <li><a href="#">就业信息网</a></li>
-        </ul>
-      </li>
-      <li><a href="#">公共服务</a>
-        <ul>
-          <li><a href="#">图书馆</a></li>
-          <li><a href="#">信息公开</a></li>
-          <li><a href="#">建行缴费</a>
-        </ul>
-      </li>
-      <li><a href="#">信息公开</a></li>
-      <li><a href="#">统一信息门户</a></li>
-    </ul>
-    <div class="search-box">
-      <input type="text" placeholder="搜索">
-      <button type="submit">搜索</button>
-    </div>
-  </nav>
-  <div style="height: 1000px;">
-    <!-- 此处添加一些内容，用于测试导航栏是否遮挡内容 -->
-    <p>大作业</p>
-  </div>
-</body>
 
+    <script>
+    document.getElementById('login-btn').addEventListener('click', function () {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === 'admin' && password === 'a123456') {
+            alert('登录成功！欢迎使用系统');
+            // 假设目标页面是 index.html，根据实际文件名修改
+            window.location.href = 'shouye.html'; 
+        } else {
+            alert('账号或密码错误，请重新输入');
+        }
+    });
+</script>
+</body>
 </html>
