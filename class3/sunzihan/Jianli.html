@@ -21,17 +21,15 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
         }
         header {
-            background: linear-gradient(135deg, #3498db, #2c3e50);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
             padding: 40px 30px;
             text-align: center;
-            position: relative;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         .header-content {
             display: flex;
@@ -57,21 +55,17 @@
         .header-text h1 {
             font-size: 32px;
             margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         .header-text p {
             font-size: 18px;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
         }
         .navbar {
             background: #fff;
             padding: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         .nav-links {
             display: flex;
@@ -91,32 +85,22 @@
             padding: 10px 15px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            font-weight: 500;
-            min-width: 100px;
         }
         .nav-links a:hover {
             background: #3498db;
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-        .nav-links a i {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-        .main-content {
-            padding: 30px;
         }
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             padding: 25px;
             background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            border: 2px dashed #3498db;
+            transition: all 0.3s ease;
         }
         .section:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         .section h2 {
             color: #2c3e50;
@@ -124,12 +108,10 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #3498db;
-            display: inline-block;
         }
         .about-content p {
             margin-bottom: 15px;
             color: #555;
-            line-height: 1.8;
         }
         .education-item {
             margin-bottom: 25px;
@@ -145,75 +127,19 @@
             color: #3498db;
             font-weight: bold;
             margin-bottom: 8px;
-            font-size: 16px;
         }
         .education-item p {
             color: #666;
-            margin-bottom: 5px;
-        }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .skill-item {
-            background: #eaf2f8;
-            padding: 12px 20px;
-            border-radius: 30px;
-            color: #2c3e50;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-        }
-        .skill-item i {
-            margin-right: 8px;
-            color: #3498db;
-        }
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }      
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }       
-        .contact-item:hover {
-            background: #e3f2fd;
-            transform: translateX(5px);
-        }       
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: #3498db;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 22px;
-        }       
-        .contact-text {
-            color: #555;
-        }        
-        .contact-text strong {
-            display: block;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 18px;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #ecf0f1;
-            font-size: 16px;
-        }   
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+        }
         @media (max-width: 768px) {
             .nav-links {
                 flex-direction: column;
@@ -231,48 +157,70 @@
                 margin-right: 10px;
                 margin-bottom: 0;
             }
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="header-content">
-                <div class="profile-img">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <div class="header-text">
-                    <h1>孙紫涵</h1>
-                    <p>计算机应用技术专业 | 大一</p>
-                </div>
-            </div>
-        </header>
+    <div class="header-content">
+        <!-- 圆形图片 -->
+        <img src="https://img2.baidu.com/it/u=1146511321,2070144521&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" alt="头像" class="circle-image">
+    </div>
+    <div class="header-text">
+        <h1>孙紫涵</h1>
+        <p>计算机应用技术专业 | 大一</p>
+    </div>
+</header>
+
+<style>
+    .header-content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .circle-image {
+        width: 100px; 
+        height: 100px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        border: 2px solid #fff; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #666;
+    }
+</style>
         <nav class="navbar">
             <ul class="nav-links">
                 <li>
-                    <a href="Gouwu.html" target="_blank">
-                        <i class="fab fa-github"></i>
+                    <a href="Gouwu.html">
                         <span>购物</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Lunbo.html" target="_blank">
-                        <i class="fab fa-codepen"></i>
+                    <a href="Lunbo.html">
                         <span>轮播图</span>
                     </a>
                 </li>
                 <li>
-                    <a href="2048.html" target="_blank">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="2048.html">
                         <span>游戏</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Xueyuanwangzhan.html" target="_blank">
-                        <i class="fas fa-blog"></i>
+                    <a href="Xueyuanwangzhan.html">
                         <span>2024下半年大作业</span>
                     </a>
                 </li>
@@ -280,14 +228,14 @@
         </nav>
         <div class="main-content">
             <section class="section">
-                <h2><i class="fas fa-user"></i> 关于我</h2>
+                <h2>关于我</h2>
                 <div class="about-content">
                     <p>你好！我是孙紫涵，一名充满热情的计算机应用技术专业大一学生。我热爱编程和技术创新，对前端开发有浓厚兴趣。</p>
                     <p>目前我正在学习HTML、CSS和JavaScript前端技术,我希望通过不断学习和实践,提升自己的技术能力。</p>
                 </div>
             </section>
             <section class="section">
-                <h2><i class="fas fa-graduation-cap"></i> 教育背景</h2>
+                <h2> 教育背景</h2>
                 <div class="education-item">
                     <div class="date">2024年9月 - 至今</div>
                     <h3>邯郸科技职业学院</h3>
@@ -308,14 +256,14 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <div class="contact-text">
+                        <div>
                             <strong>电子邮箱</strong>
                             <span>quabfuj123@qq.com</span>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <div class="contact-text">
+                        <div>
                             <strong>联系电话</strong>
                             <span>131-0310-0636</span>
                         </div>
