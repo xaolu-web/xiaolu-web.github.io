@@ -1,87 +1,141 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>极简购物页</title>
-    <style>
-        body { 
-            padding: 20px; 
-            font-family: sans-serif; 
-        }
-        .navbar { 
-            background: #f0f0f0; 
-            padding: 10px; 
-            margin-bottom: 20px; 
-        }
-        .products { 
-            display: flex; 
-            gap: 20px; 
-            flex-wrap: wrap; 
-        }
-        .product { 
-            border: 1px solid #ddd; 
-            padding: 10px; 
-            width: 250px; 
-            text-align: center; 
-            margin: 25px;
-        }
-        .productss { 
-            border: 1px solid #ddd; 
-            padding: 10px; 
-            width: 250px; 
-            text-align: center; 
-            margin: 25px;
-        }
-        .product1 { 
-            border: 1px solid #ddd; 
-            padding: 10px; 
-            width: 250px; 
-            text-align: center; 
-            margin: 25px;
-        }
-        .footer { 
-            text-align: right; 
-            margin-top: 20px; 
-        }
-        .hhh a{
-            margin-top: 20px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar"><b>购物网页</b></div>
-    
-    <div class="products">
-        <div class="product">
-            <img src="wzgw.jpg" alt="商品" width="250px">
-            <p>美瞳 ¥70</p >
-            <button>加入购物车</button>
-        </div>
-        <div class="product">
-            <img src="czxx.jpg" alt="商品" width="250px">
-            <p>车载香薰 ¥80</p >
-            <button>加入购物车</button>
-        </div>
-        <div class="productss">
-            <img src="tl.jpg" alt="商品" width="250px">
-            <p>提亮 ¥20</p >
-            <button>加入购物车</button>
-        </div>
-        <div class="product1">
-            <img src="jf.jpg" alt="商品" width="250px">
-            <p>假发 ¥50</p >
-            <button>加入购物车</button>
-        </div>
-    </div>
 
-    <div class="hhh">
+<head>
+  <meta charset="UTF-8">
+  <title>极简购物页</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: sans-serif;
+    }
+
+    .navbar {
+      background: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .products {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+      margin: 25px;
+    }
+
+    .hhh a {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      font-size: 20px;
+    }
+
+    /* 新增购物车简易样式 */
+    .cart {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar"><b>购物网页</b></div>
+
+  <div class="products">
+    <!-- 注意data-price直接写数字，不带¥符号 -->
+    <div class="product" data-name="美瞳" data-price="70">
+      <img src="wzgw.jpg" alt="商品" width="250px">
+      <p>美瞳 ¥70</p>
+      <button onclick="addToCart(this)">加入购物车</button>
+    </div>
+    <div class="product" data-name="车载香薰" data-price="80">
+      <img src="czxx.jpg" alt="商品" width="250px">
+      <p>车载香薰 ¥80</p>
+      <button onclick="addToCart(this)">加入购物车</button>
+    </div>
+    <div class="product" data-name="提亮" data-price="20">
+      <img src="tl.jpg" alt="商品" width="250px">
+      <p>提亮 ¥20</p>
+      <button onclick="addToCart(this)">加入购物车</button>
+    </div>
+    <div class="product" data-name="假发" data-price="50">
+      <img src="jf.jpg" alt="商品" width="250px">
+      <p>假发 ¥50</p>
+      <button onclick="addToCart(this)">加入购物车</button>
+    </div>
+    <!-- 其他商品类似... -->
+  </div>
+
+  <div class="cart">
+    <h3>购物车</h3>
+    <div id="cartList">购物车为空</div>
+    <div id="totalPrice">总价：¥0</div>
+  </div>
+  <div class="hhh">
         <a href="rec.html" >轮播图</a>
         <a href="news.html">个人简介</a>
         <a href="index.html">返回登录页</a>
     </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(button) {
+      const product = button.closest('.product');
+      if (!product) return;
+      
+      const name = product.getAttribute('data-name');
+      const price = parseFloat(product.getAttribute('data-price'));
+      
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+          existingItem.quantity++;
+      } else {
+          cart.push({ name, price, quantity: 1 });
+      }
+      
+      renderCart();
+      console.log("购物车已更新:", cart);
+    }
+
+    function renderCart() {
+      const cartList = document.getElementById('cartList');
+      const totalPriceEle = document.getElementById('totalPrice');
+      
+      cartList.innerHTML = '';
+      let total = 0;
+      
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+          <span>${item.name} × ${item.quantity}</span>
+          <span>¥${subtotal.toFixed(2)}</span>
+        `;
+        cartList.appendChild(cartItem);
+      });
+      
+      totalPriceEle.textContent = cart.length ? `总价：¥${total.toFixed(2)}` : "总价：¥0";
+    }
+  </script>
 </body>
+
 </html>
