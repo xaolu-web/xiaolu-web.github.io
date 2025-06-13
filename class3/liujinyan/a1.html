@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        /* 轮播图容器样式 */
+        .slider-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 假设使用占位图片 */
+        .slide:nth-child(1) {
+            background-image: url('lu.png');
+        }
+
+        .slide:nth-child(2) {
+            background-image: url('lunbo1.png');
+        }
+
+        .slide:nth-child(3) {
+            background-image: url('assets_task_01jxmezf18fhatsxdbjhqyd0d6_1749812302_src_2.png');
+        }
+
+        /* 控制按钮样式 */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* 导航点样式 */
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="jianli.html">简历</a></li>
+            <li><a href="zixuan.html">节约用水宣传</a></li>
+            <li><a href="gouwu.html">购物</a></li>
+        </ul>
+    </nav>
+
+    <!-- 轮播图 -->
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let interval;
+
+        // 显示指定索引的幻灯片
+        function showSlide(index) {
+            if (index >= slide.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slide.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+        }
+
+        // 更新导航点
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // 自动播放
+        function startAutoPlay() {
+            interval = setInterval(() => {
+                showSlide(currentIndex + 1);
+            }, 3000);
+        }
+
+        // 停止自动播放
+        function stopAutoPlay() {
+            clearInterval(interval);
+        }
+
+        // 下一页
+        nextBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            showSlide(currentIndex + 1);
+            startAutoPlay();
+        });
+
+        // 上一页
+        prevBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            showSlide(currentIndex - 1);
+            startAutoPlay();
+        });
+
+        // 导航点点击
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoPlay();
+                showSlide(index);
+                startAutoPlay();
+            });
+        });
+
+        // 初始化
+        showSlide(currentIndex);
+        startAutoPlay();
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节约用水</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #e6f3ff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .navbar li {
+            margin: 0 20px;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar a:hover {
+            color: #ffd700;
+        }
+        
+        /* 主要内容 */
+        .main-content {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('shui3.png') no-repeat center;
+            background-size: cover;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 节约用水小贴士 */
+        .tips-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card h3 {
+            font-size: 20px;
+            color: #2196F3;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* 交互部分 */
+        .action-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .action-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .toggle-btn {
+            background: linear-gradient(135deg, #2196F3 0%, #4FC3F7 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin: 10px;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .action-content {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #666;
+            display: none;
+        }
+
+        .action-content.active {
+            display: block;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .tips-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+	<nav class="navbar">
+	    <ul>
+	        <li><a href="jianli.html">简历</a></li>
+	        <li><a href="zixuan.html">节约用水宣传</a></li>
+	        <li><a href="gouwu.html">购物</a></li>
+	    </ul>
+	</nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 宣传区域 -->
+        <section class="hero" id="home">
+            <h1>节约用水，从我做起</h1>
+            <p>水是生命之源，每一滴水都值得珍惜。让我们共同努力，保护水资源，创造更美好的未来。</p>
+        </section>
+
+        <!-- 节约用水小贴士 -->
+        <section class="tips-section" id="tips">
+            <div class="tip-card">
+                <h3>随手关水龙头</h3>
+                <p>刷牙、洗脸时关闭水龙头，每次可节约数升水。</p>
+            </div>
+            <div class="tip-card">
+                <h3>使用节水设备</h3>
+                <p>安装节水马桶和淋浴头，减少日常用水量。</p>
+            </div>
+            <div class="tip-card">
+                <h3>收集雨水</h3>
+                <p>用桶收集雨水，用于浇花或清洁，减少自来水使用。</p>
+            </div>
+            <div class="tip-card">
+                <h3>缩短洗澡时间</h3>
+                <p>每次洗澡控制在5分钟以内，节约大量水资源。</p>
+            </div>
+        </section>
+
+        <!-- 行动区域 -->
+        <section class="action-section" id="action">
+            <h2>如何参与节约用水</h2>
+            <button class="toggle-btn" onclick="showContent('personal')">个人行动</button>
+            <button class="toggle-btn" onclick="showContent('community')">社区行动</button>
+            <div class="action-content" id="personal">
+                <p>每个人都可以通过改变日常习惯来节约用水，例如修复漏水的水龙头、使用节水洗衣机、减少洗车频率等。小行动也能带来大改变！</p>
+            </div>
+            <div class="action-content" id="community">
+                <p>组织社区宣传活动，推广节约用水知识；参与或发起植树造林项目，保护水源地；与邻里分享节水经验，共同建设绿色社区。</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 切换行动内容
+        function showContent(type) {
+            const personalContent = document.getElementById('personal');
+            const communityContent = document.getElementById('community');
+
+            if (type === 'personal') {
+                personalContent.classList.add('active');
+                communityContent.classList.remove('active');
+            } else {
+                communityContent.classList.add('active');
+                personalContent.classList.remove('active');
+            }
+        }
+
+        // 初始化显示个人行动内容
+        showContent('personal');
+    </script>
+</body>
+</html>
