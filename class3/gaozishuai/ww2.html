@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三 - 个人简历</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #2c82c9;
+        }
+        
+        a:hover {
+            color: #1e5f8a;
+        }
+        
+        /* 布局 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 页眉 */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f1f1f1;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            color: #2c82c9;
+        }
+        
+        /* 主要内容 */
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c82c9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .section-content {
+            padding: 0 20px;
+        }
+        
+        /* 关于我 */
+        .about p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* 工作经验 */
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-title, .degree {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .company, .school {
+            font-size: 1.1rem;
+            color: #2c82c9;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .job-description, .education-description {
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* 技能 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: #2c82c9;
+            border-radius: 5px;
+        }
+        
+        /* 项目 */
+        .project-item {
+            margin-bottom: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .project-description {
+            margin-bottom: 10px;
+        }
+        
+        .project-tech {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* 打印样式 */
+        @media print {
+            body {
+                background-color: white;
+                font-size: 12pt;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* 暗色模式切换 */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        /* 暗色模式 */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode h1, 
+        body.dark-mode h2, 
+        body.dark-mode h3,
+        body.dark-mode .job-title,
+        body.dark-mode .degree,
+        body.dark-mode .project-title {
+            color: #ffffff;
+        }
+        
+        body.dark-mode .title,
+        body.dark-mode .date,
+        body.dark-mode .project-tech {
+            color: #b0b0b0;
+        }
+        
+        body.dark-mode .company,
+        body.dark-mode .school {
+            color: #4dabf7;
+        }
+        
+        body.dark-mode a {
+            color: #4dabf7;
+        }
+        
+        body.dark-mode a:hover {
+            color: #74c0fc;
+        }
+        
+        body.dark-mode .skill-bar {
+            background-color: #333;
+        }
+        
+        body.dark-mode .dark-mode-toggle {
+            background: #f8f9fa;
+            color: #212529;
+        }
+		nav {
+		    background-color: #333;
+		    color: white;
+		    padding: 15px 0;
+		    position: sticky;
+		    top: 0;
+		    z-index: 100;
+		}
+		
+		.nav-container {
+		    width: 90%;
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		
+		.logo {
+		    font-size: 24px;
+		    font-weight: bold;
+		}
+		
+		.nav-links {
+		    display: flex;
+		    list-style: none;
+		}
+		
+		.nav-links li {
+		    margin-left: 20px;
+		}
+		
+		.nav-links a {
+		    color: white;
+		    text-decoration: none;
+		    transition: color 0.3s;
+		}
+		
+		.nav-links a:hover {
+		    color: #4CAF50;
+		}
+		nav {
+		    background-color: #333;
+		    color: white;
+		    padding: 15px 0;
+		    position: sticky;
+		    top: 0;
+		    z-index: 100;
+		}
+		
+		.nav-container {
+		    width: 90%;
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		
+		.logo {
+		    font-size: 24px;
+		    font-weight: bold;
+		}
+		
+		.nav-links {
+		    display: flex;
+		    list-style: none;
+		}
+		
+		.nav-links li {
+		    margin-left: 20px;
+		}
+		
+		.nav-links a {
+		    color: white;
+		    text-decoration: none;
+		    transition: color 0.3s;
+		}
+		
+		.nav-links a:hover {
+		    color: #4CAF50;
+		}
+    </style>
+</head>
+<body>
+	<nav>
+	    <div class="nav-container">
+	        <div class="logo">网站LOGO</div>
+	        <ul class="nav-links">
+	            <li><a href="ww2.html">个人简历</a></li>
+	            <li><a href="ww3.html">购物</a></li>
+	            <li><a href="ww4.html">电脑</a></li>
+	        </ul>
+	    </div>
+	</nav>
+    <button class="dark-mode-toggle no-print" id="darkModeToggle">暗色模式</button>
+    
+    <div class="container">
+        <header>
+            <img src="https://via.placeholder.com/150" alt="张三的照片" class="profile-img">
+            <h1>张三</h1>
+            <div class="title">前端开发工程师</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📱</i> <span>138-1234-5678</span>
+                </div>
+                <div class="contact-item">
+                    <i>📧</i> <a href="mailto:zhangsan@example.com">zhangsan@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i>🌐</i> <a href="https://github.com/zhangsan" target="_blank">github.com/zhangsan</a>
+                </div>
+                <div class="contact-item">
+                    <i>🏠</i> <span>北京市海淀区</span>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="about">
+                <h2>关于我</h2>
+                <div class="section-content">
+                    <p>我是一名有3年前端开发经验的工程师，专注于构建响应式、用户友好的Web应用程序。擅长React、Vue.js和现代JavaScript技术栈。</p>
+                    <p>热爱学习新技术，具有良好的团队协作能力和问题解决能力。致力于编写干净、可维护的代码，并关注用户体验和性能优化。</p>
+                </div>
+            </section>
+            
+            <section class="experience">
+                <h2>工作经验</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="job-title">高级前端工程师</div>
+                        <div class="company">ABC科技有限公司</div>
+                        <div class="date">2020年6月 - 至今</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>负责公司核心产品的前端架构设计和开发</li>
+                                <li>使用React和Redux重构现有系统，提高性能30%</li>
+                                <li>带领3人前端团队，制定开发规范和代码审查流程</li>
+                                <li>与产品经理和设计师合作，优化用户体验</li>
+                                <li>实现自动化测试流程，减少回归测试时间50%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">前端开发工程师</div>
+                        <div class="company">XYZ互联网公司</div>
+                        <div class="date">2018年3月 - 2020年5月</div>
+                        <div class="job-description">
+                            <ul>
+                                <li>参与公司多个Web应用的前端开发</li>
+                                <li>使用Vue.js开发后台管理系统</li>
+                                <li>优化页面加载速度，减少首屏加载时间40%</li>
+                                <li>实现响应式设计，适配多种设备</li>
+                                <li>编写可复用的UI组件库，提高团队开发效率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="education">
+                <h2>教育背景</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="degree">计算机科学与技术 学士</div>
+                        <div class="school">北京大学</div>
+                        <div class="date">2014年9月 - 2018年6月</div>
+                        <div class="education-description">
+                            <ul>
+                                <li>GPA: 3.7/4.0</li>
+                                <li>主修课程：数据结构、算法、计算机网络、数据库系统</li>
+                                <li>获得校级优秀毕业生称号</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="skills">
+                <h2>技能专长</h2>
+                <div class="section-content">
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>前端技术</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>HTML/CSS</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>JavaScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>React</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Vue.js</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>后端技术</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Node.js</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Express</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>RESTful API</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>其他技能</h3>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Git</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>Webpack</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">
+                                    <span>UI/UX设计</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="projects">
+                <h2>项目经验</h2>
+                <div class="section-content">
+                    <div class="project-item">
+                        <div class="project-title">电商平台前端重构</div>
+                        <div class="project-description">
+                            领导团队对现有电商平台进行前端重构，使用React和TypeScript重写前端代码，引入微前端架构，提高系统可维护性和开发效率。
+                        </div>
+                        <div class="project-tech">技术栈: React, TypeScript, Redux, Micro Frontends</div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">企业级后台管理系统</div>
+                        <div class="project-description">
+                            开发了一个功能丰富的企业级后台管理系统，包含用户管理、权限控制、数据可视化等功能模块。
+                        </div>
+                        <div class="project-tech">技术栈: Vue.js, Element UI, ECharts</div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">个人博客系统</div>
+                        <div class="project-description">
+                            设计并开发了一个全栈个人博客系统，支持Markdown编辑、文章分类、评论等功能。
+                        </div>
+                        <div class="project-tech">技术栈: Node.js, Express, MongoDB, React</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2023 张三 - 个人简历 | 最后更新: 2023年6月</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 暗色模式切换
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // 检查本地存储中的模式设置
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '亮色模式';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = '亮色模式';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.textContent = '暗色模式';
+            }
+        });
+        
+        // 打印功能
+        const printButton = document.createElement('button');
+        printButton.textContent = '打印简历';
+        printButton.className = 'dark-mode-toggle no-print';
+        printButton.style.right = '150px';
+        printButton.addEventListener('click', () => window.print());
+        document.body.appendChild(printButton);
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图示例</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        /* 导航栏样式 */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+        
+        /* 轮播图样式 */
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 400px;
+        }
+        
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+        }
+        
+        .slide-content h2 {
+            margin-bottom: 10px;
+        }
+        
+        /* 导航按钮 */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+        
+        .slider-nav button {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .slider-nav button:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 指示器 */
+        .slider-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .indicator.active {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">网站LOGO</div>
+            <ul class="nav-links">
+                <li><a href="ww2.html">个人简历</a></li>
+                <li><a href="ww3.html">购物</a></li>
+                <li><a href="ww4.html">电脑</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 轮播图 -->
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x400/4CAF50/FFFFFF?text=Slide+1" alt="Slide 1">
+                <div class="slide-content">
+                    <h2>第一张幻灯片</h2>
+                    <p>这是第一张幻灯片的描述内容。</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x400/2196F3/FFFFFF?text=Slide+2" alt="Slide 2">
+                <div class="slide-content">
+                    <h2>第二张幻灯片</h2>
+                    <p>这是第二张幻灯片的描述内容。</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x400/FF5722/FFFFFF?text=Slide+3" alt="Slide 3">
+                <div class="slide-content">
+                    <h2>第三张幻灯片</h2>
+                    <p>这是第三张幻灯片的描述内容。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 导航按钮 -->
+        <div class="slider-nav">
+            <button id="prevBtn">&lt;</button>
+            <button id="nextBtn">&gt;</button>
+        </div>
+        
+        <!-- 指示器 -->
+        <div class="slider-indicators" id="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let slideInterval;
+            
+            // 初始化轮播图
+            function initSlider() {
+                updateSlider();
+                startAutoSlide();
+            }
+            
+            // 更新轮播图位置
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // 更新指示器状态
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // 下一张
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateSlider();
+            }
+            
+            // 开始自动轮播
+            function startAutoSlide() {
+                slideInterval = setInterval(nextSlide, 3000);
+            }
+            
+            // 停止自动轮播
+            function stopAutoSlide() {
+                clearInterval(slideInterval);
+            }
+            
+            // 事件监听
+            nextBtn.addEventListener('click', function() {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+            
+            // 指示器点击事件
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    stopAutoSlide();
+                    currentIndex = index;
+                    updateSlider();
+                    startAutoSlide();
+                });
+            });
+            
+            // 鼠标悬停时暂停轮播
+            slider.addEventListener('mouseenter', stopAutoSlide);
+            slider.addEventListener('mouseleave', startAutoSlide);
+            
+            // 初始化
+            initSlider();
+        });
+    </script>
+</body>
+</html>

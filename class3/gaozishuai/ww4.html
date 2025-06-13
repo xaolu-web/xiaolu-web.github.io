@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿Windows桌面</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background-color: #008080;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50vh;
+        }
+        
+        /* 桌面图标 */
+        .desktop {
+            height: calc(100vh - 40px);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 80px);
+            grid-auto-rows: 90px;
+            gap: 15px;
+            align-content: start;
+        }
+        
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        
+        .desktop-icon:hover {
+            background-color: rgba(0, 0, 128, 0.3);
+        }
+        
+        .desktop-icon:active {
+            background-color: rgba(0, 0, 128, 0.5);
+        }
+        
+        .desktop-icon.selected {
+            background-color: rgba(0, 0, 128, 0.4);
+        }
+        
+        .icon-img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+        }
+        
+        .icon-text {
+            font-size: 12px;
+            text-shadow: 1px 1px 1px black;
+            word-break: break-all;
+        }
+        
+        /* 任务栏 */
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #dfdfdf;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            z-index: 1000;
+        }
+        
+        .start-btn {
+            height: 32px;
+            padding: 0 10px;
+            background: linear-gradient(to bottom, #008080, #c0c0c0);
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .start-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+        
+        .start-btn img {
+            margin-right: 5px;
+        }
+        
+        .taskbar-items {
+            display: flex;
+            margin-left: 10px;
+            height: 100%;
+            align-items: center;
+        }
+        
+        .taskbar-item {
+            height: 30px;
+            padding: 0 10px;
+            margin: 0 2px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .taskbar-item.active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+        
+        .taskbar-item img {
+            margin-right: 5px;
+        }
+        
+        .clock {
+            margin-left: auto;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+        
+        /* 开始菜单 */
+        .start-menu {
+            position: absolute;
+            bottom: 40px;
+            left: 5px;
+            width: 300px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            display: none;
+            z-index: 1001;
+        }
+        
+        .start-menu-header {
+            padding: 10px;
+            background: linear-gradient(to right, #000080, #1084d0);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .start-menu-items {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .start-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        .start-menu-item:hover {
+            background-color: #000080;
+            color: white;
+        }
+        
+        .start-menu-item img {
+            margin-right: 10px;
+        }
+        
+        /* 窗口 */
+        .window {
+            position: absolute;
+            min-width: 300px;
+            min-height: 200px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            display: none;
+            flex-direction: column;
+            z-index: 100;
+        }
+        
+        .window.active {
+            z-index: 200;
+        }
+        
+        .window-header {
+            padding: 5px;
+            background: linear-gradient(to right, #000080, #1084d0);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: move;
+        }
+        
+        .window-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .window-title img {
+            margin-right: 5px;
+        }
+        
+        .window-controls button {
+            width: 22px;
+            height: 22px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            margin-left: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .window-controls button:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+        
+        .window-body {
+            flex: 1;
+            padding: 10px;
+            overflow: auto;
+        }
+        
+        /* 右键菜单 */
+        .context-menu {
+            position: absolute;
+            width: 200px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            display: none;
+            flex-direction: column;
+            z-index: 1002;
+        }
+        
+        .context-menu-item {
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .context-menu-item:hover {
+            background-color: #000080;
+            color: white;
+        }
+        
+        .context-menu-item img {
+            margin-right: 10px;
+        }
+        
+        .context-menu-separator {
+            height: 2px;
+            background-color: #808080;
+            margin: 2px 0;
+            border-top: 1px solid #ffffff;
+        }
+		nav {
+		    background-color: #333;
+		    color: white;
+		    padding: 15px 0;
+		    position: sticky;
+		    top: 0;
+		    z-index: 100;
+		}
+		
+		.nav-container {
+		    width: 90%;
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		
+		.logo {
+		    font-size: 24px;
+		    font-weight: bold;
+		}
+		
+		.nav-links {
+		    display: flex;
+		    list-style: none;
+		}
+		
+		.nav-links li {
+		    margin-left: 20px;
+		}
+		
+		.nav-links a {
+		    color: white;
+		    text-decoration: none;
+		    transition: color 0.3s;
+		}
+		
+		.nav-links a:hover {
+		    color: #4CAF50;
+		}
+    </style>
+</head>
+<body>
+	<nav>
+	    <div class="nav-container">
+	        <div class="logo">网站LOGO</div>
+	        <ul class="nav-links">
+	            <li><a href="ww2.html">个人简历</a></li>
+	            <li><a href="ww3.html">购物</a></li>
+	            <li><a href="ww4.html">电脑</a></li>
+	        </ul>
+	    </div>
+	</nav>
+    <!-- 桌面 -->
+    <div class="desktop" id="desktop">
+        <div class="desktop-icon" data-window="my-computer">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" class="icon-img">
+            <span class="icon-text">我的电脑</span>
+        </div>
+        <div class="desktop-icon" data-window="recycle-bin">
+            <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" class="icon-img">
+            <span class="icon-text">回收站</span>
+        </div>
+        <div class="desktop-icon" data-window="notepad">
+            <img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" class="icon-img">
+            <span class="icon-text">记事本</span>
+        </div>
+        <div class="desktop-icon" data-window="internet-explorer">
+            <img src="https://win98icons.alexmeub.com/icons/png/msie1-4.png" class="icon-img">
+            <span class="icon-text">Internet Explorer</span>
+        </div>
+    </div>
+    
+    <!-- 任务栏 -->
+    <div class="taskbar">
+        <div class="start-btn" id="startBtn">
+            <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" width="16" height="16">
+            <span>开始</span>
+        </div>
+        <div class="taskbar-items" id="taskbarItems"></div>
+        <div class="clock" id="clock"></div>
+    </div>
+    
+    <!-- 开始菜单 -->
+    <div class="start-menu" id="startMenu">
+        <div class="start-menu-header">Windows 98</div>
+        <div class="start-menu-items">
+            <div class="start-menu-item" data-window="my-computer">
+                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" width="32" height="32">
+                <span>我的电脑</span>
+            </div>
+            <div class="start-menu-item" data-window="recycle-bin">
+                <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" width="32" height="32">
+                <span>回收站</span>
+            </div>
+            <div class="start-menu-item" data-window="notepad">
+                <img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" width="32" height="32">
+                <span>记事本</span>
+            </div>
+            <div class="start-menu-item" data-window="internet-explorer">
+                <img src="https://win98icons.alexmeub.com/icons/png/msie1-4.png" width="32" height="32">
+                <span>Internet Explorer</span>
+            </div>
+            <div class="start-menu-item" data-window="shutdown">
+                <img src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-4.png" width="32" height="32">
+                <span>关机</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 右键菜单 -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-item" id="refreshDesktop">
+            <img src="https://win98icons.alexmeub.com/icons/png/refresh-4.png" width="16" height="16">
+            <span>刷新</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" id="createShortcut">
+            <img src="https://win98icons.alexmeub.com/icons/png/shortcut-4.png" width="16" height="16">
+            <span>新建快捷方式</span>
+        </div>
+        <div class="context-menu-separator"></div>
+        <div class="context-menu-item" id="properties">
+            <img src="https://win98icons.alexmeub.com/icons/png/properties-4.png" width="16" height="16">
+            <span>属性</span>
+        </div>
+    </div>
+    
+    <!-- 我的电脑窗口 -->
+    <div class="window" id="my-computer">
+        <div class="window-header">
+            <div class="window-title">
+                <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png" width="16" height="16">
+                <span>我的电脑</span>
+            </div>
+            <div class="window-controls">
+                <button id="minimize">_</button>
+                <button id="maximize">□</button>
+                <button id="close">×</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p>这是一个仿Windows 98的"我的电脑"窗口。</p>
+            <p>您可以在这里浏览您的磁盘驱动器。</p>
+            <div style="display: flex; margin-top: 20px;">
+                <div style="text-align: center; margin: 0 10px;">
+                    <img src="https://win98icons.alexmeub.com/icons/png/drive_c-4.png" width="48" height="48">
+                    <div>C: 驱动器</div>
+                </div>
+                <div style="text-align: center; margin: 0 10px;">
+                    <img src="https://win98icons.alexmeub.com/icons/png/drive_cd-4.png" width="48" height="48">
+                    <div>D: 驱动器</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 回收站窗口 -->
+    <div class="window" id="recycle-bin">
+        <div class="window-header">
+            <div class="window-title">
+                <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" width="16" height="16">
+                <span>回收站</span>
+            </div>
+            <div class="window-controls">
+                <button>_</button>
+                <button>□</button>
+                <button>×</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p>回收站是空的。</p>
+        </div>
+    </div>
+    
+    <!-- 记事本窗口 -->
+    <div class="window" id="notepad">
+        <div class="window-header">
+            <div class="window-title">
+                <img src="https://win98icons.alexmeub.com/icons/png/notepad-4.png" width="16" height="16">
+                <span>记事本 - 无标题</span>
+            </div>
+            <div class="window-controls">
+                <button>_</button>
+                <button>□</button>
+                <button>×</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <textarea style="width: 100%; height: 100%; border: none; resize: none; background-color: #ffffff; padding: 5px;"></textarea>
+        </div>
+    </div>
+    
+    <!-- IE窗口 -->
+    <div class="window" id="internet-explorer">
+        <div class="window-header">
+            <div class="window-title">
+                <img src="https://win98icons.alexmeub.com/icons/png/msie1-4.png" width="16" height="16">
+                <span>Internet Explorer</span>
+            </div>
+            <div class="window-controls">
+                <button>_</button>
+                <button>□</button>
+                <button>×</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div style="display: flex; margin-bottom: 5px;">
+                <button style="margin-right: 5px;">后退</button>
+                <button style="margin-right: 5px;">前进</button>
+                <button style="margin-right: 5px;">停止</button>
+                <button style="margin-right: 5px;">刷新</button>
+                <button style="margin-right: 5px;">主页</button>
+            </div>
+            <div style="margin-bottom: 5px;">
+                <input type="text" style="width: 100%; padding: 2px;" value="http://www.microsoft.com/">
+            </div>
+            <div style="background-color: white; height: 100%; padding: 10px; border: 1px solid #808080;">
+                <p>欢迎使用Internet Explorer</p>
+                <p>这是一个仿Windows 98的IE浏览器窗口。</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 获取DOM元素
+        const desktop = document.getElementById('desktop');
+        const startBtn = document.getElementById('startBtn');
+        const startMenu = document.getElementById('startMenu');
+        const taskbarItems = document.getElementById('taskbarItems');
+        const clock = document.getElementById('clock');
+        const contextMenu = document.getElementById('contextMenu');
+        const refreshDesktop = document.getElementById('refreshDesktop');
+        const createShortcut = document.getElementById('createShortcut');
+        const properties = document.getElementById('properties');
+        
+        // 所有窗口
+        const windows = document.querySelectorAll('.window');
+        
+        // 更新时钟
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            clock.textContent = `${hours}:${minutes}`;
+        }
+        
+        // 初始化时钟
+        updateClock();
+        setInterval(updateClock, 60000);
+        
+        // 开始菜单显示/隐藏
+        startBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // 点击其他地方关闭开始菜单
+        document.addEventListener('click', () => {
+            startMenu.style.display = 'none';
+        });
+        
+        // 开始菜单项点击
+        document.querySelectorAll('.start-menu-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const windowId = item.getAttribute('data-window');
+                
+                if (windowId === 'shutdown') {
+                    alert('系统即将关机...');
+                    return;
+                }
+                
+                openWindow(windowId);
+                startMenu.style.display = 'none';
+            });
+        });
+        
+        // 桌面图标点击
+        document.querySelectorAll('.desktop-icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                if (e.detail === 2) { // 双击
+                    const windowId = icon.getAttribute('data-window');
+                    openWindow(windowId);
+                } else { // 单击
+                    document.querySelectorAll('.desktop-icon').forEach(i => {
+                        i.classList.remove('selected');
+                    });
+                    icon.classList.add('selected');
+                }
+            });
+        });
+        
+        // 打开窗口
+        function openWindow(windowId) {
+            const window = document.getElementById(windowId);
+            if (window) {
+                window.style.display = 'flex';
+                
+                // 设置随机位置
+                const maxLeft = window.innerWidth - window.offsetWidth;
+                const maxTop = window.innerHeight - window.offsetHeight;
+                const left = Math.min(Math.max(0, Math.floor(Math.random() * maxLeft)), maxLeft - 100);
+                const top = Math.min(Math.max(0, Math.floor(Math.random() * maxTop)), maxTop - 100);
+                
+                window.style.left = `${left}px`;
+                window.style.top = `${top}px`;
+                
+                // 激活窗口
+                activateWindow(window);
+                
+                // 添加到任务栏
+                addToTaskbar(windowId);
+            }
+        }
+        
+        // 激活窗口
+        function activateWindow(window) {
+            windows.forEach(w => {
+                w.classList.remove('active');
+            });
+            window.classList.add('active');
+        }
+        
+        // 添加到任务栏
+        function addToTaskbar(windowId) {
+            const window = document.getElementById(windowId);
+            if (!window) return;
+            
+            // 检查是否已在任务栏
+            const existingItem = document.querySelector(`.taskbar-item[data-window="${windowId}"]`);
+            if (existingItem) {
+                existingItem.classList.add('active');
+                return;
+            }
+            
+            const title = window.querySelector('.window-title span').textContent;
+            const icon = window.querySelector('.window-title img').cloneNode(true);
+            icon.width = 16;
+            icon.height = 16;
+            
+            const taskbarItem = document.createElement('div');
+            taskbarItem.className = 'taskbar-item active';
+            taskbarItem.setAttribute('data-window', windowId);
+            taskbarItem.innerHTML = `
+                ${icon.outerHTML}
+                <span>${title}</span>
+            `;
+            
+            taskbarItem.addEventListener('click', () => {
+                const window = document.getElementById(windowId);
+                if (window.style.display === 'none') {
+                    window.style.display = 'flex';
+                }
+                activateWindow(window);
+            });
+            
+            taskbarItems.appendChild(taskbarItem);
+        }
+        
+        // 窗口控制按钮
+        windows.forEach(window => {
+            const closeBtn = window.querySelector('.window-controls button:last-child');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    window.style.display = 'none';
+                    const windowId = window.id;
+                    const taskbarItem = document.querySelector(`.taskbar-item[data-window="${windowId}"]`);
+                    if (taskbarItem) {
+                        taskbarItem.remove();
+                    }
+                });
+            }
+            
+            // 窗口拖动
+            const header = window.querySelector('.window-header');
+            if (header) {
+                header.addEventListener('mousedown', (e) => {
+                    if (e.target.tagName === 'BUTTON') return;
+                    
+                    activateWindow(window);
+                    
+                    const startX = e.clientX;
+                    const startY = e.clientY;
+                    const startLeft = parseInt(window.style.left) || 0;
+                    const startTop = parseInt(window.style.top) || 0;
+                    
+                    function moveWindow(e) {
+                        const newLeft = startLeft + e.clientX - startX;
+                        const newTop = startTop + e.clientY - startY;
+                        
+                        window.style.left = `${Math.max(0, newLeft)}px`;
+                        window.style.top = `${Math.max(0, newTop)}px`;
+                    }
+                    
+                    function stopMoving() {
+                        document.removeEventListener('mousemove', moveWindow);
+                        document.removeEventListener('mouseup', stopMoving);
+                    }
+                    
+                    document.addEventListener('mousemove', moveWindow);
+                    document.addEventListener('mouseup', stopMoving);
+                });
+            }
+        });
+        
+        // 右键菜单
+        desktop.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            
+            contextMenu.style.display = 'flex';
+            contextMenu.style.left = `${e.clientX}px`;
+            contextMenu.style.top = `${e.clientY}px`;
+        });
+        
+        // 关闭右键菜单
+        document.addEventListener('click', () => {
+            contextMenu.style.display = 'none';
+        });
+        
+        // 右键菜单项
+        refreshDesktop.addEventListener('click', () => {
+            alert('桌面已刷新！');
+            contextMenu.style.display = 'none';
+        });
+        
+        createShortcut.addEventListener('click', () => {
+            alert('正在创建新的快捷方式...');
+            contextMenu.style.display = 'none';
+        });
+        
+        properties.addEventListener('click', () => {
+            alert('显示桌面属性');
+            contextMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

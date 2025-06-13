@@ -1,16 +1,145 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<ul>
-			<li><a href="a1.html">diyi</a></li>
-			<li><a href="a2.html">dier</a></li>
-			<li><a href="a3.html">disan</a></li>
-			<li><a href="a4.html">disi</a></li>
-			<li><a href="a5.html">diwu</a></li>
-		</ul>
-	</body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            /* background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			background-color: #2ECC71;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .success {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>用户登录</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-btn">登录</button>
+            <div id="message" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            // 清空之前消息
+            message.style.display = 'none';
+            message.className = 'message';
+
+            // 验证用户名和密码
+            if (username === 'admin' && password === 'a123456') {
+                message.textContent = '登录成功！正在跳转...';
+                message.className = 'message success';
+                message.style.display = 'block';
+
+                // 延迟跳转到欢迎页面
+                setTimeout(() => {
+                    window.location.href = 'welcome.html';
+                }, 1500);
+            } else {
+                message.textContent = '用户名或密码错误！';
+                message.className = 'message error';
+                message.style.display = 'block';
+            }
+        });
+    </script>
+</body>
 </html>
