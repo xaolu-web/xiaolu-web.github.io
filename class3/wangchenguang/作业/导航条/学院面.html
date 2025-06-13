@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta  charset="utf-8">
+        <title>导航条链接</title>
+          <style >
+            body,ul,li{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+          }
+          body{
+            background: url(./图片.jpg);
+              font-size: 20px;
+              font-family: 华文楷体;
+          }
+          a {
+              text-decoration: none;
+          }
+          a:link{
+            display: block;
+
+          }
+          nav{
+            width: 10px;
+            height: 50px;
+          }
+          nav .navcon{
+                width: 100px;
+                height: 50px;
+                position: relative;
+                z-index: 111;
+                margin: 0 auto;
+            }    
+            .navcon li{
+                width: 120px;
+                height: 50px;
+
+                text-align: center;
+            }
+            .navcon li a{
+                float: right;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                color: white;
+            }
+            .navcon li ul{
+                width: 150px;
+                display: none;
+            }
+            .navcon li:hover ul{
+                display: block;
+            }
+            .navcon li ul li{
+                width: 150px;
+                height: 48px;
+                background: red;
+                line-height: 40px;
+                border-top: 1px rgb(red)solid;
+                text-align: center;
+                float: left;
+            }
+         .navcon  li a:hover {
+              color: #FF8400;
+              text-decoration: underline;
+              background: yellowgreen;
+          }
+          .navcon li ul li a{
+            display: block;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            color:blue;
+            line-height: 50px;
+          }
+          </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="navcon">
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">学院概况</a>
+                    <ul>
+                       <li><a href="学院简介.html">学院简介</a></li>
+                       <li><a href="#">学院荣誉</a></li>
+                       <li><a href="#">国家级示范性软件学院</a></li>
+                       <li><a href="#">高技能人才培训基地</a></li>
+                       <li><a href="#">办公电话</a></li>
+                       <li><a href="#">联系方式</a></li>
+                       <li><a href="#">视频宣传</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">新闻中心</a>
+                   <ul>
+                       <li><a href="#">学校要闻</a></li>
+                       <li><a href="#">系部动态</a></li>
+                       <li><a href="#">通知公告</a></li>
+                   </ul>
+                </li>
+                <li><a href="#">机构设置</a></li>
+                    <li><a href="#">教学科研</a>
+                        <ul>
+                            <li><a href="#">教务系统管理</a></li>
+                            <li><a href="#">精品课程</a></li>
+                            <li><a href="#">教学辅助平台</a></li>
+                            <li><a href="#">网络教学平台</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
