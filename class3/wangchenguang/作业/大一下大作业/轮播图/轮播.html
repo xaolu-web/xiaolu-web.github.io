@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        /* 轮播图容器样式 */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 隐藏所有radio按钮 */
+        .carousel-radio {
+            display: none;
+        }
+        
+        /* 轮播图幻灯片样式 */
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        /* 单个幻灯片样式 */
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        /* 图片占位区域样式 */
+        .carousel-image {
+            width: 100%;
+            height: 400px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* 轮播图标题样式 */
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 20px;
+            box-sizing: border-box;
+        }
+        
+        
+        
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .carousel-control.prev {
+            left: 15px;
+        }
+        
+        .carousel-control.next {
+            right: 15px;
+        }
+        
+        
+        
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+       
+       
+        /* 轮播图自动播放动画 */
+        @keyframes slide {
+            0%, 28% { transform: translateX(0); }
+            33%, 61% { transform: translateX(-100%); }
+            66%, 94% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* 自动播放 */
+        .carousel-slides {
+            animation: slide 10s infinite;
+        }
+        
+        
+        
+       
+    </style>
+</head>
+<body>
+    <!-- 轮播图组件 -->
+    <div class="carousel-container">
+       
+        
+        <!-- 轮播图幻灯片 -->
+        <div class="carousel-slides">
+            <!-- 幻灯片1 -->
+            <div class="carousel-slide">
+                <div class="carousel-image">图片1</div>
+                <div class="carousel-caption">
+                    <h3>第一张图片</h3>
+                    <p>这是轮播图的第一张图片</p>
+                </div>
+            </div>
+            
+            <!-- 幻灯片2 -->
+            <div class="carousel-slide">
+                <div class="carousel-image">图片2</div>
+                <div class="carousel-caption">
+                    <h3>第二张图片</h3>
+                    <p>这是轮播图的第二张图片</p>
+                </div>
+            </div>
+            
+            <!-- 幻灯片3 -->
+            <div class="carousel-slide">
+                <div class="carousel-image">图片3</div>
+                <div class="carousel-caption">
+                    <h3>第三张图片</h3>
+                    <p>这是轮播图的第三张图片</p>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+       
+    </div>
+</body>
+</html>

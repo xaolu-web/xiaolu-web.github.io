@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我</title>
+   <link rel="stylesheet" href="xixi.css">
+   <style>
+       
+        .end{
+            background-color: gainsboro;
+        }
+         .introduce{
+            width: 100%;
+        }
+        .introduce-main{
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 250px;
+            top: -50px;
+        }
+        .introduce .left{
+            position: relative;
+            left: 10px;
+            margin-right: 20px;
+        }
+        .introduce .money{
+            width: 200px;
+            height: 200px;
+            top: -20px;
+        }
+        .introduce .introduce-title{
+            width: 100%;
+            height: 50px;
+            font-size: 25px;
+            line-height: 50px;
+            float: left;
+            position: relative;
+            font-weight: bold;
+            top: -40px;
+            left: 20px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .introduce .right{
+            
+            position: relative;
+            
+            line-height: 50px;
+            
+        }
+        P{
+            font-size: 20px;
+        }
+        .introduce-main02{
+            width: 100%;
+            height: 500px;
+            border: 2px solid #555;
+            box-sizing: border-box;
+            overflow: hidden;
+           
+        }
+        .introduce-main02>h1{
+            font-size: 50px;
+            color: aquamarine;
+            position: relative;
+            text-align: center;
+        }
+        .introduce-main02>ul{
+            width: 80%;
+            height: 300px;
+            border: 3px solid #555;
+            position: relative;
+            left: 70px;
+        }
+        .introduce-main02 .te{
+            width: 60%;
+            height: 50px;
+            font-size: 20px;
+            position: relative;
+            left: 150px;
+            top: 5px;
+        }
+        .but{
+            width: 200px;
+            height: 30px;
+            position: relative;
+            top: 35px;
+            left: -160px;
+            font-size: 20px;
+        }
+        li{
+            list-style-type: none;
+            font-size: 20px;
+            width: 95%;
+            height: 25px;
+            left: 10px;
+            position: relative;
+            top: 8px;
+            margin-bottom: 8px;
+            background-color: palegreen;
+        }
+        .remove{
+            width: 50px;
+            height: 20px;
+            font-size: 10px;
+            float: right;
+            margin: 2px 3px;
+        }
+   </style>
+</head>
+<body>
+    <div class="main">
+        <div class="boder">
+            <div class="title">个人简介</div>
+            <hr>
+            <div class="kongbai"></div>
+            <div class="daohang">
+                <a href="个人简介.html" class="first">个人信息</a>
+                <a href="个人实力.html" >个人实力</a>
+                <a href="我的家乡.html" >我的家乡</a>
+                <a href="我的偶像.html" >我的偶像</a>
+                <a href="联系我.html"  class="end">联系我</a>
+            </div>
+            <div class="introduce">
+                
+                <div class="introduce-title">
+                    联系方式
+                </div>
+                <div class="introduce-main">
+                <div class="left">
+                    <img src="money.jpg" class="money">
+                </div>
+                <div class="right">
+                    <p>电话:19833056293</p>
+                    <p>邮箱:2312092504@qq.com</p>
+                    <p>地址:河北邯郸</p>
+                    <p>声明：加朕之前备注好个人信息！！！</p>
+                    </div>
+                     </div>
+            <div class="introduce-main02">
+                    <h1>留言板</h1>
+                    <ul></ul>
+                    <textarea class="te" placeholder="请编辑您的留言"></textarea>
+                    <button class="but">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btn=document.querySelector(".but");
+        var text=document.querySelector("textarea");
+        var ul=document.querySelector("ul");
+        btn.onclick=function(){
+            if(text.value==""){
+                alert("您没有输入内容");
+                return;
+            }else{
+                var li=document.createElement('li');
+                li.innerHTML=text.value;
+                var button=document.createElement('button');
+                button.className='remove';
+                button.innerHTML='删除';
+                button.onclick=function() {
+                    ul.removeChild(this.parentNode);
+                };
+                li.appendChild(button);
+                ul.insertBefore(li,ul.children[0]);
+                text.value='';
+            }
+        }
+    </script>
+                
+</body>
+</html>
