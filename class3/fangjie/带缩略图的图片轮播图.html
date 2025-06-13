@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang=""en>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="带缩略图的图片轮播图.css">
+    <title>轮播图</title>
+    <style>
+        .box {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			width: 50px;
+			height: 20px;
+			border: 0px solid white;
+            }
+            .text-bottom-right {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide"></div>
+        <div class="button">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+    </div>
+
+    <div class="box">
+			<span class="text-bottom-right"><a href="大一下.html">返回作业列表</a></span>
+	</div>
+    <script>
+        const imageCount = 16;
+        const slide = document.querySelector(".slide");
+        for ( let i = 0 ; i < imageCount ; i++)
+        {
+            const item = document.createElement("div");
+            item.classList.add("item");
+            paddingNumber = (i + 1).toString().padStart(2,"0");
+            // item.style.backgroundImage = `url('./images/${paddingNumber}.png')`;     原版
+            item.style.backgroundImage = `url('${paddingNumber}.png')`;
+            // item.style.backgroundImage = `url('${paddingNumber}.png')`;
+            slide.appendChild(item);
+            const content = document.createElement("div");
+            content.classList.add("content");
+            item.appendChild(content);
+            const name = document.createElement("div");
+            name.classList.add("name");
+            name.textContent = `战地风光 ${paddingNumber}`;
+            content.appendChild(name);
+            const description = document.createElement("div");
+            description.classList.add("description");
+            description.textContent = `The Battlefield series is a critically acclaimed collection of PC and console games that began with Battlefield 1942. Developed by Digital Illusions CE (DICE) and published by Electronic Arts (EA), the series focuses on large-scale online multiplayer battles, emphasizing vehicle combat and team-based infantry combat and cooperation rather than traditional first-person shooter gameplay.`;
+            content.appendChild(description);
+            const button = document.createElement("button");
+            button.textContent = "了解更多";
+            // 给按钮添加点击事件
+                button.addEventListener("click", function() {
+        // 跳转到新的页面
+                window.location.href = "https://www.ea.com/zh-cn/games/battlefield";  // 修改为你想跳转的 URL
+    });
+            content.appendChild(button);
+        }
+
+        let next = document.querySelector(".next");
+        let prev = document.querySelector(".prev");
+
+        next.addEventListener("click",function()
+        {
+            let items = document.querySelectorAll(".item");
+            document.querySelector(".slide").appendChild(items[0]);
+        });
+
+        prev.addEventListener("click",function()
+        {
+            let items = document.querySelectorAll(".item");
+            document.querySelector(".slide").prepend(items[items.length - 1]);
+        });
+    </script>
+</body>
+</html>

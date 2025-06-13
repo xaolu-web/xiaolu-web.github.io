@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #222;
+    overflow: hidden;
+    background-image: linear-gradient(to right,#333 1px,transparent 1px),
+    linear-gradient(to bottom,#333 1px,transparent 1px);
+    background-size: 4vh 4vh;
+}
+.cusor{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    pointer-events: none;
+}
+.box{
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background: #00ff9a;
+    box-shadow: 0 0 15px #00ff9a,
+    0 0 50px #00ff9a;
+}
+.bo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 20px;
+            border: 0px solid white;
+        }
+        .text-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+        }
