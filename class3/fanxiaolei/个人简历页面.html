@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh - CN">
+
+<head>
+  <meta charset="UTF - 8">
+  <meta name="viewport" content="width=device - width, initial - scale = 1.0">
+  <title>个人简历</title>
+  <style>
+    body {
+      font-family: Arial, sans - serif;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #moreInform {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>个人简历</h1>
+  <p>姓名：樊晓蕾</p >
+  <p>联系方式：1234567890</p >
+  <p>邮箱：fanxiaolei@example.com</p >
+  <button onclick="showMoreInform()">查看更多信息</button>
+  <div id="moreInform">
+    <p>教育背景：</p >
+    <p> - 2024 - 2027 年，邯郸科技职业学院，计算机应用专业</p >
+    <p>工作经历：</p >
+    <p> - 2027 - 至今，XX 公司，XXX</p >
+    <p>技能：</p >
+    <p> - JavaScript、HTML、CSS</p >
+  </div>
+
+  <button type="button" onclick="window.location.href='网站购物页面.html'">下一个</button>
+  
+  <script>
+    function showMoreInform(){
+      var moreInformDiv=document.getElementById('moreInform');
+      if(moreInformDiv.style.display==='none'){
+        moreInformDiv.style.display='block';
+      }else{
+        moreInformDiv.style.display='none';
+      }
+    }
+  </script>
+</body>
+
+</html>

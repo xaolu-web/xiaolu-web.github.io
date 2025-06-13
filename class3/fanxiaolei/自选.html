@@ -1,0 +1,79 @@
+<hmtl lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>交通信号灯</title>
+        <style>
+            .red{
+                background-color: red;
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+            }
+            .yellow{
+                background-color: yellow;
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+            }
+            .green{
+                background-color: green;
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div id="red"></div>
+            <div id="yellow"></div>
+            <div id="green"></div>
+            <div class="second" id="second"></div>
+        </div>
+        <script>
+            var signal={
+                red:{
+                    el:document.getElementById('red'),
+                    duration:5,
+                    style:['red','off','off'],
+                },
+                yellow:{
+                    el:document.getElementById('yellow'),
+                    duration:2,
+                    style:['off','yellow','off'],
+                },
+                green:{
+                    el:document.getElementById('green'),
+                    duration:10,
+                    style:['off','off','green'],
+                },
+                second:{
+                    el:document.getElementById('second')
+                },
+                change:function(next){
+                    this.red.el.className=next.style[0];
+                    this.yellow.el.className=next.style[1];
+                    this.green.el.className=next.style[2];
+                },
+                setNum:function(num){
+                    this.second.el.innerHtml=num<10?'0'+num:num;
+                }
+            };
+            signal.red.next=signal.green;
+            signal.green.next=signal.yellow;
+            signal.yellow.next=signal.red;
+            var current=signal.green;
+            var timeout=current.duration;
+            signal.change(current);
+            signal.setNum(timeout);
+            setInterval(function(){
+                if(--timeout<=0){
+                    current=current.next;
+                    timeout=current.duration;
+                    signal.change(current);
+                }
+                signal.change(current);
+            },1000);
+        </script>
+    </body>
+</hmtl>

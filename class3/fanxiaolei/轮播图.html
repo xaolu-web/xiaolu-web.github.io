@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh - CN">
+
+<head>
+  <meta charset="UTF - 8">
+  <meta name="viewport" content="width=device-width, initial - scale = 1.0">
+  <title>带按钮和指示器的轮播图</title>
+  <style>
+    /* 轮播图容器样式 */
+    #carousel {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      margin: 50px auto;
+      position: relative;
+    }
+
+    /* 图片列表样式 */
+    #carousel img {
+      width: 500px;
+      height: 300px;
+      display: none;
+    }
+
+    /* 显示的图片样式 */
+    #carousel img.active {
+      display: block;
+    }
+
+    /* 左右切换按钮样式 */
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #prev {
+      left: 10px;
+    }
+
+    #next {
+      right: 10px;
+    }
+
+    /* 指示器样式 */
+    .indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: white;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .indicator.active {
+      background-color: #ccc;
+    }
+
+    button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+  </style>
+</head>
+
+<body>
+  <div id="carousel">
+    <img src="马克杯.jpg" alt="图片1" class="active">
+    <img src="https://unpkg.com/outeres/demo/carousel/720x360-1.jpg" alt="图片2">
+    <img src="https://unpkg.com/outeres/demo/carousel/720x360-2.jpg" alt="图片3">
+    <img src="https://unpkg.com/outeres/demo/carousel/720x360-3.jpg" alt="图片3">
+    <img src="https://unpkg.com/outeres/demo/carousel/720x360-4.jpg" alt="图片3">
+    <button id="prev" class="btn">←</button>
+    <button id="next" class="btn">→</button>
+    <div class="indicators"></div>
+  </div>
+
+  <button type="button" onclick="window.location.href='自选.html'">下一个</button>
+
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    const images = carousel.querySelectorAll('img');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const indicatorsDiv = document.querySelector('.indicators');
+    let currentIndex = 0;
+
+    // 创建指示器
+    function createIndicators() {
+      images.forEach((_, index) => {
+        const indicator = document.createElement('span');
+        indicator.classList.add('indicator');
+        if (index === 0) {
+          indicator.classList.add('active');
+        }
+        indicatorsDiv.appendChild(indicator);
+      });
+    }
+
+    // 显示指定索引的图片
+    function showImage(index) {
+      images.forEach((img, i) => {
+        if (i === index) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+      const indicators = document.querySelectorAll('.indicator');
+      indicators.forEach((indicator, i) => {
+        if (i === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    // 切换到下一张图片
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    // 切换到上一张图片
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    // 点击指示器切换图片
+    function handleIndicatorClick(index) {
+      currentIndex = index;
+      showImage(currentIndex);
+    }
+
+    // 初始化
+    createIndicators();
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => handleIndicatorClick(index));
+    });
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
+    setInterval(nextImage, 3000);
+  </script>
+</body>
+
+</html>
