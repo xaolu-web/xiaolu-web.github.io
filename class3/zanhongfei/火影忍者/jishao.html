@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廊坊市 - 京津走廊上的明珠</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/id/1016/1920/1080');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #1e3a8a;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>廊坊市</h1>
+        <p>京津走廊上的明珠</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>地理位置</h2>
+            <p>廊坊位于河北省中部偏东，环渤海腹地，北临北京，东与天津交界，南接沧州，西和保定及雄安新区毗连，地处北京、天津和雄安新区“黄金三角”核心腹地。</p>
+        </section>
+        
+        <section>
+            <h2>行政区划</h2>
+            <p>现辖6个县（香河、大厂、永清、固安、文安、大城）、2个县级市（三河、霸州）、2个市辖区（广阳、安次）、1个国家级经济技术开发区和廊坊临空经济区。</p>
+        </section>
+        
+        <section>
+            <h2>历史沿革</h2>
+            <p>4000年前，黄帝制天下以立万国始经安墟（今廊坊广阳区境内）。现地域在春秋战国时为燕国封疆，秦时分属渔阳郡、广阳郡，汉唐时属幽州、蓟州，宋辽时属河北东路、南京道，元时属中书省，明时属顺天府，清时属直隶。1989年4月，经国务院批准为省辖地级市。</p>
+        </section>
+        
+        <section>
+            <h2>经济发展</h2>
+            <p>2024年全市生产总值增长5.8%，固定资产投资增长8.3%，规上工业增加值增长6.9%，社会消费品零售总额增长4.8%，进出口总值增长17.6%，居民人均可支配收入增长5.4%，税收收入占一般公共预算收入比重全省第一。</p>
+        </section>
+        
+        <section>
+            <h2>旅游资源</h2>
+            <ul>
+                <li><a href="#">中信国安第一城</a>：位于廊坊市香河县，外仿明清时期北京城垣风貌，内集华夏古今文化之精华。</li>
+                <li><a href="#">只有红楼梦·戏剧幻城</a>：位于廊坊市广阳区，以《红楼梦》为主题的大型沉浸式戏剧主题公园。</li>
+                <li><a href="#">文安鲁能生态旅游度假区</a>：位于廊坊市文安县，集自然风光与休闲娱乐于一体。</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>特色美食</h2>
+            <ul>
+                <li>香河肉饼：皮薄馅大，香而不腻。</li>
+                <li>永清火烧：外皮酥脆，内馅软糯。</li>
+                <li>固安饸饹面：口感爽滑，汤汁浓郁。</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; 2025 廊坊市介绍网站 | 简洁版
+    </footer>
+</body>
+</html>
