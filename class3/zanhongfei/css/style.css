@@ -1,0 +1,274 @@
+ 
+html {
+	background: #000;;
+}
+
+body {
+	margin: 0;
+	padding:0;
+	font-family: Tahoma, "Trebuchet MS", Verdana;
+	font-size: 12px;
+	line-height: 1.5em;
+	width: 100%;
+	display: table;
+	background: url(../images/bj.jpg) center top no-repeat fixed #000;
+}
+
+a:link, a:visited {	color: #87430c; text-decoration: none; }
+a:active, a:hover { color: #FFFF00;}
+
+p {
+	font-family: Tahoma, "Trebuchet MS", Verdana;
+	font-size: 14px;
+	color: #222; line-height:24px;
+	text-align: justify;
+}
+
+h1 {
+	font-family: Tahoma, "Trebuchet MS", Verdana;
+	font-size: 25px;
+	color: #333;
+	font-weight: normal;
+	margin: 0 0 15px 0;
+}
+
+h2 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	color: #111;
+	margin: 0 0 10px 0;
+}
+
+h3 {
+	font-family: Tahoma;
+	font-size: 13px;
+	color: #111;
+	font-weight: normal;
+	margin: 0 0 3px 0;
+}
+
+
+
+.title_left {
+	float: left;	
+	width: 333px;
+	height: 46px;
+}
+
+.title_right {
+	float: right;	
+	width: 165px;
+	height: 40px;
+	color: #d89300;
+	font-family: Tahoma;
+	font-size:28px;
+	margin: 0;
+	padding: 6px 0 0 0;
+}
+
+.title_left  h1 {
+	float: left;
+	display: block;
+	font-family: Tahoma;
+	font-size: 25px;
+	color: #e17638;
+	font-weight: normal;
+	margin: 0 0 2px 0;
+}
+
+.title_left  h3 {
+	font-family: Tahoma;
+	font-size: 20px;
+	color: #fff;
+	font-weight: normal;
+	display: block;
+	float: right;
+}
+
+.gallery ul{ margin-left:-40px;}
+.gallery li{ float:left; margin:5px; list-style-type:none;}
+.gallery li img{ width:75px; height:75px;}
+
+
+
+li{ list-style-type:none;}
+
+#container {	width: 950px; padding:30px;	margin:10px auto; background-color:rgba(255,255,255,0.7);-moz-border-radius:20px;border-radius:20px; min-height:600px; margin-bottom:50px;
+}
+
+.index_main{ width:700px; height:auto; margin:auto; padding:50px 0px;text-align:center;}
+.index_main h1{ color:#fff;font-size:111px; text-align:center; line-height:136px; font-weight:normal;}
+.index_list{ width:960px; margin:auto; min-height:80px; padding-top:20px;}
+.index_list li{ height:50px; margin:15px; float:left; }
+.index_list li a{ color:#fff;font-size:22px; text-align:center; line-height:36px;}
+.index_list li a:hover{
+	color:#990;
+}
+
+
+.share{ width:220px; height:50px; margin:auto;}
+.share li{ float:left; margin:2px;}
+.share li img{ width:30px; height:30px;}
+
+
+.Language{ width:860px; margin:auto;}
+.Language ul{
+	width: 700px;
+}
+.Language li{ width:380px; height:100px; margin:15px;  }
+.Language img{ width:90px;height:66px; float:left; }
+.Language li p{
+	font-size:22px;
+	text-align:left;
+	line-height:66px;
+	width: 600px;
+}
+
+
+
+.Contact_input{width:500px; float:left; margin:5px;font-size:20px; color:#444; line-height:26px; }
+.Contact_input p{font-size:20px; color:#444; line-height:26px; text-indent:0em; }
+.c_input{ width:300px; height:25px;}
+.c_text{ width:300px; height:100px;}
+.SUB{ width:120px; height:35px; text-align:center; background-color:#333; -moz-border-radius:5px;border-radius:5px; margin-top:10px; }
+.SUB a{ color:#FFF; line-height:35px; font-size:18px; }
+.SUB:hover{ width:120px; height:35px; text-align:center; background-color:#800; -moz-border-radius:5px;border-radius:5px; }
+
+
+.xinshang{
+	width:960px;
+	line-height: 55px;
+}
+.xinshang ul{ margin-left:-40px;}
+.xinshang li{ width:280px; height:180px;-moz-border-radius:40px;border-radius:40px; overflow:hidden; float:left; margin:5px; list-style-type:none; border:5px solid #ccc;}
+.xinshang li:hover{ border:5px solid #fff;}
+.xinshang li img{ width:280px; height:180px;}
+
+
+.Restaurant{ width:960px;}
+.Restaurant ul{ margin-left:-40px;}
+.Restaurant li{ width:170px; height:100px;-moz-border-radius:10px;border-radius:10px; overflow:hidden; float:left; margin:5px; list-style-type:none; border:2px solid #ccc;}
+.Restaurant li:hover{ border:2px solid #fff;}
+.Restaurant li img{ width:180px; height:100px;}
+
+.Hotel{ width:960px; border-top:1px dashed #ddd;}
+.Hotel ul{ margin-left:-40px;}
+.Hotel li{ width:220px; height:140px;-moz-border-radius:10px;border-radius:10px; overflow:hidden; float:left; margin:5px; list-style-type:none; border:2px solid #ccc;}
+.Hotel li:hover{ border:2px solid #4b75dd;}
+.Hotel li img{ width:220px; height:140px;}
+
+
+.left_main{
+	width:800px;
+	padding:10px;
+	height:auto;
+	float:left;
+}
+.left_main p{ font-size:14px; line-height:22px; color:#333; text-indent:2em;}
+
+.youji_main{ width:920px; padding:10px; height:auto; float:left;}
+.youji_main p{ font-size:14px; line-height:22px; color:#333; text-indent:2em;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+
+.col_middle img {
+	float: left;
+	border: none;
+}
+
+.col_middle img.img_middle {
+	margin: 0 8px;
+}
+
+.more{
+	float: right;
+	color: #777;
+	font-size: 11px;
+	margin: 0 10px 0px 0;
+}
+
+.more a{
+	text-decoration: none;
+	color: #777;
+}
+
+.more a:hover{
+	text-decoration: underline;
+}
+
+
+.more_2{
+	float: left;
+	color: #b0b0b0;
+	font-size: 10px;
+	margin: 0 10px 10px 0;
+	background: url(../images/more.png) no-repeat ;
+	padding: 0 0 0 10px ;
+	background-position: 0 7px;
+}
+
+.more_2 a{
+	text-decoration: none;
+	color: #777;
+}
+
+.more_2 a:hover, .more_2:hover{
+	text-decoration: underline;
+}
+
+#footer {
+	width: 100%;
+	color: #555;
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
+}
+
+
+.cleaner {
+	clear: both;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* -------------------zhuce login css -------------------------------*/
+.zhuce{width:300px; height:auto; float:left; padding:10px; font-size:16px; border-top:2px solid #963; }
+.zhuce_info{width:280px; height:30px; margin:5px auto;}
+.zhuce_info input{width:180px; height:20px; float:right;}
+.subout{width:220px; height:30px; margin:5px auto}
+.sub{ width:60px; height:20px;margin:5px; margin-left:30px; color:#111; padding:2px; float:left; text-align:center; border:2px solid #555; background-color:#ddd;}
+.sub:hover{background-color:#fff; }
+.sub a{font-size:16px; line-height:20px;  color:#111; }
+.sub a:hover{color:#800; text-decoration:none;}
+
+
+
+
+/* -------------------index lunbo css -------------------------------*/
+.dm{ width:950px; height:380px; margin:auto;-moz-border-radius:30px;border-radius:30px; overflow:hidden; margin-bottom:20px;}
+.fn-clear { zoom: 1; }
+.box_skitter { position: relative; background: none; }
+.box_skitter ul { display: none; }
+.box_skitter .container_skitter { overflow: hidden; position: relative; }
+.box_skitter .image { overflow: hidden; }
+.box_skitter .image img {width: 950px; height:380px; display: none; }
+.box_skitter .box_clone { position: absolute; top: 0; left: 0; width: 100px; overflow: hidden; display: none; z-index: 20; }
+.box_skitter .box_clone img { position: absolute; top: 0; left: 0; z-index: 20; }
+.box_skitter .prev_button { position: absolute; top:30%; left:30px; z-index: 100; width:69px; height:124px; overflow: hidden; text-indent: -9999em; margin-top: -5px; background: url(../images/prev.png) no-repeat left top !important; }
+.box_skitter .next_button { position: absolute; top:30%; right:50px; z-index: 100; width:69px; height:124px;  overflow: hidden; text-indent: -9999em; margin-top: -5px; background: url(../images/next.png) no-repeat left top !important; }
+.box_skitter .label_skitter { z-index: 150; position: absolute; display: none; }
+.loading { position: absolute; top: 50%; right: 50%; z-index: 10000; margin: -16px -16px; color: #fff; text-indent: -9999em; overflow: hidden; background: url(../images/ajax-loader.gif) no-repeat left top; width: 31px; height: 31px; }
+#slideshow { width: 950px; height:380px; }
+#slideshow ul { display: none; }
+#content_area #zp {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+#content_area #zp p {
+	text-align: center;
+}
