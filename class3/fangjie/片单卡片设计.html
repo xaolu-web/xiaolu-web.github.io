@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>片单UI设计 哔哩哔哩 大碗绿豆沙</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-SemiBold/result.css"
+    />
+    <link rel="stylesheet" href="片单卡片设计.css" />
+
+    <style>
+        .bo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 20px;
+            border: 0px solid white;
+        }
+        .text-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-box">
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+
+
+          <!-- 封面 -->
+          <div class="swiper-slide">
+            <img src="BATTLEFIELD 1.jpg" alt="" />
+            <div class="overlay">
+              <h2>BATTLEFIELD 1
+                战地 1
+              </h2>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <img src="BATTLEFIELD V.jpg" alt="" />
+            <div class="overlay">
+              <h2>BATTLEFIELD V
+                战地 5
+              </h2>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <img src="BATTLEFIELD 2042.jpg" alt="" />
+            <div class="overlay">
+              <h2>
+                <div class="title-en">BATTLEFIELD 2042</div>
+                <div class="title-cn">战地 2042</div>
+              </h2>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide">
+            <img src="114514.jpg" alt="" />
+            <div class="overlay">
+              <h2>BATTLEFIELD VI
+                战地 6
+              </h2>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="swiper sub-swiper">
+        <div class="swiper-wrapper">
+
+
+          <!-- 具体介绍 -->
+          <div class="swiper-slide subbg">
+            <h1>战地 1</h1>
+            <div class="year">
+              <span class="tag">发行日期</span>
+              <span>2016 年 10 月 20 日</span>
+            </div>
+            <div class="actor">
+              <span class="tag"> 开发者</span>
+              <span>DICE</span>
+            </div>
+            <div class="cate">
+              <span class="tag">发行商</span>
+              <span>Electronic Arts</span>
+            </div>
+            <div class="time">
+              <span class="tag">原价</span>
+              <span>¥ 198.00</span>
+            </div>
+            <div class="describ">
+              <span class="shiyan">
+                无论是被围攻的法国城市、意大利阿尔卑斯山脉中重兵
+              把守的要塞还是阿拉伯半岛的沙漠，有史诗战斗的地方
+              就有你奋战的身影。在战役的冒险之旅中探索陷入战火
+              的世界，或是加入史诗般的多人游戏，与最多 64 名玩
+              家同台竞技，采用合适的战术应对惊天动地的毁灭性打
+              击和动态天气。扮演步兵骑马冲锋或操控令人惊叹的载
+              具在海里、陆上和空中参战。这些载具包括坦克、双翼
+              飞机和《战地风云》历史上最巨大的数种载具，每一种
+              都是庞然大物。
+              </span>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide subbg">
+            <h1>战地 V</h1>
+            <div class="year">
+              <span class="tag">发行日期</span>
+              <span>2018 年 11 月 9 日</span>
+            </div>
+            <div class="actor">
+              <span class="tag"> 开发者</span>
+              <span>DICE</span>
+            </div>
+            <div class="cate">
+              <span class="tag">发行商</span>
+              <span>Electronic Arts</span>
+            </div>
+            <div class="time">
+              <span class="tag">原价</span>
+              <span>¥ 228.00</span>
+            </div>
+            <div class="describ">
+              <span class="">
+                将以前所未见的手法在第二次世界大战中呈现该系列
+              的起源，让你体验人类历史上规模最大的冲突。和你的
+              小队一起在波澜壮阔的大规模行动和通力协作的联合作战
+              中体验多人模式全面战争，也可以投身单人模式的战争
+              故事。你将在遍及全球的各种出乎意料之地进行史诗级
+              战斗，投身有史以来内容最丰富、沉浸式体验。
+              </span>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide subbg">
+            <h1>战地 2042</h1>
+            <div class="year">
+              <span class="tag">发行日期</span>
+              <span>2021 年 11 月 19 日</span>
+            </div>
+            <div class="actor">
+              <span class="tag"> 开发者</span>
+              <span>DICE</span>
+            </div>
+            <div class="cate">
+              <span class="tag">发行商</span>
+              <span>Electronic Arts</span>
+            </div>
+            <div class="time">
+              <span class="tag">原价</span>
+              <span>¥ 248.00</span>
+            </div>
+            <div class="describ">
+              <span class="">
+                本作将带领玩家重返该系列标志性的全面
+              战争。运用尖端武器，参与紧张激烈、身临
+              其境的多人模式战斗。带领团队在 2042 年
+              的世界和《战地风云》系列经典地图上参与
+              大规模全面战争和近距离战斗，一起取得胜利。
+              在以兵种为基础的游戏模式中找到自己的游戏
+              风格，并体验全面升级的征服和突破模式。
+              探索 Battlefield Portal，玩家可以在这个
+              平台中探索、创建和分享《战地风云》过去和
+              现在的战斗体验。
+              </span>
+            </div>
+          </div>
+
+
+          <div class="swiper-slide subbg">
+            <h1>战地 6</h1>
+            <div class="year">
+              <span class="tag">发行日期</span>
+              <span>待定</span>
+            </div>
+            <div class="actor">
+              <span class="tag"> 开发者</span>
+              <span>DICE</span>
+            </div>
+            <div class="cate">
+              <span class="tag">发行商</span>
+              <span>Electronic Arts</span>
+            </div>
+
+            <div class="time">
+              <span class="tag">原价</span>
+              <span>暂未定价</span>
+            </div>
+            <div class="describ">
+              <span class="">
+                待定
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="bo">
+		<span class="text-bottom-right"><a href="大一下.html">返回作业列表</a></span>
+	</div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.0/swiper-bundle.min.js"></script>
+    <script src="片单卡片设计.js"></script>
+  </body>
+</html>
