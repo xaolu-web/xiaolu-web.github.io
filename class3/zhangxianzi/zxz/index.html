@@ -1,37 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>未来信息学院</title>
-        <style stye="text/css">
+        <title>thml大作业</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            header{
+                height: 180px;
+                text-align: center;
+                font-size: 80px;
+                font-family: "楷体";
+                
+            }
+            h4{
+                font-size: 38px;
+                text-align: right;
+                
+            }
+            h3{
+                margin-top: 100px;
+                float: right;
+                font-size: 35px;
+            }
+            a{
+                color: rgb(6, 52, 34);
+                font-size: 32px;
+                margin: 10px;
+                font-family: "微软雅黑";
+            }
+            
             body{
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 14px;
-                color: #333;
+                min-height: 100vh;
+                background-image: url(z1.jpg.source.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
             }
-            h2{
-                color: #F00;
+            .center li{
+                margin: 50px;
+                width: 200px;
+                height: 50px;
+                list-style: none;
                 text-align: center;
             }
-            p{
-                text-align: center;
+            .center li a{
+                display:block;
+                width: 200px;
+                height: 50px;
+                line-height:50px;
+                text-decoration: none;
+                font-weight: bold;
+                
             }
+            .center li a:hover{
+                color: aqua;
+                text-decoration: underline;
+            }
+            a{
+                text-decoration: none;
+            }
+
         </style>
     </head>
     <body>
-        <h2>欢迎来到未来信息学院</h2>
-        <hr>
-        <p>
-            <a href="intr.html">学院简介</a><br>
-            <a href="news.html">学校新闻</a><br>
-            <a href="spe.html">专业介绍</a><br>
-            <a href="rec.html">招生就业</a><br>
-        </p>
-        <p><img src="school.jpg"width="400" alt="学校鸟瞰图" title="学校鸟瞰图"> </p>
-        <p>友情链接:<a href="https://www.baidu*.com"target="_blank">百度</a>&nbsp;&nbsp;<a href="https://www.sdcit*.edu.cn"target="_blank">学校官网</a></p><br>
-        <hr>
-        <p>版权所有&copy;未来信息学院</p>
-    </body>
-    
+        <header>
+            html5大作业
+        </header>
+        <h4>计算机应用三班：张仙姿</h4>
+        <h3><a href="login.html">2025大一下学期期末作业</a></h3>
+        <article>
+           <nav class="center">
+            <ul>
+                <li><a href="example1.html">学院简介</a></li>
+                <li><a href="example2.html">学院动态</a></li>
+                <li><a href="example3.html">学校系部</a></li>
+                <li><a href="examle4.html">学生信息注册</a></li>
+                <li><a href="example5.html">课程作业</a></li>
+            </ul>
+           </nav>
+        </article>
 
+    </body>
 </html>

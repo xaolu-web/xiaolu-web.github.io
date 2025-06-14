@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(底图1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        .content{
+            position: relative;
+            top:200px;
+            left: 440px;
+            width:880px;
+            height:600px;
+            background-color: rgba(200, 175, 208, 0.5);
+            border-radius: 50px;
+
+        }
+        .left{
+            float: left;
+            width: 288px;
+            height:400px;
+        }
+        .left p{
+            font-family: '楷体';
+            font-size: 50px;
+        }
+        .left img{
+            width: 100%;
+
+        }
+        .right{
+            margin-top: 40px;
+            float: right;
+            border-left: 2px solid white;
+            padding:30px;
+            width:530px;
+            height:440px;
+            float:right;
+        }
+        .nav{
+            height: 80px;
+            width: 530px;
+            margin-left: 20px;
+            
+        }
+        .nav a{
+            display: inline-block;
+            color: black;
+            font-size: 25px;
+            line-height: 80px;
+            margin-right: 100px;
+            margin-left: 50px;
+        }
+
+        label span{
+            margin: 10px;
+            font-size: 18px;
+        }
+        input{
+            padding-left: 30px;
+            border-radius: 30px;
+            padding-top:5px;
+            width:380px;
+            height:30px;
+            margin-top:25px;
+            font-size: 15px;
+        }
+        .a123{
+            width:20px;
+            height:15px;
+        }
+        input p{
+            height: 20px;
+            line-height: 20px;
+        }
+        .dl{
+            background-color: rgb(200, 125, 232);
+            margin-top:20px;
+            margin-left:100px;
+            width:350px;
+            height:40px;
+            border-radius:40px ;
+        }
+        .red{
+            color: red;
+            font-size: 15px;
+        }
+        .green{
+            color:green;
+            font-size: 15px;
+        }
+        span{
+            margin-left: 100px;
+        }
+        .a12{
+            margin-left: 0;
+        }
+        .dll{
+            width:350px;
+            height:40px;
+            border-radius:40px ;
+             background-color: rgb(125, 125, 232);
+            margin-top:50px;
+            margin-left:90px;           
+        }
+        .su p{
+            text-align: center;
+        }
+        .nav a:active{
+            color: blueviolet;
+        }
+        /* .nav a:visited{
+            color: blueviolet;
+            font-size: px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="content">
+    <!-- 左边盒子 -->
+        <div class="left">
+            <p>&nbsp;&nbsp;欢迎到来</p>
+            <img src="小图标.jpg">
+            <p style="font-size: 35px">&nbsp;&nbsp;美滋滋的小姿</p>
+
+        </div>
+    <!-- 右边盒子 -->
+        <div class="right">
+            <div class="nav">
+                <a href="#" data-id="0">用户注册</a>
+                <a href="#" data-id="1">用户登录</a>
+            </div>
+            <!-- 注册盒子     -->
+            <div class="hid" >
+                <form class="right-denglu">
+                <!-- 用户名 -->
+                <div>
+                    <label><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用 户 名:</span></label>
+                    <input type="text" name="username" class="obj" id="ob1" placeholder="   设置用户名称,长度为3——10位，英文大小写字母">
+                    <span class="aa"></span>
+                </div>
+                <!-- 手机号 -->
+                <div>
+                    <label><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手 机 号:</span></label>
+                    <input name="phone" type="text" class="obj" id="ob2" placeholder="    请输入手机号，长度为11位">
+                    <span class="aa"></span>
+                </div>
+                <!-- 密码框 -->
+                <div>
+                    <label><span>&nbsp;&nbsp;&nbsp;设 置 密 码:</span></label>
+                    <input name="password" type="password" class="obj" id="ob3" placeholder="   长度6——20位，英文小写字母、数字、下划线">
+                    <span class="aa"></span>
+                </div>
+                <!-- 再次输入密码框 -->
+                <div>
+                    <label><span>再次输入密码:</span></label>
+                    <input name="repass" type="password" class="obj" id="ob4" placeholder="   请再次输入密码">
+                    <span class="aa"></span>
+                </div>
+                <!-- 已同意模块 -->
+                <div>
+                    <input type="checkbox" class="a123">
+                    <span class="a12 ck" >已阅读并同意《用户服务协议》</span>
+                </div>
+                <!-- 注册按钮 -->
+                <div>
+                    <button type="button" class="dl">注册</button>
+                </div>
+                </form>
+            </div>
+            <!-- 登陆盒子 -->
+            <div class="hid"style="display:none;">
+                <form>
+                    <div>
+                        <label>&nbsp;用 户 名: </label>
+                        <input type="text" id="uname" class="obb" placeholder="请输入用户名">
+                        <span></span>
+                    </div>
+                    <div>
+                        <lable>&nbsp;&nbsp;&nbsp;密 码： </lable>
+                        <input type="password"  id="password" class="obb" placeholder="请输入密码">
+                        <span></span>
+                    </div>
+                    <div>
+                        <label>确认密码:</label>
+                        <input type="password" id="repassword"class="obb" placeholder="请再次输入密码">
+                        <span></span>
+                    </div>
+
+                    <div class="su">
+                            <button type="submit" class="dll">登录</button>
+                        <p >没有账号？立即注册</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // nav栏切换
+        var tabnav=document.querySelector('.nav');
+        var pan=document.querySelectorAll('.hid');
+        tabnav.addEventListener('click',function(e){
+            for(var i=0;i<pan.length;i++){
+                pan[i].style.display='none';
+            }
+            pan[e.target.dataset.id].style.display='block';
+        })
+
+        var obj=document.querySelectorAll('.obj');
+        /调用check函数/
+        check(obj[0],'用户名',/^[a-zA-Z]{3,10}$/);
+        check(obj[1],'手机号',/^1\d{10}$/);
+        check(obj[2],'密码',/^\w{6,20}$/);
+        check(obj[3],'再次密码',/^\w{6,20}$/);
+        // 登录页面
+        var obb=document.querySelectorAll(".obb");
+        /调用check函数/
+        check(obb[0],'用户名',/^[a-zA-Z]{3,10}$/);
+        check(obb[1],'密码',/^\w{6,20}$/);
+        check(obb[2],'再次密码',/^\w{6,20}$/);
+        /验证用户名、密码是否不为空和合法/
+        function check(obj,name,reg){
+            var ops=obj.nextElementSibling;
+            obj.onblur=function(){
+                if(!obj.value.trim()){
+                    ops.innerHTML="你输入的"+name+"不能为空，请输入！"
+                    ops.classList='red';
+                    return false;
+                }else if(reg.test(obj.value)!=true){
+                    ops.innerHTML="你输入的"+name+"不合法，请重新输入！";
+                    ops.className='red';
+                    return false;
+                }else{
+                    ops.innerHTML="你输入的"+name+"合法！";
+                    ops.className='green';
+                    return true;
+
+                }
+            }
+        }
+        // 已同意模块
+        // var a12=document.querySelector('.a12');
+        // a12.addEventListener('click',function(){
+        //     this.classList.contains(ck);
+        // })
+        // 登录模块
+        var dl=document.querySelector('.dl');
+        dl.addEventListener('click',function(e){
+            var ob1=document.querySelector('#ob1');
+            var ob2=document.querySelector('#ob2');
+            var ob3=document.querySelector('#ob3');
+            var ob4=document.querySelector('#ob4');
+            var reg1=/^[a-zA-Z]{3,10}$/;
+            var reg2=/^1\d{10}$/;
+            var reg3=/^\w{6,20}$/;
+            var reg4=/^\w{6,20}$/;
+            if(reg1.test(ob1.value)&&reg2.test(ob2.value)&&reg3.test(ob3.value)&&reg4.test(ob4.value)){
+                alert('注册成功');
+            }else{
+                alert('注册失败');
+            }
+        })
+        var dll=document.querySelector(".dll");
+        var repassword=document.querySelector("#repassword");
+        var password=document.querySelector("#password");
+        var uname=document.querySelector("#uname");
+        dll.addEventListener('click',function(event){
+            event.preventDefault();
+            /验证账号密码是否正确/
+             if(uname.value=='admin'&& password.value=='a123456'){
+                alert("登陆成功！");   
+                setTimeout(function(){
+                    location.href='website.html';
+                },3000)                 
+            }else{
+                alert('用户名或密码错误！!');
+
+            }
+        })
+    </script>
+</body>
+</html>

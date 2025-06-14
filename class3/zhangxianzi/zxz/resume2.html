@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网页</title>
+    <style>
+        .w{
+            width:1200px;
+            margin: auto;
+            background-color: antiquewhite;
+        }
+        .header{
+            top:0;
+            height: 42px;
+            background-color: #f4f2f2;
+            margin: 0 auto;
+        }
+        .logo{
+            float: left;
+            width: 200px;
+            height: 42px;
+            background-color: black;
+        }
+        .logo{
+            left: 100%;
+            height: 100%;
+        }
+        .nav{
+            /* 弹性布局 */
+            float: flex;
+            margin-left: 120px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav ul li{
+            margin-left:15px;
+            float: left;
+        }
+        .nav ul li a{
+            display: block;
+            height: 42px;
+            padding-left:10px;
+            line-height: 42px;
+        }
+        .nav ul li a:hover{
+            border-bottom: 3px solid royalblue;
+        }
+        .search{
+            float: left;
+            width: 410px;
+            height: 42px;
+            background-color: rgb(206, 206, 237);
+            margin-left: 30px;
+        }
+        .search input{
+            float: left;
+            width: 340px;
+            height: 36px;
+            border: 2px solid blue;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        .search button{
+            width:45px;
+            height: 42px;
+            background-color: rgb(173, 173, 238);
+            float: left;
+            border: 0;
+        }
+        .user{
+            width: 150px;
+            float:right;
+            line-height: 30px;
+            margin-left: 1px;
+            font-size: 10px;
+        }
+        .user img{
+            float:left;
+            border-radius: 50%;
+        }
+        .user  a{
+            font-size: 13px;
+            line-height: 40px;
+            margin-left: 10px;
+        }
+        .total{
+            background-color: #fbe4df;
+        }
+        .conter-heart{
+            position: relative;
+            margin: 40px auto;
+            width: 1200px;
+            height: 700px;
+            background-color: #f4b3b3;
+        }
+        .footer{
+            margin-bottom: 0;
+            width: 100%;
+            height: 90px;
+            margin-top: 25px;
+            background-color: #f092b6;
+        }
+        .footer div{
+            text-align: center;
+            line-height: 60px;
+        }
+        .left{
+            float: left;
+            height: 700px;
+            width: 350px;
+            background-color: #faa8b6;
+        }
+        .right{
+            float: left;
+            margin-left: 35px;
+            height: 700px;
+            width: 750px;
+        }
+        .right.top{
+            width: 500px;
+        }
+        .phone{
+            position: relative;
+            margin: 0 auto;
+            height:220px;
+            width: 220px;
+            border-radius: 50%;
+            background-color: blue;
+            top: 30px;
+        }
+        .phone img{
+            height:100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .left .wenzi{
+            position: relative;
+            top: 39px;
+        }
+        
+        .left h2{
+        
+            text-align: center;
+        }
+        .left ul li{
+            display: block;
+            margin: 10px;
+            padding-top: 10px;
+        }
+        .bottom div img{
+            margin: 10px;
+            margin-top: 30px;
+            width: 230px;
+            height: 250px;
+            float: left;
+            background-color: black;
+        }
+        .footer div{
+            font-size: 25px;
+            font-family: "微软雅黑";
+        }
+        a{
+            text-decoration: none;
+
+        }
+        .left .wenzi #liu{
+            float: right;
+            line-height: 50px;
+            height: 50px;
+            width: 150px;
+            font-size: 20px;
+            margin-right: 30%;
+            margin-top: 1%;
+            border-radius: 50%;
+            background-color: #f6e3c3;
+            text-align: center;
+        }
+.messages{
+            margin: 100px auto;
+            width: 1000px;
+            padding: 50px 100px;
+            background-color: rgba(255,255,255,0.43);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #00000020;
+        }
+        .form{
+            position: relative;
+            width: 100%;
+            padding-bottom: 70px;
+        }
+        #usename,textarea{
+            border: 0;
+            width: 100%;
+            color: black;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            padding: 30px;
+        } 
+        #usename{
+            height: 3px;
+        }
+        #message{
+            height: 20px;
+        }
+       .messages h1{
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: '微软雅黑';
+        } 
+        #submitbtn{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border: 0;
+            font-size: 30px;
+            width: 200px;
+            height: 70px;
+            border-radius: 50px;
+            background-color: #ea8efc;
+        }
+        #messageBoard{
+            /* background-color: aquamarine; */
+            width: 100%;
+            text-align: left;
+        }
+        .message{
+            box-shadow: 0 10px 20px #00000020;
+            text-shadow: 0px 0px 20px #ffffff;
+            border-radius: 10px;
+            width: 100%;
+            margin: 10px;
+            padding: 10px;
+
+            background-color: #f5fc8e;
+            margin-bottom: 50px;
+        }
+        .message-info{
+            position: relative;
+            height:50px;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+        .info{
+            transform: translateY(-30px);
+        }
+        .info img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 10px solid #fff ;
+        }
+        strong{
+            margin-top: 20px;
+            margin-left: 10px;
+            position: absolute;
+            width: 800px;
+            font-size: 30px;
+        }
+        .message-info span{
+            top:10px;
+            position: absolute;
+            right: 0;
+        }
+        .content{
+            font-size: 30px;
+            margin-left: 30px;
+            width: 95%;
+            padding-left: 100px;
+
+        }
+    </style> 
+</head>
+<body>
+    <div class="total">
+             <!-- 导航栏header -->
+     <div class="header w">
+        <!-- logo -->
+         <div class="logo">
+            <img src="11.jpg" width="200" height="42px">
+         </div>
+         <!-- 导航栏nav -->
+         <div class="nav">
+            <ul>
+                <li><a href="website.html">购物网站</a></li>
+                <li><a href="resume.html">个人简历</a></li>
+                <li><a href="slideshow1.html">轮播图</a></li>
+                
+                <!-- <li><a>个人留言</a></li> -->
+            </ul>
+         </div>
+         <!-- 搜索栏 -->
+          <div class="search">
+            <input type="text">
+            <button>搜索</button>
+          </div>
+         <!-- 用户user模块 -->
+          <div class="user">
+            <img src="头像3.jpg" width="50px" height="42px">
+            <div><a href="resume2.html">美滋滋的小姿</a></div>
+          </div>
+         
+     </div>
+        <!-- 内容 -->
+        <div class="center">
+            <!-- 版心 -->
+             <div class="conter-heart">
+                <!-- 版心左边 -->
+                <div class="left">
+                    <!-- 照片 -->
+                    <div class="phone">
+                    <img src="头像3.jpg">
+                    </div>
+                    <!-- 介绍 -->
+                    <div class="wenzi">
+                        <h2>张仙姿</h2>
+                        <ul >
+                            <li>性别：女</li>
+                            <li>年龄：19岁</li>
+                            <li>籍贯：河北石家庄</li>
+                            <li>专业：计算机应用技术</li>
+                            <li>邮箱：3364703265@qq.com</li>
+                        </ul>
+                        <div id="liu">个人留言</div>
+                    </div>
+                </div>
+                <!-- 版心右边 -->
+                <div class="right">
+                    <div class="top">
+                        <h1>个人简介</h1>
+                        <p style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;作为计算机应用技术专业的大学生，我怀揣着对编程世界的无限热忱，积极投身于专业知识的学习与实践。目前已系统学习HTML、CSS、JavaScript，能够熟练搭建网页结构并赋予其交互功能；掌握C语言的基础语法与算法逻辑，具备一定的程序设计思维；通过Java课程学习，了解面向对象编程思想，能编写简单的Java应用程序。同时，我还自学了PS，可进行图片的基础处理与创意设计。在学习过程中，我不断挑战自我，积极解决各类技术难题，培养了良好的逻辑思维和问题解决能力。我始终保持对新技术的好奇心，渴望在计算机领域不断深耕，将所学知识转化为实际成果
+                        
+                    </div>
+                    <div class="bottom">
+                        <h1>生活随拍</h1>
+                        <div >
+                            <img src="风景1.jpg">
+                            <img src="风景2.jpg">
+                            <img src="风景3.jpg">
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- 个人留言 -->
+         <div class="messages">
+        <h1>留言板</h1>
+        <div class="form">
+            <input type="text" id="usename" placeholder="用户名">
+            <textarea id="message" placeholder="留言内容"></textarea>
+            <button id="submitbtn">留言</button>
+        </div>
+        <div id="messageBoard">
+            <div class="message">
+                <div class="message-info">
+                     <div class="info">
+                         <img src="头像4.jpg" width="50px" height="50px">
+                             <strong>美滋滋的小姿</strong>
+                    </div>
+                     <span>发布于：2025/6/13 16:55:03</span>
+                 </div>
+                <div class="content">欢迎大家来留言</div>
+            </div>
+        </div>
+    </div>
+        <!-- 状态栏 -->
+        <div class="footer">
+            <div>个人主页</div>
+        </div>
+    </div>
+    <script>
+     // 获取现在日期
+        function newYear(){
+            var now=new Date();
+            var year=now.getFullYear();
+             var month=now.getMonth()+1;
+             var day= now.getDate();
+             var hours=now.getHours();
+            var minutes= now.getMinutes();
+            var seconds= now.getSeconds();
+            return year+'/'+month+'/'+day+' '+hours+':'+minutes+':'+seconds;
+        }
+        var sub=document.querySelector('#submitbtn');
+        sub.addEventListener('click',function(){
+            var username=document.querySelector('#usename');
+            var message=document.querySelector('#message');
+             if(message.value===''){
+                alert('您没有输入内容,请输入内容');
+                return;
+            }
+            if(username.value===''){
+                username.value='匿名';
+
+            }
+            var messageBoard=document.querySelector('#messageBoard');
+            var newMessage=document.createElement('div');
+            newMessage.classList.add('message');
+            newMessage.innerHTML=`
+            <div class="message-info">
+                     <div class="info">
+                         <img src="头像3.jpg" width="50px" height="50px">
+                             <strong>${username.value}</strong>
+                    </div>
+                     <span>发布于：${newYear()}</span>
+                 </div>
+                 <div class="content">${message.value}</div>
+            `;
+            messageBoard.insertBefore(newMessage,messageBoard.firstChild);
+            username.value='';
+            message.value='';
+        })
+        // 个人留言点击
+        var liu=document.getElementById('liu');
+        liu.addEventListener('click',function(){
+        document.documentElement.scrollTop=1000;
+    })
+    </script>
+</body>
+</html>

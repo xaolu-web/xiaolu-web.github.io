@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .w{
+            width:1200px;
+            margin: auto;
+            background-color: antiquewhite;
+        }
+        .header{
+            top:0;
+            height: 42px;
+            background-color: #f4f2f2;
+            margin: 0 auto;
+        }
+        .logo{
+            float: left;
+            width: 200px;
+            height: 42px;
+            background-color: black;
+        }
+        .logo{
+            left: 100%;
+            height: 100%;
+        }
+        .nav{
+            /* 弹性布局 */
+            float: flex;
+            margin-left: 120px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav ul li{
+            margin-left:15px;
+            float: left;
+        }
+        .nav ul li a{
+            display: block;
+            height: 42px;
+            padding-left:10px;
+            line-height: 42px;
+        }
+        .nav ul li a:hover{
+            border-bottom: 3px solid royalblue;
+        }
+        .search{
+            float: left;
+            width: 410px;
+            height: 42px;
+            background-color: rgb(206, 206, 237);
+            margin-left: 30px;
+        }
+        .search input{
+            float: left;
+            width: 340px;
+            height: 36px;
+            border: 2px solid blue;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        .search button{
+            width:45px;
+            height: 42px;
+            background-color: rgb(173, 173, 238);
+            float: left;
+            border: 0;
+        }
+        .user{
+            width: 150px;
+            float:right;
+            line-height: 30px;
+            margin-left: 1px;
+            font-size: 10px;
+        }
+        .user img{
+            float:left;
+            border-radius: 50%;
+        }
+        .user  a{
+            font-size: 13px;
+            line-height: 40px;
+            margin-left: 10px;
+        }
+    body{
+         background-color:#fdf2f0;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .slider{
+        margin: 10px auto;
+        /* background-color: aquamarine; */
+        width:1200px;
+        height: 800px;
+        overflow: hidden;
+    }
+    .slider-top{
+        width: 100%;
+        height: 740px;
+    }
+    .slider-top img{
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    .slider-footer{
+        height: 38px;
+        /* background-color: rgb(159, 241, 159); */
+        padding: 20px 20px 0 20px;
+        position: relative;
+    }
+    .slider-footer .toggle{
+        position: absolute;
+        right: 0;
+        top: 20px;
+        /* display: flex; */
+    }
+    .slider-footer .toggle button{
+        margin-right: 50px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color:rgb(255,255,255,0.1);
+        color: #010101;
+        font-size: 40px;
+        border-radius: 50%;
+    }
+    .slider-footer .toggle button .prev{
+        float: left;
+    }
+    .slider-footer .toggle button:hover{
+        background-color: rgb(232, 91, 194);
+    }
+    .slider-footer p{
+        margin: 0;
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    .slider-indicator{
+        margin: 0;
+        padding: 0;
+        padding-left: 480px;
+        list-style: none;
+        float: left;
+        /* align-items: center; */
+    }
+    .slider-indicator li{
+        float: left;
+        width: 15px;
+        height: 15px;
+        margin: 10px;
+        border-radius: 50%;
+        background-color: #010101;
+        opacity: 0.4;
+    }
+    .slider-indicator li.active{
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        background-color:white;
+    }
+    h3{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 45px;
+        color: rgb(245, 209, 179);
+    }
+</style>
+<body>
+    <!-- 导航栏header -->
+     <div class="header w">
+        <!-- logo -->
+         <div class="logo">
+            <img src="11.jpg" width="200" height="42px">
+         </div>
+         <!-- 导航栏nav -->
+         <div class="nav">
+            <ul>
+                <li><a href="website.html">购物网站</a></li>
+                <li><a href="resume.html">个人简历</a></li>
+                <li><a href="slideshow1.html">轮播图</a></li>
+                
+                <!-- <li><a>个人留言</a></li> -->
+            </ul>
+         </div>
+         <!-- 搜索栏 -->
+          <div class="search">
+            <input type="text">
+            <button>搜索</button>
+          </div>
+         <!-- 用户user模块 -->
+          <div class="user">
+            <img src="头像3.jpg" width="50px" height="42px">
+            <div><a href="resume2.html">美滋滋的小姿</a></div>
+          </div>
+         
+     </div>
+     <h3>轮播图</h3>
+    <!-- 轮播图盒子slider -->
+    <div class="slider">
+        <!-- 照片 -->
+        <div class="slider-top">
+            <img src="img/111.jpg" alt="">
+        </div>
+        <!-- 文字盒子 -->
+         <div class="slider-footer">
+            <!-- 提示文本 -->
+            <!-- <p>文字</p> -->
+            <!-- 小圆点 -->
+             <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li ></li>
+             </ul>
+             <!-- 点击切换 -->
+              <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+              </div>
+         </div>
+    </div>
+    <script>
+        // 初始数据
+        var sliderData=[
+            {url:'d111.jpg',color:'#f09cf'},
+            {url:'d222.jpg',color:'#f1c4cd'},
+            {url:'d333.jpg',color:'#e7cad3'},
+            {url:'d444.jpg',color:'#e9ccd3'},
+            {url:'d555.jpg',color:'f6bec8'},
+            {url:'d666.jpg',color:'#eeb8c3'},
+            {url:'d777.jpg',color:'#eea6b7'},
+            {url:'d888.jpg',color:'e3adb9'},
+        ]
+        // 
+        var img=document.querySelector('.slider-top img');
+        var footerColor=document.querySelector('.slider-footer');
+        var i=0;
+        // 开启定时器
+        setInterval(function(){
+            i++;
+            if(i>=sliderData.length){
+                i=0;
+            }
+            img.src=sliderData[i].url;
+            footerColor.style.backgroundColor=sliderData[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active');
+            var circle=document.querySelector(`.slider-indicator li:nth-child(${i+1})`);
+            circle.classList.add('active');
+        },2000)
+        // 右按钮切换
+        var next=document.querySelector('.next');
+        next.addEventListener('click',function(){
+            i++;
+            if(i>=sliderData.length){
+                i=0;
+            }
+            img.src=sliderData[i].url;
+            footerColor.style.backgroundColor=sliderData[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active');
+            var circle=document.querySelector(`.slider-indicator li:nth-child(${i+1})`);
+            circle.classList.add('active');
+        })
+        // 左按钮切换
+        var prev=document.querySelector('.prev');
+        prev.addEventListener('click',function(){
+           i--;
+           if(i<0){
+            i=sliderData.length-1;
+           }
+            img.src=sliderData[i].url;
+            p.innerHTML=sliderData[i].title;
+            footerColor.style.backgroundColor=sliderData[i].color
+            document.querySelector('.slider-indicator .active').classList.remove('active');
+            var circle=document.querySelector(`.slider-indicator li:nth-child(${i+1})`);
+            circle.classList.add('active');
+
+        })
+    </script>
+
+</body>
+</html>
