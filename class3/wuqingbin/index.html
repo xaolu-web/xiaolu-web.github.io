@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 登录框 -->
+  <div class="login-box">
+    <h1>用户登录</h1>
+    <div class="form-group">
+      <input type="text" id="username" class="login-input" placeholder="请输入账号">
+    </div>
+    <div class="form-group password-wrap">
+      <input type="password" id="password" class="login-input" placeholder="请输入密码">
+      <button type="button" class="eye-btn" onclick="togglePassword()">
+        <!-- 添加 eye-icon 类名 -->
+        <img id="eye-icon" class="eye-icon" src="images/eye-closed.png" alt="显示密码">
+      </button>
+    </div>
+    <button class="login-btn" onclick="checkLogin()">登录</button>
+  </div>
+
+  <script>
+    // 显示/隐藏密码
+    function togglePassword() {
+      const pwdInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye-icon');
+      
+      // 切换密码输入类型及图标状态
+      pwdInput.type = pwdInput.type === 'password' ? 'text' : 'password';
+      eyeIcon.src = pwdInput.type === 'text' ? 'images/eye-open.png' : 'images/eye-closed.png';
+      eyeIcon.alt = pwdInput.type === 'text' ? '隐藏密码' : '显示密码';
+    }
+
+    // 登录校验
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // 输入框非空校验
+      if (!username) {
+        alert('账号不能为空，请输入账号！');
+        document.getElementById('username').focus();
+        return;
+      }
+      if (!password) {
+        alert('密码不能为空，请输入密码！');
+        document.getElementById('password').focus();
+        return;
+      }
+
+      // 密码强度简易校验（要求至少6位，包含数字和字母）
+      if (!/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{6,}$/.test(password)) {
+        alert('密码需至少6位，包含数字和字母！');
+        document.getElementById('password').focus();
+        return;
+      }
+
+      // 校验账号密码（固定值，实际需替换为后端接口）
+      if (username === 'admin' && password === 'a123456') {
+        // 存储登录状态及登录时间（用于时效控制）
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('loginTime', Date.now());
+        alert('登录成功！欢迎进入系统～');
+
+        // 跳转至首页（修改此处，跳转到包含导航条的页面）
+        window.location.href = 'carousel.html'; // 或其他包含导航条的页面
+      } else {
+        alert('账号或密码错误，请检查后重试！');
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
+      }
+    }
+  </script>
+</body>
+</html>
