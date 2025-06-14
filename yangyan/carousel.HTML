@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精美轮播图展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .carousel {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.8s ease;
+        }
+        
+        .carousel-item {
+            position: relative;
+            width: 33.333%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent 50%);
+            z-index: 1;
+        }
+        
+        .carousel-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .carousel-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .carousel-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .carousel-indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 10;
+        }
+        
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .carousel-btn i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .other-btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+        }
+        
+        .other-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6);
+        }
+        
+        .other-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .timer-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background-color: #ff4b2b;
+            z-index: 10;
+            transition: width 3s linear;
+        }
+        
+        footer {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 400px;
+            }
+            
+            .carousel-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .carousel-container {
+                height: 350px;
+            }
+            
+            .carousel-content {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>精美图片轮播展示</h1>
+            <p>每张图片持续3秒自动切换，也可以使用导航按钮手动切换</p>
+        </header>
+        
+        <div class="carousel-container">
+            <div class="timer-bar" id="timerBar"></div>
+            <div class="carousel" id="carousel">
+                <div class="carousel-item" style="background-image:url('666.jpg');">
+                    <div class="carousel-content">
+                        <h2>宇智波佐助</h2>
+                        <p>没有什么是这双眼睛看不透的。</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image:url('777.jpg');">
+                    <div class="carousel-content">
+                        <h2>波风水门</h2>
+                        <p>虽然是对手，但是你还不赖嘛！</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image:url('888.jpg');">
+                    <div class="carousel-content">
+                        <h2>宇智波鼬</h2>
+                        <p>原谅我佐助，这是最后一次了。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-controls">
+                <div class="carousel-indicator active" data-index="0"></div>
+                <div class="carousel-indicator" data-index="1"></div>
+                <div class="carousel-indicator" data-index="2"></div>
+            </div>
+        </div>
+        
+        <button class="other-btn" id="otherBtn">
+            <i class="fas fa-external-link-alt"></i>
+            其他页面
+        </button>
+        
+        <footer>
+            <p>轮播图设计 © 2023 | 每张图片持续3秒自动切换</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('carousel');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const otherBtn = document.getElementById('otherBtn');
+            const timerBar = document.getElementById('timerBar');
+            
+            let currentIndex = 0;
+            let autoSlideInterval;
+            let slideCount = document.querySelectorAll('.carousel-item').length;
+            
+            // 初始化进度条
+            timerBar.style.width = '100%';
+            
+            // 更新轮播位置
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100 / slideCount}%)`;
+                
+                // 更新指示器
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+                
+                // 重置并重新开始进度条动画
+                timerBar.style.transition = 'none';
+                timerBar.style.width = '0%';
+                
+                // 使用setTimeout触发重绘
+                setTimeout(() => {
+                    timerBar.style.transition = 'width 3s linear';
+                    timerBar.style.width = '100%';
+                }, 10);
+            }
+            
+            // 下一张
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            }
+            
+            // 上一张
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateCarousel();
+            }
+            
+            // 开始自动轮播
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            }
+            
+            // 停止自动轮播
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+            
+            // 点击指示器
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'));
+                    updateCarousel();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+            
+            // 导航按钮事件
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+            
+            // 其他页面按钮
+            otherBtn.addEventListener('click', function() {
+                // 在实际应用中，这里应该跳转到其他页面
+                alert('即将跳转到其他页面...');
+                // window.location.href = 'other-page.html';
+                window.location.href = "abc.html";
+            });
+            
+            // 鼠标悬停时暂停轮播
+            carousel.parentElement.addEventListener('mouseenter', stopAutoSlide);
+            carousel.parentElement.addEventListener('mouseleave', startAutoSlide);
+            
+            // 初始化轮播
+            updateCarousel();
+            startAutoSlide();
+        });
+
+    </script>
+</body>
+</html>

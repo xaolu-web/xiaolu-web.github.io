@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精品商店</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #ffd43b;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .nav-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .products-section {
+            flex: 3;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: #343a40;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #6a11cb;
+            border-radius: 2px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #212529;
+        }
+        
+        .product-description {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #6a11cb;
+        }
+        
+        .product-price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #6c757d;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+        
+        .add-to-cart {
+            background: #20c997;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background: #12b886;
+            transform: scale(1.05);
+        }
+        
+        .cart-section {
+            flex: 1;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .cart-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+        }
+        
+        .cart-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .cart-header i {
+            font-size: 1.8rem;
+            color: #6a11cb;
+        }
+        
+        .cart-header h2 {
+            font-size: 1.8rem;
+            color: #343a40;
+        }
+        
+        .cart-items {
+            max-height: 350px;
+            overflow-y: auto;
+            margin-bottom: 25px;
+            padding-right: 10px;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #212529;
+        }
+        
+        .item-price {
+            color: #6a11cb;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .quantity-btn:hover {
+            background: #dee2e6;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+        }
+        
+        .cart-summary {
+            border-top: 2px solid #e9ecef;
+            padding-top: 20px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        
+        .summary-total {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #212529;
+            margin-top: 10px;
+        }
+        
+        .summary-price {
+            color: #6a11cb;
+            font-weight: 700;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 30px;
+            color: #6c757d;
+        }
+        
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ced4da;
+        }
+        
+        .empty-cart p {
+            font-size: 1.1rem;
+        }
+        
+        .carousel-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .carousel-section h3 {
+            font-size: 1.8rem;
+            color: #343a40;
+            margin-bottom: 15px;
+        }
+        
+        .carousel-section p {
+            color: #6c757d;
+            max-width: 600px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .carousel-btn {
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.3);
+        }
+        
+        .carousel-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #20c997;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .cart-section {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-shopping-bag"></i>
+            <h1>精品商店</h1>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn">
+                <i class="fas fa-user"></i> 我的账户
+            </button>
+            <button class="nav-btn">
+                <i class="fas fa-heart"></i> 收藏
+            </button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="products-section">
+            <h2 class="section-title">精选商品</h2>
+            
+            <div class="products-grid">
+                <!-- 商品1 -->
+                <div class="product-card">
+                    <div class="product-badge">热卖</div>
+                    <div class="product-image">
+                        <img src="R-C.jpg" alt="智能手表">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">S忍</div>
+                        <h3 class="product-name">宇智波佐助（永恒万花筒）</h3>
+                        <p class="product-description">在宇智波鼬去世后，获得永恒万花筒血轮眼的佐助</p>
+                        <div class="product-footer">
+                            <div class="product-price">¥899 <span>¥1299</span></div>
+                            <button class="add-to-cart" data-id="1" data-name="宇智波佐助（永恒万花筒）" data-price="899" data-image="R-C.jpg">
+                                <i class="fas fa-cart-plus"></i> 加入购物车
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商品2 -->
+                <div class="product-card">
+                    <div class="product-badge">新品</div>
+                    <div class="product-image">
+                        <img src="20200924212943_bc9ff.jpg" alt="无线耳机">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">S忍</div>
+                        <h3 class="product-name">宇智波带土（忍界大战）</h3>
+                        <p class="product-description">第四次忍界大战，带土的白面具被打碎，人们见到了本应该死去的带土</p>
+                        <div class="product-footer">
+                            <div class="product-price">¥699 <span>¥999</span></div>
+                            <button class="add-to-cart" data-id="2" data-name="宇智波带土（忍界大战）" data-price="699" data-image="20200924212943_bc9ff.jpg">
+                                <i class="fas fa-cart-plus"></i> 加入购物车
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 商品3 -->
+                <div class="product-card">
+                    <div class="product-badge">特惠</div>
+                    <div class="product-image">
+                        <img src="20200314094352_mbpvj.jpg" alt="蓝牙音箱">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">S忍</div>
+                        <h3 class="product-name">自来也</h3>
+                        <p class="product-description">传说中的木叶三忍之一，蛤蟆仙人自来也参上</p>
+                        <div class="product-footer">
+                            <div class="product-price">¥499 <span>¥799</span></div>
+                            <button class="add-to-cart" data-id="3" data-name="自来也" data-price="499" data-image="20200314094352_mbpvj.jpg">
+                                <i class="fas fa-cart-plus"></i> 加入购物车
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-section">
+                <h3>浏览更多精彩商品</h3>
+                <p>我们为您准备了更多精选商品，点击下方按钮查看我们的轮播图展示，发现更多惊喜优惠！</p>
+                <button class="carousel-btn" id="carouselBtn">
+                    <i class="fas fa-images"></i> 查看轮播图
+                </button>
+            </div>
+        </div>
+        
+        <div class="cart-section">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h2>购物车</h2>
+                </div>
+                
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>您的购物车是空的</p>
+                        <p>请添加商品到购物车</p>
+                    </div>
+                </div>
+                
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-row">
+                        <span>小计:</span>
+                        <span class="summary-price" id="subtotal">¥0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>运费:</span>
+                        <span class="summary-price">¥0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>折扣:</span>
+                        <span class="summary-price">-¥0.00</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>总计:</span>
+                        <span class="summary-price" id="total">¥0.00</span>
+                    </div>
+                    
+                    <button class="checkout-btn">
+                        <i class="fas fa-credit-card"></i> 结算
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>商品已添加到购物车！</span>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = document.getElementById('cartItems');
+            const cartSummary = document.getElementById('cartSummary');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+            const notification = document.getElementById('notification');
+            const carouselBtn = document.getElementById('carouselBtn');
+            
+            // 购物车数据
+            let cart = [];
+            
+            // 添加商品到购物车
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const name = this.dataset.name;
+                    const price = parseFloat(this.dataset.price);
+                    const image = this.dataset.image;
+                    
+                    // 检查商品是否已在购物车中
+                    const existingItem = cart.find(item => item.id === id);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            image,
+                            quantity: 1
+                        });
+                    }
+                    
+                    // 更新购物车显示
+                    updateCartDisplay();
+                    
+                    // 显示通知
+                    showNotification(`${name} 已添加到购物车`);
+                });
+            });
+            
+            // 更新购物车显示
+            function updateCartDisplay() {
+                // 计算小计和总计
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const total = subtotal;
+                
+                subtotalEl.textContent = `¥${subtotal.toFixed(2)}`;
+                totalEl.textContent = `¥${total.toFixed(2)}`;
+                
+                // 清空购物车显示
+                cartItems.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    cartSummary.style.display = 'none';
+                    cartItems.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>您的购物车是空的</p>
+                            <p>请添加商品到购物车</p>
+                        </div>
+                    `;
+                } else {
+                    cartSummary.style.display = 'block';
+                    
+                    // 添加商品到购物车列表
+                    cart.forEach(item => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-price">¥${item.price.toFixed(2)}</div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                                </div>
+                            </div>
+                            <button class="remove-item" data-id="${item.id}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+                    
+                    // 添加事件监听器
+                    document.querySelectorAll('.decrease').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.dataset.id;
+                            const item = cart.find(item => item.id === id);
+                            
+                            if (item.quantity > 1) {
+                                item.quantity -= 1;
+                                updateCartDisplay();
+                            }
+                        });
+                    });
+                    
+                    document.querySelectorAll('.increase').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.dataset.id;
+                            const item = cart.find(item => item.id === id);
+                            item.quantity += 1;
+                            updateCartDisplay();
+                        });
+                    });
+                    
+                    document.querySelectorAll('.remove-item').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const id = this.dataset.id;
+                            cart = cart.filter(item => item.id !== id);
+                            updateCartDisplay();
+                            showNotification('商品已从购物车移除');
+                        });
+                    });
+                }
+            }
+            
+            // 显示通知
+            function showNotification(message) {
+                notification.querySelector('span').textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // 轮播图按钮点击事件
+            carouselBtn.addEventListener('click', function() {
+                // 创建跳转动画效果
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.zIndex = '2000';
+                overlay.style.opacity = '0';
+                overlay.style.transition = 'opacity 0.5s ease';
+                
+                const loadingText = document.createElement('div');
+                loadingText.style.color = 'white';
+                loadingText.style.fontSize = '2.5rem';
+                loadingText.style.fontWeight = 'bold';
+                loadingText.textContent = '正在进入轮播图页面...';
+                overlay.appendChild(loadingText);
+                
+                document.body.appendChild(overlay);
+                
+                // 触发动画
+                setTimeout(() => {
+                    overlay.style.opacity = '1';
+                }, 10);
+                
+                // 模拟加载后跳转
+                setTimeout(() => {
+                    window.location.href = 'carousel.html';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
