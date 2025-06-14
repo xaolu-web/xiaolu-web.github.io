@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王婷婷的自我介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#EC4899', 
+                        neutral: '#1F2937', 
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-purple-50 min-h-screen font-inter text-neutral">
+    <div class="container mx-auto px-4 py-12 md:py-20">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-primary mb-4 text-shadow">
+                <span class="inline-block transform hover:scale-110 transition-transform">王婷婷</span>
+            </h1>
+            <p class="text-[clamp(1.2rem,2vw,1.5rem)] text-gray-600 max-w-2xl mx-auto">
+                一个来自<span class="text-secondary font-medium">河北承德</span>，充满活力的<span class="text-secondary font-medium">20岁</span>女孩
+            </p>
+        </div>
+        
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+               
+                <div class="h-2 bg-gradient-to-r from-primary to-secondary"></div>
+                
+                
+                <div class="p-6 md:p-10">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                       
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                            <i class="fa fa-user-circle-o text-[100px] text-primary/80"></i>
+                        </div>
+                        
+                        
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-100">个人信息</h2>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <i class="fa fa-user text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">姓名</p>
+                                        <p class="text-xl font-semibold">王婷婷</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <i class="fa fa-birthday-cake text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">年龄</p>
+                                        <p class="text-xl font-semibold">20岁</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <i class="fa fa-venus text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">性别</p>
+                                        <p class="text-xl font-semibold">女</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <i class="fa fa-map-marker text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">籍贯</p>
+                                        <p class="text-xl font-semibold">河北承德</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="mt-12">
+                        <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-100">自我介绍</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            大家好，我是王婷婷，今年20岁，来自美丽的河北承德。我是一个性格开朗、乐观向上的女孩，喜欢交朋友，也热爱探索新事物。
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mt-4">
+                            我的家乡承德有着丰富的历史文化遗产，比如著名的承德避暑山庄，那是我从小就引以为傲的地方。我希望有一天能够将家乡的美景和文化介绍给更多的人。
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mt-4">
+                            目前我正在努力学习和成长，不断提升自己的能力，希望将来能够在自己喜欢的领域有所作为。很高兴能够在这里向大家介绍自己，期待能与更多的人相识相知！
+                        </p>
+                    </div>
+                </div>
+                
+               
+                
+                <div class="h-2 bg-gradient-to-r from-secondary to-primary"></div>
+            </div>
+        </div>
+        <a href="购物界面.html">跳转至购物界面</a>
+        
+    </div>
+</body>
+</html>

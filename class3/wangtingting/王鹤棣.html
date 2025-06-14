@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王鹤棣简介</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      color: #2c3e50;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h2 {
+      margin: 0;
+      color: #34495e;
+    }
+    .profile-info p {
+      margin: 5px 0;
+      color: #7f8c8d;
+    }
+    .carousel {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 8px;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .carousel-button:hover {
+      background-color: #2980b9;
+    }
+    .achievements {
+      margin-bottom: 20px;
+    }
+    .achievements h3 {
+      color: #2c3e50;
+    }
+    .achievements ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .achievements li {
+      background: #ecf0f1;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>王鹤棣简介</h1>
+    </div>
+    <div class="profile">
+      <img src="王鹤棣1.jpg" alt="王鹤棣">
+      <div class="profile-info">
+        <h2>王鹤棣</h2>
+        <p>出生日期：1997年12月22日</p >
+        <p>出生地：四川省乐山市</p >
+        <p>职业：演员、歌手</p >
+      </div>
+    </div>
+    <div class="carousel">
+      <img src="jpg" alt="王鹤棣1" class="active">
+      <img src="王鹤棣2.jpg" alt="王鹤棣2">
+      <img src="王鹤棣3.jpg" alt="王鹤棣3">
+      <img src="王鹤棣4.jpg" alt="王鹤棣4">
+      <div class="carousel-button" onclick="prevSlide()">上一张</div>
+      <div class="carousel-button" onclick="nextSlide()">下一张</div>
+    </div>
+    <div class="achievements">
+      <h3>个人成就</h3>
+      <ul>
+        <li>2018年，主演《流星花园》，饰演道明寺，获得广泛关注。</li>
+        <li>2019年，主演《将夜2》，饰演宁缺。</li>
+        <li>2020年，主演《绝代双骄》，饰演江小鱼。</li>
+        <li>2021年，主演《你微笑时很美》，饰演陆光。</li>
+        <li>2023年，主演《南风知我意》，饰演傅云深。</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (index + slides.length) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+  </script>
+</body>
+</html>
+
