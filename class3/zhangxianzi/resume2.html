@@ -168,7 +168,7 @@
             text-decoration: none;
 
         }
-        .left .wenzi .liu{
+        .left .wenzi #liu{
             float: right;
             line-height: 50px;
             height: 50px;
@@ -179,6 +179,100 @@
             border-radius: 50%;
             background-color: #f6e3c3;
             text-align: center;
+        }
+.messages{
+            margin: 100px auto;
+            width: 1000px;
+            padding: 50px 100px;
+            background-color: rgba(255,255,255,0.43);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #00000020;
+        }
+        .form{
+            position: relative;
+            width: 100%;
+            padding-bottom: 70px;
+        }
+        #usename,textarea{
+            border: 0;
+            width: 100%;
+            color: black;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            padding: 30px;
+        } 
+        #usename{
+            height: 3px;
+        }
+        #message{
+            height: 20px;
+        }
+       .messages h1{
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: '微软雅黑';
+        } 
+        #submitbtn{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border: 0;
+            font-size: 30px;
+            width: 200px;
+            height: 70px;
+            border-radius: 50px;
+            background-color: #ea8efc;
+        }
+        #messageBoard{
+            /* background-color: aquamarine; */
+            width: 100%;
+            text-align: left;
+        }
+        .message{
+            box-shadow: 0 10px 20px #00000020;
+            text-shadow: 0px 0px 20px #ffffff;
+            border-radius: 10px;
+            width: 100%;
+            margin: 10px;
+            padding: 10px;
+
+            background-color: #f5fc8e;
+            margin-bottom: 50px;
+        }
+        .message-info{
+            position: relative;
+            height:50px;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+        .info{
+            transform: translateY(-30px);
+        }
+        .info img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 10px solid #fff ;
+        }
+        strong{
+            margin-top: 20px;
+            margin-left: 10px;
+            position: absolute;
+            width: 800px;
+            font-size: 30px;
+        }
+        .message-info span{
+            top:10px;
+            position: absolute;
+            right: 0;
+        }
+        .content{
+            font-size: 30px;
+            margin-left: 30px;
+            width: 95%;
+            padding-left: 100px;
+
         }
     </style> 
 </head>
@@ -232,7 +326,7 @@
                             <li>专业：计算机应用技术</li>
                             <li>邮箱：3364703265@qq.com</li>
                         </ul>
-                        <div class="liu"><a href="#">个人留言</a></div>
+                        <div id="liu">个人留言</div>
                     </div>
                 </div>
                 <!-- 版心右边 -->
@@ -253,11 +347,78 @@
                 </div>
              </div>
         </div>
+        <!-- 个人留言 -->
+         <div class="messages">
+        <h1>留言板</h1>
+        <div class="form">
+            <input type="text" id="usename" placeholder="用户名">
+            <textarea id="message" placeholder="留言内容"></textarea>
+            <button id="submitbtn">留言</button>
+        </div>
+        <div id="messageBoard">
+            <div class="message">
+                <div class="message-info">
+                     <div class="info">
+                         <img src="头像4.jpg" width="50px" height="50px">
+                             <strong>美滋滋的小姿</strong>
+                    </div>
+                     <span>发布于：2025/6/13 16:55:03</span>
+                 </div>
+                <div class="content">欢迎大家来留言</div>
+            </div>
+        </div>
+    </div>
         <!-- 状态栏 -->
         <div class="footer">
             <div>个人主页</div>
         </div>
     </div>
-    
+    <script>
+     // 获取现在日期
+        function newYear(){
+            var now=new Date();
+            var year=now.getFullYear();
+             var month=now.getMonth()+1;
+             var day= now.getDate();
+             var hours=now.getHours();
+            var minutes= now.getMinutes();
+            var seconds= now.getSeconds();
+            return year+'/'+month+'/'+day+' '+hours+':'+minutes+':'+seconds;
+        }
+        var sub=document.querySelector('#submitbtn');
+        sub.addEventListener('click',function(){
+            var username=document.querySelector('#usename');
+            var message=document.querySelector('#message');
+             if(message.value===''){
+                alert('您没有输入内容,请输入内容');
+                return;
+            }
+            if(username.value===''){
+                username.value='匿名';
+
+            }
+            var messageBoard=document.querySelector('#messageBoard');
+            var newMessage=document.createElement('div');
+            newMessage.classList.add('message');
+            newMessage.innerHTML=`
+            <div class="message-info">
+                     <div class="info">
+                         <img src="头像3.jpg" width="50px" height="50px">
+                             <strong>${username.value}</strong>
+                    </div>
+                     <span>发布于：${newYear()}</span>
+                 </div>
+                 <div class="content">${message.value}</div>
+            `;
+            messageBoard.insertBefore(newMessage,messageBoard.firstChild);
+            username.value='';
+            message.value='';
+        })
+        // 个人留言点击
+        var liu=document.getElementById('liu');
+        liu.addEventListener('click',function(){
+        document.documentElement.scrollTop=1000;
+    })
+    </script>
 </body>
 </html>
