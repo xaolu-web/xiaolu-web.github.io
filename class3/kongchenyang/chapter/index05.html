@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>轮播图页面</title>
+  <style>
+    .carousel { width: 500px; margin: 2rem auto; overflow: hidden; }
+    .carousel-inner { display: flex; transition: transform 0.5s; }
+    .carousel-item { min-width: 500px; }
+    .carousel-item img { width: 100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>轮播图展示</h1>
+    <nav>
+      <a href="shop.html">返回购物页</a>
+      <a href="custom.html">前往自选页</a>
+    </nav>
+  </header>
+  <div class="carousel">
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item"><img src="01.jpg" alt="轮播1"></div>
+      <div class="carousel-item"><img src="02.jpg" alt="轮播2"></div>
+      <div class="carousel-item"><img src="03.jpg" alt="轮播3"></div>
+      <div class="carousel-item"><img src="04.jpg" alt="轮播4"></div>
+      <div class="carousel-item"><img src="05.jpg" alt="轮播5"></div>
+      <div class="carousel-item"><img src="06.jpg" alt="轮播6"></div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+  <script>
+    const carouselInner = document.querySelector('#carouselInner');
+    let currentSlide = 0;
+    const slideCount = 6; 
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slideCount;
+      carouselInner.style.transform = `translateX(-${currentSlide * 500}px)`;
+    }, 3000);
+  </script>
+</body>
+</html>
