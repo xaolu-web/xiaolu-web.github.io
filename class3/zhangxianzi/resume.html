@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .w{
+            width:1200px;
+            margin: auto;
+            background-color: antiquewhite;
+        }
+        .header{
+            top:0;
+            height: 42px;
+            background-color: #f4f2f2;
+            margin: 0 auto;
+        }
+        .logo{
+            float: left;
+            width: 200px;
+            height: 42px;
+            background-color: black;
+        }
+        .logo{
+            left: 100%;
+            height: 100%;
+        }
+        .nav{
+            /* 弹性布局 */
+            float: flex;
+            margin-left: 120px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav ul li{
+            margin-left:15px;
+            float: left;
+        }
+        .nav ul li a{
+            display: block;
+            height: 42px;
+            padding-left:10px;
+            line-height: 42px;
+        }
+        .nav ul li a:hover{
+            border-bottom: 3px solid royalblue;
+        }
+        .search{
+            float: left;
+            width: 410px;
+            height: 42px;
+            background-color: rgb(206, 206, 237);
+            margin-left: 30px;
+        }
+        .search input{
+            float: left;
+            width: 340px;
+            height: 36px;
+            border: 2px solid blue;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        .search button{
+            width:45px;
+            height: 42px;
+            background-color: rgb(173, 173, 238);
+            float: left;
+            border: 0;
+        }
+        .user{
+            width: 150px;
+            float:right;
+            line-height: 30px;
+            margin-left: 1px;
+            font-size: 10px;
+        }
+        .user img{
+            float:left;
+            border-radius: 50%;
+        }
+        .user  a{
+            font-size: 13px;
+            line-height: 40px;
+            margin-left: 10px;
+        }
+        .jl{
+            box-shadow: 0 3px 3px 3px rgba(0,0,0,0.1);
+            margin: 30Px auto;
+            width: 950px;
+            height: 1050px;
+            background-color: white;
+
+        }
+        body{
+            background-color:#fdf2f0;
+        }
+        h1{
+            padding-top: 50px;
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+        }
+        table,th,td{
+            border: 1px solid #000;
+        }
+        th,td{
+           padding-top: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        td{
+            width: 100px;
+            background-color:white;
+        }
+        th{
+            width: 100px;
+            background-color: rgb(242,242,242);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 导航栏header -->
+     <div class="header w">
+        <!-- logo -->
+         <div class="logo">
+            <img src="11.jpg" width="200" height="42px">
+         </div>
+         <!-- 导航栏nav -->
+         <div class="nav">
+            <ul>
+                <li><a href="website.html">购物网站</a></li>
+                <li><a href="resume.html">个人简历</a></li>
+                <li><a href="slideshow1.html">轮播图</a></li>
+                
+                <!-- <li><a>个人留言</a></li> -->
+            </ul>
+         </div>
+         <!-- 搜索栏 -->
+          <div class="search">
+            <input type="text">
+            <button>搜索</button>
+          </div>
+         <!-- 用户user模块 -->
+          <div class="user">
+            <img src="头像3.jpg" width="50px" height="42px">
+            <div><a href="resume2.html">美滋滋的小姿</a></div>
+          </div>
+         
+     </div>
+
+<div class="jl">
+    <h1>个人简历</h1>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <td>张仙姿</td>
+            <th>性别</th>
+            <td>女</td>
+            <td rowspan="5" width="150px">
+                <img src="头像3.jpg" width="150px" height="200pxs">
+            </td>
+        </tr>
+        <tr>
+            <th>出生年月</th>
+            <td>2005年11月</td>
+            <th>籍贯</th>
+            <td>河北石家庄</td>
+            
+        </tr>
+        <tr>
+            <th>政治面貌</th>
+            <td>团员</td>
+            <th>民族</th>
+            <td>汉族</td>
+            
+        </tr>
+        <tr>
+            <th>身高/体重</th>
+            <td>***cm/**kg</td>
+            <th>身体状况</th>
+            <td>健康</td>
+         
+        </tr>
+        <tr>
+            <th>联系电话</th>
+            <td>19831066913</td>
+            <th>学历</th>
+            <td>专科</td>
+        </tr>
+        <tr>
+            <th>邮箱</th>
+            <td>3364703265qq.com</td>
+            <th>专业</th>
+            <td colspan="2">计算机应用技术</td>
+        </tr>
+        <tr>
+            <th>毕业院校</th>
+            <td colspan="4">邯郸科技职业学院</td>
+        </tr>
+        <!-- <tr>
+            <th>求职意向</th>
+            <td colspan="4">前端开发工程师</td>
+        </tr> -->
+        <tr>
+            <th>教育背景</th>
+            <td colspan="4">
+                <br>
+                2021年9月——2024年    学习计算机基础课程，掌握了ps,vb.vf等基础知识<br>
+                2024年9月——至今    重点研习计算机应用技术专业核心课程。<br><br>
+            </td>
+        </tr>
+        <tr>
+            <th>在校经历</th>
+            <td colspan="4">在校期间，担任班级心理委员，积极关注同学心理状态，营造健康班级氛围。成绩优异，专业基础扎实。同时作为模拟政协社长，牵头组织调研、提案撰写等工作，锻炼组织与沟通能力，助力校园实践建设。</td>
+        </tr>
+            <th>专业技能</th>
+            <td colspan="4">
+                <br>
+                计算机语言：掌握C语言、HTML、Java、Js、VB、VF<br>
+                操作系统：Windows、LinuX等系统操作与维护<br>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <th>技能证书</th>
+            <td colspan="4">
+                <br>
+                全国计算机wps二级<br>
+                <!-- 河北省高职院校信息素养大赛三等奖<br> -->
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <th>自我评价</th>
+            <td colspan="4">
+                <br>
+                本人性格开朗，为人真诚谦虚，能吃苦耐劳。反应敏捷、表达能力强，具有较强的沟通能力<br>
+                及交际技巧，具有亲和力;有较强的沟通能力和应变能力精神。多次组织社团内部活动，<br>
+                有较强的组织协调能力。<br>
+            <br>
+        </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
