@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <style>
+ body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .contact-info {
+            margin-top: 10px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .job, .education {
+            margin-bottom: 15px;
+        }
+        .job-title, .degree {
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill {
+            background: #e0e0e0;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 5px 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: #eee;
+        }
+        .dark-mode .container {
+            background: #333;
+            color: #eee;
+        }
+        .dark-mode h1, .dark-mode h2 {
+            color: #eee;
+        }
+        .dark-mode .skill {
+            background: #555;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+     <button class="theme-toggle" id="themeToggle">切换主题</button>
+    
+    <div class="container">
+        <header>
+            <h1>孔晨阳</h1>
+            <div class="contact-info">
+                <p>电话: 666-888-999 | 邮箱:206737656@qq.com</p >
+                <p>地址: 邯郸科技职业技术学院</p >
+            </div>
+        </header>
+        
+        <section id="about">
+            <h2>关于我</h2>
+            <p>我是一个有0年经验的前端开发工程师，不擅长HTML, CSS, JavaScript和React框架。不热爱学习新技术，不具有良好的团队协作能力和问题解决能力。</p >
+        </section>
+        
+        <section id="experience">
+            <h2>工作经历</h2>
+            <div class="job">
+                <div class="job-title">
+                    <span>高级前端三角洲跑刀程序员</span>
+                    <span>2020 - 至今</span>
+                </div>
+                <div class="company">三角州科技有限公司</div>
+                <ul>
+                    <li>负责三角洲核心产品的前端架构设计和开发</li>
+                    <li>带领3人前端团队完成多个航天基地</li>
+                    <li>优化跑刀性能，提升三角洲金融开发和利用</li>
+                </ul>
+            </div>
+            <div class="job">
+                <div class="job-title">
+                    <span>前端三角洲工程师</span>
+                    <span>2025 - 未知</span>
+                </div>
+                <div class="company">KCY网络公司</div>
+                <ul>
+                    <li>参与巴克什和航天基地系统的开发</li>
+                    <li>实现财富自由，提升三角洲猛攻能力</li>
+                    <li>与室友和团队紧密合作</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="education">
+                <div class="degree">
+                    <span>计算机应用技术 未孵化的初学者</span>
+                    <span>2024 - 2027</span>
+                </div>
+                <div class="university">不知名大学</div>
+                <p>GPA: 3.8/4.0</p >
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>技能</h2>
+            <div class="skills">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Vue.js</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">Git</div>
+                <div class="skill">Webpack</div>
+                <div class="skill">TypeScript</div>
+                <div class="skill">响应式设计</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = '浅色模式';
+            } else {
+                this.textContent = '深色模式';
+            }
+        });
+    </script>
+</body>
+</html>
