@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线购物</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f5f5f5;
+}
+nav {
+background: #333;
+padding: 10px;
+}
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+}
+.container {
+max-width: 1200px;
+margin: 20px auto;
+padding: 0 20px;
+}
+h1 {
+text-align: center;
+color: #333;
+}
+.products {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+}
+.product-card {
+background: white;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+transition: transform 0.3s;
+}
+.product-card:hover {
+transform: translateY(-5px);
+}
+.product-image {
+height: 200px;
+overflow: hidden;
+}
+.product-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.product-info {
+padding: 15px;
+}
+.product-title {
+font-size: 18px;
+margin: 0 0 10px;
+}
+.product-price {
+color: #e53935;
+font-weight: bold;
+font-size: 20px;
+margin: 10px 0;
+}
+.add-to-cart {
+background: #4CAF50;
+color: white;
+border: none;
+padding: 8px 15px;
+width: 100%;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+.add-to-cart:hover {
+background: #45a049;
+}
+.cart-summary {
+background: white;
+padding: 20px;
+border-radius: 8px;
+margin-top: 30px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.cart-items {
+margin: 15px 0;
+}
+.cart-total {
+font-weight: bold;
+font-size: 18px;
+text-align: right;
+}
+.checkout-btn {
+background: #ff5722;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+float: right;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li><a href=" ">首页</a ></li>
+<li><a href="resume.html">个人简历</a ></li>
+<li><a href="shop.html">网站购物</a ></li>
+<li><a href="gallery.html">轮播图</a ></li>
+</ul>
+</nav>
+
+<div class="container">
+<h1>欢迎选购商品</h1>
+
+<div class="products">
+<!-- 商品1 -->
+<div class="product-card">
+<div class="product-image">
+<img src="bjb.jpg_wh860.jpg" alt="笔记本电脑">
+</div>
+<div class="product-info">
+<h3 class="product-title">高性能笔记本电脑</h3>
+<p>16GB内存/512GB SSD/i7处理器</p >
+<div class="product-price">¥6999</div>
+<button class="add-to-cart" onclick="addToCart('笔记本电脑', 6999)">加入购物车</button>
+</div>
+</div>
+
+<!-- 商品2 -->
+<div class="product-card">
+<div class="product-image">
+<img src="0915.jpg_wh860.jpg" alt="智能手机">
+</div>
+<div class="product-info">
+<h3 class="product-title">旗舰智能手机</h3>
+<p>6.7英寸/256GB存储/4800万像素</p >
+<div class="product-price">¥4999</div>
+<button class="add-to-cart" onclick="addToCart('智能手机', 4999)">加入购物车</button>
+</div>
+</div>
+
+<!-- 商品3 -->
+<div class="product-card">
+<div class="product-image">
+<img src="R-C.jpg" alt="无线耳机">
+</div>
+<div class="product-info">
+<h3 class="product-title">无线蓝牙耳机</h3>
+<p>主动降噪/30小时续航/防水</p >
+<div class="product-price">¥899</div>
+<button class="add-to-cart" onclick="addToCart('无线耳机', 899)">加入购物车</button>
+</div>
+</div>
+
+<!-- 商品4 -->
+<div class="product-card">
+<div class="product-image">
+<img src="OIP-C.jpg" alt="智能手表">
+</div>
+<div class="product-info">
+<h3 class="product-title">智能运动手表</h3>
+<p>心率监测/50米防水/10天续航</p >
+<div class="product-price">¥1299</div>
+<button class="add-to-cart" onclick="addToCart('智能手表', 1299)">加入购物车</button>
+</div>
+</div>
+</div>
+
+<div class="cart-summary">
+<h2>购物车</h2>
+<div class="cart-items" id="cart-items">
+<!-- 购物车商品将在这里动态显示 -->
+<p>购物车为空</p >
+</div>
+<div class="cart-total" id="cart-total">
+总计: ¥0
+</div>
+<button class="checkout-btn" onclick="checkout()">结算</button>
+<div style="clear: both;"></div>
+</div>
+</div>
+
+<script>
+let cart = [];
+
+// 添加商品到购物车
+function addToCart(name, price) {
+// 检查是否已存在相同商品
+const existingItem = cart.find(item => item.name === name);
+
+if (existingItem) {
+existingItem.quantity += 1;
+} else {
+cart.push({
+name: name,
+price: price,
+quantity: 1
+});
+}
+
+updateCartDisplay();
+}
+
+// 更新购物车显示
+function updateCartDisplay() {
+const cartItemsElement = document.getElementById('cart-items');
+const cartTotalElement = document.getElementById('cart-total');
+
+if (cart.length === 0) {
+cartItemsElement.innerHTML = '<p>购物车为空</p >';
+cartTotalElement.textContent = '总计: ¥0';
+return;
+}
+
+let html = '';
+let total = 0;
+
+cart.forEach(item => {
+const itemTotal = item.price * item.quantity;
+total += itemTotal;
+
+html += `
+<div style="display: flex; justify-content: space-between; margin: 10px 0;">
+<span>${item.name} x${item.quantity}</span>
+<span>¥${itemTotal}</span>
+</div>
+`;
+});
+
+cartItemsElement.innerHTML = html;
+cartTotalElement.textContent = `总计: ¥${total}`;
+}
+
+// 结算功能
+function checkout() {
+if (cart.length === 0) {
+alert('购物车为空，请先添加商品');
+return;
+}
+
+const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+alert(`订单已提交！总金额: ¥${total}\n感谢您的购买！`);
+cart = [];
+updateCartDisplay();
+}
+</script>
+</body>
+</html>
