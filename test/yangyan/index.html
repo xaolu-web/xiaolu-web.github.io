@@ -3,72 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>233333</title>
+    <title>用户登录系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, #ff6b6b, #eec6ff, #7ed6df);
-            background-size: 300% 300%;
-            animation: gradient 15s ease infinite;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
         }
-
+        
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .login-container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+            color: white;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .left-panel::before {
+            content: "";
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .left-panel::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            bottom: -80px;
+            right: 50px;
+        }
+        
+        .panel-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .left-panel h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .left-panel p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .features {
+            list-style: none;
+        }
+        
+        .features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #ffd43b;
+        }
+        
+        .right-panel {
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .right-panel h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 30px;
             text-align: center;
         }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            border: 2px solid #fff;
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .input-with-icon {
+            position: relative;
+        }
+        
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #4776E6;
+            box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.2);
+            outline: none;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
             background: none;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: none;
+            color: #777;
+            cursor: pointer;
+            font-size: 1.1rem;
         }
-
-        .button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
         }
-
-        h1 {
-            color: #fff;
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: #4776E6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(142, 84, 233, 0.4);
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(142, 84, 233, 0.6);
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 0.95rem;
+        }
+        
+        .footer a {
+            color: #4776E6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success-message i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #28a745;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+            }
+            
+            .left-panel {
+                padding: 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>welcome to my paradise</h1>
+        <div class="header">
+            <h1>欢迎回来</h1>
+            <p>请登录您的账户以继续使用我们的服务</p >
+        </div>
+        
+        <div class="login-container">
+            <div class="left-panel">
+                <div class="panel-content">
+                    <h2>安全登录系统</h2>
+                    <p>我们提供最先进的加密技术保护您的账户安全，确保您的个人信息始终受到保护。</p >
+                    <ul class="features">
+                        <li><i class="fas fa-shield-alt"></i> 银行级256位SSL加密</li>
+                        <li><i class="fas fa-sync-alt"></i> 实时安全监控</li>
+                        <li><i class="fas fa-lock"></i> 双因素认证支持</li>
+                        <li><i class="fas fa-user-check"></i> 异常登录检测</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <h2>用户登录</h2>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" class="form-control" placeholder="请输入用户名" required>
+                        </div>
+                        <div id="usernameError" class="error-message">请输入有效的用户名</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" class="form-control" placeholder="请输入密码" required>
+                            <button type="button" class="password-toggle" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div id="passwordError" class="error-message">密码长度至少为6个字符</div>
+                    </div>
+                    
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">记住我</label>
+                        </div>
+                        忘记密码?
+                    </div>
+                    
+                    <button type="submit" class="btn-login">登录</button>
+                </form>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>登录成功！</h3>
+                    <p>正在跳转到用户仪表盘...</p >
+                </div>
+                
+                <div class="footer">
+                    <p>还没有账户? 立即注册</p >
+                </div>
+            </div>
+        </div>
     </div>
-    <p><a href="index (2).html">gate1</a></p>
-    <p><a href="index.miside.html">gate2</a></p>
-    <p><a href="index.juren.html">gate3</a></p>
-    <p><a href="index.mc.html">gate4</a></p>
-    <p><a href="index.经典.html">免费大会员</a></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            const togglePassword = document.getElementById('togglePassword');
+            const successMessage = document.getElementById('successMessage');
+            
+            // 密码可见性切换
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+            
+            // 表单提交处理
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 重置错误信息
+                usernameError.style.display = 'none';
+                passwordError.style.display = 'none';
+                
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value;
+                
+                let isValid = true;
+                
+                // 用户名验证
+                if (username === '') {
+                    usernameError.textContent = '用户名不能为空';
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                } else if (username.length < 3) {
+                    usernameError.textContent = '用户名至少需要3个字符';
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // 密码验证
+                if (password === '') {
+                    passwordError.textContent = '密码不能为空';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                } else if (password.length < 6) {
+                    passwordError.textContent = '密码长度至少为6个字符';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // 如果验证通过，检查登录凭据
+                if (isValid) {
+                    // 硬编码的凭据（实际应用中应从服务器获取）
+                    const validUsername = 'admin';
+                    const validPassword = 'a123456';
+                    
+                    if (username === validUsername && password === validPassword) {
+                        // 登录成功
+                        loginForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        
+                        // 模拟跳转到另一个页面
+                        setTimeout(function() {
+                            window.location.href = 'dashboard.html';
+                        }, 2000);
+                    } else {
+                        // 登录失败
+                        usernameError.textContent = '用户名或密码不正确';
+                        usernameError.style.display = 'block';
+                    }
+                }
+            });
+            
+            // 输入时实时验证
+            usernameInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    usernameError.style.display = 'none';
+                }
+            });
+            
+            passwordInput.addEventListener('input', function() {
+                if (this.value.length >= 6) {
+                    passwordError.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
