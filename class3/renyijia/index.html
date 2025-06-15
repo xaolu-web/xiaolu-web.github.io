@@ -1,124 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
-        <style tyre="text/css">
-            body,ul,li{
-                margin: 0;
-                padding: 0;
-                list-style: none;
+        <meta chatset="utf=8">
+        <title>登录页面</title>
+        <style>
+            body{
+                font-family:Arial,sansserif;
+                background-color:#f4f4f4;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                margin:0;
             }
-            body {
-                background: url("首页图片.jpg");
-                background-repeat: no-repeat;
-				background-size: 100%;
-                font-family:"Microsoft-YaHei-Bold.ttc";
-                font-size: 14px;
+            .login-container{
+                background-color:#fff;
+               
+                border-radius:8px;
+                box-shadow:0 0 10px rgba(0,0,0,0.1);
+                width:300px;
             }
-            a {
-                text-decoration: none;
+            .login-container h2{
+                text-align:ceter;
+                margin-bottom:20px;
             }
-            nav {
-                width: 100%;
-                height: 42px;
-                background: rgb(28, 75, 169);
+            .form-group{
+                margin-bottom:15px;
             }
-            nav  .navCon {
-                width: 1200px;
-                height: 42px;
-                margin: 0 auto;
-                position: 
-                z-index: 111;
+            .form-group label{
+                display:block;
+                margin-bottom:5px;
             }
-            .navCon li {
-                width: 120px;
-                height: 42px;
-                float: left;
-                text-align: center;
+            .form-group input{
+                width:100%;
+                padding:8px;
+                box-sizing:border-box;
             }
-            .navCon li a {
-                display: block;
-                width: 120px;
-                height: 42px;
-                line-height: 42px;
-                color: #FFF;
+            .form-group button{
+                width:100%;
+                padding:10px;
+                background-color:#28a745;
+                color:#fff;
+                border:none;
+                border-radius:4px;
+                cursor:pointer;
             }
-            .navCon li ul {
-                width: 150px;
-                display: none;
+            .form-group button:hover{
+                backgroud-color:#218838;
             }
-            .navCon li:hover ul {
-                display: block;
-            }
-            .navCon li ul li {
-                background: rgb(28 75, 169);
-                width: 150px;
-                height: 40px;
-                line-height: 40px;
-                border-top: 1px rgb(0,52,162) solid;
-                text-align: center;
-            }
-            .navCon li ul li a {
-                display: block;
-                width: 150px;
-                height: 40px;
-                text-align: center;
-                color: rgb(255,255,255);
-                line-height: 40px;
+            .message{
+                text-align:center;
+                margin-top:10px;
+                color:red;
             }
         </style>
-        <meta charset="utf-8">
-        <title>学院网站导航条</title>
     </head>
     <body>
-        <nav>
-            <ul class="navCon">
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">学院概况</a>
-                    <ul>
-                        <li><a href="3.html">学院简介</a></li>
-                        <li><a href="#">学院荣誉</a></li>
-                        <li><a href="#">国家级示范性软件学院</a></li>
-                        <li><a href="#">高技能人才培训基地</a></li>
-                        <li><a href="#">办公电话</a></li>
-                        <li><a href="#">联系方式</a></li>
-                        <li><a href="#">视频宣传</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">新闻中心</a>
-                    <ul>
-                        <li><a href="2.html">学校要闻</a></li>
-                        <li><a href="#">系部动态</a></li>
-                        <li><a href="4.html">通知公告</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">机构设置</a></li>
-                <li><a href="#">教学科研</a>
-                    <ul>
-                        <li><a href="#">教务管理系统</a></li>
-                        <li><a href="#">精品课程</a></li>
-                        <li><a href="#">教学辅助平台</a></li>
-                        <li><a href="#">网络教学平台</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">团学在线</a></li>
-                <li><a href="#">招生就业</a>
-                    <ul>
-                        <li><a href="#">招生信息网</a></li>
-                        <li><a href="#">就业信息网</a></li>
-                        <li><a href="#">空中乘务</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">公共服务</a>
-                    <ul>
-                        <li><a href="#">图书馆</a></li>
-                        <li><a href="#">信息公开</a></li>
-                        <li><a href="#">建行缴费</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="5.html">信息公开</a></li> 
-                <li><a href="#">统一信息门户</a></li>   
-            </ul>
-        </nav>
+        <div class="login-container">
+            <h2>登录</h2>
+            <div class ="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id ="username" placeholder="请输入用户名">
+            </div>
+      <div class ="form-group">
+        <label for="password">密码</label>
+        <input type="password" id ="password"placeholder="请输入密码">
+      </div>
+      <div class="form-group">
+        <button onclick="checklogin()">登录</button>
+      </div>
+      <div class="message" id="message"></div>
+      </div>
+      <script>
+        function checklogin(){
+            const username=document.getElementById('username').value;
+            const password=document.getElementById('password').value;
+            const messageDiv=document.getElementById('message');
+            if(username=='admin'&& password==='a123456'){
+                messageDiv.innerText='登录成功!';
+                messageDiv.style.color='green';
+                window.location.href(个人简介.html);
+            }else{
+                messageDiv.innerText='用户名或密码错误！';
+                message.style.color='red';
+            }
+        }
+      </script>
     </body>
+    <a href="个人简历页面.html">跳转至个人简历页面</a>
 </html>

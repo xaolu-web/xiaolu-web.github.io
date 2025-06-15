@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王俊凯轮播图</title>
+  <link rel="stylesheet" href="轮播.css">
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="王俊凯1.jpg" alt="王俊凯1">
+      </div>
+      <div class="carousel-item">
+        <img src="王俊凯2.jpg" alt="王俊凯2">
+      </div>
+      <div class="carousel-item">
+        <img src="王俊凯3.jpg" alt="王俊凯3">
+      </div>
+      <div class="carousel-item">
+        <img src="王俊凯4.jpg" alt="王俊凯4">
+      </div>
+    </div>
+    
+    <a class="prev" onclick="prevSlide()">&#10094;</a >
+    <a class="next" onclick="nextSlide()">&#10095;</a >
+    <div class="indicators">
+      <span class="indicator active" onclick="goToSlide(0)"></span>
+      <span class="indicator" onclick="goToSlide(1)"></span>
+      <span class="indicator" onclick="goToSlide(2)"></span>
+      <span class="indicator" onclick="goToSlide(3)"></span>
+    </div>
+  </div>
+  <a href="成毅.html">跳转至成毅</a>
+  <script src="轮播.js"></script>
+
+</body>
+</html>
+

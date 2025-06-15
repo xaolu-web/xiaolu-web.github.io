@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任一佳个人简历</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header,
+    section {
+      padding: 2rem;
+    }
+
+    header {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #4285f4;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="https://picsum.photos/200/200" alt="头像" width="150" height="150" style="border-radius: 50%;">
+    <h1>任一佳</h1>
+    <p>19岁 | 河北邢台 | 邯郸科技职业学院</p >
+  </header>
+
+  <section id="education">
+    <h2>教育经历</h2>
+    <div>
+      <h3>邯郸科技职业学院</h3>
+      <p>入学时间：至今</p >
+      <p>专业：暂无</p >
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>技能</h2>
+    <div class="skill">
+      <p>HTML/CSS</p >
+      <div class="progress-bar">
+        <div class="progress" style="width: 70%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <p>JavaScript</p >
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>联系方式</h2>
+    <p>电话：暂无</p >
+    <p>邮箱：暂无</p >
+  </section>
+
+  <script>
+    const skillSections = document.querySelectorAll('#skills .skill');
+    skillSections.forEach(section => {
+      section.addEventListener('click', () => {
+        alert('这里是技能详情！');
+      });
+    });
+  </script>
+  <a href="网站购物页面.html">跳转至网站购物页面</a>
+</body>
+</html>
