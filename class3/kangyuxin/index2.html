@@ -1,109 +1,116 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>美丽山东</title>
-		<style type="text/css">
-		body{
-			width:1000px;
-			margin:0;
-			padding:0;
-			font-size:14px;
-			text-align:center;
-			overflow: hidden;
-		}
-		header{
-			width:1000px;
-			height:200px;
-			background:url(https://tse3-mm.cn.bing.net/th/id/OIP-C.Rx12szYnh_-PvdGvbj8kjQHaFP?rs=1&pid=ImgDetMain);
-			background-repeat: no-repeat;
-			 /* background-size: cover;  */
-			 /* background-size: contain; */
-		}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片轮播</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #34495e;
+        }
 
-		.left{
-			width:250px;
-			height:400px;
-			background-color: coral;
-			float:left;
-		}
-		.right{
-			width:1000px;
-			height:400px;
-			background-color:
-			float:right;
-		}
-		.content{
-			width: 1000px;
-			height: 400px;
-			margin: 5px auto;
-			overflow: hidden;
-		}
-		.footer1{
-			width: 1000px;
-			height: 60px;
-			line-height: 60px;
-			background-color: brown;
-			text-align: center;
-			font-size: 12px;
-			/* margin: 0 auto; */
-			/* clear: both; */
-			position: relative;
-		}
-		ul li{
-			list-style: none;
-			line-height: 40px;
-			text-align: left;
-			padding-left: 0;
-			margin-left: 0;
-		}
-		.text1{
-			font-weight: bold;
-			text-align: left;
-			border-bottom: 2px dashed #000;
-			padding-top: 0;
-			margin-top: 0;
-			font-size: 20px;
-		}
-		.text2{
-			text-align: left;
-			text-indent: 2em;
-			line-height: 40px;
-		}
-		a{
-			text-decoration: none;
-			display: block;
-			border-left: 8px solid #54e11d;
-		}
-		a:hover{
-			font-weight: bold;
-			background-color: #54e11d;
-			color: #FFF;
-		}
-		</style>
-	</head>
-	<body>
-		<header></header>
-		<div class="content">
-		<nav class="left">
-			<ul>
-				<li><a href="">山东介绍</a></li>
-				<li><a href="">行政区别</a></li>
-				<li><a href="">自然资源</a></li>
-				<li><a href="">地理环境</a></li>
-				<li><a href="">人口民族</a></li>
-				<li><a href="">经济概况</a></li>
-				<li><a href="">农业工艺</a></li>
-				<li><a href="">固定投资</a></li>
-			</ul>
-		</nav>
-		<div class="right">
-			<p class="text1">山东介绍</p>
-			<p class="text2">山东，因居太行山以东而得名，简称“鲁”，省会济南。先秦时期隶属鲁国、齐国，故而别名齐鲁。</p>
-			<p class="text2">山东地处华东沿海、黄河下游、京杭大运河中北段，是华东地区最北端省份。西部连接内陆，从西向南分别与河北、河南、安徽、江苏四省接壤；中部高突，泰山是全景最高点；东部山东半岛伸入黄海，北隔渤海海峡与辽东半岛相对、拱卫京津与渤海湾，东隔黄海与朝鲜半岛相望，东南则临靠较宽阔的黄海、遥望东海及日本南部列岛。</p>
-			<p class="text2">山东是儒家文化发源地，儒家思想的创始人孔子、孟子，以及墨家思想的创始人墨子和文化的创始人柳下惠、军事家吴起等，均出生于鲁国。姜太公在临淄建立齐国，成就了齐恒公、管仲、宴婴、鲍叔牙、孙武、孙膑等一大批志士名人；齐国还创建了世界上第一所官方举办、私家主持的高等学府————稷下学宫。</p>
-		</div>
-		</div>
-		<p class="footer1">版权所有@网页设计工作室</p>
-	</body>
+        .slidershow {
+            width: 1800px;
+            height: 1000px;
+            /* 设置图片宽高 */
+            overflow: hidden;
+            /* 溢出隐藏内容 */
+        }
+
+        /* 使图片居中↓ */
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .navigation {
+            /* 使按钮在轮播图下方 */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            /* 水平居中 */
+            transform: translateX(-50%);
+            /* 使导航居中排列 */
+            display: flex;
+        }
+
+        .bar {
+            width: 50px;
+            height: 10px;
+            border: 2px solid white;
+            margin: 6px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .bar:hover {
+            background-color: white;
+        }
+
+        input[name="r"] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        /* 做一个容器把三张图放进来↓ */
+        .slides {
+            width: 300%;
+            height: 100%;
+            display: flex;
+        }
+
+        /* 每个图片宽度设置为容器的33% */
+        .slide {
+            width: 33.33%;
+            /* 图片过渡 */
+            transition: 0.6s;
+        }
+        /* 每个图片大小 */
+        .slide img {
+            width: 100%;
+            height: 100%;
+        }
+        /* 下面都是偏移 */
+        #r1:checked ~ .s1 {
+            margin-left: 0;
+        }
+
+        #r2:checked ~ .s1 {
+            margin-left: -33.33%;
+        }
+
+        #r3:checked ~ .s1 {
+            margin-left: -66.66%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slidershow middle">
+        <div class="slides">
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <div class="slide s1">
+                <img src="1.webp" alt="轮播图片1">
+            </div>
+            <div class="slide s2">
+                <img src="2.webp" alt="轮播图片2">
+            </div>
+            <div class="slide s3">
+                <img src="3.webp" alt="轮播图片3">
+            </div>
+        </div>
+        <div class="navigation">
+            <!-- 轮播图按钮 -->
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+        </div>
+    </div>
+</body>
 </html>
