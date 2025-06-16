@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">轮播图</h1>
+        <nav>
+            <a href="index.html">返回登录</a>
+            <a href="shop.html">购物页面</a>
+            <a href="carousel.html">轮播图</a>
+            <a href="custom.html">自选界页面</a>
+        </nav>
+    </header>
+    <div class="slider">
+        <div class="slider-container">
+            <div class="slide">
+                <img src="photo\1.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="photo\2.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="photo\3.png" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="photo\4.png" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="photo\5.png" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="photo\6.png" alt="Slide 3">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.slider-container');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        
+        // 自动轮播
+        let interval = setInterval(nextSlide, 3000);
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateSlider();
+        }
+        
+        function updateSlider() {
+            container.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // 更新指示点状态
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // 重置自动轮播计时器
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 2000);
+        }
+        
+        // 点击指示点切换
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+    </script>
+</body>
+</html>

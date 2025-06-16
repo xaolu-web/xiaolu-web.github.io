@@ -1,0 +1,232 @@
+/*登录页面css*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.login-container{
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.login-container input{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-container button{
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
+    margin-top: 10px;
+}
+
+.header{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/*个人简历css*/
+
+nav{
+    text-align: center;
+    background-color: #007BFF;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover,nav a:active{
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+main{
+    padding: 20px;
+}
+
+.resume-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media(min-width:768px){
+    .resume-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.resume-container section{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resume-container h2{
+    margin-bottom: 10px;
+    color: #333;
+    border-left: 5px solid #007BFF;
+    padding-left: 10px;
+}
+
+/*购物页面css*/
+
+.banner{
+    width: 100%;
+    height: 200px;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media(min-width:768px){
+    .product-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(min-width:1024px){
+    .product-grid{
+        grid-template-columns: repeat(3.1fr);
+    }
+}
+
+.product-card{
+    background:#fff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover{
+    transform: translateY(-3px);
+}
+
+.product-card img{
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    float: left;
+}
+
+.product-desc{
+    flex: 1;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.product-title{
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.product-price{
+    color: #ff5722;
+    font-weight: bold;
+}
+.shop-footer{
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/*轮播图*/
+.slider {
+    width: 800px;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+.dot.active {
+    background: white;
+}
