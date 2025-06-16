@@ -33,17 +33,91 @@
       color: #999;
       margin-top: 30px;
     }
-  </style>
+    
+body {
+font-family: 'Microsoft YaHei', sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+background-color: #f9f9f9;
+color: #333;
+}
+.container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background: white;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+header {
+text-align: center;
+border-bottom: 2px solid #4CAF50;
+padding-bottom: 20px;
+margin-bottom: 20px;
+}
+h1 {
+color: #4CAF50;
+margin-bottom: 5px;
+}
+.contact-info {
+margin: 10px 0;
+}
+section {
+margin-bottom: 25px;
+}
+h2 {
+color: #4CAF50;
+border-bottom: 1px solid #eee;
+padding-bottom: 5px;
+}
+.education-item, .experience-item {
+margin-bottom: 15px;
+}
+.date {
+font-weight: bold;
+color: #666;
+}
+.skills {
+display: flex;
+flex-wrap: wrap;
+}
+.skill {
+background: #4CAF50;
+color: white;
+padding: 5px 10px;
+margin: 5px;
+border-radius: 3px;
+}
+nav {
+background: #333;
+padding: 10px;
+margin-bottom: 20px;
+}
+nav ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+}
+</style>
+  
 </head>
 <body>
 <!-- 导航栏（和作业其他页面保持一致，假设其他页也用 Layui 导航） -->
-<ul class="layui-nav" lay-filter="nav">
-  <li class="main.html"><a href="index.html">登录页面</a></li>
-  <li class="resume.html"><a href="resume.html">个人简历页面</a></li>
-  <li class="shop.html"><a href="shop.html">网站购物页面</a></li>
-  <li class="gallery.html"><a href="gallery.html">轮播图</a></li>
-  <li class="custom.html"><a href="custom.html">个人博客</a></li>
+<nav>
+<ul>
+<li><a href="shouye.html">首页</a ></li>
+<li><a href="resume.html">个人简历</a ></li>
+<li><a href="shop.html">网站购物</a ></li>
+<li><a href="gallery.html">轮播图</a ></li>
+    <li><a href="custom.html">个人博客</a ></li>
 </ul>
+</nav>
 
 <!-- 页面主体 -->
 <div class="layui-container" style="margin-top: 20px;">

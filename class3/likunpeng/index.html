@@ -3,40 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>主页面</title>
+<title>登录页面</title>
 <style>
-nav {
-background: #333;
-padding: 10px;
-}
-nav ul {
-list-style: none;
-padding: 0;
+body {
+font-family: Arial, sans-serif;
 display: flex;
-justify-content: space-around;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+background-color: #f5f5f5;
 }
-nav a {
+.login-container {
+background: white;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+width: 300px;
+}
+h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+.input-group {
+margin-bottom: 15px;
+position: relative;
+}
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.eye-icon {
+position: absolute;
+right: 10px;
+top: 35px;
+cursor: pointer;
+width: 20px;
+height: 20px;
+}
+button {
+width: 100%;
+padding: 10px;
+background-color: #4CAF50;
 color: white;
-text-decoration: none;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
 }
-.content {
-padding: 20px;
+button:hover {
+background-color: #45a049;
+}
+.error {
+color: red;
+font-size: 14px;
+margin-top: 5px;
+display: none;
 }
 </style>
 </head>
 <body>
-<nav>
-<ul>
-<li><a href="resume.html">个人简历</a ></li>
-<li><a href="shop.html">网站购物</a ></li>
-<li><a href="gallery.html">轮播图</a ></li>
-<li><a href="custom.html">个人博客</a ></li>
-</ul>
-</nav>
-
-<div class="content">
-<h1>欢迎访问主页面</h1>
-<p>请点击上方导航栏访问各功能页面</p >
+<div class="login-container">
+<h2>用户登录</h2>
+<form id="loginForm">
+<div class="input-group">
+<label for="username">用户名</label>
+<input type="text" id="username" required>
 </div>
+<div class="input-group">
+<label for="password">密码</label>
+<input type="password" id="password" required>
+<img src="biyan.jpg" id="eye-icon" class="eye-icon" onclick="togglePassword()">
+</div>
+<p id="errorMsg" class="error">用户名或密码错误</p >
+<button type="button" onclick="validateLogin()">登录</button>
+</form>
+</div>
+
+<script>
+// 密码显示/隐藏切换
+function togglePassword() {
+const pwdInput = document.getElementById('password');
+const eyeIcon = document.getElementById('eye-icon');
+
+if (pwdInput.type === 'password') {
+pwdInput.type = 'text';
+eyeIcon.src = 'zhengyan.jpg';
+} else {
+pwdInput.type = 'password';
+eyeIcon.src = 'biyan.jpg';
+}
+}
+
+// 登录验证
+function validateLogin() {
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+const errorMsg = document.getElementById('errorMsg');
+
+if (username === 'admin' && password === 'a123456') {
+window.location.href = 'shouye.html'; // 跳转到主页面
+} else {
+errorMsg.style.display = 'block';
+}
+}
+</script>
 </body>
 </html>
