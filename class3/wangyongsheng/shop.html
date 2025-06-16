@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易购物商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .cart-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+        }
+
+        .total-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>简易购物商城</h1>
+    </header>
+
+    <div class="container">
+        <main class="products-grid">
+            <!-- 商品卡片示例 -->
+            <div class="product-card">
+                <img src="车1.jpg" alt="商品1" class="product-image">
+                <h3>车保险</h3>
+                <p class="product-price">¥1999</p>
+                <button class="btn" onclick="addToCart('车保险', 1999)">加入购物车</button>
+            </div>
+
+            <div class="product-card">
+                <img src="床.avif" alt="商品2" class="product-image">
+                <h3>床</h3>
+                <p class="product-price">¥9999</p>
+                <button class="btn" onclick="addToCart('床', 9999)">加入购物车</button>
+            </div>
+
+            <div class="product-card">
+                <img src="吹风机.jpg" alt="商品3" class="product-image">
+                <h3>吹风机</h3>
+                <p class="product-price">¥499</p>
+                <button class="btn" onclick="addToCart('吹风机', 499)">加入购物车</button>
+            </div>
+        </main>
+
+        <aside class="cart-section">
+            <h2>购物车</h2>
+            <div id="cartItems"></div>
+            <p class="total-price">总计：¥<span id="totalPrice">0</span></p>
+            <button class="btn btn-checkout" onclick="checkout()">结算</button>
+        </aside>
+    </div>
+
+    <script>
+        // 购物车数据存储
+        let cart = [];
+        const cartItemsElement = document.getElementById('cartItems');// 获取页面中购物车商品列表的容器元素（通过 id 查找）
+        const totalPriceElement = document.getElementById('totalPrice');//获取页面中总价显示的元素（通过 id 查找）
+
+        // 添加商品到购物车
+        function addToCart(productName, price) { // 参数：productName（商品名称）、price（商品价格）
+            cart.push({ productName, price, quantity: 1 });// 向 cart 数组中添加一个新商品对象（quantity 固定为 1，默认只添加 1 件）
+            updateCartDisplay();// 调用更新函数，刷新购物车的显示（确保用户能看到新增商品）
+        updateCartDisplay(); 
+        }
+
+        // 更新购物车显示
+        function updateCartDisplay() { // 清空购物车容器的现有内容
+            cartItemsElement.innerHTML = '';// 初始化总价为 0（用于计算所有商品的价格总和）
+            let total = 0;
+
+            // 遍历购物车中的每一个商品（用for循环，适合新手）
+        for (let i = 0; i < cart.length; i++) {
+                const item = cart[i]; // 取出当前商品（对象）
+                total += item.price;// 计算总价：当前总价 + 商品价格
+                const itemDiv = document.createElement('div');// 创建一个 div 元素，用于展示单个购物车商品
+                itemDiv.className = 'cart-item';// 为 div 添加 CSS 类名（对应 CSS 中的 .cart-item 样式）
+                itemDiv.innerHTML = `  
+                    ${item.productName} ×${item.quantity} 
+                    <span>¥${item.price}</span>
+                `;//拼接商品的显示内容（模板字符串，用${}插入变量）
+                cartItemsElement.appendChild(itemDiv);//将这个商品的div添加到页面的购物车区域
+        };
+
+            totalPriceElement.textContent = total.toFixed(2);// 将计算好的总价显示到页面（toFixed(2) 确保保留两位小数）
+        }
+
+        // 模拟结算功能
+        function checkout() { 
+            alert('结算功能正在开发中，感谢您的支持！点击确定进入 轮播图 页面！');// 弹出提示框
+            location.href="轮播图.html"
+            cart = []; // 清空购物车数据
+            updateCartDisplay();// 刷新显示空购物车
+        }
+    </script>
+            <footer class="footer">
+            <p>&copy; 2025 王永胜</p>
+            <p>
+                <a href="carousel.html">next</a>
+            </p>
+        </footer>
+</body>
+</html>
