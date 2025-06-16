@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易购物商城</title>
+    <link rel="stylesheet" href="a3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Brand Logo</div>
+        <ul class="nav-links">
+            <li><a href="welcome.html" class="active">首页</a></li>
+            <li><a href="jianli.html">简历</a></li>
+            <li><a href="gouwu.html">购物</a></li>
+            <li><a href="wenjuan.html">问卷</a></li>
+            
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <!-- 主要内容 -->
+    <main>
+        <!-- 商品展示区 -->
+        <section class="products-section">
+            <h2>热门商品</h2>
+            <div class="products-container">
+                <!-- 商品1 -->
+                <div class="product-card" data-id="1">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/300/300?random=1" alt="商品1">
+                        <div class="product-tag">热卖</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">时尚休闲衬衫</h3>
+                        <p class="product-description">舒适面料，多色可选，适合日常穿着</p>
+                        <div class="product-price">
+                            <span class="price">¥129</span>
+                            <span class="original-price">¥199</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+
+                <!-- 商品2 -->
+                <div class="product-card" data-id="2">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/300/300?random=2" alt="商品2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">经典牛仔裤</h3>
+                        <p class="product-description">高质量牛仔面料，修身剪裁，百搭款式</p>
+                        <div class="product-price">
+                            <span class="price">¥199</span>
+                            <span class="original-price">¥299</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+
+                <!-- 商品3 -->
+                <div class="product-card" data-id="3">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/300/300?random=3" alt="商品3">
+                        <div class="product-tag">新品</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">运动休闲鞋</h3>
+                        <p class="product-description">轻便舒适，防滑耐磨，适合日常运动</p>
+                        <div class="product-price">
+                            <span class="price">¥299</span>
+                            <span class="original-price">¥399</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+
+                <!-- 商品4 -->
+                <div class="product-card" data-id="4">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/300/300?random=4" alt="商品4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">时尚双肩包</h3>
+                        <p class="product-description">大容量设计，多隔层，适合旅行和日常使用</p>
+                        <div class="product-price">
+                            <span class="price">¥159</span>
+                            <span class="original-price">¥259</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 购物车侧边栏 -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>购物车</h2>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- 购物车内容将通过JS动态添加 -->
+            <div class="empty-cart-message">购物车是空的</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>总计:</span>
+                <span class="total-price">¥0</span>
+            </div>
+            <button class="checkout-btn">结算</button>
+        </div>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div class="overlay"></div>
+
+    <script src="b3.js"></script>
+</body>
+</html>

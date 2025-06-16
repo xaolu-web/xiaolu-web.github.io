@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大学生生活习惯调查问卷</title>
+    <link rel="stylesheet" href="a4.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Brand Logo</div>
+        <ul class="nav-links">
+            <li><a href="welcome.html" class="active">首页</a></li>
+            <li><a href="jianli.html">简历</a></li>
+            <li><a href="gouwu.html">购物</a></li>
+            <li><a href="wenjuan.html">问卷</a></li>
+            
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>大学生生活习惯调查问卷</h1>
+            <p class="description">亲爱的同学，感谢您参与本次调查。本问卷旨在了解当代大学生的生活习惯和学习状况，所有数据仅用于统计分析，我们将严格保护您的隐私。</p>
+        </header>
+
+        <form id="survey-form">
+            <!-- 基本信息部分 -->
+            <section class="form-section">
+                <h2>基本信息</h2>
+                
+                <div class="form-group">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-id">学号：</label>
+                    <input type="text" id="student-id" name="student-id" placeholder="请输入您的学号" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">性别：</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required> 男
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female"> 女
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="other"> 其他
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">年龄：</label>
+                    <select id="age" name="age" required>
+                        <option value="" disabled selected>请选择您的年龄</option>
+                        <option value="18">18岁</option>
+                        <option value="19">19岁</option>
+                        <option value="20">20岁</option>
+                        <option value="21">21岁</option>
+                        <option value="22">22岁</option>
+                        <option value="23">23岁</option>
+                        <option value="24">24岁及以上</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="major">专业：</label>
+                    <input type="text" id="major" name="major" placeholder="请输入您的专业" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="grade">年级：</label>
+                    <select id="grade" name="grade" required>
+                        <option value="" disabled selected>请选择您的年级</option>
+                        <option value="freshman">大一</option>
+                        <option value="sophomore">大二</option>
+                        <option value="junior">大三</option>
+                        <option value="senior">大四</option>
+                        <option value="graduate">研究生</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- 学习习惯部分 -->
+            <section class="form-section">
+                <h2>学习习惯</h2>
+                
+                <div class="form-group">
+                    <label>1. 您每天大约花多少时间学习？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="study-time" value="less-than-1" required> 少于1小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="study-time" value="1-3"> 1-3小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="study-time" value="3-5"> 3-5小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="study-time" value="more-than-5"> 5小时以上
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>2. 您最常在哪里学习？（可多选）</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-place" value="dormitory"> 宿舍
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-place" value="library"> 图书馆
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-place" value="classroom"> 教室
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-place" value="cafe"> 咖啡厅
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-place" value="other"> 其他
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>3. 您通常使用哪些学习资源？（可多选）</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-resources" value="textbooks"> 教科书
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-resources" value="online-courses"> 在线课程
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-resources" value="lecture-notes"> 课堂笔记
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-resources" value="study-groups"> 学习小组
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="study-resources" value="other"> 其他
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="study-efficiency">4. 您如何评价自己的学习效率？</label>
+                    <div class="rating">
+                        <span>很低</span>
+                        <input type="range" id="study-efficiency" name="study-efficiency" min="1" max="5" step="1">
+                        <span>很高</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 生活习惯部分 -->
+            <section class="form-section">
+                <h2>生活习惯</h2>
+                
+                <div class="form-group">
+                    <label>5. 您每天的睡眠时间是多少？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="sleep-time" value="less-than-6" required> 少于6小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sleep-time" value="6-8"> 6-8小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sleep-time" value="more-than-8"> 8小时以上
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>6. 您每周参加体育锻炼的频率是？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="exercise-frequency" value="never" required> 从不
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="exercise-frequency" value="1-2"> 1-2次
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="exercise-frequency" value="3-5"> 3-5次
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="exercise-frequency" value="more-than-5"> 5次以上
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>7. 您的饮食习惯是？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="diet-habit" value="regular" required> 三餐规律
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="diet-habit" value="irregular"> 不规律
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="diet-habit" value="skip-meals"> 经常跳过某餐
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 社交与娱乐部分 -->
+            <section class="form-section">
+                <h2>社交与娱乐</h2>
+                
+                <div class="form-group">
+                    <label>8. 您每天使用手机/电脑娱乐的时间是多少？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="screen-time" value="less-than-1" required> 少于1小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="screen-time" value="1-3"> 1-3小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="screen-time" value="3-5"> 3-5小时
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="screen-time" value="more-than-5"> 5小时以上
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>9. 您参加的校园社团/组织数量是？</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="club-participation" value="none" required> 无
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="club-participation" value="1-2"> 1-2个
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="club-participation" value="3-5"> 3-5个
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="club-participation" value="more-than-5"> 5个以上
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="social-satisfaction">10. 您对自己的社交生活满意度如何？</label>
+                    <div class="rating">
+                        <span>很不满意</span>
+                        <input type="range" id="social-satisfaction" name="social-satisfaction" min="1" max="5" step="1">
+                        <span>很满意</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 意见建议部分 -->
+            <section class="form-section">
+                <h2>意见与建议</h2>
+                
+                <div class="form-group">
+                    <label for="suggestions">您对大学生活有什么建议或想法？</label>
+                    <textarea id="suggestions" name="suggestions" rows="4" placeholder="请输入您的意见或建议..."></textarea>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">提交问卷</button>
+                <button type="reset" class="reset-btn">重置</button>
+            </div>
+        </form>
+
+        <footer>
+            <p>感谢您的参与！如有疑问，请联系：survey@university.edu</p>
+        </footer>
+    </div>
+</body>
+</html>

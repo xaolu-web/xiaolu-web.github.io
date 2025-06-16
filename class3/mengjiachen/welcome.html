@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精美轮播图网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">Brand Logo</div>
+        <ul class="nav-links">
+            <li><a href="welcome.html" class="active">首页</a></li>
+            <li><a href="jianli.html">简历</a></li>
+            <li><a href="gouwu.html">购物</a></li>
+            <li><a href="wenjuan.html">问卷</a></li>
+            
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- 轮播图容器 -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="https://picsum.photos/1200/500?random=1" alt="轮播图片1">
+                <div class="slide-content">
+                    <h2>精彩视觉体验</h2>
+                    <p>探索我们的创新产品与服务</p>
+                    <button class="btn">了解更多</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/500?random=2" alt="轮播图片2">
+                <div class="slide-content">
+                    <h2>卓越品质保证</h2>
+                    <p>品质源于专注，服务创造价值</p>
+                    <button class="btn">查看详情</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/500?random=3" alt="轮播图片3">
+                <div class="slide-content">
+                    <h2>创新科技应用</h2>
+                    <p>引领行业发展，创造美好未来</p>
+                    <button class="btn">立即体验</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 轮播图控制按钮 -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+        
+        <!-- 轮播图指示器 -->
+        <div class="carousel-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+    </div>
+
+    <script src="lbt.js"></script>
+</body>
+</html>
