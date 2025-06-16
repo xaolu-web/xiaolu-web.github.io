@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>购物页面</title>
+</head>
+<body>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: "微软雅黑", sans-serif; 
+  background-color: #f4f4f4; 
+  color: #333; 
+  line-height: 1.6;
+}
+header { 
+  background-color: #333; 
+  color: #fff; 
+  padding: 1rem; 
+  text-align: center; 
+}
+nav a { 
+  color: #fff; 
+  margin: 0 0.5rem; 
+  text-decoration: none; 
+}
+    .product-list { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 2rem; 
+  padding: 2rem; 
+}
+.product { 
+  width: 250px; 
+  background-color: #fff; 
+  padding: 1rem; 
+  box-shadow: 0 0 5px rgba(0,0,0,0.1); 
+  text-align: center; 
+}
+.product img { margin-bottom: 1rem; }
+.product button { 
+  padding: 0.5rem 1rem; 
+  background-color: #333; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+  </style>
+  <header>
+    <h1>商品购物</h1>
+    <nav>
+      <a href="resume.html">返回简历</a>
+      <a href="carousel.html">前往轮播图</a>
+    </nav>
+  </header>
+  <section class="product-list">
+    <div class="product">
+      <img src="a.jpg" alt="" width="100"商品1>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p >
+      <button onclick="addToCart('宇智波鼬手办1', 99)">加入购物车</button>
+    </div>
+    <div class="product">
+      <img src="b.jpg" alt="" width="100"商品2>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p >
+      <button onclick="addToCart('宇智波鼬手办2', 99)">加入购物车</button>
+    </div>
+    <div class="product">
+      <img src="c.jpg" alt="" width="100"商品3>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p>
+      <button onclick="addToCart('宇智波鼬手办3',99)">加入购物车</button>
+    </div>
+    <div class="product">
+      <img src="d.jpg" alt="" width="100"商品4>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p>
+      <button onclick="addToCart('宇智波鼬手办4',99)">加入购物车</button>
+    </div>
+    <div class="product">
+      <img src="e.jpg" alt="" width="100"商品5>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p>
+      <button onclick="addToCart('宇智波鼬手办5',99)">加入购物车</button>
+    </div>
+    <div class="product">
+      <img src="f.jpg" alt="" width="100"商品6>
+      <h3>宇智波鼬手办</h3>
+      <p>价格：¥99</p>
+      <button onclick="addToCart('宇智波鼬手办6',99)">加入购物车</button>
+    </div>
+  </section>
+  <script> function addToCart(productName, price) {
+  alert(`${productName} 已加入购物车，价格 ¥${price} ~`);
+}
+</script>
+</body>
+</html>
