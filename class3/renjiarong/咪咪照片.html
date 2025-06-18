@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>咪咪简介</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 80%;
+      max-width: 900px; /* 限制最大宽度 */
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      color: #2c3e50;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile img {
+      width: 120px; /* 缩小头像尺寸 */
+      height: 120px;
+      border-radius: 50%;
+      margin-right: 20px;
+      object-fit: cover; /* 确保图片不变形 */
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h2 {
+      margin: 0;
+      color: #34495e;
+    }
+    .profile-info p {
+      margin: 5px 0;
+      color: #7f8c8d;
+    }
+    .carousel {
+      position: relative;
+      margin: 20px auto;
+      width: 85%; /* 缩小轮播图容器 */
+    }
+    .carousel img {
+      width: 100%;
+      height: auto; /* 保持图片比例 */
+      display: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .carousel-button:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+    .achievements {
+      margin-bottom: 20px;
+    }
+    .achievements h3 {
+      color: #2c3e50;
+    }
+    .achievements ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .achievements li {
+      background: #ecf0f1;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      color: #34495e;
+      transition: all 0.2s ease;
+    }
+    .achievements li:hover {
+      transform: translateX(5px);
+    }
+    .login-button {
+      display: block;
+      width: 150px;
+      margin: 20px auto;
+      padding: 12px;
+      background-color: #e74c3c;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .login-button:hover {
+      background-color: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+        padding: 15px;
+      }
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile img {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      .carousel {
+        width: 100%;
+      }
+      .carousel-button {
+        margin: 5px;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>咪咪简介</h1>
+    </div>
+    <div class="profile">
+      <img src="咪咪1.jpg" alt="咪咪">
+      <div class="profile-info">
+        <h2>咪咪</h2>
+        <p>出生日期：2024年3月13日</p>
+        <p>出生地：河北省保定市</p>
+        <p>职业：咪咪大王</p>
+      </div>
+    </div>
+    <div class="carousel">
+      <img src="咪咪1.jpg" alt="咪咪1" class="active">
+      <img src="咪咪2.jpg" alt="咪咪2">
+      <img src="咪咪3.jpg" alt="咪咪3">
+      <img src="咪咪4.jpg" alt="咪咪4">
+      <img src="咪咪5.jpg" alt="咪咪5">
+      <div class="carousel-button" onclick="prevSlide()">上一张</div>
+      <div class="carousel-button" onclick="nextSlide()">下一张</div>
+    </div>
+    <div class="achievements">
+      <h3>此喵经历</h3>
+      <ul>
+        <li>2024年3月13日出生于河北省保定市</li>
+        <li>2024年8月遇到一生之敌屎蛋</li>
+        <li>2024年9月份面临无家可归</li>
+        <li>同年9月成功俘获所有人芳心，成功存留下来</li>
+        <li>于后遇到真命仙女小三花</li>
+      </ul>
+    </div>
+    <a href="index.html" class="login-button" id="backToLogin">返回登录页面</a>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (index + slides.length) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+  </script>
+</body>
+</html>

@@ -1,22 +1,141 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
     <head>
-        <meta charset="utf-6">
-        <title>欢迎来到我的网站</title>
+        <meta charset="utf-8">
+        <title>登录页面</title>
+        <style>
+            body{
+                font-family:Arial,sans-serif;
+                /* 修改背景图路径，假设图片和HTML文件同目录，图片名为"seagull-sunset.jpg"，你可按实际调整 */
+                background-image: url('背景.jpg'); 
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                margin:0;
+                backdrop-filter: blur(5px); /* 添加模糊效果 */
+            }
+            
+            .login-container{
+                background-color:rgba(255,255,255,0.9); /* 添加半透明背景 */
+                border-radius:8px;
+                box-shadow:0 0 10px rgba(0,0,0,0.3); /* 增强阴影效果 */
+                width:300px;
+                padding:20px;
+                position: relative;
+                z-index: 1;
+            }
+        
+            .login-container{
+                background-color:#fff;
+                border-radius:8px;
+                box-shadow:0 0 10px rgba(0,0,0,0.1);
+                width:300px;
+                padding:20px;
+            }
+            .login-container h2{
+                text-align:center;
+                margin-bottom:20px;
+            }
+            .form-group{
+                margin-bottom:15px;
+            }
+            .form-group label{
+                display:block;
+                margin-bottom:5px;
+            }
+            .form-group input{
+                width:100%;
+                padding:8px;
+                box-sizing:border-box;
+                border:1px solid #ddd;
+                border-radius:4px;
+            }
+            .form-group button{
+                width:100%;
+                padding:10px;
+                background-color:#ed3aa2;
+                color:#fff;
+                border:none;
+                border-radius:4px;
+                cursor:pointer;
+                font-size:16px;
+            }
+            .form-group button:hover{
+                background-color:#f02cd9;
+            }
+            .message{
+                text-align:center;
+                margin-top:15px;
+                padding:10px;
+                border-radius:4px;
+            }
+            .message.success{
+                color:#155724;
+                background-color:#d4edda;
+            }
+            .message.error{
+                color:#721c24;
+                background-color:#f8d7da;
+            }
+            .profile-link{
+                display:block;
+                text-align:center;
+                margin-top:15px;
+                color:#007bff;
+                text-decoration:none;
+            }
+            .profile-link:hover{
+                text-decoration:underline;
+            }
+        </style>
     </head>
     <body>
-        <h2>欢迎来到职业诈骗学院</h2>
-        <hr>
-        <p>
-            <a href="C:\Users\rjr\Desktop\新建文件夹\321.html">学校要闻</a><br>
-            <a href="C:\Users\rjr\Desktop\新建文件夹\students.html">学生信息表</a><br>
-            <a href="C:\Users\rjr\Desktop\新建文件夹\nav.html">导航栏</a><br>
-            <a href="C:\Users\rjr\Desktop\新建文件夹\123.html">招生就业</a>
+        <div class="login-container">
+            <h2>登录</h2>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <button onclick="checkLogin()">登录</button>
+            </div>
+            <div class="message" id="message"></div>
+        </div>
 
-        </p>
-        <p> <img src="C:\Users\rjr\Desktop\新建文件夹\tupian.jpg" width="400" alt="欢迎光临" title="欢迎光临"></p>
-        <p>友情链接：<a href="https://www.baidu*.com" target="_blank"></a>&nbsp;&nbsp;<a href="#">学院官网</a></p>
-        <hr>
-        <p>版权所有&copy;职业诈骗学院</p>
+        <script>
+            function checkLogin(){
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const messageDiv = document.getElementById('message');
+                
+                if(username === 'admin' && password === 'a123456'){
+                    messageDiv.innerText = '登录成功！即将跳转到个人简历页面...';
+                    messageDiv.className = 'message success';
+                    
+                    // 3秒后跳转到个人简介页面
+                    setTimeout(() => {
+                        window.location.href = '个人简历.html';
+                    }, 1000);
+                }else{
+                    messageDiv.innerText = '用户名或密码错误！';
+                    messageDiv.className = 'message error';
+                    
+                    // 2秒后清除错误消息
+                    setTimeout(() => {
+                        messageDiv.innerText = '';
+                        messageDiv.className = 'message';
+                    }, 2000);
+                }
+            }
+        </script>
     </body>
 </html>
