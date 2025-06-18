@@ -1,30 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>王俊凯轮播图</title>
-  <link rel="stylesheet" href="轮播.css">
+  <style>
+    .carousel {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+      min-width: 100%;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    .indicators {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background-color: #bbb;
+      cursor: pointer;
+    }
+    
+    .active {
+      background-color: #717171;
+    }
+  </style>
 </head>
 <body>
   <div class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="王俊凯1.jpg" alt="王俊凯1">
+        <img src="王俊凯1.jpg" alt="王俊凯2.jpg">
       </div>
       <div class="carousel-item">
-        <img src="王俊凯2.jpg" alt="王俊凯2">
+        <img src="王俊凯2.jpg" alt="王俊凯3.jpg">
       </div>
       <div class="carousel-item">
-        <img src="王俊凯3.jpg" alt="王俊凯3">
+        <img src="王俊凯3.jpg" alt="王俊凯4.jpg">
       </div>
       <div class="carousel-item">
-        <img src="王俊凯4.jpg" alt="王俊凯4">
+        <img src="王俊凯4.jpg" alt="王俊凯1.jpg">
       </div>
     </div>
     
-    <a class="prev" onclick="prevSlide()">&#10094;</a >
-    <a class="next" onclick="nextSlide()">&#10095;</a >
+    <a class="prev" onclick="prevSlide()">&#10094;</a>
+    <a class="next" onclick="nextSlide()">&#10095;</a>
     <div class="indicators">
       <span class="indicator active" onclick="goToSlide(0)"></span>
       <span class="indicator" onclick="goToSlide(1)"></span>
@@ -33,8 +94,51 @@
     </div>
   </div>
   <a href="成毅.html">跳转至成毅</a>
-  <script src="轮播.js"></script>
-
+  
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    showSlide(currentSlide);
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+    
+    function showSlide(index) {
+      document.querySelector('.carousel-inner').style.transform = 
+        `translateX(-${index * 100}%)`;
+      
+      indicators.forEach((indicator, i) => {
+        if (i === index) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+      
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+    
+    setInterval(nextSlide, 5000);
+  </script>
 </body>
 </html>
-
