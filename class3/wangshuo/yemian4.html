@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .carousel-container {
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-container img {
+      width: 100%;
+      display: none;
+      transition: transform 0.5s ease;
+    }
+    .carousel-container img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 10;
+    }
+    .carousel-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .carousel-controls button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-indicators {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+    .carousel-indicators button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .carousel-indicators button.active {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <img src="图片1.jpg" alt="Slide 1" class="active">
+    <img src="图片2.jpg" alt="Slide 2">
+    <img src="图片3.jpg" alt="Slide 3">
+    <div class="carousel-controls">
+      <button id="prevBtn">←</button>
+      <button id="nextBtn">→</button>
+    </div>
+    <div class="carousel-indicators">
+      <button class="indicator active" data-index="0"></button>
+      <button class="indicator" data-index="1"></button>
+      <button class="indicator" data-index="2"></button>
+    </div>
+  </div>
+
+  <script>
+    // 获取轮播图的图片和控制按钮
+    const slides = document.querySelectorAll('.carousel-container img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+
+    let currentIndex = 0;
+
+    // 显示当前的图片
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        indicators[i].classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+          indicators[i].classList.add('active');
+        }
+      });
+      currentIndex = index;
+    }
+
+    // 下一张图片
+    function nextSlide() {
+      let nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+
+    // 上一张图片
+    function prevSlide() {
+      let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(prevIndex);
+    }
+
+    // 自动播放
+    let autoPlayInterval = setInterval(nextSlide, 3000);
+
+    // 点击按钮切换图片
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoPlayInterval);
+      prevSlide();
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoPlayInterval);
+      nextSlide();
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    });
+
+    // 点击指示器切换图片
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        showSlide(index);
+        autoPlayInterval = setInterval(nextSlide, 3000);
+      });
+    });
+
+    // 初始化轮播图
+    showSlide(currentIndex);
+  </script>
+</body>
+</html>
