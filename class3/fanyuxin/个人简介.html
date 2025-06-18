@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介</title>
+    <style>
+        :root {
+            --miku-primary: #39c5bb;
+            --miku-secondary: #00a0e9;
+            --miku-accent: #a0e9ff;
+            --miku-dark: #2d2d2d;
+            --miku-light: #f0f8ff;
+            --miku-pink: #ff9eb5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--miku-light);
+            color: var(--miku-dark);
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(rgba(160, 233, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(160, 233, 255, 0.2) 1px, transparent 1px);
+            background-size: 20px 20px;
+            overflow-x: hidden;
+        }
+        
+        .miku-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(57, 197, 187, 0.2);
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--miku-primary);
+        }
+        
+        .miku-header {
+            background: linear-gradient(135deg, var(--miku-primary), var(--miku-secondary));
+            color: white;
+            padding: 50px 40px 70px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .miku-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, 
+                var(--miku-pink), 
+                var(--miku-accent), 
+                var(--miku-pink));
+        }
+        
+        .miku-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background-color: var(--miku-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--miku-primary);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .miku-avatar::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.5), 
+                transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        
+        .miku-title {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .miku-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--miku-pink);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 0 5px;
+            transform: rotate(-5deg);
+        }
+        
+        .miku-body {
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .miku-section {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h2 {
+            color: var(--miku-primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px dashed var(--miku-accent);
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: var(--miku-primary);
+            margin-right: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--miku-accent);
+        }
+        
+        .miku-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .miku-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: rgba(160, 233, 255, 0.1);
+            border-radius: 10px;
+            border-left: 3px solid var(--miku-primary);
+            transition: all 0.3s;
+        }
+        
+        .miku-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(57, 197, 187, 0.1);
+        }
+        
+        .miku-label {
+            font-weight: bold;
+            color: var(--miku-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .miku-label i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .miku-content {
+            padding-left: 30px;
+        }
+        
+        .miku-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .miku-interest {
+            background-color: var(--miku-accent);
+            color: var(--miku-dark);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .miku-interest::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+        }
+        
+        .miku-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .miku-social-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--miku-primary), var(--miku-secondary));
+            box-shadow: 0 4px 10px rgba(57, 197, 187, 0.3);
+        }
+        
+        .miku-social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(57, 197, 187, 0.4);
+        }
+        
+        .miku-social-link i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        
+        .miku-footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--miku-dark);
+            font-size: 14px;
+            border-top: 1px dashed var(--miku-accent);
+        }
+        
+        .miku-note {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%2339c5bb" d="M50 0 Q70 20 50 40 Q30 20 50 0" opacity="0.3"/></svg>') no-repeat;
+            animation: float 6s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        .miku-note:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .miku-note:nth-child(2) {
+            top: 30%;
+            right: 8%;
+            animation-delay: 1s;
+        }
+        
+        .miku-note:nth-child(3) {
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .miku-header {
+                padding: 40px 20px 60px;
+            }
+            
+            .miku-body {
+                padding: 30px 20px;
+            }
+            
+            .miku-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="miku-container">
+        <!-- 浮动音符背景元素 -->
+        <div class="miku-note"></div>
+        <div class="miku-note"></div>
+        <div class="miku-note"></div>
+        
+        <div class="miku-header">
+           <div class="miku-avatar">X</div>
+            <h1>范雨欣</h1>
+            <div class="miku-title">邯郸科技职业学院 · 计算机应用技术专业</div>
+        </div>
+        
+        <div class="miku-body">
+            <div class="miku-section">
+                <h2><i class="fas fa-user-astronaut"></i> 基本信息</h2>
+                <div class="miku-grid">
+                    <div class="miku-item">
+                        <div class="miku-label"><i class="fas fa-birthday-cake"></i> 出生日期</div>
+                        <div class="miku-content">2006年1月</div>
+                    </div>
+                    <div class="miku-item">
+                        <div class="miku-label"><i class="fas fa-map-marker-alt"></i> 籍贯</div>
+                        <div class="miku-content">河北承德</div>
+                    </div>
+                    <div class="miku-item">
+                        <div class="miku-label"><i class="fas fa-laptop-code"></i> 专业</div>
+                        <div class="miku-content">计算机应用技术</div>
+                    </div>
+                    <div class="miku-item">
+                        <div class="miku-label"><i class="fas fa-phone"></i> 电话</div>
+                        <div class="miku-content">xxx-xxxx-xxxx</div>
+                    </div>
+                    <div class="miku-item">
+                        <div class="miku-label"><i class="fas fa-envelope"></i> 邮箱</div>
+                        <div class="miku-content">xxx@xxx.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="miku-section">
+                <h2><i class="fas fa-star"></i> 个人简介</h2>
+                <div class="miku-item">
+                   <p>我是邯郸科技职业学院计算机应用技术专业的学生，对前端开发、UI设计和编程有浓厚兴趣。目前正在学习HTML、CSS、JavaScript等Web开发技术，希望未来能成为一名优秀的前端工程师。</p >
+                <p>性格开朗，乐于助人，喜欢团队合作。在学习之余，也积极参加校园活动和技能竞赛，不断提升自己的专业能力和综合素质。</p >
+                </div>
+            </div>
+            
+            <div class="miku-section">
+                <h2><i class="fas fa-heart"></i> 兴趣爱好</h2>
+                <div class="miku-interests">
+                    <span class="miku-interest"><i class="fas fa-code"></i> 编程</span>
+                    <span class="miku-interest"><i class="fas fa-paint-brush"></i> 设计</span>
+                    <span class="miku-interest"><i class="fas fa-headphones"></i> 音乐</span>
+                </div>
+            </div>
+            
+            <div class="miku-section">
+                <h2><i class="fas fa-share-alt"></i> 联系方式</h2>
+                <div class="miku-social">
+                    <i class="fab fa-qq"></i> QQ
+                    <i class="fab fa-weixin"></i> 微信
+                    <i class="fab fa-bilibili"></i> B站
+                    <i class="fab fa-github"></i> GitHub
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthYear = 2006;
+            const birthMonth = 1;
+            const currentDate = new Date();
+            let age = currentDate.getFullYear() - birthYear;
+            
+            if (currentDate.getMonth() + 1 < birthMonth) {
+                age--;
+            }
+            const ageItem = document.createElement('div');
+            ageItem.className = 'miku-item';
+            ageItem.innerHTML = `
+                <div class="miku-label"><i class="fas fa-user"></i> 年龄</div>
+                <div class="miku-content">${age}岁</div>
+            `;
+            document.querySelector('.miku-grid').prepend(ageItem);
+            for (let i = 0; i < 5; i++) {
+                const note = document.createElement('div');
+                note.className = 'miku-note';
+                note.style.width = `${Math.random() * 50 + 50}px`;
+                note.style.height = note.style.width;
+                note.style.left = `${Math.random() * 90}%`;
+                note.style.top = `${Math.random() * 90}%`;
+                note.style.animationDelay = `${Math.random() * 5}s`;
+                note.style.animationDuration = `${Math.random() * 3 + 4}s`;
+                document.querySelector('.miku-container').appendChild(note);
+            }
+            const interests = document.querySelectorAll('.miku-interest');
+            interests.forEach(interest => {
+                interest.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+  <a href="网页购物.html">跳转网页购物</a>
+</html>

@@ -1,133 +1,247 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style type="tex/css">
-            body,form,input,select,h2,p {
-                padding: 0;
-                margin: 0;
-                border: 0;
-            }
-            body {
-                font-size: 12px;
-                font-family: "微软雅黑";
-            }
-            .bg {
-                width: 800px;
-                height: 500px;
-                margin: 20px auto;
-                background: url(images/bg.jpg)no-repeat;
-            }
-            form {
-                width: 550px;
-                height: 480px;
-                padding-top: 20px;
-                padding-left: 250px;
-            }
-            h2 {
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-                font-size: 20px;
-                border-bottom: 2px solid #ccc;
-            }
-            .yelc {
-                color: #FFFF00;
-                font-weight: bold;
-            }
-            p {
-                margin-top: 10px;
-            }
-            p span {
-                width: 75px;
-                display: inline-block;
-                text-align: right;
-                padding-right: 10px;
-            }
-            p input {
-                width: 200px;
-                height: 15px;
-                line-height: 15px;
-                border: 1px solid #d4cdba;
-                padding: 2px;
-            }
-            p input.spe {
-                width: 15px;
-                height: 15px;
-                border: 0;
-                padding: 0;
-            }
-            .lucky input {
-                width: 50px;
-                height: 24px;
-                border: 0;
-                padding: 0;
-            }
-            .btn input {
-                width: 80px;
-                height: 30px;
-                background:#93b518;
-                margin-top: 10px;
-                margin-left: 120px;
-                border-radius: 3px;
-                font-size: 14px;
-                color: #fff;
-            }
-        </style>
-        <meta charset="utf-8">
-        <title>注册表单</title>
-    </head>
-    <body>
-        <div class="bg">
-            <form action="#"method="get">
-                <h2>学生信息注册</h2>
-                <p class="yelc">请注意:带有*的项必须填写</p>
-                <p><span>昵称:*</span>
-                    <input type="text"name="txtUsername"autofocus required pattern="^[a-zA-z]\w{5,17}$">(6~18个字符,由字母、数字或下划线组成)
-                </p>
-                <p><span>手机:*</span>
-                    <input type="tel"name="telephone"required pattern="\d(11)$">
-                </p>
-                <p><span>姓名:*</span>
-                    <input type="text"name="txtName"required pattern="^[\u4e00-\u9fa5]{0,}$"/>（要填写真实姓名，只能输入汉字）
-                </p>
-                <p><span>性别:</span>
-                    <input type="radio"name="gender"checked class="spe">男
-                    <input type="radio"name="gender"class="spe">女
-                </p>
-                <p><span>年龄:</span>
-                    <input type="number"name="age"value="18"min="18"max="100">(年龄介于18~100岁)
-                </p>
-                <p><span>出生日期:</span>
-                    <input type="date"name="birthday"value="1999-10-01">
-                </p>
-                <p><span>电子邮箱:</span>
-                    <input type="email"name="myemail"placeholder="susan@126.com">
-                </p>
-                <p><span>身份证号:*</span>
-                    <input type="text"name="card"required pattern="^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$">
-                </p>
-                <p><span>籍贯:</span>
-                    <select>
-                        <option>江苏省</option>
-                        <option selected="selected">山东省</option>
-                        <option>湖北省</option>
-                        <option>浙江省</option>
-                    </select>
-                </p>
-                <p><span>爱好:</span>
-                    <input type="checkbox"name="music"class="spe">音乐
-                    <input type="checkbox"name="internet"class="spe">上网
-                    <input type="checkbox"name="movie"class="spe">看电影
-                    <input type="checkbox"name="xiaqi"class="spe">下棋
-                </p>
-                <p class="lucky"><span>喜欢的颜色:</span>
-                    <input type="color"name="lovecolor">(请选择你喜欢的颜色)
-                </p>
-                <p class="btn">
-                    <input type="submit"value="提交">
-                    <input type="reset"value="重置">
-                </p>
-            </form>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 登录页面 </title>
+    <style>
+        :root {
+            --primary: #FF8BAB;
+            --secondary: #FFD6E0;
+            --text: #5E3747;
+            --text-light: #A87B8F;
+            --bg: #FFF5F7;
+            --border: #FFC0CB;
+            --error: #FF4D6D;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text);
+            background-image: radial-gradient(circle at 10% 20%, var(--secondary) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, var(--secondary) 0%, transparent 20%);
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 139, 171, 0.2);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #FF8BAB, #FFC0CB, #FFD6E0);
+        }
+        
+        h1 {
+            font-weight: 600;
+            margin: 20px 0 30px;
+            font-size: 26px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "🌸";
+            position: absolute;
+            right: -30px;
+            top: -10px;
+        }
+        
+        h1::before {
+            content: "🍄";
+            position: absolute;
+            left: -30px;
+            top: -10px;
+        }
+        
+        .input-group {
+            margin-bottom: 24px;
+            text-align: left;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text);
+            padding-left: 8px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 14px 16px 14px 45px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: all 0.3s;
+            background-color: #FFF9FA;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 139, 171, 0.2);
+        }
+        
+        .input-group::before {
+            position: absolute;
+            left: 16px;
+            top: 42px;
+            font-size: 20px;
+        }
+        
+        #username-group::before {
+            content: "👤";
+        }
+        
+        #password-group::before {
+            content: "🔒";
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button:hover {
+            background-color: #FF7299;
+            transform: translateY(-2px);
+        }
+        
+        button::after {
+            content: "→";
+            position: absolute;
+            right: 20px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        button:hover::after {
+            opacity: 1;
+            right: 15px;
+        }
+        
+        .error {
+            color: var(--error);
+            margin: 16px 0;
+            font-size: 14px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error::before {
+            content: "⚠️";
+            margin-right: 6px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .decoration {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        
+        .decoration:nth-child(1) {
+            top: 20px;
+            right: 30px;
+            content: "🌼";
+        }
+        
+        .decoration:nth-child(2) {
+            bottom: 30px;
+            left: 25px;
+            content: "🦋";
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="decoration">🌼</div>
+        <div class="decoration">🦋</div>
+        <h1>欢迎登录</h1>
+        <div class="input-group" id="username-group">
+            <label for="username">用户名</label>
+            <input type="text" id="username" placeholder="请输入用户名" autocomplete="username">
         </div>
-    </body>
+        <div class="input-group" id="password-group">
+            <label for="password">密码</label>
+            <input type="password" id="password" placeholder="请输入密码" autocomplete="current-password">
+        </div>
+        <div class="error" id="error"></div>
+        <button onclick="login()">登录 <span style="opacity:0">→</span></button>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('error');
+            
+            // 正确的账号和密码
+            const correctUsername = 'admin';
+            const correctPassword = 'a123456';
+            
+            if (!username || !password) {
+                errorElement.textContent = '请输入用户名和密码';
+                return;
+            }
+            
+            if (username === correctUsername && password === correctPassword) {
+                // 登录成功，跳转到个人简介页面
+                errorElement.textContent = '';
+                window.location.href = '个人简介.html';
+            } else {
+                errorElement.textContent = '用户名或密码错误';
+            }
+        }
+        
+        // 添加回车键登录功能
+        document.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
+</body>
 </html>

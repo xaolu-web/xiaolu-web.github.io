@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鬼灭之刃角色简介</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .character-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+        .character-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+        .character-info {
+            padding: 15px;
+        }
+        .character-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .character-title {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .character-desc {
+            color: #444;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>鬼灭之刃角色简介</h1>
+    <div class="container" id="characters-container"></div>
+
+    <script>
+        // 角色数据
+        const characters = [
+            {
+                name: "我妻善逸",
+                title: "雷之呼吸继承者",
+               image: "gm4.jpg",
+                description: "性格胆小爱哭，但在睡着时会变成强大的剑士。掌握雷之呼吸，只会壹之型·霹雳一闪，但将其修炼到极致。对女孩子非常着迷，尤其喜欢祢豆子。"
+            },
+            {
+                name: "富冈义勇",
+                title: "水柱",
+                image: "gm3.jpg",
+                description: "鬼杀队九柱之一，使用水之呼吸。性格冷静沉着，不擅表达情感。是炭治郎的恩人，也是引导他加入鬼杀队的人。"
+            },
+            {
+                name: "时透无一郎",
+                title: "霞柱",
+                image: "gm2.jpg",
+                description: "鬼杀队九柱中最年轻的柱，14岁就成为霞柱。使用霞之呼吸。性格冷淡，记忆力极差，只记得与剑术相关的事情。其实是继国缘一的后裔。"
+            },
+            {
+                name: "甘露寺蜜璃",
+                title: "恋柱",
+                image: "gm1.jpg",
+                description: "鬼杀队恋柱，性格开朗，食量惊人，拥有粉色绿纹头发和怪力，擅长恋之呼吸。"
+            }
+        ];
+
+        
+        function createCharacterCards() {
+            const container = document.getElementById('characters-container');
+            
+            characters.forEach(character => {
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                
+                
+                const imgContainer = document.createElement('div');
+                const img = document.createElement('img');
+                img.className = 'character-image';
+                img.src = character.image;
+                img.alt = character.name;
+                img.onerror = function() {
+                    this.onerror = null;
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'image-placeholder';
+                    placeholder.textContent = character.name;
+                    imgContainer.innerHTML = '';
+                    imgContainer.appendChild(placeholder);
+                };
+                imgContainer.appendChild(img);
+                
+               
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'character-info';
+                infoDiv.innerHTML = `
+                    <div class="character-name">${character.name}</div>
+                    <div class="character-title">${character.title}</div>
+                    <div class="character-desc">${character.description}</div>
+                `;
+                
+                card.appendChild(imgContainer);
+                card.appendChild(infoDiv);
+                
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = createCharacterCards;
+    </script>
+</body>
+</html>
