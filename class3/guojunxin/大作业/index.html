@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .login-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            border: 2px solid #ffcccb; /* 淡粉色边框 */
+        }
+        .login-header {
+            margin-bottom: 35px;
+            position: relative;
+        }
+        .login-header h1 {
+            color: #ff69b4; /* 粉红色标题 */
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+        .login-header p {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px; /* 更圆润的边角 */
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: #fff3f3; /* 淡粉色背景 */
+        }
+        .input-group input:focus {
+            border-color: #ff69b4; /* 粉红色焦点边框 */
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+        }
+        .input-group input::placeholder {
+            color: #95a5a6;
+        }
+        .password-container {
+            position: relative;
+        }
+        .password-container i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #ff69b4;
+        }
+        .login-button {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff69b4;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .login-button:hover {
+            background-color: #e05f9c; /* 按钮悬停颜色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>欢迎回来！</h1>
+            <p>请登录您的账户</p >
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="用户名" id="username">
+        </div>
+        <div class="input-group password-container">
+            <input type="password" placeholder="密码" id="password">
+            <i class="fas fa-eye" onclick="togglePasswordVisibility()"></i>
+        </div>
+        <button class="login-button" onclick="login()">登录</button>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.querySelector('.password-container input');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        }
+
+        function login() {
+            // 获取用户名和密码（这里只是简单示例，实际项目中需要进行验证）
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // 简单的验证逻辑（可以根据需要修改）
+            if (username === 'admin' && password === 'a123456') {
+                // 跳转到指定页面
+                window.location.href = '个人简介.html'// 替换为你的目标页面
+            } else {
+                alert('用户名或密码错误！');
+            }
+        }
+    </script>
+</body>
+</html>
