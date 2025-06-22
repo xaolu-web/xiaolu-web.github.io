@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #000000;
+            font-size: 28px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-price {
+            color: #ff6600;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .buy-button {
+            display: block;
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .buy-button:hover {
+            background-color: #333333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>购物</h1>
+        </div>
+        
+        <div class="products">
+            <div class="product">
+                <img src="https://pic.616pic.com/ys_bnew_img/00/25/26/OpuAaCBMc8.jpg" alt="智能手机">
+                <div class="product-info">
+                    <div class="product-name">智能手机</div>
+                    <div class="product-price">¥5999</div>
+                    <a href="#" class="buy-button">立即购买</a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <img src="https://img95.699pic.com/element/40028/1492.png_860.png" alt="智能手表">
+                <div class="product-info">
+                    <div class="product-name">智能手表</div>
+                    <div class="product-price">¥99</div>
+                    <a href="#" class="buy-button">立即购买</a>
+                </div>
+            </div>
+            
+            <div class="product">
+                <img src="https://cbu01.alicdn.com/img/ibank/2018/451/051/8690150154_200991789.jpg" alt="充电器">
+                <div class="product-info">
+                    <div class="product-name">充电器</div>
+                    <div class="product-price">¥59</div>
+                    <a href="#" class="buy-button">立即购买</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            ©  保留所有权利.
+        </div>
+    </div>
+</body>
+</html>

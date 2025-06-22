@@ -1,91 +1,98 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
+    <title>登录系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>山东蓝翔技师学院</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Arial", sans-serif;
+            background-color: #e6e6fa;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; 
-            background-size: cover; 
-            background-repeat: no-repeat; 
-            background-attachment: fixed; 
         }
-     .header {
-            background-color: #111;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-     .nav {
-            background-color: #ddd;
-            padding: 10px;
-        }
-     .nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-     .nav ul li {
-            margin: 0 10px;
-        }
-     .nav ul li a {
-            text-decoration: none;
-            color: #373;
-        }
-     .content {
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
             padding: 20px;
-            text-align: center;
-            background-color: rgba(248, 248, 255, 0.8); 
-            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-     .footer {
-            background-color: #333;
+        h1 {
+            color: #003366;
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #003366;
             color: white;
             padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>山东蓝翔技师学院</h1>
-    </div>
-    <div class="nav">
-        <ul>
-            <li><a href="#overview">学院概况</a></li>
-            <li><a href="#majors">专业设置</a></li>
-            <li><a href="#facilities">教学设施</a></li>
-            <li><a href="#contact">联系我们</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <h2 id="overview">学院概况</h2>
-        <p>山东蓝翔技师学院是一所具有悠久历史和卓越声誉的职业技术院校，致力于培养各类技能型人才。</p>
-        <p>学院拥有丰富的教学经验，为社会输送了大量优秀的毕业生。</p>
-        <h2 id="majors">专业设置</h2>
-        <p>我们提供多种热门专业，包括但不限于：</p>
-        <ul>
-            <li>汽车维修</li>
-            <li>烹饪技术</li>
-            <li>美容美发</li>
-            <li>工程机械操作</li>
-        </ul>
-        <h2 id="facilities">教学设施</h2>
-        <p>学院配备了先进的教学设施，以确保学生获得最佳的实践经验。</p>
-        <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.-igO6sZWeB9WZQmemTJXhgHaEU?rs=1&pid=ImgDetMain" alt="教学设施" width="300">
-        <h2 id="contact">联系我们</h2>
-        <p>如果你对我们学院感兴趣，请联系我们：</p>
-    </div>
-    <div class="footer">
-    </div>
-</body>
-</html>
+    <div class="container">
+          <h1>用户登录</h1>
+                 <form id="loginForm">
+                     <div class="form-group">
+                         <label for="username">用户名:</label>
+                         <input type="text" id="username" name="username" required>
+                     </div>
+                     <div class="form-group">
+                         <label for="password">密码:</label>
+                         <input type="password" id="password" name="password" required>
+                     </div>
+                     <button type="button" id="loginButton">登录</button>
+                     <div class="error-message" id="errorMessage">用户名或密码错误</div>
+                 </form>
+             </div>
+         
+             <script>
+               
+                 document.getElementById('loginButton').addEventListener('click', function() {
+                   
+                     const username = document.getElementById('username').value;
+                     const password = document.getElementById('password').value;
+                     if (password === 'a123456') {
+                         window.location.href = 'index2.html';
+                     } else {
+                         document.getElementById('errorMessage').style.display = 'block';
+                     }
+                 });
+                 
+                 document.getElementById('loginForm').addEventListener('submit', function(e) {
+                     e.preventDefault();
+                 });
+             </script>
+         </body>
+         </html>

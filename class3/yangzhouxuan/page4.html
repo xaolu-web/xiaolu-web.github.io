@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>年龄计算器</title>
+  <style>
+    body { font-family: system-ui, sans-serif; text-align: center; padding: 20px; }
+    .container { max-width: 400px; margin: 0 auto; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; border-radius: 4px; }
+    button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    #result { font-size: 1.2em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>年龄计算器</h1>
+    <input type="number" id="birthYear" placeholder="输入出生年份">
+    <button onclick="calculateAge()">计算年龄</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const birthYear = parseInt(document.getElementById('birthYear').value);
+      const currentYear = new Date().getFullYear();
+      const age = currentYear - birthYear;
+      document.getElementById('result').textContent = `你今年 ${age} 岁了。`;
+    }
+  </script>
+</body>
+</html>

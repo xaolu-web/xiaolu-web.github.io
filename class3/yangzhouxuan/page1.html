@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            color: #003366;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #003366;
+            display: inline-block;
+            width: 100px;
+        }
+        .photo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .photo {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #003366;
+            border-radius: 50%;
+        }
+        .skill-item {
+            margin-top: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script>
+     
+        const resumeData = {
+            name: "杨周璇",
+            age: 18,
+            birthday: "2006年8月13日",
+            address: "河北省石家庄市",
+            contact: "13800138000",
+            school: "邯郸科技职业学院",
+            photo: "https://tse4-mm.cn.bing.net/th/id/OIP-C.L8h15ttBLqMAGFlkR4LobAHaGU?rs=1&pid=ImgDetMain",
+            skill: "HTML"
+        };
+        
+        
+        function renderApp() {
+            const appContainer = document.getElementById('app');
+            appContainer.innerHTML = '';
+            
+         
+            const container = document.createElement('div');
+            container.className = 'container';
+            
+       
+            const title = document.createElement('h1');
+            title.textContent = '个人简历';
+            
+           
+            const photoContainer = document.createElement('div');
+            photoContainer.className = 'photo-container';
+            
+          
+            const photo = document.createElement('img');
+            photo.src = resumeData.photo;
+            photo.alt = resumeData.name;
+            photo.className = 'photo';
+            
+            photoContainer.appendChild(photo);
+            
+            
+            const createInfoItem = (label, value) => {
+                const item = document.createElement('div');
+                item.className = 'info-item';
+                
+                const labelElement = document.createElement('span');
+                labelElement.className = 'info-label';
+                labelElement.textContent = label + ':';
+                
+                const valueElement = document.createElement('span');
+                valueElement.textContent = value;
+                
+                item.appendChild(labelElement);
+                item.appendChild(valueElement);
+                
+                return item;
+            };
+            
+            
+            container.appendChild(title);
+            container.appendChild(photoContainer);
+            container.appendChild(createInfoItem('姓名', resumeData.name));
+            container.appendChild(createInfoItem('年龄', resumeData.age));
+            container.appendChild(createInfoItem('生日', resumeData.birthday));
+            container.appendChild(createInfoItem('毕业院校', resumeData.school));
+            container.appendChild(createInfoItem('住址', resumeData.address));
+            container.appendChild(createInfoItem('联系方式', resumeData.contact));
+            
+          
+            if (resumeData.skill) {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-item';
+                
+                const skillLabel = document.createElement('span');
+                skillLabel.className = 'info-label';
+                skillLabel.textContent = '技能:';
+                
+                const skillValue = document.createElement('span');
+                skillValue.textContent = resumeData.skill;
+                
+                skillItem.appendChild(skillLabel);
+                skillItem.appendChild(skillValue);
+                
+                container.appendChild(skillItem);
+            }
+            
+            appContainer.appendChild(container);
+        }
+        
+        document.addEventListener('DOMContentLoaded', renderApp);
+    </script>
+</body>
+</html>

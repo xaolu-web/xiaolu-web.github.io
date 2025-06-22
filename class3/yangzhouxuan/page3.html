@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            neutral: '#F5F7FA',
+            dark: '#1D2129',
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .carousel-container {
+        @apply relative overflow-hidden rounded-lg shadow-lg;
+      }
+      .carousel-slide {
+        @apply min-w-full h-[200px] md:h-[300px] bg-cover bg-center;
+      }
+      .carousel-indicator {
+        @apply w-2 h-2 rounded-full bg-white/60 transition-all duration-300;
+      }
+      .carousel-indicator.active {
+        @apply w-6 bg-white;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-2xl">
+ 
+    <div id="carousel" class="carousel-container">
+ 
+      <div id="slides" class="flex transition-transform duration-700 ease-out">
+        <div class="carousel-slide" style="background-image: url('https://ts1.tc.mm.bing.net/th/id/R-C.464a34ec24ef3e0bb41415dc0b3a0c3a?rik=dXoX2pLM7ROJXQ&riu=http%3a%2f%2fseopic.699pic.com%2fphoto%2f50067%2f8224.jpg_wh1200.jpg&ehk=%2fMvvMj9%2bgQCrXNAD6VjvFMgP56bzQRS2pTOIEXnab1o%3d&risl=&pid=ImgRaw&r=0')"></div>
+        <div class="carousel-slide" style="background-image: url('https://bpic.588ku.com/video_listen/588ku_pic/21/05/08/1541759b32eb3c4aefa2747466294058.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('https://www.keaitupian.cn/cjpic/frombd/1/253/3891205095/1624240520.jpg')"></div>
+      </div>
+      
+      
+      <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
+        <div class="carousel-indicator active" data-index="0"></div>
+        <div class="carousel-indicator" data-index="1"></div>
+        <div class="carousel-indicator" data-index="2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.getElementById('slides');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+      const slideCount = indicators.length;
+      let currentIndex = 0;
+      let autoplayInterval;
+
+    
+      function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+          goToSlide((currentIndex + 1) % slideCount);
+        }, 4000);
+      }
+
+    
+      function goToSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        
+        
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle('active', i === index);
+        });
+        
+        currentIndex = index;
+      }
+
+      startAutoplay();
+    });
+  </script>
+</body>
+</html>
