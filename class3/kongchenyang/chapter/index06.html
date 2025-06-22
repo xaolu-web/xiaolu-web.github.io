@@ -1,25 +1,158 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>自选页面</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气应用</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6f7ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .weather-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+        }
+        #cityInput {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        #searchBtn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #searchBtn:hover {
+            background-color: #45a049;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        .temperature {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .detail-item {
+            text-align: center;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ps大作业</h1>
-    <nav>
-      <a href="carousel.html">返回轮播页</a>
-      <a href="index.html">退出登录</a>
-    </nav>
-  </header>
-  <section class="blog-list">
-    <article>
-      <h2>Jscript学习总结</h2>
-      <p>Js期末考试重点</p >
-    </article>
-  </section>
-  <script src="js/script.js"></script>
+    <div class="weather-container">
+        <h1>天气查询</h1>
+        
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="输入城市名称">
+            <button id="searchBtn">查询</button>
+        </div>
+        
+        <div id="error" class="error"></div>
+        
+        <div class="weather-info" id="weatherInfo">
+            < img src="07.jpg" alt="天气图标" class="weather-icon" id="weatherIcon">
+            <div class="temperature" id="temperature">--°C</div>
+            <div class="description" id="description">请输入城市查询天气</div>
+            <div class="details">
+                <div class="detail-item">
+                    <div>湿度</div>
+                    <div id="humidity">--%</div>
+                </div>
+                <div class="detail-item">
+                    <div>风速</div>
+                    <div id="windSpeed">-- km/h</div>
+                </div>
+                <div class="detail-item">
+                    <div>气压</div>
+                    <div id="pressure">-- hPa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const city = document.getElementById('cityInput').value.trim();
+            if (city) {
+                getWeather(city);
+            } else {
+                document.getElementById('error').textContent = '请输入城市名称';
+            }
+        });
+        
+        function getWeather(city) {
+            // 这里应该是调用天气API的代码
+            // 由于需要API密钥，这里使用模拟数据
+            
+            document.getElementById('error').textContent = '';
+            
+            // 模拟API响应
+            setTimeout(() => {
+                const mockData = {
+                    temperature: Math.round(Math.random() * 30 - 5),
+                    description: ['晴天', '多云', '小雨', '阴天'][Math.floor(Math.random() * 4)],
+                    humidity: Math.round(Math.random() * 50 + 30),
+                    windSpeed: Math.round(Math.random() * 30),
+                    pressure: Math.round(Math.random() * 20 + 980),
+                    icon: 'https://via.placeholder.com/100x100?text=' + ['晴', '云', '雨', '阴'][Math.floor(Math.random() * 4)]
+                };
+                
+                document.getElementById('temperature').textContent = mockData.temperature + '°C';
+                document.getElementById('description').textContent = city + ' · ' + mockData.description;
+                document.getElementById('humidity').textContent = mockData.humidity + '%';
+                document.getElementById('windSpeed').textContent = mockData.windSpeed + ' km/h';
+                document.getElementById('pressure').textContent = mockData.pressure + ' hPa';
+                document.getElementById('weatherIcon').src = mockData.icon;
+              },500);
+            }
+            window.onload = function(){
+              getWeather('北京');
+            }
+            </script>
 </body>
 </html>
