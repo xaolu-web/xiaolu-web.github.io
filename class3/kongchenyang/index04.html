@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">我的网站</div>
+                <ul class="nav-links">
+                    <li><a href="index02.html" onclick="loadPage('index02.html')">个人简历</a></li>
+                    <li><a href="index03.html" onclick="loadPage('index03.html')">购物页面</a></li>
+                    <li><a href="index05.html" onclick="loadPage('index05.html')">轮播图</a></li>
+                    <li><a href="index06.html" onclick="loadPage('index06.html')">自选页面</a></li>
+                    <li><button class="logout-btn" onclick="logout()">退出登录</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container content">
+        <iframe id="contentFrame" src="index02.html"></iframe>
+    </div>
+
+    <script>
+        // 检查登录状态
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                window.location.href = 'index01.html';
+            }
+        }
+
+        // 加载页面到iframe
+        function loadPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+
+        // 退出登录
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'index01.html';
+        }
+
+        // 页面加载时检查登录状态
+        window.onload = checkLogin;
+    </script>
+</body>
+</html>
