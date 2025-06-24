@@ -793,14 +793,13 @@
                 document.body.appendChild(overlay);
                 
                 // 触发动画
-                setTimeout(() => {
-                    overlay.style.opacity = '1';
-                }, 10);
-                
-                // 模拟加载后跳转
-                setTimeout(() => {
-                    window.location.href = 'carousel.html';
-                }, 2000);
+               setTimeout(() => {
+    overlay.style.opacity = '1';
+    // 2秒后跳转（确保动画完成）
+    setTimeout(() => {
+        window.location.href = 'carousel.html';
+    }, 2000);
+}, 10);
             });
         });
     </script>
